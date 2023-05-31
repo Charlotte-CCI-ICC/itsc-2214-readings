@@ -253,7 +253,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#common-big-o-complexities" id="toc-common-big-o-complexities" class="nav-link" data-scroll-target="#common-big-o-complexities"><span class="header-section-number">3.5</span> Common Big-O Complexities</a>
   <ul class="collapse">
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">3.5.1</span> Examples</a></li>
+  <li><a href="#constant-complexity-and-growth" id="toc-constant-complexity-and-growth" class="nav-link" data-scroll-target="#constant-complexity-and-growth"><span class="header-section-number">3.5.1</span> Constant Complexity and Growth</a></li>
+  <li><a href="#linear-complexity-and-growth" id="toc-linear-complexity-and-growth" class="nav-link" data-scroll-target="#linear-complexity-and-growth"><span class="header-section-number">3.5.2</span> Linear Complexity and Growth</a></li>
+  <li><a href="#quadratic-complexity-and-growth" id="toc-quadratic-complexity-and-growth" class="nav-link" data-scroll-target="#quadratic-complexity-and-growth"><span class="header-section-number">3.5.3</span> Quadratic Complexity and Growth</a></li>
+  <li><a href="#exponential-functions-and-growth" id="toc-exponential-functions-and-growth" class="nav-link" data-scroll-target="#exponential-functions-and-growth"><span class="header-section-number">3.5.4</span> Exponential Functions and Growth</a></li>
+  <li><a href="#logarithmic-functions-and-growth" id="toc-logarithmic-functions-and-growth" class="nav-link" data-scroll-target="#logarithmic-functions-and-growth"><span class="header-section-number">3.5.5</span> Logarithmic Functions and Growth</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">3.5.6</span> Examples</a></li>
   </ul></li>
   <li><a href="#growth-rate" id="toc-growth-rate" class="nav-link" data-scroll-target="#growth-rate"><span class="header-section-number">3.6</span> Growth Rate</a></li>
   <li><a href="#summary-review" id="toc-summary-review" class="nav-link" data-scroll-target="#summary-review"><span class="header-section-number">3.7</span> Summary / Review</a></li>
@@ -417,15 +422,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="common-big-o-complexities" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="common-big-o-complexities"><span class="header-section-number">3.5</span> Common Big-O Complexities</h2>
 <p>Big-O notation is a way of expressing the worst-case time complexity of an algorithm. It describes how the running time of an algorithm changes as the size of its input grows. The most common Big-O complexities are:</p>
+<section id="constant-complexity-and-growth" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="constant-complexity-and-growth"><span class="header-section-number">3.5.1</span> Constant Complexity and Growth</h3>
+<p>Constant complexity, often represented as <span class="math inline">\(O(1)\)</span>, occurs when the running time of an algorithm or the amount of work needed does not change with the size of the input (<span class="math inline">\(N\)</span>). This means the algorithm takes a fixed amount of time, regardless of how many elements it is processing.</p>
+<p>For example, accessing an element in an array by its index is an operation of constant complexity. This is because it takes roughly the same amount of time, regardless of the size of the array:</p>
 <ul>
-<li><span class="math inline">\(O(1)\)</span>: Constant time. The algorithm takes a fixed amount of time to finish, regardless of the input size. This is the best possible complexity.</li>
-<li><span class="math inline">\(O(log(n))\)</span>: Logarithmic time. The algorithm takes a time that is proportional to the logarithm of the input size. This means that the running time increases slowly as the input size grows. This is a very good complexity.</li>
-<li><span class="math inline">\(O(n)\)</span>: Linear time. The algorithm takes a time that is proportional to the input size. This means that the running time increases at the same rate as the input size grows. This is a common and acceptable complexity.</li>
-<li><span class="math inline">\(O(n^2)\)</span>: Quadratic time. The algorithm takes a time that is proportional to the square of the input size. This means that the running time increases rapidly as the input size grows. This is a common and often undesirable complexity.</li>
-<li><span class="math inline">\(O(2^n)\)</span>: Exponential time. The algorithm takes a time that is proportional to <span class="math inline">\(2^n\)</span> of the input size. This means that the running time increases exponentially as the input size grows. This is a very bad complexity and should be avoided if possible.</li>
+<li><span class="math inline">\(f(n) = 1\)</span> for all <span class="math inline">\(n\)</span></li>
 </ul>
-<section id="examples" class="level3" data-number="3.5.1">
-<h3 data-number="3.5.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">3.5.1</span> Examples</h3>
+<p>In this case, no matter how large or small our input size is, the amount of work we have to do remains the same. This is the most efficient complexity an algorithm can have.</p>
+</section>
+<section id="linear-complexity-and-growth" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="linear-complexity-and-growth"><span class="header-section-number">3.5.2</span> Linear Complexity and Growth</h3>
+<p>Linear complexity, often represented as <span class="math inline">\(O(n)\)</span>, occurs when the running time of an algorithm or the amount of work needed scales proportionally with the size of the input (<span class="math inline">\(N\)</span>). For every additional element in the input, a fixed amount of work is added.</p>
+<p>For example, finding an element in an unsorted list is an operation of linear complexity, as the algorithm might need to look at every element once:</p>
+<ul>
+<li><span class="math inline">\(f(n) = n\)</span></li>
+</ul>
+<p>In this case, if we add one more element to our input size, we add one more unit of work. This is because every additional element requires the same amount of work.</p>
+</section>
+<section id="quadratic-complexity-and-growth" class="level3" data-number="3.5.3">
+<h3 data-number="3.5.3" class="anchored" data-anchor-id="quadratic-complexity-and-growth"><span class="header-section-number">3.5.3</span> Quadratic Complexity and Growth</h3>
+<p>Quadratic complexity, often represented as <span class="math inline">\(O(n^2)\)</span>, occurs when the running time of an algorithm or the amount of work needed scales with the square of the size of the input (<span class="math inline">\(N\)</span>). For every additional element in the input, the work increases by a factor of <span class="math inline">\(n\)</span>.</p>
+<p>For example, a simple nested loop for comparing pairs of elements in a list has quadratic complexity. This is because each element is compared to every other element:</p>
+<ul>
+<li><span class="math inline">\(f(n) = n^2\)</span></li>
+</ul>
+<p>In this case, if we add one more element to our input size, we add <span class="math inline">\(n\)</span> units of work, as we have to compare this new element with every other element already in the list.</p>
+</section>
+<section id="exponential-functions-and-growth" class="level3" data-number="3.5.4">
+<h3 data-number="3.5.4" class="anchored" data-anchor-id="exponential-functions-and-growth"><span class="header-section-number">3.5.4</span> Exponential Functions and Growth</h3>
+<p>An exponential function is one that includes a variable in the exponent. To illustrate, the function <span class="math inline">\(2^n\)</span> is an exponential function. Here, with each unit increase in the input, the output is multiplied (or scaled up) by a factor of 2. For instance:</p>
+<ul>
+<li><span class="math inline">\(f(1) = 2^1 = 2\)</span></li>
+<li><span class="math inline">\(f(2) = 2^2 = 4\)</span></li>
+<li><span class="math inline">\(f(n+1) = f(n) * 2\)</span></li>
+</ul>
+<p>Exponential growth is characterized by a constant factor scaling up the running time of the algorithm, or the amount of work needed, for each unit increase in the size of the input (often denoted as <span class="math inline">\(N\)</span>). This constant factor is the base of the exponent. This means that for an algorithm with a time complexity of <span class="math inline">\(2^N\)</span>, adding one more element to the input could potentially double the amount of work required. Examples of algorithms exhibiting exponential growth include certain solutions to problems like the Towers of Hanoi and calculations of the Fibonacci sequence.</p>
+</section>
+<section id="logarithmic-functions-and-growth" class="level3" data-number="3.5.5">
+<h3 data-number="3.5.5" class="anchored" data-anchor-id="logarithmic-functions-and-growth"><span class="header-section-number">3.5.5</span> Logarithmic Functions and Growth</h3>
+<p>Logarithmic functions serve as the inverse of exponential functions. For example, <span class="math inline">\(log_2(n)\)</span> is a logarithmic function. Here, the output is decremented by 1 each time the input is divided (or scaled down) by a factor of 2. For instance:</p>
+<ul>
+<li><span class="math inline">\(f(16) = log_2(16) = 4\)</span></li>
+<li><span class="math inline">\(f(8) = log_2(8) = 3\)</span></li>
+<li><span class="math inline">\(f(n/2) = f(n) - 1\)</span></li>
+</ul>
+<p>Logarithmic growth is characterized by a decrement of 1 in the running time of the algorithm or the amount of work needed, each time the size of the input (denoted as <span class="math inline">\(N\)</span>) is divided by a constant factor. This constant factor is the base of the logarithm. For an algorithm with a time complexity of <span class="math inline">\(log_2(n)\)</span>, if we have an input size of 16, doubling the input size will only increase the amount of work by 1 unit. Similarly, halving the input size will decrease the work by 1 unit.</p>
+<p>Algorithms often display complexities such as <span class="math inline">\(N*log_2(N)\)</span>, which represents a combination of linear and logarithmic growth. Examples of such algorithms that include logarithmic growth are binary search and certain sorting algorithms.</p>
+</section>
+<section id="examples" class="level3" data-number="3.5.6">
+<h3 data-number="3.5.6" class="anchored" data-anchor-id="examples"><span class="header-section-number">3.5.6</span> Examples</h3>
 <p>Let’s look at some examples of algorithms and their Big-O complexities.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> <span class="dt">int</span> <span class="fu">findMin</span><span class="op">(</span>x<span class="op">,</span> y<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span>x <span class="op">&lt;</span> y<span class="op">)</span> <span class="op">{</span></span>
