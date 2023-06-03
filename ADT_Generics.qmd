@@ -1,0 +1,125 @@
+---
+title: "Abstract DataType and Generics"
+format: html
+---
+# Abstract DataType and Generics
+
+## Section 1: Introduction to Data Types
+
+In computing, all data exists as bits (0s and 1s). These bits can be interpreted in different ways to represent different types of information. The interpretation scheme determines the meaning of the series of bits, and so it is crucial to maintain consistency in interpretation to avoid confusion.
+
+For example, the 8 bits '00000001' could be interpreted as the integer '1' or the character 'A' depending on the agreed-upon scheme. Therefore, a data type is a specific way of interpreting a sequence of bits.
+
+Java, like many other programming languages, provides several built-in data types. There are two main categories:
+
+Primitive data types: These include short, int, long, char, and others.
+Reference types or User-defined types: These are defined by the user, like classes.
+
+Example:
+
+```Java
+Public class Student {
+  int age;
+  String name;
+  Student s = new Student(); //creating your own user-defined data type
+}
+```
+From the user's perspective, data types allow implementing concepts of things like numbers or collections, providing a means of encapsulating, hiding complexity, and reusing code. From the compiler's perspective, data types allow it to keep track of how bits should be interpreted and what valid operations can be performed on them.
+
+## Section 1.2: Data Types and Bits Representation
+
+Understanding the representation of different data types at the bit level can help explain some interesting behaviours in programming. For instance, the same bit sequence can be interpreted differently depending on the data type. The operations performed on these data types can also result in different outcomes.
+
+## Section 1.3: Limitations and the Need for Generic Programming
+
+While working with different data types, we often encounter the issue of code duplication. For example, if we want to add two numbers, the method implementation can differ depending on the data type of the numbers. As a result, for each data type, a new method needs to be created, leading to code redundancy and inefficiency.
+
+Consider the following code:
+
+```Java
+class ADT {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+    public static void main (String[] args) {
+        System.out.println("Hey,I can add two numbers: " + add(1, 2));
+    }
+}
+```
+To avoid writing multiple methods for the same operation, it would be ideal to have a placeholder type, like AnyType, which can accept all kinds of types. However, this raises a new problem: Not all types can be used with all operations.
+
+## Section 1.4: The Solution: Generic Programming
+
+Generic programming aims to write code that is independent of any particular type. With generics, we can create methods that can work on different data types, without the need for explicit typecasting or creating multiple method definitions for different types.
+
+Languages like Rust offer a powerful generic programming model. They allow us to specify constraints on placeholder types so that they can only be used when certain conditions are met.
+
+Here is an example in Rust:
+
+```rust
+fn add<AnyType: Add> (a: AnyType, b: AnyType) -> AnyType
+    where AnyType: Add<Output = AnyType>
+    {
+        a + b
+    }
+```
+This function can add any two values, provided that their type supports the **'Add'** operation. The keyword **'AnyType'** is a placeholder that can represent any type that implements the **'Add'** trait. This feature offers an excellent way to create more flexible and reusable code.
+
+# Section 2: Generics in Java
+
+Java, like many other languages, supports the concept of generics. Generics are a way to define a method or class that can work with different types of data. This is accomplished by using placeholders for the data types, which are then replaced by actual types at compile time.
+
+They are introduced before the return type of methods and after class or interface names. The main advantages of generics are code reusability and type safety. For example, consider a simple generic method:
+
+```Java
+public static <Type> Type add(Type rhs, Type lhs) {...}
+
+```
+This allows the method to accept any type of data.
+
+To limit the types allowed, Java supports bounded type parameters. These restrict the types that can be substituted for a type parameter. For instance, you can restrict a type parameter to extend a particular class or implement multiple interfaces:
+
+```Java
+public static <Type extends Number> Type add(Type rhs, Type lhs) {...}
+
+```
+In the above example, **'Type'** is a placeholder that can represent any type. The method **'add()'**' can work with any two objects of the same type that support the addition operation. It is also possible to restrict the types that can be used with a generic method or class by specifying an interface or a superclass that the type must extend.
+
+## Section 2.1 Interfaces in Java
+
+Interfaces in Java define a contract for classes to follow, typically specifying a set of methods that a class must implement. For example, if we have a **'Drawable'** interface with a **'draw()'** method, any class that implements **'Drawable'** must provide an implementation for **'draw()'**. Interfaces are used as a way to enforce certain behaviors in classes, and they can also be used to define the types that a generic method or class can work with.
+
+## Section 2.2: Abstract Datatypes in Java
+
+Abstract Data Types (ADTs) are high-level type definitions that that define a set of operations that can be performed on an object, but they do not specify how these operations are implemented. Examples of ADTs include lists, stacks, and queues. Java's standard library includes several predefined ADTs that programmers can use to build their software.
+
+```Java
+List<Integer> list = new ArrayList<>();
+list.add(5);
+```
+
+In the above example, **'add()'** is a common operation defined for the List ADT.
+
+# Section 3: Unit Testing
+
+Unit Testing is a method of software testing where individual units of source code, sets of one or more program modules together with associated control data, usage procedures, and operating procedures, are tested to determine if they are fit for use. In Java, a common library used for unit testing is JUnit. A unit test for a method in a class typically involves calling the method with various inputs and checking that it produces the expected outputs.
+
+For example, consider a class **'MathUtil'** with a method **'add()'**. A corresponding unit test class **'MathUtilTest'** might contain methods to test **'add()'** in various scenarios. This helps ensure each component of a system is working as expected individually, which can give more confidence in the overall system's functionality.
+
+Consider the following simple example of a unit test in JUnit:
+
+```Java
+public class MathUtilTest {
+    @Test
+    public void testAddPositiveNumbers() {
+        MathUtil math = new MathUtil();
+        assertEquals(5, math.add(2, 3));
+    }
+}
+
+```
+The JUnit framework, commonly used in Java for writing and running unit tests, provides annotations like **'@Test'** and assertion methods like **'assertEquals()'** to facilitate unit testing.
+
+# Conclusion
+
+Abstract Data Types and Generics are powerful features of many modern programming languages that allow programmers to write more flexible and reusable code.Generics improve code reusability and maintain type safety. ADTs encapsulate data and operations, increasing code maintainability and readability. Unit Testing ensures that each component or method works as expected, improving the overall system's reliability. By effectively utilizing these concepts, one can write robust, maintainable, and efficient code in Java.
