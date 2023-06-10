@@ -1,0 +1,2368 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-99.9.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ITSC 2214 - Data Structures and Algorithms - Summer 2023 - 12&nbsp; The Graph Data Structure</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./22_hashing.html" rel="next">
+<link href="./11_linear_search.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./21_graphs.html">Graphs</a></li><li class="breadcrumb-item"><a href="./21_graphs.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Graph Data Structure</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">ITSC 2214 - Data Structures and Algorithms - Summer 2023</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">On Computers and Computing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_intro_to_cs_dsa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Background on Computer Science and Data Structures</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_general_purpose_computers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modern General-Purpose, Programmable Computers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Algorithmic Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_algorithmic_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Unit Testing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_unit_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_writing_junit_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_mutation_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_list_of_mutators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">List of Mutators</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Iterative Sorting and Searching</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_sorting_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_comparable_comparator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_bubble_selection_insertion_sort.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_linear_search.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Linear Search</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">Graphs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./21_graphs.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Graph Data Structure</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text">Hashing, HashMaps and HashTables</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./22_hashing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#background-and-motivation" id="toc-background-and-motivation" class="nav-link active" data-scroll-target="#background-and-motivation"><span class="header-section-number">12.1</span> Background and Motivation</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">12.2</span> Introduction</a></li>
+  <li><a href="#graph-terminology" id="toc-graph-terminology" class="nav-link" data-scroll-target="#graph-terminology"><span class="header-section-number">12.3</span> Graph Terminology</a>
+  <ul class="collapse">
+  <li><a href="#basic-terms-and-properties" id="toc-basic-terms-and-properties" class="nav-link" data-scroll-target="#basic-terms-and-properties"><span class="header-section-number">12.3.1</span> Basic Terms and Properties</a></li>
+  <li><a href="#graph-notation" id="toc-graph-notation" class="nav-link" data-scroll-target="#graph-notation"><span class="header-section-number">12.3.2</span> Graph Notation</a></li>
+  <li><a href="#special-types-of-graphs" id="toc-special-types-of-graphs" class="nav-link" data-scroll-target="#special-types-of-graphs"><span class="header-section-number">12.3.3</span> Special Types of Graphs</a></li>
+  </ul></li>
+  <li><a href="#graph-representation" id="toc-graph-representation" class="nav-link" data-scroll-target="#graph-representation"><span class="header-section-number">12.4</span> Graph Representation</a>
+  <ul class="collapse">
+  <li><a href="#adjacency-list" id="toc-adjacency-list" class="nav-link" data-scroll-target="#adjacency-list"><span class="header-section-number">12.4.1</span> Adjacency List</a></li>
+  <li><a href="#adjacency-matrix" id="toc-adjacency-matrix" class="nav-link" data-scroll-target="#adjacency-matrix"><span class="header-section-number">12.4.2</span> Adjacency Matrix</a></li>
+  <li><a href="#converting-between-representations" id="toc-converting-between-representations" class="nav-link" data-scroll-target="#converting-between-representations"><span class="header-section-number">12.4.3</span> Converting Between Representations</a></li>
+  </ul></li>
+  <li><a href="#graph-traversal" id="toc-graph-traversal" class="nav-link" data-scroll-target="#graph-traversal"><span class="header-section-number">12.5</span> Graph Traversal</a>
+  <ul class="collapse">
+  <li><a href="#breadth-first-search-bfs" id="toc-breadth-first-search-bfs" class="nav-link" data-scroll-target="#breadth-first-search-bfs"><span class="header-section-number">12.5.1</span> Breadth-First Search (BFS)</a></li>
+  <li><a href="#depth-first-search-dfs" id="toc-depth-first-search-dfs" class="nav-link" data-scroll-target="#depth-first-search-dfs"><span class="header-section-number">12.5.2</span> Depth-First Search (DFS)</a></li>
+  <li><a href="#applications-and-variations-of-bfs-and-dfs" id="toc-applications-and-variations-of-bfs-and-dfs" class="nav-link" data-scroll-target="#applications-and-variations-of-bfs-and-dfs"><span class="header-section-number">12.5.3</span> Applications and Variations of BFS and DFS</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Graph Data Structure</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="background-and-motivation" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="background-and-motivation"><span class="header-section-number">12.1</span> Background and Motivation</h2>
+<p>Imagine you want to represent the connections between you and your Instagram followers in a data structure. The diagram below (<a href="#fig-instagram-followers">Figure&nbsp;<span>12.1</span></a>) shows a simple representation of your followers as numbered vertices and the edges represent the connections between you and your followers.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-instagram-followers" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 1125.69 140.72" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 136.72)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-136.72 1121.69,-136.72 1121.69,4 -4,4"></polygon> <!-- You --> <g id="node1" class="node">
+<title>
+You
+</title>
+<ellipse fill="none" stroke="black" cx="536" cy="-105.05" rx="27.84" ry="27.84"></ellipse> <text text-anchor="middle" x="536" y="-100.85" font-family="Times,serif" font-size="14.00">You</text> </g> <!-- 1 --> <g id="node2" class="node">
+<title>
+1
+</title>
+<ellipse fill="none" stroke="black" cx="18" cy="-20.69" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="18" y="-16.49" font-family="Times,serif" font-size="14.00">1</text> </g> <!-- You&#45;&#45;1 --> <g id="edge1" class="edge">
+<title>
+You–1
+</title>
+<path fill="none" stroke="black" d="M508.23,-102.33C417.48,-96.43 130.64,-75.45 45,-41.39 40.15,-39.46 35.37,-36.45 31.21,-33.36"></path> </g> <!-- 2 --> <g id="node3" class="node">
+<title>
+2
+</title>
+<ellipse fill="none" stroke="black" cx="72" cy="-20.69" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="72" y="-16.49" font-family="Times,serif" font-size="14.00">2</text> </g> <!-- You&#45;&#45;2 --> <g id="edge2" class="edge">
+<title>
+You–2
+</title>
+<path fill="none" stroke="black" d="M508.21,-104.63C437.22,-105.16 244.54,-100.58 99,-41.39 94.16,-39.42 89.39,-36.4 85.23,-33.31"></path> </g> <!-- 3 --> <g id="node4" class="node">
+<title>
+3
+</title>
+<ellipse fill="none" stroke="black" cx="126" cy="-20.69" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="126" y="-16.49" font-family="Times,serif" font-size="14.00">3</text> </g> <!-- You&#45;&#45;3 --> <g id="edge3" class="edge">
+<title>
+You–3
+</title>
+<path fill="none" stroke="black" d="M508.35,-103.87C443.61,-102.52 278.25,-93.78 153,-41.39 148.18,-39.37 143.42,-36.34 139.26,-33.25"></path> </g> <!-- 4 --> <g id="node5" class="node">
+<title>
+4
+</title>
+<ellipse fill="none" stroke="black" cx="180" cy="-20.69" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="180" y="-16.49" font-family="Times,serif" font-size="14.00">4</text> </g> <!-- You&#45;&#45;4 --> <g id="edge4" class="edge">
+<title>
+You–4
+</title>
+<path fill="none" stroke="black" d="M508.38,-102.86C450.27,-99.5 312.09,-86.96 207,-41.39 202.21,-39.31 197.45,-36.26 193.29,-33.18"></path> </g> <!-- 5 --> <g id="node6" class="node">
+<title>
+5
+</title>
+<ellipse fill="none" stroke="black" cx="234" cy="-20.69" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="234" y="-16.49" font-family="Times,serif" font-size="14.00">5</text> </g> <!-- You&#45;&#45;5 --> <g id="edge5" class="edge">
+<title>
+You–5
+</title>
+<path fill="none" stroke="black" d="M508.28,-101.48C457.31,-95.95 346.12,-80.13 261,-41.39 256.25,-39.22 251.5,-36.15 247.34,-33.07"></path> </g> <!-- 6 --> <g id="node7" class="node">
+<title>
+6
+</title>
+<ellipse fill="none" stroke="black" cx="288" cy="-20.69" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="288" y="-16.49" font-family="Times,serif" font-size="14.00">6</text> </g> <!-- You&#45;&#45;6 --> <g id="edge6" class="edge">
+<title>
+You–6
+</title>
+<path fill="none" stroke="black" d="M508.69,-99.53C465.81,-91.74 380.79,-73.43 315,-41.39 310.31,-39.1 305.57,-35.99 301.41,-32.91"></path> </g> <!-- 7 --> <g id="node8" class="node">
+<title>
+7
+</title>
+<ellipse fill="none" stroke="black" cx="342" cy="-20.69" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="342" y="-16.49" font-family="Times,serif" font-size="14.00">7</text> </g> <!-- You&#45;&#45;7 --> <g id="edge7" class="edge">
+<title>
+You–7
+</title>
+<path fill="none" stroke="black" d="M509.59,-96.58C475.84,-86.5 416.15,-66.82 369,-41.39 364.4,-38.91 359.7,-35.74 355.54,-32.67"></path> </g> <!-- 8 --> <g id="node9" class="node">
+<title>
+8
+</title>
+<ellipse fill="none" stroke="black" cx="396" cy="-20.69" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="396" y="-16.49" font-family="Times,serif" font-size="14.00">8</text> </g> <!-- You&#45;&#45;8 --> <g id="edge8" class="edge">
+<title>
+You–8
+</title>
+<path fill="none" stroke="black" d="M511.69,-91.69C488.46,-79.62 452.68,-60.34 423,-41.39 418.7,-38.64 414.16,-35.45 410.06,-32.46"></path> </g> <!-- 9 --> <g id="node10" class="node">
+<title>
+9
+</title>
+<ellipse fill="none" stroke="black" cx="450" cy="-20.69" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="450" y="-16.49" font-family="Times,serif" font-size="14.00">9</text> </g> <!-- You&#45;&#45;9 --> <g id="edge9" class="edge">
+<title>
+You–9
+</title>
+<path fill="none" stroke="black" d="M516.49,-85.37C499.93,-69.51 476.68,-47.25 462.52,-33.68"></path> </g> <!-- 10 --> <g id="node11" class="node">
+<title>
+10
+</title>
+<ellipse fill="none" stroke="black" cx="507" cy="-20.69" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="507" y="-16.49" font-family="Times,serif" font-size="14.00">10</text> </g> <!-- You&#45;&#45;10 --> <g id="edge10" class="edge">
+<title>
+You–10
+</title>
+<path fill="none" stroke="black" d="M526.98,-78.45C522.66,-66.17 517.57,-51.73 513.62,-40.48"></path> </g> <!-- 11 --> <g id="node12" class="node">
+<title>
+11
+</title>
+<ellipse fill="none" stroke="black" cx="566" cy="-20.69" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="566" y="-16.49" font-family="Times,serif" font-size="14.00">11</text> </g> <!-- You&#45;&#45;11 --> <g id="edge11" class="edge">
+<title>
+You–11
+</title>
+<path fill="none" stroke="black" d="M545.16,-78.9C549.68,-66.5 555.03,-51.81 559.18,-40.42"></path> </g> <!-- 12 --> <g id="node13" class="node">
+<title>
+12
+</title>
+<ellipse fill="none" stroke="black" cx="625" cy="-20.69" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="625" y="-16.49" font-family="Times,serif" font-size="14.00">12</text> </g> <!-- You&#45;&#45;12 --> <g id="edge12" class="edge">
+<title>
+You–12
+</title>
+<path fill="none" stroke="black" d="M556.2,-85.37C572.61,-70.18 595.38,-49.1 610.15,-35.43"></path> </g> <!-- 13 --> <g id="node14" class="node">
+<title>
+13
+</title>
+<ellipse fill="none" stroke="black" cx="684" cy="-20.69" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="684" y="-16.49" font-family="Times,serif" font-size="14.00">13</text> </g> <!-- You&#45;&#45;13 --> <g id="edge13" class="edge">
+<title>
+You–13
+</title>
+<path fill="none" stroke="black" d="M560.6,-92.11C584.97,-80.04 623.17,-60.49 655,-41.39 659.07,-38.94 663.35,-36.16 667.34,-33.47"></path> </g> <!-- 14 --> <g id="node15" class="node">
+<title>
+14
+</title>
+<ellipse fill="none" stroke="black" cx="743" cy="-20.69" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="743" y="-16.49" font-family="Times,serif" font-size="14.00">14</text> </g> <!-- You&#45;&#45;14 --> <g id="edge14" class="edge">
+<title>
+You–14
+</title>
+<path fill="none" stroke="black" d="M562.51,-97.05C598.06,-87.14 662.67,-67.3 714,-41.39 718.35,-39.19 722.81,-36.45 726.89,-33.71"></path> </g> <!-- 15 --> <g id="node16" class="node">
+<title>
+15
+</title>
+<ellipse fill="none" stroke="black" cx="802" cy="-20.69" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="802" y="-16.49" font-family="Times,serif" font-size="14.00">15</text> </g> <!-- You&#45;&#45;15 --> <g id="edge15" class="edge">
+<title>
+You–15
+</title>
+<path fill="none" stroke="black" d="M563.31,-99.92C608.49,-92.42 700.96,-74.21 773,-41.39 777.43,-39.37 781.92,-36.69 786.01,-33.96"></path> </g> <!-- 16 --> <g id="node17" class="node">
+<title>
+16
+</title>
+<ellipse fill="none" stroke="black" cx="861" cy="-20.69" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="861" y="-16.49" font-family="Times,serif" font-size="14.00">16</text> </g> <!-- You&#45;&#45;16 --> <g id="edge16" class="edge">
+<title>
+You–16
+</title>
+<path fill="none" stroke="black" d="M563.59,-101.79C617.23,-96.64 738.48,-81.21 832,-41.39 836.48,-39.48 840.99,-36.84 845.08,-34.11"></path> </g> <!-- 17 --> <g id="node18" class="node">
+<title>
+17
+</title>
+<ellipse fill="none" stroke="black" cx="920" cy="-20.69" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="920" y="-16.49" font-family="Times,serif" font-size="14.00">17</text> </g> <!-- You&#45;&#45;17 --> <g id="edge17" class="edge">
+<title>
+You–17
+</title>
+<path fill="none" stroke="black" d="M563.8,-103.08C625.1,-100.12 775.6,-88.23 891,-41.39 895.51,-39.56 900.03,-36.95 904.12,-34.22"></path> </g> <!-- 18 --> <g id="node19" class="node">
+<title>
+18
+</title>
+<ellipse fill="none" stroke="black" cx="979" cy="-20.69" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="979" y="-16.49" font-family="Times,serif" font-size="14.00">18</text> </g> <!-- You&#45;&#45;18 --> <g id="edge18" class="edge">
+<title>
+You–18
+</title>
+<path fill="none" stroke="black" d="M563.71,-104.04C631.9,-103.12 812.26,-95.35 950,-41.39 954.53,-39.61 959.07,-37.02 963.15,-34.3"></path> </g> <!-- 19 --> <g id="node20" class="node">
+<title>
+19
+</title>
+<ellipse fill="none" stroke="black" cx="1038" cy="-20.69" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="1038" y="-16.49" font-family="Times,serif" font-size="14.00">19</text> </g> <!-- You&#45;&#45;19 --> <g id="edge19" class="edge">
+<title>
+You–19
+</title>
+<path fill="none" stroke="black" d="M563.74,-104.76C638.4,-105.74 848.77,-102.45 1009,-41.39 1013.55,-39.65 1018.09,-37.08 1022.18,-34.36"></path> </g> <!-- 20 --> <g id="node21" class="node">
+<title>
+20
+</title>
+<ellipse fill="none" stroke="black" cx="1097" cy="-20.69" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="1097" y="-16.49" font-family="Times,serif" font-size="14.00">20</text> </g> <!-- You&#45;&#45;20 --> <g id="edge20" class="edge">
+<title>
+You–20
+</title>
+<path fill="none" stroke="black" d="M563.68,-102.53C659.13,-97.01 973.78,-76.52 1068,-41.39 1072.56,-39.69 1077.1,-37.12 1081.19,-34.41"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.1: A representation of your Instagram followers.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>At first glance, it might appear to be a tree structure, but that is not the case. Your followers can follow other people, who in turn can have their followers. This creates a recursive relationship that cannot be represented using a tree data structure (see <a href="#fig-instagram-followers-recursive">Figure&nbsp;<span>12.2</span></a>).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-instagram-followers-recursive" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 681.23 439.50" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 435.5)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-435.5 677.23,-435.5 677.23,4 -4,4"></polygon> <!-- You --> <g id="node1" class="node">
+<title>
+You
+</title>
+<ellipse fill="none" stroke="black" cx="502" cy="-403.83" rx="27.84" ry="27.84"></ellipse> <text text-anchor="middle" x="502" y="-399.63" font-family="Times,serif" font-size="14.00">You</text> </g> <!-- 1 --> <g id="node2" class="node">
+<title>
+1
+</title>
+<ellipse fill="none" stroke="black" cx="162" cy="-247.47" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="162" y="-243.27" font-family="Times,serif" font-size="14.00">1</text> </g> <!-- You&#45;&#45;1 --> <g id="edge1" class="edge">
+<title>
+You–1
+</title>
+<path fill="none" stroke="black" d="M476.42,-393.07C445.67,-381.18 392.63,-360.21 348,-340.16 283.96,-311.39 209.56,-273.25 177.74,-256.7"></path> </g> <!-- 2 --> <g id="node3" class="node">
+<title>
+2
+</title>
+<ellipse fill="none" stroke="black" cx="375" cy="-322.16" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="375" y="-317.96" font-family="Times,serif" font-size="14.00">2</text> </g> <!-- You&#45;&#45;2 --> <g id="edge2" class="edge">
+<title>
+You–2
+</title>
+<path fill="none" stroke="black" d="M479,-388.4C453.13,-372.17 411.85,-346.28 389.89,-332.5"></path> </g> <!-- 3 --> <g id="node4" class="node">
+<title>
+3
+</title>
+<ellipse fill="none" stroke="black" cx="154" cy="-18" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="154" y="-13.8" font-family="Times,serif" font-size="14.00">3</text> </g> <!-- You&#45;&#45;3 --> <g id="edge3" class="edge">
+<title>
+You–3
+</title>
+<path fill="none" stroke="black" d="M474.3,-400.41C369.06,-390.48 0,-348.54 0,-248.47 0,-248.47 0,-248.47 0,-169.08 0,-92.92 97.79,-42.84 137.52,-25.63"></path> </g> <!-- 4 --> <g id="node5" class="node">
+<title>
+4
+</title>
+<ellipse fill="none" stroke="black" cx="126" cy="-92.69" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="126" y="-88.49" font-family="Times,serif" font-size="14.00">4</text> </g> <!-- You&#45;&#45;4 --> <g id="edge4" class="edge">
+<title>
+You–4
+</title>
+<path fill="none" stroke="black" d="M474.66,-398.2C410.14,-386.21 245.56,-349.23 135,-268.16 84.07,-230.82 29.77,-206.37 57,-149.39 67.89,-126.61 93.14,-110.16 109.89,-101.28"></path> </g> <!-- 5 --> <g id="node6" class="node">
+<title>
+5
+</title>
+<ellipse fill="none" stroke="black" cx="253" cy="-18" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="253" y="-13.8" font-family="Times,serif" font-size="14.00">5</text> </g> <!-- You&#45;&#45;5 --> <g id="edge5" class="edge">
+<title>
+You–5
+</title>
+<path fill="none" stroke="black" d="M525.78,-389.65C564.03,-366.49 635,-314.62 635,-248.47 635,-248.47 635,-248.47 635,-169.08 635,-89.72 345.79,-34.84 270.66,-21.92"></path> </g> <!-- 6 --> <g id="node7" class="node">
+<title>
+6
+</title>
+<ellipse fill="none" stroke="black" cx="491" cy="-170.08" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="491" y="-165.88" font-family="Times,serif" font-size="14.00">6</text> </g> <!-- You&#45;&#45;6 --> <g id="edge6" class="edge">
+<title>
+You–6
+</title>
+<path fill="none" stroke="black" d="M501.9,-375.95C501.61,-341.4 500.59,-279.55 497,-226.77 496.12,-213.77 494.51,-199.12 493.19,-188.11"></path> </g> <!-- 7 --> <g id="node8" class="node">
+<title>
+7
+</title>
+<ellipse fill="none" stroke="black" cx="544" cy="-18" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="544" y="-13.8" font-family="Times,serif" font-size="14.00">7</text> </g> <!-- You&#45;&#45;7 --> <g id="edge7" class="edge">
+<title>
+You–7
+</title>
+<path fill="none" stroke="black" d="M529.32,-398.63C562.51,-392.07 617.92,-376.18 649,-340.16 676.52,-308.27 673,-290.59 673,-248.47 673,-248.47 673,-248.47 673,-169.08 673,-124.63 676.7,-106.76 649,-72 626.47,-43.73 584.9,-29.22 561.39,-22.95"></path> </g> <!-- 8 --> <g id="node9" class="node">
+<title>
+8
+</title>
+<ellipse fill="none" stroke="black" cx="455" cy="-92.69" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="455" y="-88.49" font-family="Times,serif" font-size="14.00">8</text> </g> <!-- You&#45;&#45;8 --> <g id="edge8" class="edge">
+<title>
+You–8
+</title>
+<path fill="none" stroke="black" d="M519.26,-381.81C554.51,-336.19 627.42,-226.02 578,-149.39 554.62,-113.14 501.31,-100.23 473.17,-95.83"></path> </g> <!-- 9 --> <g id="node10" class="node">
+<title>
+9
+</title>
+<ellipse fill="none" stroke="black" cx="437" cy="-170.08" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="437" y="-165.88" font-family="Times,serif" font-size="14.00">9</text> </g> <!-- You&#45;&#45;9 --> <g id="edge9" class="edge">
+<title>
+You–9
+</title>
+<path fill="none" stroke="black" d="M498.31,-376.34C492.98,-341.42 481.78,-278.36 464,-226.77 459.1,-212.55 451.48,-197.23 445.59,-186.26"></path> </g> <!-- 10 --> <g id="node11" class="node">
+<title>
+10
+</title>
+<ellipse fill="none" stroke="black" cx="548" cy="-170.08" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="548" y="-165.88" font-family="Times,serif" font-size="14.00">10</text> </g> <!-- You&#45;&#45;10 --> <g id="edge10" class="edge">
+<title>
+You–10
+</title>
+<path fill="none" stroke="black" d="M508.05,-376.65C510.59,-365.43 513.52,-352.17 516,-340.16 527.14,-286.18 538.84,-222.18 544.51,-190.65"></path> </g> <!-- 11 --> <g id="node12" class="node">
+<title>
+11
+</title>
+<ellipse fill="none" stroke="black" cx="87" cy="-170.08" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="87" y="-165.88" font-family="Times,serif" font-size="14.00">11</text> </g> <!-- 1&#45;&#45;11 --> <g id="edge11" class="edge">
+<title>
+1–11
+</title>
+<path fill="none" stroke="black" d="M149.62,-234.02C136.3,-220.64 115.17,-199.4 101.2,-185.35"></path> </g> <!-- 12 --> <g id="node13" class="node">
+<title>
+12
+</title>
+<ellipse fill="none" stroke="black" cx="204" cy="-92.69" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="204" y="-88.49" font-family="Times,serif" font-size="14.00">12</text> </g> <!-- 1&#45;&#45;12 --> <g id="edge12" class="edge">
+<title>
+1–12
+</title>
+<path fill="none" stroke="black" d="M155.59,-230.6C153.21,-211.04 155.14,-177.01 164,-149.39 169.07,-133.58 178.84,-117.18 187.87,-106.3"></path> </g> <!-- 13 --> <g id="node14" class="node">
+<title>
+13
+</title>
+<ellipse fill="none" stroke="black" cx="262" cy="-170.08" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="262" y="-165.88" font-family="Times,serif" font-size="14.00">13</text> </g> <!-- 1&#45;&#45;13 --> <g id="edge13" class="edge">
+<title>
+1–13
+</title>
+<path fill="none" stroke="black" d="M175.9,-235.99C194.26,-222.15 226.51,-197.84 245.9,-183.22"></path> </g> <!-- 14 --> <g id="node15" class="node">
+<title>
+14
+</title>
+<ellipse fill="none" stroke="black" cx="321" cy="-170.08" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="321" y="-165.88" font-family="Times,serif" font-size="14.00">14</text> </g> <!-- 1&#45;&#45;14 --> <g id="edge14" class="edge">
+<title>
+1–14
+</title>
+<path fill="none" stroke="black" d="M176.63,-236.61C181.96,-233.25 188.13,-229.62 194,-226.77 235.74,-206.51 250.72,-211.97 292,-190.77 296.33,-188.55 300.79,-185.79 304.87,-183.05"></path> </g> <!-- 15 --> <g id="node16" class="node">
+<title>
+15
+</title>
+<ellipse fill="none" stroke="black" cx="203" cy="-170.08" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="203" y="-165.88" font-family="Times,serif" font-size="14.00">15</text> </g> <!-- 1&#45;&#45;15 --> <g id="edge15" class="edge">
+<title>
+1–15
+</title>
+<path fill="none" stroke="black" d="M170.3,-231.21C176.99,-218.91 186.41,-201.59 193.42,-188.69"></path> </g> <!-- 16 --> <g id="node17" class="node">
+<title>
+16
+</title>
+<ellipse fill="none" stroke="black" cx="434" cy="-247.47" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="434" y="-243.27" font-family="Times,serif" font-size="14.00">16</text> </g> <!-- 2&#45;&#45;16 --> <g id="edge16" class="edge">
+<title>
+2–16
+</title>
+<path fill="none" stroke="black" d="M382.12,-305.39C391.29,-292.19 406.5,-273.6 418.29,-261.3"></path> </g> <!-- 17 --> <g id="node18" class="node">
+<title>
+17
+</title>
+<ellipse fill="none" stroke="black" cx="380" cy="-170.08" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="380" y="-165.88" font-family="Times,serif" font-size="14.00">17</text> </g> <!-- 2&#45;&#45;17 --> <g id="edge17" class="edge">
+<title>
+2–17
+</title>
+<path fill="none" stroke="black" d="M357.03,-320.89C324.62,-319.31 257.01,-310.78 227,-268.16 216.41,-253.12 215.95,-241.48 227,-226.77 261.46,-180.89 299.07,-215.19 351,-190.77 355.41,-188.7 359.89,-186 363.97,-183.27"></path> </g> <!-- 18 --> <g id="node19" class="node">
+<title>
+18
+</title>
+<ellipse fill="none" stroke="black" cx="375" cy="-247.47" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="375" y="-243.27" font-family="Times,serif" font-size="14.00">18</text> </g> <!-- 2&#45;&#45;18 --> <g id="edge18" class="edge">
+<title>
+2–18
+</title>
+<path fill="none" stroke="black" d="M375,-303.93C375,-293.27 375,-279.54 375,-268.4"></path> </g> <!-- 19 --> <g id="node20" class="node">
+<title>
+19
+</title>
+<ellipse fill="none" stroke="black" cx="316" cy="-247.47" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="316" y="-243.27" font-family="Times,serif" font-size="14.00">19</text> </g> <!-- 2&#45;&#45;19 --> <g id="edge19" class="edge">
+<title>
+2–19
+</title>
+<path fill="none" stroke="black" d="M363.9,-307.49C353.89,-295.15 339.16,-277.01 328.69,-264.1"></path> </g> <!-- 20 --> <g id="node21" class="node">
+<title>
+20
+</title>
+<ellipse fill="none" stroke="black" cx="257" cy="-247.47" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="257" y="-243.27" font-family="Times,serif" font-size="14.00">20</text> </g> <!-- 2&#45;&#45;20 --> <g id="edge20" class="edge">
+<title>
+2–20
+</title>
+<path fill="none" stroke="black" d="M359.72,-312.43C341.85,-302.14 311.49,-284.38 286,-268.16 282,-265.61 277.74,-262.79 273.76,-260.09"></path> </g> <!-- 12&#45;&#45;1 --> <g id="edge21" class="edge">
+<title>
+12–1
+</title>
+<path fill="none" stroke="black" d="M198.83,-112.93C193.36,-123.28 186.12,-136.53 182,-149.39 173.19,-176.84 171.23,-210.65 168.27,-230.26"></path> </g> <!-- 12&#45;&#45;3 --> <g id="edge22" class="edge">
+<title>
+12–3
+</title>
+<path fill="none" stroke="black" d="M192.65,-75.2C184.01,-62.63 172.23,-45.5 163.95,-33.46"></path> </g> <!-- 12&#45;&#45;5 --> <g id="edge23" class="edge">
+<title>
+12–5
+</title>
+<path fill="none" stroke="black" d="M215.12,-75.2C223.59,-62.63 235.14,-45.5 243.25,-33.46"></path> </g> <!-- 12&#45;&#45;7 --> <g id="edge24" class="edge">
+<title>
+12–7
+</title>
+<path fill="none" stroke="black" d="M224.25,-87.36C285.58,-74.25 468.62,-35.12 526.35,-22.77"></path> </g> <!-- 14&#45;&#45;4 --> <g id="edge25" class="edge">
+<title>
+14–4
+</title>
+<path fill="none" stroke="black" d="M304.95,-156.93C300.87,-154.2 296.39,-151.49 292,-149.39 242.54,-125.72 225.64,-131.81 174,-113.39 163.31,-109.57 151.52,-104.74 142.29,-100.82"></path> </g> <!-- 14&#45;&#45;8 --> <g id="edge26" class="edge">
+<title>
+14–8
+</title>
+<path fill="none" stroke="black" d="M337.67,-157.31C341.65,-154.62 345.93,-151.84 350,-149.39 380.76,-130.86 418.21,-111.79 439.05,-101.47"></path> </g> <!-- 14&#45;&#45;12 --> <g id="edge27" class="edge">
+<title>
+14–12
+</title>
+<path fill="none" stroke="black" d="M304.19,-157.53C300.21,-154.83 295.97,-151.99 292,-149.39 267.66,-133.42 239.13,-115.51 221.3,-104.42"></path> </g> <!-- 16&#45;&#45;2 --> <g id="edge28" class="edge">
+<title>
+16–2
+</title>
+<path fill="none" stroke="black" d="M425.24,-266.57C415.39,-280.37 400.03,-298.9 388.66,-310.43"></path> </g> <!-- 16&#45;&#45;6 --> <g id="edge29" class="edge">
+<title>
+16–6
+</title>
+<path fill="none" stroke="black" d="M446.09,-230.48C456.28,-216.99 470.73,-197.89 480.46,-185.02"></path> </g> <!-- 16&#45;&#45;10 --> <g id="edge30" class="edge">
+<title>
+16–10
+</title>
+<path fill="none" stroke="black" d="M450.82,-235.34C472.37,-221.09 509.52,-196.52 531.11,-182.25"></path> </g> <!-- 16&#45;&#45;14 --> <g id="edge31" class="edge">
+<title>
+16–14
+</title>
+<path fill="none" stroke="black" d="M417.16,-234.96C413.18,-232.26 408.95,-229.41 405,-226.77 380.69,-210.57 374.31,-206.98 350,-190.77 346.05,-188.14 341.82,-185.28 337.84,-182.58"></path> </g> <!-- 19&#45;&#45;9 --> <g id="edge32" class="edge">
+<title>
+19–9
+</title>
+<path fill="none" stroke="black" d="M332.7,-234.75C336.68,-232.06 340.96,-229.26 345,-226.77 373.13,-209.48 382.16,-208.54 410,-190.77 414.3,-188.03 418.84,-184.84 422.94,-181.84"></path> </g> <!-- 19&#45;&#45;13 --> <g id="edge33" class="edge">
+<title>
+19–13
+</title>
+<path fill="none" stroke="black" d="M304.28,-230.11C295.23,-217.46 282.75,-200.04 273.69,-187.41"></path> </g> <!-- 19&#45;&#45;17 --> <g id="edge34" class="edge">
+<title>
+19–17
+</title>
+<path fill="none" stroke="black" d="M328.95,-231.21C340.06,-218.13 355.97,-199.39 367.07,-186.31"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.2: A representation of your instagram followers where they’re allowed to follow other people too.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>To accurately capture this complex relationship, we need to use a graph data structure. Graphs consist of a set of vertices (or nodes) and a set of edges that connect them. In the context of Instagram followers, the vertices represent the users, and the edges represent the connections between them.</p>
+<p>Using a graph data structure allows us to represent the recursive nature of the relationship between you and your followers, enabling us to model and analyze the complex network of connections in a more accurate way.</p>
+<p>Sure! I will translate the given block according to the specifications you provided. Here’s the updated version:</p>
+<p>Furthermore, the relationship between you and your followers is even more complex. For instance, you can follow someone who does not follow you back, creating a directed relationship where the edges have a direction. In this case, the edges represent the connections from you to your followers, but not the other way around. Such relationships are often modeled using directed graphs, which are a common use case for graphs. <a href="#fig-instagram-followers-directed">Figure&nbsp;<span>12.3</span></a> visualizes this directed relationship.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-instagram-followers-directed" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 681.23 439.50" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 435.5)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-435.5 677.23,-435.5 677.23,4 -4,4"></polygon> <!-- You --> <g id="node1" class="node">
+<title>
+You
+</title>
+<ellipse fill="none" stroke="black" cx="502" cy="-403.83" rx="27.84" ry="27.84"></ellipse> <text text-anchor="middle" x="502" y="-399.63" font-family="Times,serif" font-size="14.00">You</text> </g> <!-- 1 --> <g id="node2" class="node">
+<title>
+1
+</title>
+<ellipse fill="none" stroke="black" cx="162" cy="-247.47" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="162" y="-243.27" font-family="Times,serif" font-size="14.00">1</text> </g> <!-- You&#45;&gt;1 --> <g id="edge1" class="edge">
+<title>
+You-&gt;1
+</title>
+<path fill="none" stroke="black" d="M476.42,-393.07C445.67,-381.18 392.63,-360.21 348,-340.16 289.46,-313.86 222.27,-279.73 186.85,-261.43"></path> <polygon fill="black" stroke="black" points="188.23,-258.2 177.74,-256.7 185.01,-264.41 188.23,-258.2"></polygon> </g> <!-- 2 --> <g id="node3" class="node">
+<title>
+2
+</title>
+<ellipse fill="none" stroke="black" cx="375" cy="-322.16" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="375" y="-317.96" font-family="Times,serif" font-size="14.00">2</text> </g> <!-- You&#45;&gt;2 --> <g id="edge2" class="edge">
+<title>
+You-&gt;2
+</title>
+<path fill="none" stroke="black" d="M479,-388.4C456.26,-374.13 421.62,-352.41 398.65,-338"></path> <polygon fill="black" stroke="black" points="400.22,-334.85 389.89,-332.5 396.5,-340.78 400.22,-334.85"></polygon> </g> <!-- 3 --> <g id="node4" class="node">
+<title>
+3
+</title>
+<ellipse fill="none" stroke="black" cx="154" cy="-18" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="154" y="-13.8" font-family="Times,serif" font-size="14.00">3</text> </g> <!-- You&#45;&gt;3 --> <g id="edge3" class="edge">
+<title>
+You-&gt;3
+</title>
+<path fill="none" stroke="black" d="M474.3,-400.41C369.06,-390.48 0,-348.54 0,-248.47 0,-248.47 0,-248.47 0,-169.08 0,-98.28 84.52,-50.01 128.33,-29.75"></path> <polygon fill="black" stroke="black" points="129.82,-32.92 137.52,-25.63 126.96,-26.53 129.82,-32.92"></polygon> </g> <!-- 4 --> <g id="node5" class="node">
+<title>
+4
+</title>
+<ellipse fill="none" stroke="black" cx="126" cy="-92.69" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="126" y="-88.49" font-family="Times,serif" font-size="14.00">4</text> </g> <!-- You&#45;&gt;4 --> <g id="edge4" class="edge">
+<title>
+You-&gt;4
+</title>
+<path fill="none" stroke="black" d="M474.66,-398.2C410.14,-386.21 245.56,-349.23 135,-268.16 84.07,-230.82 29.77,-206.37 57,-149.39 66.1,-130.35 85.24,-115.73 101.06,-106.25"></path> <polygon fill="black" stroke="black" points="102.9,-109.24 109.89,-101.28 99.46,-103.14 102.9,-109.24"></polygon> </g> <!-- 5 --> <g id="node6" class="node">
+<title>
+5
+</title>
+<ellipse fill="none" stroke="black" cx="253" cy="-18" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="253" y="-13.8" font-family="Times,serif" font-size="14.00">5</text> </g> <!-- You&#45;&gt;5 --> <g id="edge5" class="edge">
+<title>
+You-&gt;5
+</title>
+<path fill="none" stroke="black" d="M525.78,-389.65C564.03,-366.49 635,-314.62 635,-248.47 635,-248.47 635,-248.47 635,-169.08 635,-92.9 368.48,-39.27 280.68,-23.67"></path> <polygon fill="black" stroke="black" points="281.11,-20.2 270.66,-21.92 279.91,-27.09 281.11,-20.2"></polygon> </g> <!-- 6 --> <g id="node7" class="node">
+<title>
+6
+</title>
+<ellipse fill="none" stroke="black" cx="491" cy="-170.08" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="491" y="-165.88" font-family="Times,serif" font-size="14.00">6</text> </g> <!-- You&#45;&gt;6 --> <g id="edge6" class="edge">
+<title>
+You-&gt;6
+</title>
+<path fill="none" stroke="black" d="M501.9,-375.95C501.61,-341.4 500.59,-279.55 497,-226.77 496.36,-217.43 495.36,-207.23 494.35,-198.15"></path> <polygon fill="black" stroke="black" points="497.81,-197.64 493.19,-188.11 490.86,-198.45 497.81,-197.64"></polygon> </g> <!-- 7 --> <g id="node8" class="node">
+<title>
+7
+</title>
+<ellipse fill="none" stroke="black" cx="544" cy="-18" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="544" y="-13.8" font-family="Times,serif" font-size="14.00">7</text> </g> <!-- You&#45;&gt;7 --> <g id="edge7" class="edge">
+<title>
+You-&gt;7
+</title>
+<path fill="none" stroke="black" d="M529.32,-398.63C562.51,-392.07 617.92,-376.18 649,-340.16 676.52,-308.27 673,-290.59 673,-248.47 673,-248.47 673,-248.47 673,-169.08 673,-124.63 676.7,-106.76 649,-72 629.38,-47.38 595.3,-33.19 571.3,-25.8"></path> <polygon fill="black" stroke="black" points="571.97,-22.35 561.39,-22.95 570.04,-29.08 571.97,-22.35"></polygon> </g> <!-- 8 --> <g id="node9" class="node">
+<title>
+8
+</title>
+<ellipse fill="none" stroke="black" cx="455" cy="-92.69" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="455" y="-88.49" font-family="Times,serif" font-size="14.00">8</text> </g> <!-- You&#45;&gt;8 --> <g id="edge8" class="edge">
+<title>
+You-&gt;8
+</title>
+<path fill="none" stroke="black" d="M519.26,-381.81C554.51,-336.19 627.42,-226.02 578,-149.39 557.18,-117.1 512.61,-103.33 483.23,-97.6"></path> <polygon fill="black" stroke="black" points="483.62,-94.11 473.17,-95.83 482.41,-101.01 483.62,-94.11"></polygon> </g> <!-- 9 --> <g id="node10" class="node">
+<title>
+9
+</title>
+<ellipse fill="none" stroke="black" cx="437" cy="-170.08" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="437" y="-165.88" font-family="Times,serif" font-size="14.00">9</text> </g> <!-- You&#45;&gt;9 --> <g id="edge9" class="edge">
+<title>
+You-&gt;9
+</title>
+<path fill="none" stroke="black" d="M498.31,-376.34C492.98,-341.42 481.78,-278.36 464,-226.77 460.32,-216.11 455.12,-204.82 450.26,-195.22"></path> <polygon fill="black" stroke="black" points="453.32,-193.51 445.59,-186.26 447.11,-196.75 453.32,-193.51"></polygon> </g> <!-- 10 --> <g id="node11" class="node">
+<title>
+10
+</title>
+<ellipse fill="none" stroke="black" cx="548" cy="-170.08" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="548" y="-165.88" font-family="Times,serif" font-size="14.00">10</text> </g> <!-- You&#45;&gt;10 --> <g id="edge10" class="edge">
+<title>
+You-&gt;10
+</title>
+<path fill="none" stroke="black" d="M508.05,-376.65C510.59,-365.43 513.52,-352.17 516,-340.16 526.05,-291.45 536.56,-234.59 542.68,-200.78"></path> <polygon fill="black" stroke="black" points="546.18,-201.11 544.51,-190.65 539.29,-199.87 546.18,-201.11"></polygon> </g> <!-- 11 --> <g id="node12" class="node">
+<title>
+11
+</title>
+<ellipse fill="none" stroke="black" cx="87" cy="-170.08" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="87" y="-165.88" font-family="Times,serif" font-size="14.00">11</text> </g> <!-- 1&#45;&gt;11 --> <g id="edge11" class="edge">
+<title>
+1-&gt;11
+</title>
+<path fill="none" stroke="black" d="M149.62,-234.02C138.49,-222.83 121.89,-206.15 108.59,-192.78"></path> <polygon fill="black" stroke="black" points="110.73,-189.97 101.2,-185.35 105.77,-194.91 110.73,-189.97"></polygon> </g> <!-- 12 --> <g id="node13" class="node">
+<title>
+12
+</title>
+<ellipse fill="none" stroke="black" cx="204" cy="-92.69" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="204" y="-88.49" font-family="Times,serif" font-size="14.00">12</text> </g> <!-- 1&#45;&gt;12 --> <g id="edge12" class="edge">
+<title>
+1-&gt;12
+</title>
+<path fill="none" stroke="black" d="M155.59,-230.6C153.21,-211.04 155.14,-177.01 164,-149.39 167.92,-137.16 174.65,-124.58 181.68,-114.47"></path> <polygon fill="black" stroke="black" points="184.63,-116.39 187.87,-106.3 179.05,-112.16 184.63,-116.39"></polygon> </g> <!-- 13 --> <g id="node14" class="node">
+<title>
+13
+</title>
+<ellipse fill="none" stroke="black" cx="262" cy="-170.08" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="262" y="-165.88" font-family="Times,serif" font-size="14.00">13</text> </g> <!-- 1&#45;&gt;13 --> <g id="edge13" class="edge">
+<title>
+1-&gt;13
+</title>
+<path fill="none" stroke="black" d="M175.9,-235.99C191.89,-223.93 218.42,-203.93 237.82,-189.31"></path> <polygon fill="black" stroke="black" points="240.02,-192.03 245.9,-183.22 235.81,-186.44 240.02,-192.03"></polygon> </g> <!-- 14 --> <g id="node15" class="node">
+<title>
+14
+</title>
+<ellipse fill="none" stroke="black" cx="321" cy="-170.08" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="321" y="-165.88" font-family="Times,serif" font-size="14.00">14</text> </g> <!-- 1&#45;&gt;14 --> <g id="edge14" class="edge">
+<title>
+1-&gt;14
+</title>
+<path fill="none" stroke="black" d="M176.63,-236.61C181.96,-233.25 188.13,-229.62 194,-226.77 235.74,-206.51 250.72,-211.97 292,-190.77 293.35,-190.08 294.72,-189.33 296.08,-188.55"></path> <polygon fill="black" stroke="black" points="298.25,-191.32 304.87,-183.05 294.53,-185.39 298.25,-191.32"></polygon> </g> <!-- 15 --> <g id="node16" class="node">
+<title>
+15
+</title>
+<ellipse fill="none" stroke="black" cx="203" cy="-170.08" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="203" y="-165.88" font-family="Times,serif" font-size="14.00">15</text> </g> <!-- 1&#45;&gt;15 --> <g id="edge15" class="edge">
+<title>
+1-&gt;15
+</title>
+<path fill="none" stroke="black" d="M170.3,-231.21C175.53,-221.6 182.42,-208.92 188.53,-197.69"></path> <polygon fill="black" stroke="black" points="191.72,-199.15 193.42,-188.69 185.57,-195.81 191.72,-199.15"></polygon> </g> <!-- 16 --> <g id="node17" class="node">
+<title>
+16
+</title>
+<ellipse fill="none" stroke="black" cx="434" cy="-247.47" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="434" y="-243.27" font-family="Times,serif" font-size="14.00">16</text> </g> <!-- 2&#45;&gt;16 --> <g id="edge16" class="edge">
+<title>
+2-&gt;16
+</title>
+<path fill="none" stroke="black" d="M382.12,-305.39C389.57,-294.67 401.01,-280.38 411.36,-268.81"></path> <polygon fill="black" stroke="black" points="414.08,-271.03 418.29,-261.3 408.93,-266.28 414.08,-271.03"></polygon> </g> <!-- 17 --> <g id="node18" class="node">
+<title>
+17
+</title>
+<ellipse fill="none" stroke="black" cx="380" cy="-170.08" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="380" y="-165.88" font-family="Times,serif" font-size="14.00">17</text> </g> <!-- 2&#45;&gt;17 --> <g id="edge17" class="edge">
+<title>
+2-&gt;17
+</title>
+<path fill="none" stroke="black" d="M357.03,-320.89C324.62,-319.31 257.01,-310.78 227,-268.16 216.41,-253.12 215.95,-241.48 227,-226.77 261.46,-180.89 299.07,-215.19 351,-190.77 352.38,-190.13 353.76,-189.42 355.14,-188.67"></path> <polygon fill="black" stroke="black" points="357.26,-191.47 363.97,-183.27 353.62,-185.49 357.26,-191.47"></polygon> </g> <!-- 18 --> <g id="node19" class="node">
+<title>
+18
+</title>
+<ellipse fill="none" stroke="black" cx="375" cy="-247.47" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="375" y="-243.27" font-family="Times,serif" font-size="14.00">18</text> </g> <!-- 2&#45;&gt;18 --> <g id="edge18" class="edge">
+<title>
+2-&gt;18
+</title>
+<path fill="none" stroke="black" d="M375,-303.93C375,-296.35 375,-287.22 375,-278.57"></path> <polygon fill="black" stroke="black" points="378.5,-278.4 375,-268.4 371.5,-278.4 378.5,-278.4"></polygon> </g> <!-- 19 --> <g id="node20" class="node">
+<title>
+19
+</title>
+<ellipse fill="none" stroke="black" cx="316" cy="-247.47" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="316" y="-243.27" font-family="Times,serif" font-size="14.00">19</text> </g> <!-- 2&#45;&gt;19 --> <g id="edge19" class="edge">
+<title>
+2-&gt;19
+</title>
+<path fill="none" stroke="black" d="M363.9,-307.49C355.84,-297.56 344.74,-283.87 335.24,-272.18"></path> <polygon fill="black" stroke="black" points="337.71,-269.66 328.69,-264.1 332.27,-274.07 337.71,-269.66"></polygon> </g> <!-- 20 --> <g id="node21" class="node">
+<title>
+20
+</title>
+<ellipse fill="none" stroke="black" cx="257" cy="-247.47" rx="20.89" ry="20.89"></ellipse> <text text-anchor="middle" x="257" y="-243.27" font-family="Times,serif" font-size="14.00">20</text> </g> <!-- 2&#45;&gt;20 --> <g id="edge20" class="edge">
+<title>
+2-&gt;20
+</title>
+<path fill="none" stroke="black" d="M359.72,-312.43C341.85,-302.14 311.49,-284.38 286,-268.16 284.75,-267.36 283.47,-266.54 282.19,-265.7"></path> <polygon fill="black" stroke="black" points="284.02,-262.72 273.76,-260.09 280.14,-268.55 284.02,-262.72"></polygon> </g> <!-- 12&#45;&gt;1 --> <g id="edge21" class="edge">
+<title>
+12-&gt;1
+</title>
+<path fill="none" stroke="black" d="M198.83,-112.93C193.36,-123.28 186.12,-136.53 182,-149.39 174.57,-172.55 172.01,-200.24 169.62,-220.1"></path> <polygon fill="black" stroke="black" points="166.12,-219.88 168.27,-230.26 173.05,-220.8 166.12,-219.88"></polygon> </g> <!-- 12&#45;&gt;3 --> <g id="edge22" class="edge">
+<title>
+12-&gt;3
+</title>
+<path fill="none" stroke="black" d="M192.65,-75.2C185.9,-65.38 177.23,-52.77 169.81,-41.99"></path> <polygon fill="black" stroke="black" points="172.5,-39.72 163.95,-33.46 166.73,-43.69 172.5,-39.72"></polygon> </g> <!-- 12&#45;&gt;5 --> <g id="edge23" class="edge">
+<title>
+12-&gt;5
+</title>
+<path fill="none" stroke="black" d="M215.12,-75.2C221.74,-65.38 230.23,-52.77 237.5,-41.99"></path> <polygon fill="black" stroke="black" points="240.56,-43.71 243.25,-33.46 234.76,-39.8 240.56,-43.71"></polygon> </g> <!-- 12&#45;&gt;7 --> <g id="edge24" class="edge">
+<title>
+12-&gt;7
+</title>
+<path fill="none" stroke="black" d="M224.25,-87.36C282.35,-74.94 449.65,-39.17 516.21,-24.94"></path> <polygon fill="black" stroke="black" points="517.3,-28.29 526.35,-22.77 515.84,-21.44 517.3,-28.29"></polygon> </g> <!-- 14&#45;&gt;4 --> <g id="edge25" class="edge">
+<title>
+14-&gt;4
+</title>
+<path fill="none" stroke="black" d="M304.95,-156.93C300.87,-154.2 296.39,-151.49 292,-149.39 242.54,-125.72 225.64,-131.81 174,-113.39 166.65,-110.76 158.78,-107.66 151.58,-104.7"></path> <polygon fill="black" stroke="black" points="152.87,-101.45 142.29,-100.82 150.17,-107.91 152.87,-101.45"></polygon> </g> <!-- 14&#45;&gt;8 --> <g id="edge26" class="edge">
+<title>
+14-&gt;8
+</title>
+<path fill="none" stroke="black" d="M337.67,-157.31C341.65,-154.62 345.93,-151.84 350,-149.39 376.67,-133.32 408.38,-116.85 429.92,-106.03"></path> <polygon fill="black" stroke="black" points="431.66,-109.07 439.05,-101.47 428.54,-102.8 431.66,-109.07"></polygon> </g> <!-- 14&#45;&gt;12 --> <g id="edge27" class="edge">
+<title>
+14-&gt;12
+</title>
+<path fill="none" stroke="black" d="M304.19,-157.53C300.21,-154.83 295.97,-151.99 292,-149.39 271.27,-135.79 247.5,-120.79 229.9,-109.78"></path> <polygon fill="black" stroke="black" points="231.64,-106.74 221.3,-104.42 227.94,-112.68 231.64,-106.74"></polygon> </g> <!-- 16&#45;&gt;2 --> <g id="edge28" class="edge">
+<title>
+16-&gt;2
+</title>
+<path fill="none" stroke="black" d="M425.24,-266.57C417.32,-277.67 405.82,-291.84 395.71,-302.96"></path> <polygon fill="black" stroke="black" points="392.98,-300.76 388.66,-310.43 398.07,-305.56 392.98,-300.76"></polygon> </g> <!-- 16&#45;&gt;6 --> <g id="edge29" class="edge">
+<title>
+16-&gt;6
+</title>
+<path fill="none" stroke="black" d="M446.09,-230.48C454.29,-219.63 465.25,-205.14 474.29,-193.18"></path> <polygon fill="black" stroke="black" points="477.22,-195.1 480.46,-185.02 471.64,-190.88 477.22,-195.1"></polygon> </g> <!-- 16&#45;&gt;10 --> <g id="edge30" class="edge">
+<title>
+16-&gt;10
+</title>
+<path fill="none" stroke="black" d="M450.82,-235.34C469.76,-222.82 500.75,-202.32 522.64,-187.85"></path> <polygon fill="black" stroke="black" points="524.7,-190.68 531.11,-182.25 520.84,-184.85 524.7,-190.68"></polygon> </g> <!-- 16&#45;&gt;14 --> <g id="edge31" class="edge">
+<title>
+16-&gt;14
+</title>
+<path fill="none" stroke="black" d="M417.16,-234.96C413.18,-232.26 408.95,-229.41 405,-226.77 380.69,-210.57 374.31,-206.98 350,-190.77 348.77,-189.95 347.5,-189.11 346.23,-188.25"></path> <polygon fill="black" stroke="black" points="348.08,-185.28 337.84,-182.58 344.17,-191.08 348.08,-185.28"></polygon> </g> <!-- 19&#45;&gt;9 --> <g id="edge32" class="edge">
+<title>
+19-&gt;9
+</title>
+<path fill="none" stroke="black" d="M332.7,-234.75C336.68,-232.06 340.96,-229.26 345,-226.77 373.13,-209.48 382.16,-208.54 410,-190.77 411.48,-189.83 412.99,-188.83 414.49,-187.81"></path> <polygon fill="black" stroke="black" points="416.79,-190.47 422.94,-181.84 412.75,-184.76 416.79,-190.47"></polygon> </g> <!-- 19&#45;&gt;13 --> <g id="edge33" class="edge">
+<title>
+19-&gt;13
+</title>
+<path fill="none" stroke="black" d="M304.28,-230.11C297.07,-220.03 287.67,-206.92 279.58,-195.62"></path> <polygon fill="black" stroke="black" points="282.36,-193.5 273.69,-187.41 276.67,-197.57 282.36,-193.5"></polygon> </g> <!-- 19&#45;&gt;17 --> <g id="edge34" class="edge">
+<title>
+19-&gt;17
+</title>
+<path fill="none" stroke="black" d="M328.95,-231.21C337.97,-220.58 350.17,-206.22 360.38,-194.19"></path> <polygon fill="black" stroke="black" points="363.26,-196.2 367.07,-186.31 357.93,-191.67 363.26,-196.2"></polygon> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.3: A directed representation of your Instagram followers. Here, an arrow going from vertex <span class="math inline">\(A\)</span> to vertex <span class="math inline">\(B\)</span> indicates that <span class="math inline">\(A\)</span> follows <span class="math inline">\(B\)</span>, but <span class="math inline">\(B\)</span> does not necessarily follow <span class="math inline">\(A\)</span>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="introduction" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="introduction"><span class="header-section-number">12.2</span> Introduction</h2>
+<p>A <strong>graph</strong> is a non-linear data structure that consists of a set of vertices (also called nodes) and a set of edges (or connections) that connect these vertices. In this data structure, the arrangement of vertices and edges allows for a more flexible and complex representation of relationships between data elements compared to linear data structures like arrays, lists, or queues.</p>
+<p>The concept of <strong>adjacency</strong> refers to the relationship between two vertices in a graph. If there is an edge connecting two vertices, they are said to be adjacent. <strong>Incidence</strong> is the relationship between a vertex and an edge. A vertex is said to be incident to an edge if it is one of the two vertices connected by that edge.</p>
+<p>Graphs have numerous real-life applications, and some examples include:</p>
+<ul>
+<li>Social networks, where vertices represent people and edges represent friendships or connections</li>
+<li>Transportation networks, where vertices represent locations and edges represent roads or routes</li>
+<li>Coronavirus transmission networks, where vertices represent individuals and edges represent transmission paths</li>
+</ul>
+</section>
+<section id="graph-terminology" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="graph-terminology"><span class="header-section-number">12.3</span> Graph Terminology</h2>
+<p>Before diving into the implementation of graph data structures, let’s discuss some basic terms and properties of graphs.</p>
+<section id="basic-terms-and-properties" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="basic-terms-and-properties"><span class="header-section-number">12.3.1</span> Basic Terms and Properties</h3>
+<ul>
+<li><p>A&nbsp;<strong>graph</strong>&nbsp;is a data structure for representing connections among&nbsp;items and consists of <strong>vertices</strong> connected by <strong>edges</strong>.​</p></li>
+<li><p>A&nbsp;<strong>vertex</strong>&nbsp;(or node) represents an item in a graph.​</p></li>
+<li><p>An&nbsp;<strong>edge</strong>&nbsp;represents a connection between two vertices in a graph.</p></li>
+<li><p>Two vertices are&nbsp;<strong>adjacent</strong>&nbsp;if connected by an <strong>edge</strong>.​</p></li>
+<li><p><strong>Directed vs Undirected</strong>: In an <strong>undirected graph</strong>, the edges have no specific direction, meaning that if there is an edge between vertices A and B, the connection is mutual. In a <strong>directed graph</strong> (also called a digraph), the edges have a direction, indicating an asymmetrical relationship between vertices. (See <a href="#fig-directed-vs-undirected-1">Figure&nbsp;<span>12.4</span></a> and <a href="#fig-directed-vs-undirected-2">Figure&nbsp;<span>12.5</span></a> for examples.)</p></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-directed-vs-undirected-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 89.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 85,-184 85,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="54" y="-157.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M47.6,-144.41C43.36,-133.41 37.81,-119.03 33.54,-107.96"></path> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="54" y="-13.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- B&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+B–C
+</title>
+<path fill="none" stroke="black" d="M33.4,-72.41C37.64,-61.41 43.19,-47.03 47.46,-35.96"></path> </g> <!-- C&#45;&#45;A --> <g id="edge3" class="edge">
+<title>
+C–A
+</title>
+<path fill="none" stroke="black" d="M57.65,-36.09C59.68,-46.43 61.98,-59.91 63,-72 64.34,-87.94 64.34,-92.06 63,-108 61.98,-120.09 59.68,-133.57 57.65,-143.91"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.4: Example of an undirected graph.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-directed-vs-undirected-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 89.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 85,-184 85,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="54" y="-157.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&gt;B --> <g id="edge1" class="edge">
+<title>
+A-&gt;B
+</title>
+<path fill="none" stroke="black" d="M47.6,-144.41C44.49,-136.34 40.67,-126.43 37.17,-117.35"></path> <polygon fill="black" stroke="black" points="40.4,-116.03 33.54,-107.96 33.87,-118.55 40.4,-116.03"></polygon> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="54" y="-13.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- B&#45;&gt;C --> <g id="edge2" class="edge">
+<title>
+B-&gt;C
+</title>
+<path fill="none" stroke="black" d="M33.4,-72.41C36.51,-64.34 40.33,-54.43 43.83,-45.35"></path> <polygon fill="black" stroke="black" points="47.13,-46.55 47.46,-35.96 40.6,-44.03 47.13,-46.55"></polygon> </g> <!-- C&#45;&gt;A --> <g id="edge3" class="edge">
+<title>
+C-&gt;A
+</title>
+<path fill="none" stroke="black" d="M57.65,-36.09C59.68,-46.43 61.98,-59.91 63,-72 64.34,-87.94 64.34,-92.06 63,-108 62.28,-116.5 60.93,-125.69 59.49,-133.99"></path> <polygon fill="black" stroke="black" points="56.03,-133.44 57.65,-143.91 62.91,-134.71 56.03,-133.44"></polygon> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.5: Example of a directed graph.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Weighted vs Unweighted</strong>: In an <strong>unweighted graph</strong>, all edges have equal importance, while in a <strong>weighted graph</strong>, each edge is assigned a value (or weight), representing the importance, cost, or distance between the connected vertices. (See <a href="#fig-weighted-vs-unweighted-1">Figure&nbsp;<span>12.6</span></a> and <a href="#fig-weighted-vs-unweighted-2">Figure&nbsp;<span>12.7</span></a> for examples.)</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-weighted-vs-unweighted-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 89.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 85,-184 85,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="54" y="-157.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M47.6,-144.41C43.36,-133.41 37.81,-119.03 33.54,-107.96"></path> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="54" y="-13.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- B&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+B–C
+</title>
+<path fill="none" stroke="black" d="M33.4,-72.41C37.64,-61.41 43.19,-47.03 47.46,-35.96"></path> </g> <!-- C&#45;&#45;A --> <g id="edge3" class="edge">
+<title>
+C–A
+</title>
+<path fill="none" stroke="black" d="M57.65,-36.09C59.68,-46.43 61.98,-59.91 63,-72 64.34,-87.94 64.34,-92.06 63,-108 61.98,-120.09 59.68,-133.57 57.65,-143.91"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.6: Example of an unweighted graph.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-weighted-vs-unweighted-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 109.00 221.60" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 217.6)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-217.6 105,-217.6 105,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="74" cy="-195.6" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="74" y="-191.4" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-106.8" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-102.6" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M65.16,-178.27C56.76,-162.76 44.19,-139.55 35.8,-124.05"></path> <text text-anchor="middle" x="58.5" y="-147" font-family="Times,serif" font-size="14.00">2</text> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="59" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="59" y="-13.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- B&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+B–C
+</title>
+<path fill="none" stroke="black" d="M33.17,-89.06C38.84,-73.69 47.19,-51.04 52.85,-35.68"></path> <text text-anchor="middle" x="49.5" y="-58.2" font-family="Times,serif" font-size="14.00">3</text> </g> <!-- C&#45;&#45;A --> <g id="edge3" class="edge">
+<title>
+C–A
+</title>
+<path fill="none" stroke="black" d="M60.47,-36.23C63.34,-69.85 69.67,-143.87 72.53,-177.44"></path> <text text-anchor="middle" x="71.5" y="-102.6" font-family="Times,serif" font-size="14.00">1</text> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.7: Example of a weighted graph.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Simple vs Multigraph</strong>: A <strong>simple graph</strong> has no more than one edge between any pair of vertices and does not contain any self-loops (edges that connect a vertex to itself). A <strong>multigraph</strong> can have multiple edges between the same pair of vertices and may include self-loops. (See <a href="#fig-simple-vs-multigraph-1">Figure&nbsp;<span>12.8</span></a> and <a href="#fig-simple-vs-multigraph-2">Figure&nbsp;<span>12.9</span></a> for examples.)</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-simple-vs-multigraph-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 89.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 85,-184 85,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="54" y="-157.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M47.6,-144.41C43.36,-133.41 37.81,-119.03 33.54,-107.96"></path> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="54" y="-13.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- B&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+B–C
+</title>
+<path fill="none" stroke="black" d="M33.4,-72.41C37.64,-61.41 43.19,-47.03 47.46,-35.96"></path> </g> <!-- C&#45;&#45;A --> <g id="edge3" class="edge">
+<title>
+C–A
+</title>
+<path fill="none" stroke="black" d="M57.65,-36.09C59.68,-46.43 61.98,-59.91 63,-72 64.34,-87.94 64.34,-92.06 63,-108 61.98,-120.09 59.68,-133.57 57.65,-143.91"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.8: Example of a simple graph.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-simple-vs-multigraph-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 156.77 205.80" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 201.8)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-201.8 152.77,-201.8 152.77,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-179.8" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="54" y="-175.6" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- A&#45;&#45;A --> <g id="edge5" class="edge">
+<title>
+A–A
+</title>
+<path fill="none" stroke="black" d="M78.53,-187.92C89.51,-188.69 99,-185.99 99,-179.8 99,-173.61 89.51,-170.91 78.53,-171.68"></path> <text text-anchor="middle" x="123.88" y="-175.6" font-family="Times,serif" font-size="14.00">self-loop</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-91" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-86.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M43.89,-162.95C40.59,-157.13 37.21,-150.35 35,-143.8 31.22,-132.59 29.22,-119.41 28.16,-109.15"></path> </g> <!-- A&#45;&#45;B --> <g id="edge2" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M48.79,-162.06C44.01,-146.69 36.97,-124.04 32.19,-108.68"></path> <text text-anchor="middle" x="48.61" y="-131.2" font-family="Times,serif" font-size="14.00">e2</text> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="54" y="-13.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- B&#45;&#45;C --> <g id="edge3" class="edge">
+<title>
+B–C
+</title>
+<path fill="none" stroke="black" d="M33.4,-73.17C37.7,-61.86 43.35,-47 47.65,-35.71"></path> </g> <!-- C&#45;&#45;A --> <g id="edge4" class="edge">
+<title>
+C–A
+</title>
+<path fill="none" stroke="black" d="M57.56,-35.93C59.6,-46.53 61.97,-60.5 63,-73 65.6,-104.41 63.03,-112.54 59,-143.8 58.25,-149.64 57.36,-156.03 56.54,-161.72"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.9: Example of a multigraph.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Degree</strong>: The degree of a vertex is the number of edges incident to it. In a directed graph, we can distinguish between in-degree (the number of edges directed towards the vertex) and out-degree (the number of edges directed away from the vertex). See <a href="#fig-vertex-degree">Figure&nbsp;<span>12.10</span></a> for an example.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-vertex-degree" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 269.97 221.60" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 217.6)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-217.6 265.97,-217.6 265.97,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="110" cy="-195.6" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="110" y="-191.4" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-106.8" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-102.6" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M84.58,-189.21C67.95,-184.33 47.16,-175.39 35.26,-159.6 27.92,-149.85 26,-136.12 25.84,-125.24"></path> <text text-anchor="middle" x="71.37" y="-147" font-family="Times,serif" font-size="14.00">A (degree 3)</text> </g> <!-- D --> <g id="node4" class="node">
+<title>
+D
+</title>
+<ellipse fill="none" stroke="black" cx="110" cy="-106.8" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="110" y="-102.6" font-family="Times,serif" font-size="14.00">D</text> </g> <!-- A&#45;&#45;D --> <g id="edge4" class="edge">
+<title>
+A–D
+</title>
+<path fill="none" stroke="black" d="M110,-177.45C110,-162.23 110,-140.12 110,-124.91"></path> <text text-anchor="middle" x="145.37" y="-147" font-family="Times,serif" font-size="14.00">D (degree 1)</text> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="111" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="111" y="-13.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- B&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+B–C
+</title>
+<path fill="none" stroke="black" d="M41.25,-91.08C56.79,-75.02 81.5,-49.48 96.96,-33.51"></path> <text text-anchor="middle" x="111.98" y="-58.2" font-family="Times,serif" font-size="14.00">B (degree 3)</text> </g> <!-- C&#45;&#45;A --> <g id="edge3" class="edge">
+<title>
+C–A
+</title>
+<path fill="none" stroke="black" d="M129.24,-31.63C136.84,-37.67 145.22,-45.43 151,-54 204.27,-132.89 199.34,-131.9 182,-159.6 171.9,-175.74 151.99,-184.63 135.66,-189.41"></path> <text text-anchor="middle" x="226.98" y="-102.6" font-family="Times,serif" font-size="14.00">C (degree 3)</text> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.10: Example graph with vertex degrees.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Path</strong>: A path in a graph is a sequence of vertices connected by edges. See <a href="#fig-path">Figure&nbsp;<span>12.11</span></a> for an example.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-path" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 62.00 260.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 58,-256 58,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-234" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-229.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-157.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M27,-215.7C27,-204.85 27,-190.92 27,-180.1"></path> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- B&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+B–C
+</title>
+<path fill="none" stroke="black" d="M27,-143.7C27,-132.85 27,-118.92 27,-108.1"></path> </g> <!-- D --> <g id="node4" class="node">
+<title>
+D
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">D</text> </g> <!-- C&#45;&#45;D --> <g id="edge3" class="edge">
+<title>
+C–D
+</title>
+<path fill="none" stroke="black" d="M27,-71.7C27,-60.85 27,-46.92 27,-36.1"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.11: Example graph with a path from A to D.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Cycle</strong>: A cycle is a closed path, where the first and last vertices in the path are the same, and no vertex is visited more than once. See <a href="#fig-cycle">Figure&nbsp;<span>12.12</span></a> for an example.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-cycle" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 89.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 85,-184 85,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="54" y="-157.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M47.6,-144.41C43.36,-133.41 37.81,-119.03 33.54,-107.96"></path> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="54" y="-13.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- B&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+B–C
+</title>
+<path fill="none" stroke="black" d="M33.4,-72.41C37.64,-61.41 43.19,-47.03 47.46,-35.96"></path> </g> <!-- C&#45;&#45;A --> <g id="edge3" class="edge">
+<title>
+C–A
+</title>
+<path fill="none" stroke="black" d="M57.65,-36.09C59.68,-46.43 61.98,-59.91 63,-72 64.34,-87.94 64.34,-92.06 63,-108 61.98,-120.09 59.68,-133.57 57.65,-143.91"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.12: Example graph with a cycle. (A-B-C)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Connected vs Disconnected</strong>: A graph is connected if there is a path between every pair of vertices. If there is at least one pair of vertices with no path between them, the graph is disconnected. See <a href="#fig-connected-vs-disconnected-1">Figure&nbsp;<span>12.13</span></a> and <a href="#fig-connected-vs-disconnected-2">Figure&nbsp;<span>12.14</span></a> for examples.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-connected-vs-disconnected-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 89.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 85,-184 85,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="54" y="-157.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M47.6,-144.41C43.36,-133.41 37.81,-119.03 33.54,-107.96"></path> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="54" y="-13.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- B&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+B–C
+</title>
+<path fill="none" stroke="black" d="M33.4,-72.41C37.64,-61.41 43.19,-47.03 47.46,-35.96"></path> </g> <!-- C&#45;&#45;A --> <g id="edge3" class="edge">
+<title>
+C–A
+</title>
+<path fill="none" stroke="black" d="M57.65,-36.09C59.68,-46.43 61.98,-59.91 63,-72 64.34,-87.94 64.34,-92.06 63,-108 61.98,-120.09 59.68,-133.57 57.65,-143.91"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.13: Example of a connected graph.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-connected-vs-disconnected-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-157.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M27,-143.7C27,-132.85 27,-118.92 27,-108.1"></path> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- B&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+B–C
+</title>
+<path fill="none" stroke="black" d="M27,-71.7C27,-60.85 27,-46.92 27,-36.1"></path> </g> <!-- D --> <g id="node4" class="node">
+<title>
+D
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-157.8" font-family="Times,serif" font-size="14.00">D</text> </g> <!-- E --> <g id="node5" class="node">
+<title>
+E
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">E</text> </g> <!-- D&#45;&#45;E --> <g id="edge3" class="edge">
+<title>
+D–E
+</title>
+<path fill="none" stroke="black" d="M99,-143.7C99,-132.85 99,-118.92 99,-108.1"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.14: Example of a disconnected graph.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="graph-notation" class="level3" data-number="12.3.2">
+<h3 data-number="12.3.2" class="anchored" data-anchor-id="graph-notation"><span class="header-section-number">12.3.2</span> Graph Notation</h3>
+<p>We can use a notation like <span class="math inline">\(G(V, E)\)</span>, where <span class="math inline">\(V\)</span> is the set of vertices and <span class="math inline">\(E\)</span> is the set of edges, to represent a graph.</p>
+</section>
+<section id="special-types-of-graphs" class="level3" data-number="12.3.3">
+<h3 data-number="12.3.3" class="anchored" data-anchor-id="special-types-of-graphs"><span class="header-section-number">12.3.3</span> Special Types of Graphs</h3>
+<ul>
+<li><strong>Complete Graph</strong>: A complete graph is a simple graph in which every pair of vertices is connected by a unique edge. See <a href="#fig-complete-graph">Figure&nbsp;<span>12.15</span></a> for an example.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-complete-graph" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 122.47 260.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 118.47,-256 118.47,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="73" cy="-234" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="73" y="-229.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="73" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="73" y="-157.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M73,-215.7C73,-204.85 73,-190.92 73,-180.1"></path> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- A&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+A–C
+</title>
+<path fill="none" stroke="black" d="M59.79,-217.89C51.79,-207.85 42.17,-193.98 37,-180 28.21,-156.23 26.56,-126.65 26.52,-108.29"></path> </g> <!-- D --> <g id="node4" class="node">
+<title>
+D
+</title>
+<ellipse fill="none" stroke="black" cx="82" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="82" y="-13.8" font-family="Times,serif" font-size="14.00">D</text> </g> <!-- A&#45;&#45;D --> <g id="edge3" class="edge">
+<title>
+A–D
+</title>
+<path fill="none" stroke="black" d="M86.75,-218.07C94.96,-208.1 104.62,-194.25 109,-180 124.83,-128.53 102.29,-64.77 89.61,-35.32"></path> </g> <!-- B&#45;&#45;C --> <g id="edge4" class="edge">
+<title>
+B–C
+</title>
+<path fill="none" stroke="black" d="M62.56,-145.12C55.03,-133.66 44.92,-118.26 37.4,-106.82"></path> </g> <!-- B&#45;&#45;D --> <g id="edge5" class="edge">
+<title>
+B–D
+</title>
+<path fill="none" stroke="black" d="M74.09,-143.87C75.82,-116.58 79.18,-63.52 80.91,-36.19"></path> </g> <!-- C&#45;&#45;D --> <g id="edge6" class="edge">
+<title>
+C–D
+</title>
+<path fill="none" stroke="black" d="M38.93,-73.81C48.16,-62.07 60.87,-45.89 70.09,-34.16"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.15: Example of a complete graph.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Bipartite Graph</strong>: A bipartite graph is a graph whose vertices can be divided into two disjoint sets such that all edges connect vertices from one set to the other, with no edges connecting vertices within the same set. See <a href="#fig-bipartite-graph">Figure&nbsp;<span>12.16</span></a> for an example.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-bipartite-graph" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 206.00 116.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 202,-112 202,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- 1 --> <g id="node2" class="node">
+<title>
+1
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">1</text> </g> <!-- A&#45;&#45;1 --> <g id="edge1" class="edge">
+<title>
+A–1
+</title>
+<path fill="none" stroke="black" d="M84.43,-74.83C72.02,-62.77 54.27,-45.51 41.8,-33.38"></path> </g> <!-- 2 --> <g id="node3" class="node">
+<title>
+2
+</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="171" y="-13.8" font-family="Times,serif" font-size="14.00">2</text> </g> <!-- A&#45;&#45;2 --> <g id="edge2" class="edge">
+<title>
+A–2
+</title>
+<path fill="none" stroke="black" d="M113.57,-74.83C125.98,-62.77 143.73,-45.51 156.2,-33.38"></path> </g> <!-- B --> <g id="node4" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- B&#45;&#45;1 --> <g id="edge3" class="edge">
+<title>
+B–1
+</title>
+<path fill="none" stroke="black" d="M27,-71.7C27,-60.85 27,-46.92 27,-36.1"></path> </g> <!-- 3 --> <g id="node5" class="node">
+<title>
+3
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00">3</text> </g> <!-- B&#45;&#45;3 --> <g id="edge4" class="edge">
+<title>
+B–3
+</title>
+<path fill="none" stroke="black" d="M41.57,-74.83C53.98,-62.77 71.73,-45.51 84.2,-33.38"></path> </g> <!-- C --> <g id="node6" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- C&#45;&#45;2 --> <g id="edge5" class="edge">
+<title>
+C–2
+</title>
+<path fill="none" stroke="black" d="M171,-71.7C171,-60.85 171,-46.92 171,-36.1"></path> </g> <!-- C&#45;&#45;3 --> <g id="edge6" class="edge">
+<title>
+C–3
+</title>
+<path fill="none" stroke="black" d="M156.43,-74.83C144.02,-62.77 126.27,-45.51 113.8,-33.38"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.16: Example of a bipartite graph.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Tree</strong>: A tree is an undirected graph with no cycles, and all vertices are connected. It has a hierarchical structure, with one vertex acting as the root, and the other vertices connected in a parent-child relationship. See <a href="#fig-tree">Figure&nbsp;<span>12.17</span></a> for an example.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tree" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 278.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 274,-184 274,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="135" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="135" y="-157.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M126.65,-144.76C120.83,-133.46 113.11,-118.44 107.3,-107.15"></path> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="171" y="-85.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- A&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+A–C
+</title>
+<path fill="none" stroke="black" d="M143.35,-144.76C149.17,-133.46 156.89,-118.44 162.7,-107.15"></path> </g> <!-- D --> <g id="node4" class="node">
+<title>
+D
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">D</text> </g> <!-- B&#45;&#45;D --> <g id="edge3" class="edge">
+<title>
+B–D
+</title>
+<path fill="none" stroke="black" d="M84.43,-74.83C72.02,-62.77 54.27,-45.51 41.8,-33.38"></path> </g> <!-- E --> <g id="node5" class="node">
+<title>
+E
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00">E</text> </g> <!-- B&#45;&#45;E --> <g id="edge4" class="edge">
+<title>
+B–E
+</title>
+<path fill="none" stroke="black" d="M99,-71.7C99,-60.85 99,-46.92 99,-36.1"></path> </g> <!-- F --> <g id="node6" class="node">
+<title>
+F
+</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="171" y="-13.8" font-family="Times,serif" font-size="14.00">F</text> </g> <!-- C&#45;&#45;F --> <g id="edge5" class="edge">
+<title>
+C–F
+</title>
+<path fill="none" stroke="black" d="M171,-71.7C171,-60.85 171,-46.92 171,-36.1"></path> </g> <!-- G --> <g id="node7" class="node">
+<title>
+G
+</title>
+<ellipse fill="none" stroke="black" cx="243" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="243" y="-13.8" font-family="Times,serif" font-size="14.00">G</text> </g> <!-- C&#45;&#45;G --> <g id="edge6" class="edge">
+<title>
+C–G
+</title>
+<path fill="none" stroke="black" d="M185.57,-74.83C197.98,-62.77 215.73,-45.51 228.2,-33.38"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.17: Example of a tree.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="graph-representation" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="graph-representation"><span class="header-section-number">12.4</span> Graph Representation</h2>
+<p>In order to work with graphs in code or store them in memory, we need efficient ways to represent them. There are multiple methods to represent graphs, and the choice of representation depends on factors such as the density of the graph, the operations to be performed, and memory constraints.</p>
+<p>In this section, we will discuss two common methods to represent a graph: adjacency list and adjacency matrix.</p>
+<section id="adjacency-list" class="level3" data-number="12.4.1">
+<h3 data-number="12.4.1" class="anchored" data-anchor-id="adjacency-list"><span class="header-section-number">12.4.1</span> Adjacency List</h3>
+<p>An <strong>adjacency list</strong> represents a graph by storing a list of adjacent vertices for each vertex in the graph. This can be implemented using an array of lists or a hash table, where the index or key corresponds to a vertex, and the value is a list of adjacent vertices.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-adjacency-list-graph" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M54.65,-144.76C48.83,-133.46 41.11,-118.44 35.3,-107.15"></path> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- A&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+A–C
+</title>
+<path fill="none" stroke="black" d="M71.35,-144.76C77.17,-133.46 84.89,-118.44 90.7,-107.15"></path> </g> <!-- D --> <g id="node4" class="node">
+<title>
+D
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-13.8" font-family="Times,serif" font-size="14.00">D</text> </g> <!-- B&#45;&#45;D --> <g id="edge3" class="edge">
+<title>
+B–D
+</title>
+<path fill="none" stroke="black" d="M35.35,-72.76C41.17,-61.46 48.89,-46.44 54.7,-35.15"></path> </g> <!-- C&#45;&#45;D --> <g id="edge4" class="edge">
+<title>
+C–D
+</title>
+<path fill="none" stroke="black" d="M90.65,-72.76C84.83,-61.46 77.11,-46.44 71.3,-35.15"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.18: See adjacency list for this example <a href="#lst-adjacency-list-example">Listing&nbsp;<span>12.1</span></a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Adjacency list representation for figure <a href="#fig-adjacency-list-graph">Figure&nbsp;<span>12.18</span></a>:</p>
+<div id="lst-adjacency-list-example" class="listing">
+<p>Listing&nbsp;12.1: Adjacency list representation.</p>
+<div class="sourceCode" id="lst-adjacency-list-example" data-lst-cap="Adjacency list representation."><pre class="sourceCode rust code-with-copy"><code class="sourceCode rust"><span id="lst-adjacency-list-example-1"><a href="#lst-adjacency-list-example-1" aria-hidden="true" tabindex="-1"></a>A<span class="op">:</span> [B<span class="op">,</span> C]</span>
+<span id="lst-adjacency-list-example-2"><a href="#lst-adjacency-list-example-2" aria-hidden="true" tabindex="-1"></a>B<span class="op">:</span> [A<span class="op">,</span> D]</span>
+<span id="lst-adjacency-list-example-3"><a href="#lst-adjacency-list-example-3" aria-hidden="true" tabindex="-1"></a>C<span class="op">:</span> [A<span class="op">,</span> D]</span>
+<span id="lst-adjacency-list-example-4"><a href="#lst-adjacency-list-example-4" aria-hidden="true" tabindex="-1"></a>D<span class="op">:</span> [B<span class="op">,</span> C]</span>
+<span id="lst-adjacency-list-example-5"><a href="#lst-adjacency-list-example-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="lst-adjacency-list-example-6"><a href="#lst-adjacency-list-example-6" aria-hidden="true" tabindex="-1"></a><span class="co">// or as an arraylist of arraylists -</span></span>
+<span id="lst-adjacency-list-example-7"><a href="#lst-adjacency-list-example-7" aria-hidden="true" tabindex="-1"></a>[[B<span class="op">,</span> C]<span class="op">,</span> [A<span class="op">,</span> D]<span class="op">,</span> [A<span class="op">,</span> D]<span class="op">,</span> [B<span class="op">,</span> C]]</span>
+<span id="lst-adjacency-list-example-8"><a href="#lst-adjacency-list-example-8" aria-hidden="true" tabindex="-1"></a><span class="co">// here, the index of the outer arraylist represents the vertex.</span></span>
+<span id="lst-adjacency-list-example-9"><a href="#lst-adjacency-list-example-9" aria-hidden="true" tabindex="-1"></a><span class="co">// in order for this to work, the order of the vertices must be </span></span>
+<span id="lst-adjacency-list-example-10"><a href="#lst-adjacency-list-example-10" aria-hidden="true" tabindex="-1"></a><span class="co">// fixed, and stored separately.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The adjacency list representation is efficient for sparse graphs (graphs with relatively few edges) as it only stores the existing edges, reducing memory usage. This representation also allows for faster traversal of a vertex’s neighbors.</p>
+</section>
+<section id="adjacency-matrix" class="level3" data-number="12.4.2">
+<h3 data-number="12.4.2" class="anchored" data-anchor-id="adjacency-matrix"><span class="header-section-number">12.4.2</span> Adjacency Matrix</h3>
+<p>An <strong>adjacency matrix</strong> is a two-dimensional array (or matrix) where the cell at the i-th row and j-th column represents the edge between vertex i and vertex j. For an undirected graph, the adjacency matrix is symmetric. For a weighted graph, the values in the cells represent the weights of the edges; for an unweighted graph, the cells contain either 1 (edge exists) or 0 (no edge).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="adjacency-matrix-graph">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M54.65,-144.76C48.83,-133.46 41.11,-118.44 35.3,-107.15"></path> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- A&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+A–C
+</title>
+<path fill="none" stroke="black" d="M71.35,-144.76C77.17,-133.46 84.89,-118.44 90.7,-107.15"></path> </g> <!-- D --> <g id="node4" class="node">
+<title>
+D
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-13.8" font-family="Times,serif" font-size="14.00">D</text> </g> <!-- B&#45;&#45;D --> <g id="edge3" class="edge">
+<title>
+B–D
+</title>
+<path fill="none" stroke="black" d="M35.35,-72.76C41.17,-61.46 48.89,-46.44 54.7,-35.15"></path> </g> <!-- C&#45;&#45;D --> <g id="edge4" class="edge">
+<title>
+C–D
+</title>
+<path fill="none" stroke="black" d="M90.65,-72.76C84.83,-61.46 77.11,-46.44 71.3,-35.15"></path> </g> </g>
+</svg>
+</div>
+<p>See adjacency matrix for this example <a href="#lst-adjacency-matrix-example">Listing&nbsp;<span>12.2</span></a></p>
+</div>
+</div>
+</div>
+<p>Adjacency matrix representation (unweighted):</p>
+<div id="lst-adjacency-matrix-example" class="listing">
+<p>Listing&nbsp;12.2: Adjacency matrix representation.</p>
+<pre id="lst-adjacency-matrix-example" class="text" data-lst-cap="Adjacency matrix representation."><code>  A B C D
+A 0 1 1 0
+B 1 0 0 1
+C 1 0 0 1
+D 0 1 1 0</code></pre>
+</div>
+<p>The adjacency matrix representation is suitable for dense graphs (graphs with many edges) or when checking for the presence of an edge between two vertices needs to be fast. However, this representation can be inefficient in terms of memory usage, especially for large, sparse graphs, as it stores information for all possible edges, even if they do not exist.</p>
+</section>
+<section id="converting-between-representations" class="level3" data-number="12.4.3">
+<h3 data-number="12.4.3" class="anchored" data-anchor-id="converting-between-representations"><span class="header-section-number">12.4.3</span> Converting Between Representations</h3>
+<p>To convert a graph diagram or notation into an adjacency list or an adjacency matrix, follow these steps:</p>
+<ol type="1">
+<li>Identify the vertices and edges in the graph.</li>
+<li>For an adjacency list, create an empty list or hash table for each vertex. For each edge, add the adjacent vertices to the corresponding lists.</li>
+<li>For an adjacency matrix, create a square matrix with dimensions equal to the number of vertices. For each edge, set the corresponding cells in the matrix to 1 (or the edge weight for weighted graphs).</li>
+</ol>
+<p>To convert an adjacency list or an adjacency matrix back into a graph diagram or notation, follow these steps:</p>
+<ol type="1">
+<li>Identify the vertices based on the keys (for an adjacency list) or indices (for an adjacency matrix).</li>
+<li>For an adjacency list, iterate through the lists and draw an edge for each adjacent vertex.</li>
+<li>For an adjacency matrix, iterate through the matrix cells and draw an edge for each non-zero value (or the corresponding weight for weighted graphs).</li>
+</ol>
+</section>
+</section>
+<section id="graph-traversal" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="graph-traversal"><span class="header-section-number">12.5</span> Graph Traversal</h2>
+<p>Imagine you want to find the average age of all users on Facebook. With billions of users, it is infeasible to hold the entire graph of the friend network in memory. Ideally, we would want to find out information on each user one at a time, on a per-need basis. To achieve this, we can use graph traversal algorithms, which allow us to visit each user, add up their ages, and then calculate the average. A simple way to do this is to load information on a user, add all their friends to a stack, and then keep popping from the stack and requesting data from Facebook for each friend. When we receive the data, we mark that user as visited to avoid recounting their age if we reach the same user again. We then add friends of each loaded user to our stack and keep repeating until we run out of users in our stack.</p>
+<p>This problem illustrates the importance of graph traversal, a fundamental operation in graph theory. Graphs are a powerful and versatile data structure that can model various kinds of relationships and networks, such as social networks, computer networks, transportation networks, web pages, games, and many other domains. Graph traversal allows us to explore and manipulate graphs in various ways, with applications in domains like searching for specific nodes, finding the shortest path between nodes, and analyzing the structure of a graph.</p>
+<p>Graph traversal algorithms typically begin with a start node and attempt to visit the remaining nodes from there. They must deal with several troublesome cases, such as unreachable nodes, revisited nodes, and choosing which node to visit next among several options. To handle these cases, graph traversal algorithms use different strategies and data structures to keep track of which nodes have been visited and which nodes are still pending. The most common graph traversal algorithms are breadth-first search (BFS) and depth-first search (DFS), which differ in the order in which they visit the nodes.</p>
+<p>In some situations, we may not know the entire graph at once and instead only have access to a node object and its adjacent nodes. As demonstrated in the Facebook example, graph traversal algorithms can be used to solve problems that involve large and dynamic graphs by visiting each user and analyzing their information on a per-need basis.</p>
+<p>There are two common methods to traverse a graph:</p>
+<ol type="1">
+<li>Breadth-First Search (BFS)</li>
+<li>Depth-First Search (DFS)</li>
+</ol>
+<p>By understanding and implementing these graph traversal methods, you can efficiently explore and manipulate complex graphs to solve a wide range of problems.</p>
+<section id="breadth-first-search-bfs" class="level3" data-number="12.5.1">
+<h3 data-number="12.5.1" class="anchored" data-anchor-id="breadth-first-search-bfs"><span class="header-section-number">12.5.1</span> Breadth-First Search (BFS)</h3>
+<p><strong>Breadth-First Search</strong> explores a graph by visiting all the neighbors of the starting vertex before moving on to their neighbors. BFS uses a queue data structure to keep track of the vertices to visit.</p>
+<p>Here’s a step-by-step example of BFS traversal (for the graph in example <a href="#fig-bfs-example">Figure&nbsp;<span>12.19</span></a>):</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-bfs-example" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M54.65,-144.76C48.83,-133.46 41.11,-118.44 35.3,-107.15"></path> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- A&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+A–C
+</title>
+<path fill="none" stroke="black" d="M71.35,-144.76C77.17,-133.46 84.89,-118.44 90.7,-107.15"></path> </g> <!-- D --> <g id="node4" class="node">
+<title>
+D
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">D</text> </g> <!-- B&#45;&#45;D --> <g id="edge3" class="edge">
+<title>
+B–D
+</title>
+<path fill="none" stroke="black" d="M27,-71.7C27,-60.85 27,-46.92 27,-36.1"></path> </g> <!-- C&#45;&#45;D --> <g id="edge4" class="edge">
+<title>
+C–D
+</title>
+<path fill="none" stroke="black" d="M84.43,-74.83C72.02,-62.77 54.27,-45.51 41.8,-33.38"></path> </g> <!-- E --> <g id="node5" class="node">
+<title>
+E
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00">E</text> </g> <!-- C&#45;&#45;E --> <g id="edge5" class="edge">
+<title>
+C–E
+</title>
+<path fill="none" stroke="black" d="M99,-71.7C99,-60.85 99,-46.92 99,-36.1"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.19: Example graph for BFS traversal.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>BFS traversal starting from vertex A:</p>
+<ol type="1">
+<li>Visit A and add its neighbors B and C to the queue: [B, C]</li>
+<li>Visit B and add its unvisited neighbor D to the queue: [C, D]</li>
+<li>Visit C and add its unvisited neighbor E to the queue: [D, E]</li>
+<li>Visit D: [E]</li>
+<li>Visit E: []</li>
+</ol>
+<p>BFS traversal order: <code>A, B, C, D, E</code></p>
+<p>BFS pseudocode:</p>
+<pre><code>BFS(graph, start):
+  Initialize an empty queue Q
+  Mark start as visited
+  Enqueue start into Q
+  
+  while Q is not empty:
+    vertex = Dequeue(Q)
+    Visit vertex
+    
+    for each neighbor of vertex:
+      if neighbor is not visited:
+        Mark neighbor as visited
+        Enqueue neighbor into Q</code></pre>
+</section>
+<section id="depth-first-search-dfs" class="level3" data-number="12.5.2">
+<h3 data-number="12.5.2" class="anchored" data-anchor-id="depth-first-search-dfs"><span class="header-section-number">12.5.2</span> Depth-First Search (DFS)</h3>
+<p><strong>Depth-First Search</strong> explores a graph by visiting a vertex and its neighbors as deeply as possible before backtracking. DFS can be implemented using recursion or an explicit stack data structure.</p>
+<p>Here’s a step-by-step example of DFS traversal (for the graph in example <a href="#fig-dfs-example">Figure&nbsp;<span>12.20</span></a>):</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-dfs-example" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>
+G
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"></polygon> <!-- A --> <g id="node1" class="node">
+<title>
+A
+</title>
+<ellipse fill="none" stroke="black" cx="63" cy="-162" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="63" y="-157.8" font-family="Times,serif" font-size="14.00">A</text> </g> <!-- B --> <g id="node2" class="node">
+<title>
+B
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-85.8" font-family="Times,serif" font-size="14.00">B</text> </g> <!-- A&#45;&#45;B --> <g id="edge1" class="edge">
+<title>
+A–B
+</title>
+<path fill="none" stroke="black" d="M54.65,-144.76C48.83,-133.46 41.11,-118.44 35.3,-107.15"></path> </g> <!-- C --> <g id="node3" class="node">
+<title>
+C
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-85.8" font-family="Times,serif" font-size="14.00">C</text> </g> <!-- A&#45;&#45;C --> <g id="edge2" class="edge">
+<title>
+A–C
+</title>
+<path fill="none" stroke="black" d="M71.35,-144.76C77.17,-133.46 84.89,-118.44 90.7,-107.15"></path> </g> <!-- D --> <g id="node4" class="node">
+<title>
+D
+</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">D</text> </g> <!-- B&#45;&#45;D --> <g id="edge3" class="edge">
+<title>
+B–D
+</title>
+<path fill="none" stroke="black" d="M27,-71.7C27,-60.85 27,-46.92 27,-36.1"></path> </g> <!-- C&#45;&#45;D --> <g id="edge4" class="edge">
+<title>
+C–D
+</title>
+<path fill="none" stroke="black" d="M84.43,-74.83C72.02,-62.77 54.27,-45.51 41.8,-33.38"></path> </g> <!-- E --> <g id="node5" class="node">
+<title>
+E
+</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"></ellipse> <text text-anchor="middle" x="99" y="-13.8" font-family="Times,serif" font-size="14.00">E</text> </g> <!-- C&#45;&#45;E --> <g id="edge5" class="edge">
+<title>
+C–E
+</title>
+<path fill="none" stroke="black" d="M99,-71.7C99,-60.85 99,-46.92 99,-36.1"></path> </g> </g>
+</svg>
+</div>
+<figcaption class="figure-caption">Figure&nbsp;12.20: Example graph for DFS traversal.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>DFS traversal starting from vertex A:</p>
+<ol type="1">
+<li>Visit A and recurse on its first neighbor B</li>
+<li>Visit B and recurse on its first neighbor D</li>
+<li>Visit D and backtrack (no unvisited neighbors)</li>
+<li>Backtrack to A and recurse on its next neighbor C</li>
+<li>Visit C and recurse on its first neighbor E</li>
+<li>Visit E and backtrack (no unvisited neighbors)</li>
+</ol>
+<p>DFS traversal order: <code>A, B, D, C, E</code></p>
+<p>DFS pseudocode (recursive):</p>
+<pre><code>DFS(graph, vertex):
+  Mark vertex as visited
+  Visit vertex
+  
+  for each neighbor of vertex:
+    if neighbor is not visited:
+      DFS(graph, neighbor)</code></pre>
+<p>DFS pseudocode (iterative with a stack):</p>
+<pre><code>DFS(graph, start):
+  Initialize an empty stack S
+  Mark start as visited
+  Push start onto S
+  
+  while S is not empty:
+    vertex = Pop(S)
+    Visit vertex
+    
+    for each neighbor of vertex:
+      if neighbor is not visited:
+        Mark neighbor as visited
+        Push neighbor onto S</code></pre>
+</section>
+<section id="applications-and-variations-of-bfs-and-dfs" class="level3" data-number="12.5.3">
+<h3 data-number="12.5.3" class="anchored" data-anchor-id="applications-and-variations-of-bfs-and-dfs"><span class="header-section-number">12.5.3</span> Applications and Variations of BFS and DFS</h3>
+<p>Both BFS and DFS have numerous applications and can be adapted to solve various graph-related problems:</p>
+<ul>
+<li><p><strong>Shortest path</strong>: BFS can be used to find the shortest path between two vertices in an unweighted graph. The algorithm can be modified to keep track of the path length or the actual path itself.</p></li>
+<li><p><strong>Connected components</strong>: Both BFS and DFS can be used to find connected components in an undirected graph. By running the traversal algorithm and marking visited vertices, we can identify the set of vertices reachable from a starting vertex. Repeating this process for all unvisited vertices will find all connected components in the graph.</p></li>
+<li><p><strong>Topological sorting</strong>: DFS can be adapted to perform a topological sort on a directed acyclic graph (DAG). A topological ordering is a linear ordering of the vertices such that for every directed edge (u, v), vertex u comes before vertex v in the ordering. This can be useful in scheduling tasks with dependencies or determining the order of courses in a curriculum.</p></li>
+<li><p><strong>Bipartite graph check</strong>: BFS or DFS can be used to check if a graph is bipartite. The algorithm can be modified to color vertices while traversing the graph. If at any point during the traversal, two adjacent vertices have the same color, the graph is not bipartite.</p></li>
+<li><p><strong>Graph cycle detection</strong>: DFS can be used to detect cycles in a graph. By keeping track of the recursion stack, we can determine if a vertex is visited more than once in the same path, indicating a cycle.</p></li>
+</ul>
+<p>In summary, graph traversal is a fundamental operation in graph theory with various applications. Breadth-First Search (BFS) and Depth-First Search (DFS) are two common techniques to traverse a graph, each with its own advantages and use cases. Understanding these algorithms and their variations can help solve a wide range of graph-related problems.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./11_linear_search.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Linear Search</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./22_hashing.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
