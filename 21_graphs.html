@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - Summer 2023 - 12&nbsp; The Graph Data Structure</title>
+<title>ITSC 2214 - Data Structures and Algorithms - Summer 2023 - 14&nbsp; The Graph Data Structure</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./22_hashing.html" rel="next">
-<link href="./11_linear_search.html" rel="prev">
+<link href="./13_operations_on_lists.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./21_graphs.html">Graphs</a></li><li class="breadcrumb-item"><a href="./21_graphs.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Graph Data Structure</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./21_graphs.html">Graphs</a></li><li class="breadcrumb-item"><a href="./21_graphs.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Graph Data Structure</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -254,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
- <span class="menu-text">Graphs</span></a>
+ <span class="menu-text">Sequential Collections of Data</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -262,8 +262,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./21_graphs.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Graph Data Structure</span></span></a>
+  <a href="./12_collections_of_data_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Collections of Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_operations_on_lists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span></a>
   </div>
 </li>
       </ul>
@@ -271,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
- <span class="menu-text">Hashing, HashMaps and HashTables</span></a>
+ <span class="menu-text">Graphs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -279,8 +285,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./21_graphs.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Graph Data Structure</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+ <span class="menu-text">Hashing, HashMaps and HashTables</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./22_hashing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
   </div>
 </li>
       </ul>
@@ -301,25 +324,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#background-and-motivation" id="toc-background-and-motivation" class="nav-link active" data-scroll-target="#background-and-motivation"><span class="header-section-number">12.1</span> Background and Motivation</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">12.2</span> Introduction</a></li>
-  <li><a href="#graph-terminology" id="toc-graph-terminology" class="nav-link" data-scroll-target="#graph-terminology"><span class="header-section-number">12.3</span> Graph Terminology</a>
+  <li><a href="#background-and-motivation" id="toc-background-and-motivation" class="nav-link active" data-scroll-target="#background-and-motivation"><span class="header-section-number">14.1</span> Background and Motivation</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">14.2</span> Introduction</a></li>
+  <li><a href="#graph-terminology" id="toc-graph-terminology" class="nav-link" data-scroll-target="#graph-terminology"><span class="header-section-number">14.3</span> Graph Terminology</a>
   <ul class="collapse">
-  <li><a href="#basic-terms-and-properties" id="toc-basic-terms-and-properties" class="nav-link" data-scroll-target="#basic-terms-and-properties"><span class="header-section-number">12.3.1</span> Basic Terms and Properties</a></li>
-  <li><a href="#graph-notation" id="toc-graph-notation" class="nav-link" data-scroll-target="#graph-notation"><span class="header-section-number">12.3.2</span> Graph Notation</a></li>
-  <li><a href="#special-types-of-graphs" id="toc-special-types-of-graphs" class="nav-link" data-scroll-target="#special-types-of-graphs"><span class="header-section-number">12.3.3</span> Special Types of Graphs</a></li>
+  <li><a href="#basic-terms-and-properties" id="toc-basic-terms-and-properties" class="nav-link" data-scroll-target="#basic-terms-and-properties"><span class="header-section-number">14.3.1</span> Basic Terms and Properties</a></li>
+  <li><a href="#graph-notation" id="toc-graph-notation" class="nav-link" data-scroll-target="#graph-notation"><span class="header-section-number">14.3.2</span> Graph Notation</a></li>
+  <li><a href="#special-types-of-graphs" id="toc-special-types-of-graphs" class="nav-link" data-scroll-target="#special-types-of-graphs"><span class="header-section-number">14.3.3</span> Special Types of Graphs</a></li>
   </ul></li>
-  <li><a href="#graph-representation" id="toc-graph-representation" class="nav-link" data-scroll-target="#graph-representation"><span class="header-section-number">12.4</span> Graph Representation</a>
+  <li><a href="#graph-representation" id="toc-graph-representation" class="nav-link" data-scroll-target="#graph-representation"><span class="header-section-number">14.4</span> Graph Representation</a>
   <ul class="collapse">
-  <li><a href="#adjacency-list" id="toc-adjacency-list" class="nav-link" data-scroll-target="#adjacency-list"><span class="header-section-number">12.4.1</span> Adjacency List</a></li>
-  <li><a href="#adjacency-matrix" id="toc-adjacency-matrix" class="nav-link" data-scroll-target="#adjacency-matrix"><span class="header-section-number">12.4.2</span> Adjacency Matrix</a></li>
-  <li><a href="#converting-between-representations" id="toc-converting-between-representations" class="nav-link" data-scroll-target="#converting-between-representations"><span class="header-section-number">12.4.3</span> Converting Between Representations</a></li>
+  <li><a href="#adjacency-list" id="toc-adjacency-list" class="nav-link" data-scroll-target="#adjacency-list"><span class="header-section-number">14.4.1</span> Adjacency List</a></li>
+  <li><a href="#adjacency-matrix" id="toc-adjacency-matrix" class="nav-link" data-scroll-target="#adjacency-matrix"><span class="header-section-number">14.4.2</span> Adjacency Matrix</a></li>
+  <li><a href="#converting-between-representations" id="toc-converting-between-representations" class="nav-link" data-scroll-target="#converting-between-representations"><span class="header-section-number">14.4.3</span> Converting Between Representations</a></li>
   </ul></li>
-  <li><a href="#graph-traversal" id="toc-graph-traversal" class="nav-link" data-scroll-target="#graph-traversal"><span class="header-section-number">12.5</span> Graph Traversal</a>
+  <li><a href="#graph-traversal" id="toc-graph-traversal" class="nav-link" data-scroll-target="#graph-traversal"><span class="header-section-number">14.5</span> Graph Traversal</a>
   <ul class="collapse">
-  <li><a href="#breadth-first-search-bfs" id="toc-breadth-first-search-bfs" class="nav-link" data-scroll-target="#breadth-first-search-bfs"><span class="header-section-number">12.5.1</span> Breadth-First Search (BFS)</a></li>
-  <li><a href="#depth-first-search-dfs" id="toc-depth-first-search-dfs" class="nav-link" data-scroll-target="#depth-first-search-dfs"><span class="header-section-number">12.5.2</span> Depth-First Search (DFS)</a></li>
-  <li><a href="#applications-and-variations-of-bfs-and-dfs" id="toc-applications-and-variations-of-bfs-and-dfs" class="nav-link" data-scroll-target="#applications-and-variations-of-bfs-and-dfs"><span class="header-section-number">12.5.3</span> Applications and Variations of BFS and DFS</a></li>
+  <li><a href="#breadth-first-search-bfs" id="toc-breadth-first-search-bfs" class="nav-link" data-scroll-target="#breadth-first-search-bfs"><span class="header-section-number">14.5.1</span> Breadth-First Search (BFS)</a></li>
+  <li><a href="#depth-first-search-dfs" id="toc-depth-first-search-dfs" class="nav-link" data-scroll-target="#depth-first-search-dfs"><span class="header-section-number">14.5.2</span> Depth-First Search (DFS)</a></li>
+  <li><a href="#applications-and-variations-of-bfs-and-dfs" id="toc-applications-and-variations-of-bfs-and-dfs" class="nav-link" data-scroll-target="#applications-and-variations-of-bfs-and-dfs"><span class="header-section-number">14.5.3</span> Applications and Variations of BFS and DFS</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -329,7 +352,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">The Graph Data Structure</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">The Graph Data Structure</span></h1>
 </div>
 
 
@@ -344,9 +367,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="background-and-motivation" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="background-and-motivation"><span class="header-section-number">12.1</span> Background and Motivation</h2>
-<p>Imagine you want to represent the connections between you and your Instagram followers in a data structure. The diagram below (<a href="#fig-instagram-followers">Figure&nbsp;<span>12.1</span></a>) shows a simple representation of your followers as numbered vertices and the edges represent the connections between you and your followers.</p>
+<section id="background-and-motivation" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="background-and-motivation"><span class="header-section-number">14.1</span> Background and Motivation</h2>
+<p>Imagine you want to represent the connections between you and your Instagram followers in a data structure. The diagram below (<a href="#fig-instagram-followers">Figure&nbsp;<span>14.1</span></a>) shows a simple representation of your followers as numbered vertices and the edges represent the connections between you and your followers.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-instagram-followers" class="quarto-figure quarto-figure-center anchored">
@@ -524,12 +547,12 @@ You–20
 <path fill="none" stroke="black" d="M563.68,-102.53C659.13,-97.01 973.78,-76.52 1068,-41.39 1072.56,-39.69 1077.1,-37.12 1081.19,-34.41"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.1: A representation of your Instagram followers.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.1: A representation of your Instagram followers.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>At first glance, it might appear to be a tree structure, but that is not the case. Your followers can follow other people, who in turn can have their followers. This creates a recursive relationship that cannot be represented using a tree data structure (see <a href="#fig-instagram-followers-recursive">Figure&nbsp;<span>12.2</span></a>).</p>
+<p>At first glance, it might appear to be a tree structure, but that is not the case. Your followers can follow other people, who in turn can have their followers. This creates a recursive relationship that cannot be represented using a tree data structure (see <a href="#fig-instagram-followers-recursive">Figure&nbsp;<span>14.2</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-instagram-followers-recursive" class="quarto-figure quarto-figure-center anchored">
@@ -763,7 +786,7 @@ You–10
 <path fill="none" stroke="black" d="M328.95,-231.21C340.06,-218.13 355.97,-199.39 367.07,-186.31"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.2: A representation of your instagram followers where they’re allowed to follow other people too.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.2: A representation of your instagram followers where they’re allowed to follow other people too.</figcaption>
 </figure>
 </div>
 </div>
@@ -771,7 +794,7 @@ You–10
 <p>To accurately capture this complex relationship, we need to use a graph data structure. Graphs consist of a set of vertices (or nodes) and a set of edges that connect them. In the context of Instagram followers, the vertices represent the users, and the edges represent the connections between them.</p>
 <p>Using a graph data structure allows us to represent the recursive nature of the relationship between you and your followers, enabling us to model and analyze the complex network of connections in a more accurate way.</p>
 <p>Sure! I will translate the given block according to the specifications you provided. Here’s the updated version:</p>
-<p>Furthermore, the relationship between you and your followers is even more complex. For instance, you can follow someone who does not follow you back, creating a directed relationship where the edges have a direction. In this case, the edges represent the connections from you to your followers, but not the other way around. Such relationships are often modeled using directed graphs, which are a common use case for graphs. <a href="#fig-instagram-followers-directed">Figure&nbsp;<span>12.3</span></a> visualizes this directed relationship.</p>
+<p>Furthermore, the relationship between you and your followers is even more complex. For instance, you can follow someone who does not follow you back, creating a directed relationship where the edges have a direction. In this case, the edges represent the connections from you to your followers, but not the other way around. Such relationships are often modeled using directed graphs, which are a common use case for graphs. <a href="#fig-instagram-followers-directed">Figure&nbsp;<span>14.3</span></a> visualizes this directed relationship.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-instagram-followers-directed" class="quarto-figure quarto-figure-center anchored">
@@ -1005,14 +1028,14 @@ You-&gt;10
 <path fill="none" stroke="black" d="M328.95,-231.21C337.97,-220.58 350.17,-206.22 360.38,-194.19"></path> <polygon fill="black" stroke="black" points="363.26,-196.2 367.07,-186.31 357.93,-191.67 363.26,-196.2"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.3: A directed representation of your Instagram followers. Here, an arrow going from vertex <span class="math inline">\(A\)</span> to vertex <span class="math inline">\(B\)</span> indicates that <span class="math inline">\(A\)</span> follows <span class="math inline">\(B\)</span>, but <span class="math inline">\(B\)</span> does not necessarily follow <span class="math inline">\(A\)</span>.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.3: A directed representation of your Instagram followers. Here, an arrow going from vertex <span class="math inline">\(A\)</span> to vertex <span class="math inline">\(B\)</span> indicates that <span class="math inline">\(A\)</span> follows <span class="math inline">\(B\)</span>, but <span class="math inline">\(B\)</span> does not necessarily follow <span class="math inline">\(A\)</span>.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="introduction" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="introduction"><span class="header-section-number">12.2</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="introduction"><span class="header-section-number">14.2</span> Introduction</h2>
 <p>A <strong>graph</strong> is a non-linear data structure that consists of a set of vertices (also called nodes) and a set of edges (or connections) that connect these vertices. In this data structure, the arrangement of vertices and edges allows for a more flexible and complex representation of relationships between data elements compared to linear data structures like arrays, lists, or queues.</p>
 <p>The concept of <strong>adjacency</strong> refers to the relationship between two vertices in a graph. If there is an edge connecting two vertices, they are said to be adjacent. <strong>Incidence</strong> is the relationship between a vertex and an edge. A vertex is said to be incident to an edge if it is one of the two vertices connected by that edge.</p>
 <p>Graphs have numerous real-life applications, and some examples include:</p>
@@ -1022,17 +1045,17 @@ You-&gt;10
 <li>Coronavirus transmission networks, where vertices represent individuals and edges represent transmission paths</li>
 </ul>
 </section>
-<section id="graph-terminology" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="graph-terminology"><span class="header-section-number">12.3</span> Graph Terminology</h2>
+<section id="graph-terminology" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="graph-terminology"><span class="header-section-number">14.3</span> Graph Terminology</h2>
 <p>Before diving into the implementation of graph data structures, let’s discuss some basic terms and properties of graphs.</p>
-<section id="basic-terms-and-properties" class="level3" data-number="12.3.1">
-<h3 data-number="12.3.1" class="anchored" data-anchor-id="basic-terms-and-properties"><span class="header-section-number">12.3.1</span> Basic Terms and Properties</h3>
+<section id="basic-terms-and-properties" class="level3" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="basic-terms-and-properties"><span class="header-section-number">14.3.1</span> Basic Terms and Properties</h3>
 <ul>
 <li><p>A&nbsp;<strong>graph</strong>&nbsp;is a data structure for representing connections among&nbsp;items and consists of <strong>vertices</strong> connected by <strong>edges</strong>.​</p></li>
 <li><p>A&nbsp;<strong>vertex</strong>&nbsp;(or node) represents an item in a graph.​</p></li>
 <li><p>An&nbsp;<strong>edge</strong>&nbsp;represents a connection between two vertices in a graph.</p></li>
 <li><p>Two vertices are&nbsp;<strong>adjacent</strong>&nbsp;if connected by an <strong>edge</strong>.​</p></li>
-<li><p><strong>Directed vs Undirected</strong>: In an <strong>undirected graph</strong>, the edges have no specific direction, meaning that if there is an edge between vertices A and B, the connection is mutual. In a <strong>directed graph</strong> (also called a digraph), the edges have a direction, indicating an asymmetrical relationship between vertices. (See <a href="#fig-directed-vs-undirected-1">Figure&nbsp;<span>12.4</span></a> and <a href="#fig-directed-vs-undirected-2">Figure&nbsp;<span>12.5</span></a> for examples.)</p></li>
+<li><p><strong>Directed vs Undirected</strong>: In an <strong>undirected graph</strong>, the edges have no specific direction, meaning that if there is an edge between vertices A and B, the connection is mutual. In a <strong>directed graph</strong> (also called a digraph), the edges have a direction, indicating an asymmetrical relationship between vertices. (See <a href="#fig-directed-vs-undirected-1">Figure&nbsp;<span>14.4</span></a> and <a href="#fig-directed-vs-undirected-2">Figure&nbsp;<span>14.5</span></a> for examples.)</p></li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1071,7 +1094,7 @@ C–A
 <path fill="none" stroke="black" d="M57.65,-36.09C59.68,-46.43 61.98,-59.91 63,-72 64.34,-87.94 64.34,-92.06 63,-108 61.98,-120.09 59.68,-133.57 57.65,-143.91"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.4: Example of an undirected graph.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.4: Example of an undirected graph.</figcaption>
 </figure>
 </div>
 </div>
@@ -1113,13 +1136,13 @@ C-&gt;A
 <path fill="none" stroke="black" d="M57.65,-36.09C59.68,-46.43 61.98,-59.91 63,-72 64.34,-87.94 64.34,-92.06 63,-108 62.28,-116.5 60.93,-125.69 59.49,-133.99"></path> <polygon fill="black" stroke="black" points="56.03,-133.44 57.65,-143.91 62.91,-134.71 56.03,-133.44"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.5: Example of a directed graph.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.5: Example of a directed graph.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li><strong>Weighted vs Unweighted</strong>: In an <strong>unweighted graph</strong>, all edges have equal importance, while in a <strong>weighted graph</strong>, each edge is assigned a value (or weight), representing the importance, cost, or distance between the connected vertices. (See <a href="#fig-weighted-vs-unweighted-1">Figure&nbsp;<span>12.6</span></a> and <a href="#fig-weighted-vs-unweighted-2">Figure&nbsp;<span>12.7</span></a> for examples.)</li>
+<li><strong>Weighted vs Unweighted</strong>: In an <strong>unweighted graph</strong>, all edges have equal importance, while in a <strong>weighted graph</strong>, each edge is assigned a value (or weight), representing the importance, cost, or distance between the connected vertices. (See <a href="#fig-weighted-vs-unweighted-1">Figure&nbsp;<span>14.6</span></a> and <a href="#fig-weighted-vs-unweighted-2">Figure&nbsp;<span>14.7</span></a> for examples.)</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1158,7 +1181,7 @@ C–A
 <path fill="none" stroke="black" d="M57.65,-36.09C59.68,-46.43 61.98,-59.91 63,-72 64.34,-87.94 64.34,-92.06 63,-108 61.98,-120.09 59.68,-133.57 57.65,-143.91"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.6: Example of an unweighted graph.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.6: Example of an unweighted graph.</figcaption>
 </figure>
 </div>
 </div>
@@ -1200,13 +1223,13 @@ C–A
 <path fill="none" stroke="black" d="M60.47,-36.23C63.34,-69.85 69.67,-143.87 72.53,-177.44"></path> <text text-anchor="middle" x="71.5" y="-102.6" font-family="Times,serif" font-size="14.00">1</text> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.7: Example of a weighted graph.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.7: Example of a weighted graph.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li><strong>Simple vs Multigraph</strong>: A <strong>simple graph</strong> has no more than one edge between any pair of vertices and does not contain any self-loops (edges that connect a vertex to itself). A <strong>multigraph</strong> can have multiple edges between the same pair of vertices and may include self-loops. (See <a href="#fig-simple-vs-multigraph-1">Figure&nbsp;<span>12.8</span></a> and <a href="#fig-simple-vs-multigraph-2">Figure&nbsp;<span>12.9</span></a> for examples.)</li>
+<li><strong>Simple vs Multigraph</strong>: A <strong>simple graph</strong> has no more than one edge between any pair of vertices and does not contain any self-loops (edges that connect a vertex to itself). A <strong>multigraph</strong> can have multiple edges between the same pair of vertices and may include self-loops. (See <a href="#fig-simple-vs-multigraph-1">Figure&nbsp;<span>14.8</span></a> and <a href="#fig-simple-vs-multigraph-2">Figure&nbsp;<span>14.9</span></a> for examples.)</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1245,7 +1268,7 @@ C–A
 <path fill="none" stroke="black" d="M57.65,-36.09C59.68,-46.43 61.98,-59.91 63,-72 64.34,-87.94 64.34,-92.06 63,-108 61.98,-120.09 59.68,-133.57 57.65,-143.91"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.8: Example of a simple graph.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.8: Example of a simple graph.</figcaption>
 </figure>
 </div>
 </div>
@@ -1295,13 +1318,13 @@ C–A
 <path fill="none" stroke="black" d="M57.56,-35.93C59.6,-46.53 61.97,-60.5 63,-73 65.6,-104.41 63.03,-112.54 59,-143.8 58.25,-149.64 57.36,-156.03 56.54,-161.72"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.9: Example of a multigraph.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.9: Example of a multigraph.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li><strong>Degree</strong>: The degree of a vertex is the number of edges incident to it. In a directed graph, we can distinguish between in-degree (the number of edges directed towards the vertex) and out-degree (the number of edges directed away from the vertex). See <a href="#fig-vertex-degree">Figure&nbsp;<span>12.10</span></a> for an example.</li>
+<li><strong>Degree</strong>: The degree of a vertex is the number of edges incident to it. In a directed graph, we can distinguish between in-degree (the number of edges directed towards the vertex) and out-degree (the number of edges directed away from the vertex). See <a href="#fig-vertex-degree">Figure&nbsp;<span>14.10</span></a> for an example.</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1348,13 +1371,13 @@ C–A
 <path fill="none" stroke="black" d="M129.24,-31.63C136.84,-37.67 145.22,-45.43 151,-54 204.27,-132.89 199.34,-131.9 182,-159.6 171.9,-175.74 151.99,-184.63 135.66,-189.41"></path> <text text-anchor="middle" x="226.98" y="-102.6" font-family="Times,serif" font-size="14.00">C (degree 3)</text> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.10: Example graph with vertex degrees.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.10: Example graph with vertex degrees.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li><strong>Path</strong>: A path in a graph is a sequence of vertices connected by edges. See <a href="#fig-path">Figure&nbsp;<span>12.11</span></a> for an example.</li>
+<li><strong>Path</strong>: A path in a graph is a sequence of vertices connected by edges. See <a href="#fig-path">Figure&nbsp;<span>14.11</span></a> for an example.</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1397,13 +1420,13 @@ C–D
 <path fill="none" stroke="black" d="M27,-71.7C27,-60.85 27,-46.92 27,-36.1"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.11: Example graph with a path from A to D.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.11: Example graph with a path from A to D.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li><strong>Cycle</strong>: A cycle is a closed path, where the first and last vertices in the path are the same, and no vertex is visited more than once. See <a href="#fig-cycle">Figure&nbsp;<span>12.12</span></a> for an example.</li>
+<li><strong>Cycle</strong>: A cycle is a closed path, where the first and last vertices in the path are the same, and no vertex is visited more than once. See <a href="#fig-cycle">Figure&nbsp;<span>14.12</span></a> for an example.</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1442,13 +1465,13 @@ C–A
 <path fill="none" stroke="black" d="M57.65,-36.09C59.68,-46.43 61.98,-59.91 63,-72 64.34,-87.94 64.34,-92.06 63,-108 61.98,-120.09 59.68,-133.57 57.65,-143.91"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.12: Example graph with a cycle. (A-B-C)</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.12: Example graph with a cycle. (A-B-C)</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li><strong>Connected vs Disconnected</strong>: A graph is connected if there is a path between every pair of vertices. If there is at least one pair of vertices with no path between them, the graph is disconnected. See <a href="#fig-connected-vs-disconnected-1">Figure&nbsp;<span>12.13</span></a> and <a href="#fig-connected-vs-disconnected-2">Figure&nbsp;<span>12.14</span></a> for examples.</li>
+<li><strong>Connected vs Disconnected</strong>: A graph is connected if there is a path between every pair of vertices. If there is at least one pair of vertices with no path between them, the graph is disconnected. See <a href="#fig-connected-vs-disconnected-1">Figure&nbsp;<span>14.13</span></a> and <a href="#fig-connected-vs-disconnected-2">Figure&nbsp;<span>14.14</span></a> for examples.</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1487,7 +1510,7 @@ C–A
 <path fill="none" stroke="black" d="M57.65,-36.09C59.68,-46.43 61.98,-59.91 63,-72 64.34,-87.94 64.34,-92.06 63,-108 61.98,-120.09 59.68,-133.57 57.65,-143.91"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.13: Example of a connected graph.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.13: Example of a connected graph.</figcaption>
 </figure>
 </div>
 </div>
@@ -1537,20 +1560,20 @@ D–E
 <path fill="none" stroke="black" d="M99,-143.7C99,-132.85 99,-118.92 99,-108.1"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.14: Example of a disconnected graph.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.14: Example of a disconnected graph.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="graph-notation" class="level3" data-number="12.3.2">
-<h3 data-number="12.3.2" class="anchored" data-anchor-id="graph-notation"><span class="header-section-number">12.3.2</span> Graph Notation</h3>
+<section id="graph-notation" class="level3" data-number="14.3.2">
+<h3 data-number="14.3.2" class="anchored" data-anchor-id="graph-notation"><span class="header-section-number">14.3.2</span> Graph Notation</h3>
 <p>We can use a notation like <span class="math inline">\(G(V, E)\)</span>, where <span class="math inline">\(V\)</span> is the set of vertices and <span class="math inline">\(E\)</span> is the set of edges, to represent a graph.</p>
 </section>
-<section id="special-types-of-graphs" class="level3" data-number="12.3.3">
-<h3 data-number="12.3.3" class="anchored" data-anchor-id="special-types-of-graphs"><span class="header-section-number">12.3.3</span> Special Types of Graphs</h3>
+<section id="special-types-of-graphs" class="level3" data-number="14.3.3">
+<h3 data-number="14.3.3" class="anchored" data-anchor-id="special-types-of-graphs"><span class="header-section-number">14.3.3</span> Special Types of Graphs</h3>
 <ul>
-<li><strong>Complete Graph</strong>: A complete graph is a simple graph in which every pair of vertices is connected by a unique edge. See <a href="#fig-complete-graph">Figure&nbsp;<span>12.15</span></a> for an example.</li>
+<li><strong>Complete Graph</strong>: A complete graph is a simple graph in which every pair of vertices is connected by a unique edge. See <a href="#fig-complete-graph">Figure&nbsp;<span>14.15</span></a> for an example.</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1605,13 +1628,13 @@ C–D
 <path fill="none" stroke="black" d="M38.93,-73.81C48.16,-62.07 60.87,-45.89 70.09,-34.16"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.15: Example of a complete graph.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.15: Example of a complete graph.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li><strong>Bipartite Graph</strong>: A bipartite graph is a graph whose vertices can be divided into two disjoint sets such that all edges connect vertices from one set to the other, with no edges connecting vertices within the same set. See <a href="#fig-bipartite-graph">Figure&nbsp;<span>12.16</span></a> for an example.</li>
+<li><strong>Bipartite Graph</strong>: A bipartite graph is a graph whose vertices can be divided into two disjoint sets such that all edges connect vertices from one set to the other, with no edges connecting vertices within the same set. See <a href="#fig-bipartite-graph">Figure&nbsp;<span>14.16</span></a> for an example.</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1674,13 +1697,13 @@ C–3
 <path fill="none" stroke="black" d="M156.43,-74.83C144.02,-62.77 126.27,-45.51 113.8,-33.38"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.16: Example of a bipartite graph.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.16: Example of a bipartite graph.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li><strong>Tree</strong>: A tree is an undirected graph with no cycles, and all vertices are connected. It has a hierarchical structure, with one vertex acting as the root, and the other vertices connected in a parent-child relationship. See <a href="#fig-tree">Figure&nbsp;<span>12.17</span></a> for an example.</li>
+<li><strong>Tree</strong>: A tree is an undirected graph with no cycles, and all vertices are connected. It has a hierarchical structure, with one vertex acting as the root, and the other vertices connected in a parent-child relationship. See <a href="#fig-tree">Figure&nbsp;<span>14.17</span></a> for an example.</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -1747,19 +1770,19 @@ C–G
 <path fill="none" stroke="black" d="M185.57,-74.83C197.98,-62.77 215.73,-45.51 228.2,-33.38"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.17: Example of a tree.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.17: Example of a tree.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="graph-representation" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="graph-representation"><span class="header-section-number">12.4</span> Graph Representation</h2>
+<section id="graph-representation" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="graph-representation"><span class="header-section-number">14.4</span> Graph Representation</h2>
 <p>In order to work with graphs in code or store them in memory, we need efficient ways to represent them. There are multiple methods to represent graphs, and the choice of representation depends on factors such as the density of the graph, the operations to be performed, and memory constraints.</p>
 <p>In this section, we will discuss two common methods to represent a graph: adjacency list and adjacency matrix.</p>
-<section id="adjacency-list" class="level3" data-number="12.4.1">
-<h3 data-number="12.4.1" class="anchored" data-anchor-id="adjacency-list"><span class="header-section-number">12.4.1</span> Adjacency List</h3>
+<section id="adjacency-list" class="level3" data-number="14.4.1">
+<h3 data-number="14.4.1" class="anchored" data-anchor-id="adjacency-list"><span class="header-section-number">14.4.1</span> Adjacency List</h3>
 <p>An <strong>adjacency list</strong> represents a graph by storing a list of adjacent vertices for each vertex in the graph. This can be implemented using an array of lists or a hash table, where the index or key corresponds to a vertex, and the value is a list of adjacent vertices.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -1806,14 +1829,14 @@ C–D
 <path fill="none" stroke="black" d="M90.65,-72.76C84.83,-61.46 77.11,-46.44 71.3,-35.15"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.18: See adjacency list for this example <a href="#lst-adjacency-list-example">Listing&nbsp;<span>12.1</span></a></figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.18: See adjacency list for this example <a href="#lst-adjacency-list-example">Listing&nbsp;<span>14.1</span></a></figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Adjacency list representation for figure <a href="#fig-adjacency-list-graph">Figure&nbsp;<span>12.18</span></a>:</p>
+<p>Adjacency list representation for figure <a href="#fig-adjacency-list-graph">Figure&nbsp;<span>14.18</span></a>:</p>
 <div id="lst-adjacency-list-example" class="listing">
-<p>Listing&nbsp;12.1: Adjacency list representation.</p>
+<p>Listing&nbsp;14.1: Adjacency list representation.</p>
 <div class="sourceCode" id="lst-adjacency-list-example" data-lst-cap="Adjacency list representation."><pre class="sourceCode rust code-with-copy"><code class="sourceCode rust"><span id="lst-adjacency-list-example-1"><a href="#lst-adjacency-list-example-1" aria-hidden="true" tabindex="-1"></a>A<span class="op">:</span> [B<span class="op">,</span> C]</span>
 <span id="lst-adjacency-list-example-2"><a href="#lst-adjacency-list-example-2" aria-hidden="true" tabindex="-1"></a>B<span class="op">:</span> [A<span class="op">,</span> D]</span>
 <span id="lst-adjacency-list-example-3"><a href="#lst-adjacency-list-example-3" aria-hidden="true" tabindex="-1"></a>C<span class="op">:</span> [A<span class="op">,</span> D]</span>
@@ -1827,8 +1850,8 @@ C–D
 </div>
 <p>The adjacency list representation is efficient for sparse graphs (graphs with relatively few edges) as it only stores the existing edges, reducing memory usage. This representation also allows for faster traversal of a vertex’s neighbors.</p>
 </section>
-<section id="adjacency-matrix" class="level3" data-number="12.4.2">
-<h3 data-number="12.4.2" class="anchored" data-anchor-id="adjacency-matrix"><span class="header-section-number">12.4.2</span> Adjacency Matrix</h3>
+<section id="adjacency-matrix" class="level3" data-number="14.4.2">
+<h3 data-number="14.4.2" class="anchored" data-anchor-id="adjacency-matrix"><span class="header-section-number">14.4.2</span> Adjacency Matrix</h3>
 <p>An <strong>adjacency matrix</strong> is a two-dimensional array (or matrix) where the cell at the i-th row and j-th column represents the edge between vertex i and vertex j. For an undirected graph, the adjacency matrix is symmetric. For a weighted graph, the values in the cells represent the weights of the edges; for an unweighted graph, the cells contain either 1 (edge exists) or 0 (no edge).</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -1874,13 +1897,13 @@ C–D
 <path fill="none" stroke="black" d="M90.65,-72.76C84.83,-61.46 77.11,-46.44 71.3,-35.15"></path> </g> </g>
 </svg>
 </div>
-<p>See adjacency matrix for this example <a href="#lst-adjacency-matrix-example">Listing&nbsp;<span>12.2</span></a></p>
+<p>See adjacency matrix for this example <a href="#lst-adjacency-matrix-example">Listing&nbsp;<span>14.2</span></a></p>
 </div>
 </div>
 </div>
 <p>Adjacency matrix representation (unweighted):</p>
 <div id="lst-adjacency-matrix-example" class="listing">
-<p>Listing&nbsp;12.2: Adjacency matrix representation.</p>
+<p>Listing&nbsp;14.2: Adjacency matrix representation.</p>
 <pre id="lst-adjacency-matrix-example" class="text" data-lst-cap="Adjacency matrix representation."><code>  A B C D
 A 0 1 1 0
 B 1 0 0 1
@@ -1889,8 +1912,8 @@ D 0 1 1 0</code></pre>
 </div>
 <p>The adjacency matrix representation is suitable for dense graphs (graphs with many edges) or when checking for the presence of an edge between two vertices needs to be fast. However, this representation can be inefficient in terms of memory usage, especially for large, sparse graphs, as it stores information for all possible edges, even if they do not exist.</p>
 </section>
-<section id="converting-between-representations" class="level3" data-number="12.4.3">
-<h3 data-number="12.4.3" class="anchored" data-anchor-id="converting-between-representations"><span class="header-section-number">12.4.3</span> Converting Between Representations</h3>
+<section id="converting-between-representations" class="level3" data-number="14.4.3">
+<h3 data-number="14.4.3" class="anchored" data-anchor-id="converting-between-representations"><span class="header-section-number">14.4.3</span> Converting Between Representations</h3>
 <p>To convert a graph diagram or notation into an adjacency list or an adjacency matrix, follow these steps:</p>
 <ol type="1">
 <li>Identify the vertices and edges in the graph.</li>
@@ -1905,8 +1928,8 @@ D 0 1 1 0</code></pre>
 </ol>
 </section>
 </section>
-<section id="graph-traversal" class="level2" data-number="12.5">
-<h2 data-number="12.5" class="anchored" data-anchor-id="graph-traversal"><span class="header-section-number">12.5</span> Graph Traversal</h2>
+<section id="graph-traversal" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="graph-traversal"><span class="header-section-number">14.5</span> Graph Traversal</h2>
 <p>Imagine you want to find the average age of all users on Facebook. With billions of users, it is infeasible to hold the entire graph of the friend network in memory. Ideally, we would want to find out information on each user one at a time, on a per-need basis. To achieve this, we can use graph traversal algorithms, which allow us to visit each user, add up their ages, and then calculate the average. A simple way to do this is to load information on a user, add all their friends to a stack, and then keep popping from the stack and requesting data from Facebook for each friend. When we receive the data, we mark that user as visited to avoid recounting their age if we reach the same user again. We then add friends of each loaded user to our stack and keep repeating until we run out of users in our stack.</p>
 <p>This problem illustrates the importance of graph traversal, a fundamental operation in graph theory. Graphs are a powerful and versatile data structure that can model various kinds of relationships and networks, such as social networks, computer networks, transportation networks, web pages, games, and many other domains. Graph traversal allows us to explore and manipulate graphs in various ways, with applications in domains like searching for specific nodes, finding the shortest path between nodes, and analyzing the structure of a graph.</p>
 <p>Graph traversal algorithms typically begin with a start node and attempt to visit the remaining nodes from there. They must deal with several troublesome cases, such as unreachable nodes, revisited nodes, and choosing which node to visit next among several options. To handle these cases, graph traversal algorithms use different strategies and data structures to keep track of which nodes have been visited and which nodes are still pending. The most common graph traversal algorithms are breadth-first search (BFS) and depth-first search (DFS), which differ in the order in which they visit the nodes.</p>
@@ -1917,10 +1940,10 @@ D 0 1 1 0</code></pre>
 <li>Depth-First Search (DFS)</li>
 </ol>
 <p>By understanding and implementing these graph traversal methods, you can efficiently explore and manipulate complex graphs to solve a wide range of problems.</p>
-<section id="breadth-first-search-bfs" class="level3" data-number="12.5.1">
-<h3 data-number="12.5.1" class="anchored" data-anchor-id="breadth-first-search-bfs"><span class="header-section-number">12.5.1</span> Breadth-First Search (BFS)</h3>
+<section id="breadth-first-search-bfs" class="level3" data-number="14.5.1">
+<h3 data-number="14.5.1" class="anchored" data-anchor-id="breadth-first-search-bfs"><span class="header-section-number">14.5.1</span> Breadth-First Search (BFS)</h3>
 <p><strong>Breadth-First Search</strong> explores a graph by visiting all the neighbors of the starting vertex before moving on to their neighbors. BFS uses a queue data structure to keep track of the vertices to visit.</p>
-<p>Here’s a step-by-step example of BFS traversal (for the graph in example <a href="#fig-bfs-example">Figure&nbsp;<span>12.19</span></a>):</p>
+<p>Here’s a step-by-step example of BFS traversal (for the graph in example <a href="#fig-bfs-example">Figure&nbsp;<span>14.19</span></a>):</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-bfs-example" class="quarto-figure quarto-figure-center anchored">
@@ -1974,7 +1997,7 @@ C–E
 <path fill="none" stroke="black" d="M99,-71.7C99,-60.85 99,-46.92 99,-36.1"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.19: Example graph for BFS traversal.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.19: Example graph for BFS traversal.</figcaption>
 </figure>
 </div>
 </div>
@@ -2003,10 +2026,10 @@ C–E
         Mark neighbor as visited
         Enqueue neighbor into Q</code></pre>
 </section>
-<section id="depth-first-search-dfs" class="level3" data-number="12.5.2">
-<h3 data-number="12.5.2" class="anchored" data-anchor-id="depth-first-search-dfs"><span class="header-section-number">12.5.2</span> Depth-First Search (DFS)</h3>
+<section id="depth-first-search-dfs" class="level3" data-number="14.5.2">
+<h3 data-number="14.5.2" class="anchored" data-anchor-id="depth-first-search-dfs"><span class="header-section-number">14.5.2</span> Depth-First Search (DFS)</h3>
 <p><strong>Depth-First Search</strong> explores a graph by visiting a vertex and its neighbors as deeply as possible before backtracking. DFS can be implemented using recursion or an explicit stack data structure.</p>
-<p>Here’s a step-by-step example of DFS traversal (for the graph in example <a href="#fig-dfs-example">Figure&nbsp;<span>12.20</span></a>):</p>
+<p>Here’s a step-by-step example of DFS traversal (for the graph in example <a href="#fig-dfs-example">Figure&nbsp;<span>14.20</span></a>):</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-dfs-example" class="quarto-figure quarto-figure-center anchored">
@@ -2060,7 +2083,7 @@ C–E
 <path fill="none" stroke="black" d="M99,-71.7C99,-60.85 99,-46.92 99,-36.1"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;12.20: Example graph for DFS traversal.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;14.20: Example graph for DFS traversal.</figcaption>
 </figure>
 </div>
 </div>
@@ -2098,8 +2121,8 @@ C–E
         Mark neighbor as visited
         Push neighbor onto S</code></pre>
 </section>
-<section id="applications-and-variations-of-bfs-and-dfs" class="level3" data-number="12.5.3">
-<h3 data-number="12.5.3" class="anchored" data-anchor-id="applications-and-variations-of-bfs-and-dfs"><span class="header-section-number">12.5.3</span> Applications and Variations of BFS and DFS</h3>
+<section id="applications-and-variations-of-bfs-and-dfs" class="level3" data-number="14.5.3">
+<h3 data-number="14.5.3" class="anchored" data-anchor-id="applications-and-variations-of-bfs-and-dfs"><span class="header-section-number">14.5.3</span> Applications and Variations of BFS and DFS</h3>
 <p>Both BFS and DFS have numerous applications and can be adapted to solve various graph-related problems:</p>
 <ul>
 <li><p><strong>Shortest path</strong>: BFS can be used to find the shortest path between two vertices in an unweighted graph. The algorithm can be modified to keep track of the path length or the actual path itself.</p></li>
@@ -2351,13 +2374,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./11_linear_search.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Linear Search</span></span>
+      <a href="./13_operations_on_lists.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./22_hashing.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
