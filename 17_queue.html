@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - Summer 2023 - 9&nbsp; Comparable and Comparator</title>
+<title>ITSC 2214 - Data Structures and Algorithms - Summer 2023 - 17&nbsp; Queue Data Structure</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./10_bubble_selection_insertion_sort.html" rel="next">
-<link href="./08_sorting_intro.html" rel="prev">
+<link href="./21_graphs.html" rel="next">
+<link href="./16_stack.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -109,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08_sorting_intro.html">Iterative Sorting and Searching</a></li><li class="breadcrumb-item"><a href="./09_comparable_comparator.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./16_stack.html">Stacks and Queues</a></li><li class="breadcrumb-item"><a href="./17_queue.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -232,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09_comparable_comparator.html" class="sidebar-item-text sidebar-link active">
+  <a href="./09_comparable_comparator.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
   </div>
 </li>
@@ -302,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./17_queue.html" class="sidebar-item-text sidebar-link">
+  <a href="./17_queue.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span></a>
   </div>
 </li>
@@ -358,12 +324,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sorting-complex-objects" id="toc-sorting-complex-objects" class="nav-link active" data-scroll-target="#sorting-complex-objects"><span class="header-section-number">9.1</span> Sorting Complex Objects</a></li>
-  <li><a href="#defining-a-comparison-method" id="toc-defining-a-comparison-method" class="nav-link" data-scroll-target="#defining-a-comparison-method"><span class="header-section-number">9.2</span> Defining a Comparison Method</a></li>
-  <li><a href="#implementing-comparable" id="toc-implementing-comparable" class="nav-link" data-scroll-target="#implementing-comparable"><span class="header-section-number">9.3</span> Implementing Comparable</a></li>
-  <li><a href="#comparable-in-the-standard-library" id="toc-comparable-in-the-standard-library" class="nav-link" data-scroll-target="#comparable-in-the-standard-library"><span class="header-section-number">9.4</span> <code>Comparable</code> in the Standard Library</a></li>
-  <li><a href="#sorting-flexibility-with-comparator" id="toc-sorting-flexibility-with-comparator" class="nav-link" data-scroll-target="#sorting-flexibility-with-comparator"><span class="header-section-number">9.5</span> Sorting Flexibility with <code>Comparator</code></a></li>
-  <li><a href="#understanding-natural-and-total-orderings" id="toc-understanding-natural-and-total-orderings" class="nav-link" data-scroll-target="#understanding-natural-and-total-orderings"><span class="header-section-number">9.6</span> Understanding Natural and Total Orderings</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">17.1</span> Introduction</a></li>
+  <li><a href="#operations-on-a-queue" id="toc-operations-on-a-queue" class="nav-link" data-scroll-target="#operations-on-a-queue"><span class="header-section-number">17.2</span> Operations on a Queue</a></li>
+  <li><a href="#applications-of-queues" id="toc-applications-of-queues" class="nav-link" data-scroll-target="#applications-of-queues"><span class="header-section-number">17.3</span> Applications of Queues</a></li>
   </ul>
 </nav>
     </div>
@@ -372,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></h1>
 </div>
 
 
@@ -387,83 +350,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="sorting-complex-objects" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="sorting-complex-objects"><span class="header-section-number">9.1</span> Sorting Complex Objects</h2>
-<p>In our previous lessons, we have primarily dealt with arrays of basic data types, such as integers, which are inherently easy to compare and sort. However, software development often involves sorting collections of complex objects, such as <code>Employee</code> or <code>Student</code> objects. These user-defined types lack a natural order for comparison, necessitating a custom solution.</p>
+<section id="introduction" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">17.1</span> Introduction</h2>
+<p>A queue is a linear data structure that is open at both ends and follows a particular order for storing data. The order is <strong>First In First Out</strong> (FIFO). That means that the first element that is added to the queue is also the first one that is removed from it3. One can imagine a queue as a line of people waiting to receive something in sequential order which starts from the beginning of the line.</p>
+<p>Some real-life examples of queues are:</p>
+<ul>
+<li>Waiting lines at a bank, a restaurant, or an airport</li>
+<li>Printer jobs that are processed in the order they are received</li>
+<li>Customer service calls that are answered based on who called first</li>
+</ul>
+<p>Queues are useful for modeling situations where we need to process data elements one by one in the order they arrive.</p>
 </section>
-<section id="defining-a-comparison-method" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="defining-a-comparison-method"><span class="header-section-number">9.2</span> Defining a Comparison Method</h2>
-<p>A rudimentary solution could involve appending a comparison method to our <code>Employee</code> or <code>Student</code> classes, like <code>compareSalary</code> or <code>compareGPA</code>. However, this design lacks versatility - each new attribute requires a fresh comparison method.</p>
-<p>A superior solution employs the <code>Comparable</code> interface, comprising a single method, <code>compareTo</code>. This method, accepting an object of the same type, returns an integer indicating if the current object is lesser than, equal to, or greater than the input object.</p>
-<p>The <code>Comparable</code> interface in Java is defined as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">interface</span> <span class="bu">Comparable</span><span class="op">&lt;</span>T<span class="op">&gt;</span> <span class="op">{</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> <span class="fu">compareTo</span><span class="op">(</span>T o<span class="op">);</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="operations-on-a-queue" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="operations-on-a-queue"><span class="header-section-number">17.2</span> Operations on a Queue</h2>
+<p>The main operations that we can perform on a queue are:</p>
+<ul>
+<li><strong>Enqueue</strong>: This operation adds an element to the rear end of the queue. We can only enqueue an element if the queue is not full.</li>
+<li><strong>Dequeue</strong>: This operation removes an element from the front end of the queue. We can only dequeue an element if the queue is not empty. The dequeued element is returned as the output of this operation.</li>
+<li><strong>Peek</strong> or <strong>Front</strong>: This operation returns (but does not remove) the element at the front end of the queue without modifying it. We can only peek at an element if the queue is not empty.</li>
+<li><strong>Poll</strong>: This operation is similar to dequeue, but it returns null instead of throwing an exception if the queue is empty.</li>
+</ul>
+<blockquote class="blockquote">
+<p>Note that the exact operations, their names and behavior often vary depending on the programming language and the implementation of the queue. You always need to check the documentation of the programming language you are using to know the exact operations and their behavior.</p>
+</blockquote>
 </section>
-<section id="implementing-comparable" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="implementing-comparable"><span class="header-section-number">9.3</span> Implementing Comparable</h2>
-<p>Implementing the <code>Comparable</code> interface in any class endows it with sortable attributes. For example, sorting <code>Student</code> objects by GPA could be achieved by implementing <code>Comparable&lt;Student&gt;</code> in the <code>Student</code> class, defining <code>compareTo</code> to compare GPAs:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Student <span class="kw">implements</span> <span class="bu">Comparable</span><span class="op">&lt;</span>Student<span class="op">&gt;</span> <span class="op">{</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">double</span> gpa<span class="op">;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// other fields and methods...</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Override</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">compareTo</span><span class="op">(</span>Student other<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">Double</span><span class="op">.</span><span class="fu">compare</span><span class="op">(</span><span class="kw">this</span><span class="op">.</span><span class="fu">gpa</span><span class="op">,</span> other<span class="op">.</span><span class="fu">gpa</span><span class="op">);</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The array of <code>Student</code> objects can be sorted with our new comparison logic, <code>arr[j].compareTo(arr[j+1]) &gt; 0</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="op">&lt;</span>T <span class="kw">extends</span> <span class="bu">Comparable</span><span class="op">&lt;</span>T<span class="op">&gt;&gt;</span> <span class="dt">void</span> <span class="fu">sort</span><span class="op">(</span>T<span class="op">[]</span> arr<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> arr<span class="op">.</span><span class="fu">length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&gt;</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">--)</span> <span class="op">{</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> i<span class="op">;</span> j<span class="op">++)</span> <span class="op">{</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="op">(</span>arr<span class="op">[</span>j<span class="op">].</span><span class="fu">compareTo</span><span class="op">(</span>arr<span class="op">[</span>j<span class="op">+</span><span class="dv">1</span><span class="op">])</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                T temp <span class="op">=</span> arr<span class="op">[</span>j<span class="op">];</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                arr<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span> arr<span class="op">[</span>j<span class="op">+</span><span class="dv">1</span><span class="op">];</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                arr<span class="op">[</span>j<span class="op">+</span><span class="dv">1</span><span class="op">]</span> <span class="op">=</span> temp<span class="op">;</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="comparable-in-the-standard-library" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="comparable-in-the-standard-library"><span class="header-section-number">9.4</span> <code>Comparable</code> in the Standard Library</h2>
-<p>The <code>Comparable</code> interface facilitates the creation of versatile sorting functions, capable of sorting arrays of any type implementing <code>Comparable</code>. This applies to user-defined types, as well as many built-in types in the Java standard library.</p>
-<p>Implementing the <code>Comparable</code> interface communicates that a class is able to be compared with other instances of its type. This standard behavior empowers methods to interact with objects more abstractly and flexibly.</p>
-<p>The Java standard library provides a <code>Comparable</code> interface similar to the one defined earlier. Many built-in classes such as <code>Integer</code>, <code>Double</code>, and <code>String</code> already implement this interface, enabling their comparison and sorting with no additional code. Our <code>Student</code> class can be modified to use <code>java.lang.Comparable</code> in place of our custom interface, maintaining the same <code>compareTo</code> method for use in our generic sort function.</p>
-</section>
-<section id="sorting-flexibility-with-comparator" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="sorting-flexibility-with-comparator"><span class="header-section-number">9.5</span> Sorting Flexibility with <code>Comparator</code></h2>
-<p>The <code>Comparable</code> interface is limited to a single <code>compareTo</code> method per class. When multiple sorting methods are required, Java’s <code>Comparator</code> interface comes into play. <code>Comparator</code> represents different orderings for a specific type, allowing multiple comparators per class.</p>
-<p>For instance, a <code>Comparator</code> for <code>Student</code> objects that orders by GPA could look like this:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">util</span><span class="op">.</span><span class="fu">Comparator</span><span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> StudentGPAComparator <span class="kw">implements</span> <span class="bu">Comparator</span><span class="op">&lt;</span>Student<span class="op">&gt;</span> <span class="op">{</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Override</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">compare</span><span class="op">(</span>Student s1<span class="op">,</span> Student s2<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">Double</span><span class="op">.</span><span class="fu">compare</span><span class="op">(</span>s1<span class="op">.</span><span class="fu">getGPA</span><span class="op">(),</span> s2<span class="op">.</span><span class="fu">getGPA</span><span class="op">());</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>A modified version of our generic sort function, now accepting a <code>Comparator</code>, can compare elements of the array:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="op">&lt;</span>T<span class="op">&gt;</span> <span class="dt">void</span> <span class="fu">sort</span><span class="op">(</span>T<span class="op">[]</span> arr<span class="op">,</span> <span class="bu">Comparator</span><span class="op">&lt;?</span> <span class="kw">super</span> T<span class="op">&gt;</span> comparator<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> arr<span class="op">.</span><span class="fu">length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&gt;</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">--)</span> <span class="op">{</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> i<span class="op">;</span> j<span class="op">++)</span> <span class="op">{</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="op">(</span>comparator<span class="op">.</span><span class="fu">compare</span><span class="op">(</span>arr<span class="op">[</span>j<span class="op">],</span> arr<span class="op">[</span>j<span class="op">+</span><span class="dv">1</span><span class="op">])</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                T temp <span class="op">=</span> arr<span class="op">[</span>j<span class="op">];</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                arr<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span> arr<span class="op">[</span>j<span class="op">+</span><span class="dv">1</span><span class="op">];</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                arr<span class="op">[</span>j<span class="op">+</span><span class="dv">1</span><span class="op">]</span> <span class="op">=</span> temp<span class="op">;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="understanding-natural-and-total-orderings" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="understanding-natural-and-total-orderings"><span class="header-section-number">9.6</span> Understanding Natural and Total Orderings</h2>
-<p>Implementing <code>Comparable</code> endows a class with a <em>natural ordering</em>, a default ordering used in operations like sorting. For example, <code>String</code> objects follow lexicographic order and <code>Integer</code> objects adhere to numerical order. When <code>Comparable&lt;Student&gt;</code> is implemented to compare GPAs, we establish GPA as the natural ordering for <code>Student</code> objects.</p>
-<p>Java’s <code>Comparator</code> interface allows the definition of additional orderings, known as <em>total orderings</em>. While the natural ordering is default, total orderings, which also follow rules of completeness, transitivity, and antisymmetry, provide flexibility to define any suitable ordering.</p>
-<p>The <code>Comparable</code> and <code>Comparator</code> interfaces epitomize the power of abstraction in computer science. By concentrating on the core concept of order and essential operations involving order, we can create general, flexible, and reusable code to work with a broad spectrum of data types and orderings.</p>
-<p>In the next chapter, we will delve into how these concepts are employed in data structures like trees and heaps to manage data for efficient searching and sorting. For now, contemplate the elegance and versatility of the <code>Comparable</code> and <code>Comparator</code> interfaces, and the compelling concept of order they embody.</p>
+<section id="applications-of-queues" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="applications-of-queues"><span class="header-section-number">17.3</span> Applications of Queues</h2>
+<p>A queue data structure is generally used in scenarios where we need to follow a <strong>First In First Out (FIFO)</strong> approach for managing data elements. That means that we process data elements one by one in the order they arrive or are added to the queue.</p>
+<p>Some common applications of the queue data structure are:</p>
+<ul>
+<li><p><strong>Task Scheduling</strong>: Queues can be used to schedule tasks based on priority or the order in which they were received. For example, a printer may use a queue to store print jobs that are waiting to be executed. The printer will print the documents in the order they were added to the queue, ensuring fairness and efficiency.</p></li>
+<li><p><strong>Resource Allocation</strong>: Queues can be used to manage and allocate resources, such as printers, CPU processing time, disk space, etc. For example, an operating system may use a queue to handle requests for CPU time from different processes. The operating system will grant CPU time to each process based on its position in the queue, ensuring that no process is starved or neglected.</p></li>
+<li><p><strong>Data Buffering</strong>: Queues can be used to buffer data between two components that operate at different speeds or have different capacities. For example, a keyboard may use a queue to store keystrokes that are entered by the user but not yet processed by the computer. The keyboard will enqueue each keystroke as it is typed, and the computer will dequeue each keystroke as it is ready to process it.</p></li>
+</ul>
+<p>One application of queue data structure that we will focus on is <strong>CPU Scheduling</strong>.</p>
+<p>CPU scheduling is the problem of deciding which process should get access to the CPU at any given time. CPU scheduling is important for optimizing CPU utilization, throughput, response time, waiting time, etc. CPU scheduling algorithms use queues to store processes that are ready or waiting for execution.</p>
+<p>Different types of queues can be used for CPU scheduling:</p>
+<ul>
+<li><p><strong>Single Queue</strong>: This is a simple FIFO queue that stores all processes that are ready for execution. The CPU will execute processes in the order they arrive or are added to this queue. This type of queue ensures fairness but does not consider priority or burst time (the amount of time required by a process for execution) of processes. An example of this type of queue is FCFS (First Come First Serve) scheduling algorithm.</p></li>
+<li><p><strong>Multiple Queues</strong>: This is a set of FIFO queues that store processes based on some criteria such as priority or burst time. The CPU will execute processes from different queues according to some rules such as round robin (each queue gets an equal share of CPU time), shortest job first (the queue with the shortest burst time gets higher preference), etc. This type of queue allows more flexibility and control over CPU scheduling but may introduce complexity and overheads. An example of this type of queue is MLFQ (Multi-Level Feedback Queue) scheduling algorithm.</p></li>
+<li><p><strong>Priority Queue</strong>: This is a special type of queue that stores processes based on their priority values. The priority value can be static (assigned at creation) or dynamic (changed during execution). The CPU will execute processes with higher priority values before lower ones. This type of queue ensures urgency but may cause starvation (low-priority processes never get executed) or inversion (high-priority process waits for the low-priority process) problems.</p></li>
+</ul>
 
 
 </section>
@@ -704,13 +631,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./08_sorting_intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span>
+      <a href="./16_stack.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./10_bubble_selection_insertion_sort.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./21_graphs.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">The Graph Data Structure</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

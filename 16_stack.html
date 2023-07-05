@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - Summer 2023 - 9&nbsp; Comparable and Comparator</title>
+<title>ITSC 2214 - Data Structures and Algorithms - Summer 2023 - 16&nbsp; Stack Data Structure</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./10_bubble_selection_insertion_sort.html" rel="next">
-<link href="./08_sorting_intro.html" rel="prev">
+<link href="./17_queue.html" rel="next">
+<link href="./15_implementing_linkedlists.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -109,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08_sorting_intro.html">Iterative Sorting and Searching</a></li><li class="breadcrumb-item"><a href="./09_comparable_comparator.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./16_stack.html">Stacks and Queues</a></li><li class="breadcrumb-item"><a href="./16_stack.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -232,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09_comparable_comparator.html" class="sidebar-item-text sidebar-link active">
+  <a href="./09_comparable_comparator.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
   </div>
 </li>
@@ -296,7 +262,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./16_stack.html" class="sidebar-item-text sidebar-link">
+  <a href="./16_stack.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span></a>
   </div>
 </li>
@@ -358,12 +324,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sorting-complex-objects" id="toc-sorting-complex-objects" class="nav-link active" data-scroll-target="#sorting-complex-objects"><span class="header-section-number">9.1</span> Sorting Complex Objects</a></li>
-  <li><a href="#defining-a-comparison-method" id="toc-defining-a-comparison-method" class="nav-link" data-scroll-target="#defining-a-comparison-method"><span class="header-section-number">9.2</span> Defining a Comparison Method</a></li>
-  <li><a href="#implementing-comparable" id="toc-implementing-comparable" class="nav-link" data-scroll-target="#implementing-comparable"><span class="header-section-number">9.3</span> Implementing Comparable</a></li>
-  <li><a href="#comparable-in-the-standard-library" id="toc-comparable-in-the-standard-library" class="nav-link" data-scroll-target="#comparable-in-the-standard-library"><span class="header-section-number">9.4</span> <code>Comparable</code> in the Standard Library</a></li>
-  <li><a href="#sorting-flexibility-with-comparator" id="toc-sorting-flexibility-with-comparator" class="nav-link" data-scroll-target="#sorting-flexibility-with-comparator"><span class="header-section-number">9.5</span> Sorting Flexibility with <code>Comparator</code></a></li>
-  <li><a href="#understanding-natural-and-total-orderings" id="toc-understanding-natural-and-total-orderings" class="nav-link" data-scroll-target="#understanding-natural-and-total-orderings"><span class="header-section-number">9.6</span> Understanding Natural and Total Orderings</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">16.1</span> Introduction</a></li>
+  <li><a href="#operations-on-a-stack" id="toc-operations-on-a-stack" class="nav-link" data-scroll-target="#operations-on-a-stack"><span class="header-section-number">16.2</span> Operations on a Stack</a></li>
+  <li><a href="#applications-of-a-stack" id="toc-applications-of-a-stack" class="nav-link" data-scroll-target="#applications-of-a-stack"><span class="header-section-number">16.3</span> Applications of a Stack</a></li>
   </ul>
 </nav>
     </div>
@@ -372,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></h1>
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></h1>
 </div>
 
 
@@ -387,83 +350,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="sorting-complex-objects" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="sorting-complex-objects"><span class="header-section-number">9.1</span> Sorting Complex Objects</h2>
-<p>In our previous lessons, we have primarily dealt with arrays of basic data types, such as integers, which are inherently easy to compare and sort. However, software development often involves sorting collections of complex objects, such as <code>Employee</code> or <code>Student</code> objects. These user-defined types lack a natural order for comparison, necessitating a custom solution.</p>
+<section id="introduction" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">16.1</span> Introduction</h2>
+<p>A stack is a linear data structure that follows a <strong>last-in-first-out (LIFO)</strong> principle. That means the last element added to a stack is the first one to be removed. A stack has only one end, called the <strong>top</strong>, where elements can be inserted or deleted.</p>
+<p>You can think of a stack as a pile of books. You can only add or remove books from the top of the pile. The book that you added last will be on top, and you have to remove it first before you can access any other book below it.</p>
+<p>Stacks are useful for many applications that require reversing, backtracking, or undoing operations. For example, when you use an undo button in a text editor, you are using a stack to store your previous actions and revert them in reverse order.</p>
 </section>
-<section id="defining-a-comparison-method" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="defining-a-comparison-method"><span class="header-section-number">9.2</span> Defining a Comparison Method</h2>
-<p>A rudimentary solution could involve appending a comparison method to our <code>Employee</code> or <code>Student</code> classes, like <code>compareSalary</code> or <code>compareGPA</code>. However, this design lacks versatility - each new attribute requires a fresh comparison method.</p>
-<p>A superior solution employs the <code>Comparable</code> interface, comprising a single method, <code>compareTo</code>. This method, accepting an object of the same type, returns an integer indicating if the current object is lesser than, equal to, or greater than the input object.</p>
-<p>The <code>Comparable</code> interface in Java is defined as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">interface</span> <span class="bu">Comparable</span><span class="op">&lt;</span>T<span class="op">&gt;</span> <span class="op">{</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> <span class="fu">compareTo</span><span class="op">(</span>T o<span class="op">);</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="operations-on-a-stack" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="operations-on-a-stack"><span class="header-section-number">16.2</span> Operations on a Stack</h2>
+<p>The two basic operations of a stack are <strong>push</strong> and <strong>pop</strong>. Push adds a new element to the top of the stack, while pop removes an element from the top of the stack. Both operations take constant time, that is <strong>O(1)</strong>, because they only involve changing one pointer.</p>
+<p>Another operation that can be useful for stacks is <strong>peek</strong>. Peek returns the top element of the stack without removing it. This can be helpful for checking what is on top of the stack before performing any other operation. Peek also takes constant time, <strong>O(1)</strong>, because it only accesses one element.</p>
+<p>Here is an example of how these operations work on a stack:</p>
+<ul>
+<li>Initially, the stack is empty: <code>[]</code></li>
+<li>Push 10: <code>[10]</code></li>
+<li>Push 20: <code>[10, 20]</code></li>
+<li>Push 30: <code>[10, 20, 30]</code></li>
+<li>Pop: returns 30 and removes it from the stack: <code>[10, 20]</code></li>
+<li>Peek: returns 20 but does not remove it from the stack: <code>[10, 20]</code></li>
+<li>Pop: returns 20 and removes it from the stack: <code>[10]</code></li>
+<li>Pop: returns 10 and removes it from the stack: <code>[]</code></li>
+<li>Pop: returns an error or null because there is nothing to pop</li>
+</ul>
 </section>
-<section id="implementing-comparable" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="implementing-comparable"><span class="header-section-number">9.3</span> Implementing Comparable</h2>
-<p>Implementing the <code>Comparable</code> interface in any class endows it with sortable attributes. For example, sorting <code>Student</code> objects by GPA could be achieved by implementing <code>Comparable&lt;Student&gt;</code> in the <code>Student</code> class, defining <code>compareTo</code> to compare GPAs:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Student <span class="kw">implements</span> <span class="bu">Comparable</span><span class="op">&lt;</span>Student<span class="op">&gt;</span> <span class="op">{</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">double</span> gpa<span class="op">;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// other fields and methods...</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Override</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">compareTo</span><span class="op">(</span>Student other<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">Double</span><span class="op">.</span><span class="fu">compare</span><span class="op">(</span><span class="kw">this</span><span class="op">.</span><span class="fu">gpa</span><span class="op">,</span> other<span class="op">.</span><span class="fu">gpa</span><span class="op">);</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The array of <code>Student</code> objects can be sorted with our new comparison logic, <code>arr[j].compareTo(arr[j+1]) &gt; 0</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="op">&lt;</span>T <span class="kw">extends</span> <span class="bu">Comparable</span><span class="op">&lt;</span>T<span class="op">&gt;&gt;</span> <span class="dt">void</span> <span class="fu">sort</span><span class="op">(</span>T<span class="op">[]</span> arr<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> arr<span class="op">.</span><span class="fu">length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&gt;</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">--)</span> <span class="op">{</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> i<span class="op">;</span> j<span class="op">++)</span> <span class="op">{</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="op">(</span>arr<span class="op">[</span>j<span class="op">].</span><span class="fu">compareTo</span><span class="op">(</span>arr<span class="op">[</span>j<span class="op">+</span><span class="dv">1</span><span class="op">])</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                T temp <span class="op">=</span> arr<span class="op">[</span>j<span class="op">];</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                arr<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span> arr<span class="op">[</span>j<span class="op">+</span><span class="dv">1</span><span class="op">];</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                arr<span class="op">[</span>j<span class="op">+</span><span class="dv">1</span><span class="op">]</span> <span class="op">=</span> temp<span class="op">;</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="comparable-in-the-standard-library" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="comparable-in-the-standard-library"><span class="header-section-number">9.4</span> <code>Comparable</code> in the Standard Library</h2>
-<p>The <code>Comparable</code> interface facilitates the creation of versatile sorting functions, capable of sorting arrays of any type implementing <code>Comparable</code>. This applies to user-defined types, as well as many built-in types in the Java standard library.</p>
-<p>Implementing the <code>Comparable</code> interface communicates that a class is able to be compared with other instances of its type. This standard behavior empowers methods to interact with objects more abstractly and flexibly.</p>
-<p>The Java standard library provides a <code>Comparable</code> interface similar to the one defined earlier. Many built-in classes such as <code>Integer</code>, <code>Double</code>, and <code>String</code> already implement this interface, enabling their comparison and sorting with no additional code. Our <code>Student</code> class can be modified to use <code>java.lang.Comparable</code> in place of our custom interface, maintaining the same <code>compareTo</code> method for use in our generic sort function.</p>
-</section>
-<section id="sorting-flexibility-with-comparator" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="sorting-flexibility-with-comparator"><span class="header-section-number">9.5</span> Sorting Flexibility with <code>Comparator</code></h2>
-<p>The <code>Comparable</code> interface is limited to a single <code>compareTo</code> method per class. When multiple sorting methods are required, Java’s <code>Comparator</code> interface comes into play. <code>Comparator</code> represents different orderings for a specific type, allowing multiple comparators per class.</p>
-<p>For instance, a <code>Comparator</code> for <code>Student</code> objects that orders by GPA could look like this:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">.</span><span class="fu">util</span><span class="op">.</span><span class="fu">Comparator</span><span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> StudentGPAComparator <span class="kw">implements</span> <span class="bu">Comparator</span><span class="op">&lt;</span>Student<span class="op">&gt;</span> <span class="op">{</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Override</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">compare</span><span class="op">(</span>Student s1<span class="op">,</span> Student s2<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">Double</span><span class="op">.</span><span class="fu">compare</span><span class="op">(</span>s1<span class="op">.</span><span class="fu">getGPA</span><span class="op">(),</span> s2<span class="op">.</span><span class="fu">getGPA</span><span class="op">());</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>A modified version of our generic sort function, now accepting a <code>Comparator</code>, can compare elements of the array:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="op">&lt;</span>T<span class="op">&gt;</span> <span class="dt">void</span> <span class="fu">sort</span><span class="op">(</span>T<span class="op">[]</span> arr<span class="op">,</span> <span class="bu">Comparator</span><span class="op">&lt;?</span> <span class="kw">super</span> T<span class="op">&gt;</span> comparator<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> arr<span class="op">.</span><span class="fu">length</span> <span class="op">-</span> <span class="dv">1</span><span class="op">;</span> i <span class="op">&gt;</span> <span class="dv">0</span><span class="op">;</span> i<span class="op">--)</span> <span class="op">{</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> i<span class="op">;</span> j<span class="op">++)</span> <span class="op">{</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="op">(</span>comparator<span class="op">.</span><span class="fu">compare</span><span class="op">(</span>arr<span class="op">[</span>j<span class="op">],</span> arr<span class="op">[</span>j<span class="op">+</span><span class="dv">1</span><span class="op">])</span> <span class="op">&gt;</span> <span class="dv">0</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                T temp <span class="op">=</span> arr<span class="op">[</span>j<span class="op">];</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                arr<span class="op">[</span>j<span class="op">]</span> <span class="op">=</span> arr<span class="op">[</span>j<span class="op">+</span><span class="dv">1</span><span class="op">];</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                arr<span class="op">[</span>j<span class="op">+</span><span class="dv">1</span><span class="op">]</span> <span class="op">=</span> temp<span class="op">;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="understanding-natural-and-total-orderings" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="understanding-natural-and-total-orderings"><span class="header-section-number">9.6</span> Understanding Natural and Total Orderings</h2>
-<p>Implementing <code>Comparable</code> endows a class with a <em>natural ordering</em>, a default ordering used in operations like sorting. For example, <code>String</code> objects follow lexicographic order and <code>Integer</code> objects adhere to numerical order. When <code>Comparable&lt;Student&gt;</code> is implemented to compare GPAs, we establish GPA as the natural ordering for <code>Student</code> objects.</p>
-<p>Java’s <code>Comparator</code> interface allows the definition of additional orderings, known as <em>total orderings</em>. While the natural ordering is default, total orderings, which also follow rules of completeness, transitivity, and antisymmetry, provide flexibility to define any suitable ordering.</p>
-<p>The <code>Comparable</code> and <code>Comparator</code> interfaces epitomize the power of abstraction in computer science. By concentrating on the core concept of order and essential operations involving order, we can create general, flexible, and reusable code to work with a broad spectrum of data types and orderings.</p>
-<p>In the next chapter, we will delve into how these concepts are employed in data structures like trees and heaps to manage data for efficient searching and sorting. For now, contemplate the elegance and versatility of the <code>Comparable</code> and <code>Comparator</code> interfaces, and the compelling concept of order they embody.</p>
+<section id="applications-of-a-stack" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="applications-of-a-stack"><span class="header-section-number">16.3</span> Applications of a Stack</h2>
+<p>Stacks have many applications in various domains, such as expression evaluation, backtracking, function calls, undo/redo operations, browser history, etc. In this section, we will focus on one application: expression evaluation.</p>
+<p>Expression evaluation is the process of computing the value of an arithmetic or logical expression. For example, given an expression like <code>2 + 3 4 - 5 / (6 + 7)</code>, we want to find its value according to some rules of precedence and associativity.</p>
+<p>So, for the problem of “Expression evaluation”, the input is a <strong>string</strong> like <code>"2 + 3 * 4 - 5 / (6 + 7)"</code>, and the output is the <strong>value</strong> of the expression as an integer or a floating point number. This is much harder to do than it initially appears to be, particularly when we consider the rules of precedence and associativity.</p>
+<p>To solve this problem, we can first convert an expression from infix notation (where operators are between operands) to postfix notation (where operators are after operands) using a stack.</p>
+<p>It is useful to convert infix expressions to postfix expressions because postfix expressions are easier for computers to evaluate. Postfix expressions do not need parentheses or precedence rules to determine the order of operations. They can be evaluated from left to right using a stack.</p>
+<ul>
+<li>Infix: <code>2 + 3 * 4</code> (=&gt; <code>2 + 12</code> =&gt; <code>14</code>)</li>
+<li>Postfix: <code>2 3 4 * +</code> (=&gt; <code>2 12 +</code> =&gt; <code>14</code>)</li>
+<li>Infix: <code>2 + 3 * 4 - 5 / (6 + 7)</code></li>
+<li>Postfix: <code>2 3 4 * + 5 6 7 + / -</code></li>
+</ul>
+<p>For example, to evaluate a postfix expression like <code>2 3 4 * +</code>, we can use a stack as follows:</p>
+<ol type="1">
+<li>Scan the expression from left to right</li>
+<li>If we encounter an operand (a number), we push it onto the stack</li>
+<li>If we encounter an operator (+, -, *, /), we pop two operands from the stack, apply the operator on them, and push the result back onto the stack</li>
+<li>At the end of the expression, there will be only one value on the stack, which is the final result.</li>
+</ol>
+<p>Here are the steps in action -</p>
+<ol type="1">
+<li>Scan the expression from left to right - <code>2 3 4 * +</code></li>
+<li>Encounter 2, push it onto the stack (stack: [2])</li>
+<li>Encounter 3, push it onto the stack (stack: [2, 3])</li>
+<li>Encounter 4, push it onto the stack (stack: [2, 3, 4])</li>
+<li>Encounter , pop two operands (4 and 3) from the stack and apply &nbsp;on them. Push the result (12) onto the stack.(stack: [2, 12])</li>
+<li>Encounter +, pop two operands (12 and 2) from the stack and apply + on them. Push the result (14) onto the stack. (stack: [14])</li>
+<li>Reach the end of the expression, pop the final result (14) from the stack and output it. (stack: [])</li>
+</ol>
+<p>As for how you convert an infix expression to a postfix expression, you can use stacks again! Here are the steps:</p>
+<ol type="1">
+<li>If we encounter an operand (a number), we append it to the output string.</li>
+<li>If we encounter an operator (+, -, *, /), we push it onto the stack if it has higher precedence than the top of the stack. Otherwise, we pop all operators with equal or higher precedence than it from the stack and append them to the output string. Then we push it onto the stack.</li>
+<li>If we encounter a left parenthesis ‘(’, we push it onto the stack.</li>
+<li>If we encounter a right parenthesis ‘)’, we pop all operators from the stack until we reach a left parenthesis ‘(’ and append them to the output string. Then we discard both parentheses.</li>
+<li>If we reach the end of the input, pop all operators from the stack and append them to the output string.</li>
+<li>The final output string is the postfix expression.</li>
+</ol>
+<p>For example, to convert the infix expression <code>2 + 3 * 4 - 5 / (6 + 7)</code> to postfix, we can use a stack as follows:</p>
+<ol type="1">
+<li>Scan the expression from left to right - 2 + 3 * 4 - 5 / (6 + 7)</li>
+<li>Encounter 2, append it to the output string <code>(output: 2)</code></li>
+<li>Encounter +, push it onto the stack <code>(stack: [+])</code></li>
+<li>Encounter 3, append it to the output string <code>(output: 2 3)</code></li>
+<li>Encounter *, push it onto the stack <code>(stack: [+, *])</code></li>
+<li>Encounter 4, append it to the output string <code>(output: 2 3 4)</code></li>
+<li>Encounter -, push it onto the stack <code>(stack: [+, *, -])</code></li>
+<li>Encounter 5, append it to the output string <code>(output: 2 3 4 5)</code></li>
+<li>Encounter /, pop all operators with higher or equal precedence from the stack and append them to the output string. Then push / onto the stack <code>(output: 2 3 4 5 * /, stack: [+, -])</code></li>
+<li>Encounter (, push it onto the stack <code>(stack: [+, -, (])</code></li>
+<li>Encounter 6, append it to the output string <code>(output: 2 3 4 5 * / 6)</code></li>
+<li>Encounter +, push it onto the stack <code>(stack: [+, -, (, +])</code></li>
+<li>Encounter 7, append it to the output string <code>(output: 2 3 4 5 * / 6 7)</code></li>
+<li>Encounter ), pop all operators from the stack until we reach the matching left parenthesis and append them to the output string. Discard both parentheses <code>(output: 2 3 4 5 * / 6 7 + -, stack: [+])</code></li>
+<li>Pop the remaining operator (+) from the stack and append it to the output string <code>(output: 2 3 4 5 */ 6 7 + - +)</code></li>
+</ol>
+<p>The final output string is <code>2 3 4* + 5 6 7 + / -</code>, which is the postfix notation of the original infix expression.</p>
 
 
 </section>
@@ -704,13 +671,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./08_sorting_intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span>
+      <a href="./15_implementing_linkedlists.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./10_bubble_selection_insertion_sort.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./17_queue.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
