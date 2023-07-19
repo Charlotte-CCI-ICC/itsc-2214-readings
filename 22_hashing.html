@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - Summer 2023 - 20&nbsp; Hashing, Hash Tables, and Hash Maps</title>
+<title>ITSC 2214 - Data Structures and Algorithms - Summer 2023 - 21&nbsp; Hashing, Hash Tables, and Hash Maps</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -111,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./22_hashing.html">Hashing, HashMaps and HashTables</a></li><li class="breadcrumb-item"><a href="./22_hashing.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./22_hashing.html">Hashing, HashMaps and HashTables</a></li><li class="breadcrumb-item"><a href="./22_hashing.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -325,6 +325,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Recursion</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19_binary_search.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -339,7 +345,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./21_graphs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">The Graph Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">The Graph Data Structure</span></span></a>
   </div>
 </li>
       </ul>
@@ -356,7 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./22_hashing.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
   </div>
 </li>
       </ul>
@@ -377,54 +383,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#background-and-motivation" id="toc-background-and-motivation" class="nav-link active" data-scroll-target="#background-and-motivation"><span class="header-section-number">20.1</span> Background and Motivation</a>
+  <li><a href="#background-and-motivation" id="toc-background-and-motivation" class="nav-link active" data-scroll-target="#background-and-motivation"><span class="header-section-number">21.1</span> Background and Motivation</a>
   <ul class="collapse">
-  <li><a href="#indexing" id="toc-indexing" class="nav-link" data-scroll-target="#indexing"><span class="header-section-number">20.1.1</span> Indexing</a></li>
-  <li><a href="#limitations-of-indexing" id="toc-limitations-of-indexing" class="nav-link" data-scroll-target="#limitations-of-indexing"><span class="header-section-number">20.1.2</span> Limitations of Indexing</a></li>
-  <li><a href="#mapping-strings-to-numbers" id="toc-mapping-strings-to-numbers" class="nav-link" data-scroll-target="#mapping-strings-to-numbers"><span class="header-section-number">20.1.3</span> Mapping Strings to Numbers</a></li>
-  <li><a href="#hashing-a-better-solution" id="toc-hashing-a-better-solution" class="nav-link" data-scroll-target="#hashing-a-better-solution"><span class="header-section-number">20.1.4</span> Hashing: A Better Solution</a></li>
+  <li><a href="#indexing" id="toc-indexing" class="nav-link" data-scroll-target="#indexing"><span class="header-section-number">21.1.1</span> Indexing</a></li>
+  <li><a href="#limitations-of-indexing" id="toc-limitations-of-indexing" class="nav-link" data-scroll-target="#limitations-of-indexing"><span class="header-section-number">21.1.2</span> Limitations of Indexing</a></li>
+  <li><a href="#mapping-strings-to-numbers" id="toc-mapping-strings-to-numbers" class="nav-link" data-scroll-target="#mapping-strings-to-numbers"><span class="header-section-number">21.1.3</span> Mapping Strings to Numbers</a></li>
+  <li><a href="#hashing-a-better-solution" id="toc-hashing-a-better-solution" class="nav-link" data-scroll-target="#hashing-a-better-solution"><span class="header-section-number">21.1.4</span> Hashing: A Better Solution</a></li>
   </ul></li>
-  <li><a href="#hash-functions" id="toc-hash-functions" class="nav-link" data-scroll-target="#hash-functions"><span class="header-section-number">20.2</span> Hash Functions</a>
+  <li><a href="#hash-functions" id="toc-hash-functions" class="nav-link" data-scroll-target="#hash-functions"><span class="header-section-number">21.2</span> Hash Functions</a>
   <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">20.2.1</span> Introduction</a></li>
-  <li><a href="#hashing" id="toc-hashing" class="nav-link" data-scroll-target="#hashing"><span class="header-section-number">20.2.2</span> Hashing</a></li>
-  <li><a href="#simple-hash-functions" id="toc-simple-hash-functions" class="nav-link" data-scroll-target="#simple-hash-functions"><span class="header-section-number">20.2.3</span> Simple Hash Functions</a></li>
-  <li><a href="#other-types-of-hash-functions" id="toc-other-types-of-hash-functions" class="nav-link" data-scroll-target="#other-types-of-hash-functions"><span class="header-section-number">20.2.4</span> Other Types of Hash Functions</a></li>
-  <li><a href="#trade-offs-between-different-hash-functions" id="toc-trade-offs-between-different-hash-functions" class="nav-link" data-scroll-target="#trade-offs-between-different-hash-functions"><span class="header-section-number">20.2.5</span> Trade-offs Between Different Hash Functions</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">21.2.1</span> Introduction</a></li>
+  <li><a href="#hashing" id="toc-hashing" class="nav-link" data-scroll-target="#hashing"><span class="header-section-number">21.2.2</span> Hashing</a></li>
+  <li><a href="#simple-hash-functions" id="toc-simple-hash-functions" class="nav-link" data-scroll-target="#simple-hash-functions"><span class="header-section-number">21.2.3</span> Simple Hash Functions</a></li>
+  <li><a href="#other-types-of-hash-functions" id="toc-other-types-of-hash-functions" class="nav-link" data-scroll-target="#other-types-of-hash-functions"><span class="header-section-number">21.2.4</span> Other Types of Hash Functions</a></li>
+  <li><a href="#trade-offs-between-different-hash-functions" id="toc-trade-offs-between-different-hash-functions" class="nav-link" data-scroll-target="#trade-offs-between-different-hash-functions"><span class="header-section-number">21.2.5</span> Trade-offs Between Different Hash Functions</a></li>
   </ul></li>
-  <li><a href="#hash-collisions" id="toc-hash-collisions" class="nav-link" data-scroll-target="#hash-collisions"><span class="header-section-number">20.3</span> Hash Collisions</a></li>
-  <li><a href="#chaining" id="toc-chaining" class="nav-link" data-scroll-target="#chaining"><span class="header-section-number">20.4</span> Chaining</a>
+  <li><a href="#hash-collisions" id="toc-hash-collisions" class="nav-link" data-scroll-target="#hash-collisions"><span class="header-section-number">21.3</span> Hash Collisions</a></li>
+  <li><a href="#chaining" id="toc-chaining" class="nav-link" data-scroll-target="#chaining"><span class="header-section-number">21.4</span> Chaining</a>
   <ul class="collapse">
-  <li><a href="#insertion-search-and-deletion" id="toc-insertion-search-and-deletion" class="nav-link" data-scroll-target="#insertion-search-and-deletion"><span class="header-section-number">20.4.1</span> Insertion, Search, and Deletion</a></li>
-  <li><a href="#advantages-and-disadvantages-of-chaining" id="toc-advantages-and-disadvantages-of-chaining" class="nav-link" data-scroll-target="#advantages-and-disadvantages-of-chaining"><span class="header-section-number">20.4.2</span> Advantages and Disadvantages of Chaining</a></li>
+  <li><a href="#insertion-search-and-deletion" id="toc-insertion-search-and-deletion" class="nav-link" data-scroll-target="#insertion-search-and-deletion"><span class="header-section-number">21.4.1</span> Insertion, Search, and Deletion</a></li>
+  <li><a href="#advantages-and-disadvantages-of-chaining" id="toc-advantages-and-disadvantages-of-chaining" class="nav-link" data-scroll-target="#advantages-and-disadvantages-of-chaining"><span class="header-section-number">21.4.2</span> Advantages and Disadvantages of Chaining</a></li>
   </ul></li>
-  <li><a href="#open-addressing" id="toc-open-addressing" class="nav-link" data-scroll-target="#open-addressing"><span class="header-section-number">20.5</span> Open Addressing</a>
+  <li><a href="#open-addressing" id="toc-open-addressing" class="nav-link" data-scroll-target="#open-addressing"><span class="header-section-number">21.5</span> Open Addressing</a>
   <ul class="collapse">
-  <li><a href="#probing-techniques" id="toc-probing-techniques" class="nav-link" data-scroll-target="#probing-techniques"><span class="header-section-number">20.5.1</span> Probing Techniques</a></li>
-  <li><a href="#insertion-search-and-deletion-1" id="toc-insertion-search-and-deletion-1" class="nav-link" data-scroll-target="#insertion-search-and-deletion-1"><span class="header-section-number">20.5.2</span> Insertion, Search, and Deletion</a></li>
-  <li><a href="#advantages-and-disadvantages-of-open-addressing" id="toc-advantages-and-disadvantages-of-open-addressing" class="nav-link" data-scroll-target="#advantages-and-disadvantages-of-open-addressing"><span class="header-section-number">20.5.3</span> Advantages and Disadvantages of Open Addressing</a></li>
+  <li><a href="#probing-techniques" id="toc-probing-techniques" class="nav-link" data-scroll-target="#probing-techniques"><span class="header-section-number">21.5.1</span> Probing Techniques</a></li>
+  <li><a href="#insertion-search-and-deletion-1" id="toc-insertion-search-and-deletion-1" class="nav-link" data-scroll-target="#insertion-search-and-deletion-1"><span class="header-section-number">21.5.2</span> Insertion, Search, and Deletion</a></li>
+  <li><a href="#advantages-and-disadvantages-of-open-addressing" id="toc-advantages-and-disadvantages-of-open-addressing" class="nav-link" data-scroll-target="#advantages-and-disadvantages-of-open-addressing"><span class="header-section-number">21.5.3</span> Advantages and Disadvantages of Open Addressing</a></li>
   </ul></li>
-  <li><a href="#complexity-and-load-factor" id="toc-complexity-and-load-factor" class="nav-link" data-scroll-target="#complexity-and-load-factor"><span class="header-section-number">20.6</span> Complexity and Load Factor</a>
+  <li><a href="#complexity-and-load-factor" id="toc-complexity-and-load-factor" class="nav-link" data-scroll-target="#complexity-and-load-factor"><span class="header-section-number">21.6</span> Complexity and Load Factor</a>
   <ul class="collapse">
-  <li><a href="#time-complexity-of-hash-computation" id="toc-time-complexity-of-hash-computation" class="nav-link" data-scroll-target="#time-complexity-of-hash-computation"><span class="header-section-number">20.6.1</span> Time Complexity of Hash Computation</a></li>
-  <li><a href="#time-complexity-of-list-traversal" id="toc-time-complexity-of-list-traversal" class="nav-link" data-scroll-target="#time-complexity-of-list-traversal"><span class="header-section-number">20.6.2</span> Time Complexity of List Traversal</a></li>
-  <li><a href="#load-factor" id="toc-load-factor" class="nav-link" data-scroll-target="#load-factor"><span class="header-section-number">20.6.3</span> Load Factor</a></li>
-  <li><a href="#balancing-load-factor-and-complexity" id="toc-balancing-load-factor-and-complexity" class="nav-link" data-scroll-target="#balancing-load-factor-and-complexity"><span class="header-section-number">20.6.4</span> Balancing Load Factor and Complexity</a></li>
+  <li><a href="#time-complexity-of-hash-computation" id="toc-time-complexity-of-hash-computation" class="nav-link" data-scroll-target="#time-complexity-of-hash-computation"><span class="header-section-number">21.6.1</span> Time Complexity of Hash Computation</a></li>
+  <li><a href="#time-complexity-of-list-traversal" id="toc-time-complexity-of-list-traversal" class="nav-link" data-scroll-target="#time-complexity-of-list-traversal"><span class="header-section-number">21.6.2</span> Time Complexity of List Traversal</a></li>
+  <li><a href="#load-factor" id="toc-load-factor" class="nav-link" data-scroll-target="#load-factor"><span class="header-section-number">21.6.3</span> Load Factor</a></li>
+  <li><a href="#balancing-load-factor-and-complexity" id="toc-balancing-load-factor-and-complexity" class="nav-link" data-scroll-target="#balancing-load-factor-and-complexity"><span class="header-section-number">21.6.4</span> Balancing Load Factor and Complexity</a></li>
   </ul></li>
-  <li><a href="#rehashing" id="toc-rehashing" class="nav-link" data-scroll-target="#rehashing"><span class="header-section-number">20.7</span> Rehashing</a>
+  <li><a href="#rehashing" id="toc-rehashing" class="nav-link" data-scroll-target="#rehashing"><span class="header-section-number">21.7</span> Rehashing</a>
   <ul class="collapse">
-  <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why"><span class="header-section-number">20.7.1</span> Why?</a></li>
-  <li><a href="#how" id="toc-how" class="nav-link" data-scroll-target="#how"><span class="header-section-number">20.7.2</span> How?</a></li>
+  <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why"><span class="header-section-number">21.7.1</span> Why?</a></li>
+  <li><a href="#how" id="toc-how" class="nav-link" data-scroll-target="#how"><span class="header-section-number">21.7.2</span> How?</a></li>
   </ul></li>
-  <li><a href="#hash-tables-vs-hash-maps" id="toc-hash-tables-vs-hash-maps" class="nav-link" data-scroll-target="#hash-tables-vs-hash-maps"><span class="header-section-number">20.8</span> Hash Tables vs Hash Maps</a></li>
-  <li><a href="#hashmaps-in-java" id="toc-hashmaps-in-java" class="nav-link" data-scroll-target="#hashmaps-in-java"><span class="header-section-number">20.9</span> HashMaps in Java</a></li>
-  <li><a href="#hashtables-in-java" id="toc-hashtables-in-java" class="nav-link" data-scroll-target="#hashtables-in-java"><span class="header-section-number">20.10</span> HashTables in Java</a></li>
-  <li><a href="#hashsets-in-java" id="toc-hashsets-in-java" class="nav-link" data-scroll-target="#hashsets-in-java"><span class="header-section-number">20.11</span> HashSets in Java</a></li>
-  <li><a href="#hascode-and-equals-in-java" id="toc-hascode-and-equals-in-java" class="nav-link" data-scroll-target="#hascode-and-equals-in-java"><span class="header-section-number">20.12</span> <code>hasCode</code> and <code>equals</code> in Java</a>
+  <li><a href="#hash-tables-vs-hash-maps" id="toc-hash-tables-vs-hash-maps" class="nav-link" data-scroll-target="#hash-tables-vs-hash-maps"><span class="header-section-number">21.8</span> Hash Tables vs Hash Maps</a></li>
+  <li><a href="#hashmaps-in-java" id="toc-hashmaps-in-java" class="nav-link" data-scroll-target="#hashmaps-in-java"><span class="header-section-number">21.9</span> HashMaps in Java</a></li>
+  <li><a href="#hashtables-in-java" id="toc-hashtables-in-java" class="nav-link" data-scroll-target="#hashtables-in-java"><span class="header-section-number">21.10</span> HashTables in Java</a></li>
+  <li><a href="#hashsets-in-java" id="toc-hashsets-in-java" class="nav-link" data-scroll-target="#hashsets-in-java"><span class="header-section-number">21.11</span> HashSets in Java</a></li>
+  <li><a href="#hascode-and-equals-in-java" id="toc-hascode-and-equals-in-java" class="nav-link" data-scroll-target="#hascode-and-equals-in-java"><span class="header-section-number">21.12</span> <code>hasCode</code> and <code>equals</code> in Java</a>
   <ul class="collapse">
-  <li><a href="#the-hashcode-method" id="toc-the-hashcode-method" class="nav-link" data-scroll-target="#the-hashcode-method"><span class="header-section-number">20.12.1</span> The <code>hashCode</code> Method</a></li>
-  <li><a href="#overriding-the-hashcode-method" id="toc-overriding-the-hashcode-method" class="nav-link" data-scroll-target="#overriding-the-hashcode-method"><span class="header-section-number">20.12.2</span> Overriding the <code>hashCode</code> Method</a></li>
-  <li><a href="#using-hashcode-with-java-collections" id="toc-using-hashcode-with-java-collections" class="nav-link" data-scroll-target="#using-hashcode-with-java-collections"><span class="header-section-number">20.12.3</span> Using <code>hashCode</code> with Java Collections</a></li>
+  <li><a href="#the-hashcode-method" id="toc-the-hashcode-method" class="nav-link" data-scroll-target="#the-hashcode-method"><span class="header-section-number">21.12.1</span> The <code>hashCode</code> Method</a></li>
+  <li><a href="#overriding-the-hashcode-method" id="toc-overriding-the-hashcode-method" class="nav-link" data-scroll-target="#overriding-the-hashcode-method"><span class="header-section-number">21.12.2</span> Overriding the <code>hashCode</code> Method</a></li>
+  <li><a href="#using-hashcode-with-java-collections" id="toc-using-hashcode-with-java-collections" class="nav-link" data-scroll-target="#using-hashcode-with-java-collections"><span class="header-section-number">21.12.3</span> Using <code>hashCode</code> with Java Collections</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -434,7 +440,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></h1>
+<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></h1>
 </div>
 
 
@@ -449,22 +455,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="background-and-motivation" class="level2" data-number="20.1">
-<h2 data-number="20.1" class="anchored" data-anchor-id="background-and-motivation"><span class="header-section-number">20.1</span> Background and Motivation</h2>
-<section id="indexing" class="level3" data-number="20.1.1">
-<h3 data-number="20.1.1" class="anchored" data-anchor-id="indexing"><span class="header-section-number">20.1.1</span> Indexing</h3>
+<section id="background-and-motivation" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="background-and-motivation"><span class="header-section-number">21.1</span> Background and Motivation</h2>
+<section id="indexing" class="level3" data-number="21.1.1">
+<h3 data-number="21.1.1" class="anchored" data-anchor-id="indexing"><span class="header-section-number">21.1.1</span> Indexing</h3>
 <p><strong>Indexing</strong> refers to the idea of accessing a certain element of an array by referring to it using a specific number, called the index. Using the same index always returns the same element, as long as the array remains unchanged. For example, to access the 12th element of an array <code>arr</code>, we use <code>arr[11]</code>.</p>
 <p>The math for finding the address of an element in the array works out to be:</p>
 <pre><code>baseAddress + (index * sizeOfElement)</code></pre>
 <p>Now, keeping that in mind, let’s explore the limitations of indexing.</p>
 </section>
-<section id="limitations-of-indexing" class="level3" data-number="20.1.2">
-<h3 data-number="20.1.2" class="anchored" data-anchor-id="limitations-of-indexing"><span class="header-section-number">20.1.2</span> Limitations of Indexing</h3>
+<section id="limitations-of-indexing" class="level3" data-number="21.1.2">
+<h3 data-number="21.1.2" class="anchored" data-anchor-id="limitations-of-indexing"><span class="header-section-number">21.1.2</span> Limitations of Indexing</h3>
 <p>Suppose we want to access an element in the array using a string as an index, such as <code>arr["dhruv"]</code>. What is stopping us?</p>
 <p>The problem is that we cannot calculate <code>baseAddress + ("dhruv" * sizeOfElement)</code> because the index, in this case, is a string, not a number. The operation is not defined, and therefore, we can’t directly use strings as indices in an array.</p>
 </section>
-<section id="mapping-strings-to-numbers" class="level3" data-number="20.1.3">
-<h3 data-number="20.1.3" class="anchored" data-anchor-id="mapping-strings-to-numbers"><span class="header-section-number">20.1.3</span> Mapping Strings to Numbers</h3>
+<section id="mapping-strings-to-numbers" class="level3" data-number="21.1.3">
+<h3 data-number="21.1.3" class="anchored" data-anchor-id="mapping-strings-to-numbers"><span class="header-section-number">21.1.3</span> Mapping Strings to Numbers</h3>
 <p>Let’s consider an array of strings. We can use it to map a number to a string:</p>
 <pre><code>0 -&gt; "Alice"
 1 -&gt; "Bob"
@@ -478,8 +484,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 5 -&gt; "Dhruv"</code></pre>
 <p>The index at which we found the string “Dhruv” (in this case, 5) can be used as a key in a different array to find the data related to “Dhruv”. However, this method of linear searching can be quite slow for large datasets.</p>
 </section>
-<section id="hashing-a-better-solution" class="level3" data-number="20.1.4">
-<h3 data-number="20.1.4" class="anchored" data-anchor-id="hashing-a-better-solution"><span class="header-section-number">20.1.4</span> Hashing: A Better Solution</h3>
+<section id="hashing-a-better-solution" class="level3" data-number="21.1.4">
+<h3 data-number="21.1.4" class="anchored" data-anchor-id="hashing-a-better-solution"><span class="header-section-number">21.1.4</span> Hashing: A Better Solution</h3>
 <p>This is where <strong>hashing</strong> comes into play. Hashing allows us to efficiently map strings (or any other non-numeric keys) to numbers. By using a hash function, we can convert a string into a number that represents the index in the array.</p>
 <p>A <strong>hash function</strong> takes a key as input and outputs an index in the hash table’s array. A good hash function has the following criteria:</p>
 <ul>
@@ -493,15 +499,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The output of the hash function is 100, which we can use as an index in an array to store or retrieve data related to “dhruv”. This allows us to use strings (and other non-numeric keys) as indices, achieving our goal of efficient mapping.</p>
 </section>
 </section>
-<section id="hash-functions" class="level2" data-number="20.2">
-<h2 data-number="20.2" class="anchored" data-anchor-id="hash-functions"><span class="header-section-number">20.2</span> Hash Functions</h2>
-<section id="introduction" class="level3" data-number="20.2.1">
-<h3 data-number="20.2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">20.2.1</span> Introduction</h3>
+<section id="hash-functions" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="hash-functions"><span class="header-section-number">21.2</span> Hash Functions</h2>
+<section id="introduction" class="level3" data-number="21.2.1">
+<h3 data-number="21.2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">21.2.1</span> Introduction</h3>
 <p>Previously, we managed to map a string “D” to some data, just like an index maps to some data in an array. The resulting data structure that can map any string to any data is called a <strong>hash table</strong>. The function used to map strings to data is called a <strong>hash function</strong>. The concept of mapping “D” to some data can be referred to as <strong>hashing</strong> “D” to an index 3, which is where we found the value corresponding to “D”.</p>
 <p>Now, we’ll learn about a way of mapping any object (called a key) to any other object (called the record, or the value). For instance, your student ID can be a key, and all the data about you on your ID can be stored in a record object.</p>
 </section>
-<section id="hashing" class="level3" data-number="20.2.2">
-<h3 data-number="20.2.2" class="anchored" data-anchor-id="hashing"><span class="header-section-number">20.2.2</span> Hashing</h3>
+<section id="hashing" class="level3" data-number="21.2.2">
+<h3 data-number="21.2.2" class="anchored" data-anchor-id="hashing"><span class="header-section-number">21.2.2</span> Hashing</h3>
 <p>Hashing can be thought of as a method for storing and retrieving records from a database. It lets you insert, delete, and search for records based on a search key value. When properly implemented, these operations can be performed in constant time. In fact, a properly tuned hash system typically looks at only one or two records for each search, insert, or delete operation. This is far better than the <span class="math inline">\(O(log n)\)</span> average cost required to do a binary search on a sorted array of n records, or the <span class="math inline">\(O(log n)\)</span> average cost required to do an operation on a binary search tree. However, even though hashing is based on a very simple idea, it is surprisingly difficult to implement properly. Designers need to pay careful attention to all of the details involved with implementing a hash system.</p>
 <p>A hash system stores records in an array called a <strong>hash table</strong>, which we will call <code>HT</code>. Hashing works by performing a computation on a search key <code>K</code> in a way that is intended to identify the position in <code>HT</code> that contains the record with key <code>K</code>. The function that does this calculation is called the <strong>hash function</strong>, and will be denoted by the letter <code>h</code>. Since hashing schemes place records in the table in whatever order satisfies the needs of the address calculation, records are not ordered by value. A position in the hash table is also known as a <strong>slot</strong>. The number of slots in hash table <code>HT</code> will be denoted by the variable <code>M</code> with slots numbered from 0 to M−1. The goal for a hashing system is to arrange things such that, for any key value <code>K</code> and some hash function <code>h</code>, <span class="math inline">\(i=h(K)\)</span> is a slot in the table such that <span class="math inline">\(0 \leq i &lt; M\)</span>, and we have the key of the record stored at <code>HT[i]</code> equal to <code>K</code>.</p>
 <p>Hashing is not good for applications where multiple records with the same key value are permitted. Hashing is not a good method for answering range searches. In other words, we cannot easily find all records (if any) whose key values fall within a certain range. Nor can we easily find the record with the minimum or maximum key value or visit the records in key order. Hashing is most appropriate for answering the question, ‘What record, if any, has key value K?’ For applications where all search is done by exact-match queries, hashing is the search method of choice because it is extremely efficient when implemented correctly.</p>
@@ -512,8 +518,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In conclusion, anything can be a hash function (i.e., map a value to an index), but not everything can be a good hash function. A function that always returns the index 0 is a hash function that maps everything to 0. It’s no good but it’s still a hash function. An example of a commonly used hash function is the modulus operator! It is common for <code>N</code>-sized hash tables to use the modulus of <code>N</code> as a hash function. If <code>N</code> is <span class="math inline">\(20\)</span>, data for 113 will be hashed to index <span class="math inline">\(113 \% 20 = 13\)</span>.</p>
 <p>But if we use the modulo operator as a hash function, what do we do when multiple pieces of data map to the same index? <span class="math inline">\(53 \% 20 = 13\)</span>, <span class="math inline">\(73 \% 20 = 13\)</span>, etc. But if you think about it, we can store everything at <span class="math inline">\(13\)</span>! By using nested data structures… More on this later.</p>
 </section>
-<section id="simple-hash-functions" class="level3" data-number="20.2.3">
-<h3 data-number="20.2.3" class="anchored" data-anchor-id="simple-hash-functions"><span class="header-section-number">20.2.3</span> Simple Hash Functions</h3>
+<section id="simple-hash-functions" class="level3" data-number="21.2.3">
+<h3 data-number="21.2.3" class="anchored" data-anchor-id="simple-hash-functions"><span class="header-section-number">21.2.3</span> Simple Hash Functions</h3>
 <p>Let’s apply a simple hash function to a set of keys and compute their indices. In this example, we’ll use the modulo operation as the hash function. Given a hash table with a size of 5, we can compute the indices for the keys as follows:</p>
 <pre><code>HashTable size: 5
 HashFunction: key % size
@@ -527,10 +533,10 @@ Indices:
 10 % 5 = 0
 33 % 5 = 3</code></pre>
 </section>
-<section id="other-types-of-hash-functions" class="level3" data-number="20.2.4">
-<h3 data-number="20.2.4" class="anchored" data-anchor-id="other-types-of-hash-functions"><span class="header-section-number">20.2.4</span> Other Types of Hash Functions</h3>
-<section id="direct-hashing" class="level4" data-number="20.2.4.1">
-<h4 data-number="20.2.4.1" class="anchored" data-anchor-id="direct-hashing"><span class="header-section-number">20.2.4.1</span> Direct Hashing</h4>
+<section id="other-types-of-hash-functions" class="level3" data-number="21.2.4">
+<h3 data-number="21.2.4" class="anchored" data-anchor-id="other-types-of-hash-functions"><span class="header-section-number">21.2.4</span> Other Types of Hash Functions</h3>
+<section id="direct-hashing" class="level4" data-number="21.2.4.1">
+<h4 data-number="21.2.4.1" class="anchored" data-anchor-id="direct-hashing"><span class="header-section-number">21.2.4.1</span> Direct Hashing</h4>
 <p>A direct hash function uses the item’s key as the bucket index. For example, if the key is 937, the index is 937. A hash table with a direct hash function is called a direct access table. Given a key, a direct access table search algorithm returns the item at index key if the bucket is not empty, and returns null (indicating item not found) if empty.</p>
 <p><strong>Limitations</strong>:</p>
 <p>A direct access table has the advantage of no collisions: Each key is unique (by definition of a key), and each gets a unique bucket, so no collisions can occur. However, a direct access table has two main limitations:</p>
@@ -540,23 +546,23 @@ Indices:
 </ol>
 <p>Similarly, there are other hash functions each with their own characteristics.</p>
 </section>
-<section id="modulo-hash" class="level4" data-number="20.2.4.2">
-<h4 data-number="20.2.4.2" class="anchored" data-anchor-id="modulo-hash"><span class="header-section-number">20.2.4.2</span> Modulo Hash</h4>
+<section id="modulo-hash" class="level4" data-number="21.2.4.2">
+<h4 data-number="21.2.4.2" class="anchored" data-anchor-id="modulo-hash"><span class="header-section-number">21.2.4.2</span> Modulo Hash</h4>
 <p>A modulo hash function computes the index by taking the remainder of the key divided by the table size <code>M</code>. This is a simple and effective way to convert a large key range into a smaller index range. The hash function can be defined as:</p>
 <pre><code>h(K) = K % M</code></pre>
 </section>
-<section id="mid-square-hash" class="level4" data-number="20.2.4.3">
-<h4 data-number="20.2.4.3" class="anchored" data-anchor-id="mid-square-hash"><span class="header-section-number">20.2.4.3</span> Mid-Square Hash</h4>
+<section id="mid-square-hash" class="level4" data-number="21.2.4.3">
+<h4 data-number="21.2.4.3" class="anchored" data-anchor-id="mid-square-hash"><span class="header-section-number">21.2.4.3</span> Mid-Square Hash</h4>
 <p>A mid-square hash function computes the index by first squaring the key, and then extracting a portion of the squared value as the index. This approach is especially useful when the keys are not uniformly distributed. The hash function can be defined as:</p>
 <pre><code>h(K) = middle_digits(K^2)</code></pre>
 </section>
-<section id="mid-square-hash-with-base-2" class="level4" data-number="20.2.4.4">
-<h4 data-number="20.2.4.4" class="anchored" data-anchor-id="mid-square-hash-with-base-2"><span class="header-section-number">20.2.4.4</span> Mid-Square Hash with Base 2</h4>
+<section id="mid-square-hash-with-base-2" class="level4" data-number="21.2.4.4">
+<h4 data-number="21.2.4.4" class="anchored" data-anchor-id="mid-square-hash-with-base-2"><span class="header-section-number">21.2.4.4</span> Mid-Square Hash with Base 2</h4>
 <p>A mid-square hash function with base 2 is a variation of the mid-square hash function, where the key is first squared, and then the middle bits of the binary representation of the squared value are extracted as the index. This approach is especially useful for binary keys. The hash function can be defined as:</p>
 <pre><code>h(K) = middle_bits(K^2)</code></pre>
 </section>
-<section id="multiplicative-string-hashing" class="level4" data-number="20.2.4.5">
-<h4 data-number="20.2.4.5" class="anchored" data-anchor-id="multiplicative-string-hashing"><span class="header-section-number">20.2.4.5</span> Multiplicative String Hashing</h4>
+<section id="multiplicative-string-hashing" class="level4" data-number="21.2.4.5">
+<h4 data-number="21.2.4.5" class="anchored" data-anchor-id="multiplicative-string-hashing"><span class="header-section-number">21.2.4.5</span> Multiplicative String Hashing</h4>
 <p>A multiplicative string hashing function computes the index by treating the characters in the string as numbers and combining them using a multiplication and a constant. This approach can help achieve a good distribution of string keys in the hash table. The hash function can be defined as:</p>
 <pre><code>h(K) = (c1 * a^(n-1) + c2 * a^(n-2) + ... + cn) % M</code></pre>
 <p>where <code>c1, c2, ..., cn</code> are the character codes of the string, <code>a</code> is a constant, <code>n</code> is the length of the string, and <code>M</code> is the size of the hash table.</p>
@@ -571,8 +577,8 @@ Indices:
 <p>In this example, we can see that the keys 15 and 10, as well as 28 and 33, have collided, as they both map to the same indices (0 and 3, respectively).</p>
 </section>
 </section>
-<section id="trade-offs-between-different-hash-functions" class="level3" data-number="20.2.5">
-<h3 data-number="20.2.5" class="anchored" data-anchor-id="trade-offs-between-different-hash-functions"><span class="header-section-number">20.2.5</span> Trade-offs Between Different Hash Functions</h3>
+<section id="trade-offs-between-different-hash-functions" class="level3" data-number="21.2.5">
+<h3 data-number="21.2.5" class="anchored" data-anchor-id="trade-offs-between-different-hash-functions"><span class="header-section-number">21.2.5</span> Trade-offs Between Different Hash Functions</h3>
 <p>There are trade-offs between different hash functions in terms of performance and complexity:</p>
 <ul>
 <li>A simple hash function, like the modulo operation, is fast to compute but may not distribute keys uniformly, leading to more collisions and reduced performance.</li>
@@ -581,16 +587,16 @@ Indices:
 <p>In practice, the choice of a hash function depends on the specific requirements of the application and the data being stored. The goal is to find a balance between uniform distribution, minimal collisions, fast computation, and deterministic output.</p>
 </section>
 </section>
-<section id="hash-collisions" class="level2" data-number="20.3">
-<h2 data-number="20.3" class="anchored" data-anchor-id="hash-collisions"><span class="header-section-number">20.3</span> Hash Collisions</h2>
+<section id="hash-collisions" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="hash-collisions"><span class="header-section-number">21.3</span> Hash Collisions</h2>
 <p><strong>Hash collisions</strong> occur when two or more keys map to the same index in the hash table. Due to the pigeonhole principle, hash collisions are inevitable, as there are typically more possible keys than available indices in the array. Collisions negatively impact the efficiency of hashing, as they can lead to longer access times for insertion, deletion, and retrieval of key-value pairs.</p>
 <p>There are two primary methods to resolve hash collisions: <strong>chaining</strong> and <strong>open addressing</strong>.</p>
 </section>
-<section id="chaining" class="level2" data-number="20.4">
-<h2 data-number="20.4" class="anchored" data-anchor-id="chaining"><span class="header-section-number">20.4</span> Chaining</h2>
+<section id="chaining" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="chaining"><span class="header-section-number">21.4</span> Chaining</h2>
 <p><strong>Chaining</strong> is a collision resolution technique that uses a linked list or another data structure to store multiple key-value pairs at the same index. When a collision occurs, the new key-value pair is simply added to the data structure at the index.</p>
-<section id="insertion-search-and-deletion" class="level3" data-number="20.4.1">
-<h3 data-number="20.4.1" class="anchored" data-anchor-id="insertion-search-and-deletion"><span class="header-section-number">20.4.1</span> Insertion, Search, and Deletion</h3>
+<section id="insertion-search-and-deletion" class="level3" data-number="21.4.1">
+<h3 data-number="21.4.1" class="anchored" data-anchor-id="insertion-search-and-deletion"><span class="header-section-number">21.4.1</span> Insertion, Search, and Deletion</h3>
 <p>Here’s how to perform insertion, search, and deletion operations using chaining:</p>
 <ol type="1">
 <li><p><strong>Insertion</strong>: Calculate the index using the hash function. If the index is empty, create a new data structure (e.g., linked list) and insert the key-value pair. If the index is not empty, add the key-value pair to the existing data structure.</p></li>
@@ -598,8 +604,8 @@ Indices:
 <li><p><strong>Deletion</strong>: Calculate the index using the hash function. If the index is empty, the key is not in the hash table. If the index is not empty, search the data structure at the index for the key and remove it if found.</p></li>
 </ol>
 </section>
-<section id="advantages-and-disadvantages-of-chaining" class="level3" data-number="20.4.2">
-<h3 data-number="20.4.2" class="anchored" data-anchor-id="advantages-and-disadvantages-of-chaining"><span class="header-section-number">20.4.2</span> Advantages and Disadvantages of Chaining</h3>
+<section id="advantages-and-disadvantages-of-chaining" class="level3" data-number="21.4.2">
+<h3 data-number="21.4.2" class="anchored" data-anchor-id="advantages-and-disadvantages-of-chaining"><span class="header-section-number">21.4.2</span> Advantages and Disadvantages of Chaining</h3>
 <p>Chaining has several advantages and disadvantages:</p>
 <ul>
 <li><strong>Advantages</strong>:
@@ -616,19 +622,19 @@ Indices:
 <p>Chaining is a popular method for resolving hash collisions due to its simplicity and dynamic size. However, it may not be the most efficient option for all use cases, especially when memory overhead and variable access times are critical factors.</p>
 </section>
 </section>
-<section id="open-addressing" class="level2" data-number="20.5">
-<h2 data-number="20.5" class="anchored" data-anchor-id="open-addressing"><span class="header-section-number">20.5</span> Open Addressing</h2>
+<section id="open-addressing" class="level2" data-number="21.5">
+<h2 data-number="21.5" class="anchored" data-anchor-id="open-addressing"><span class="header-section-number">21.5</span> Open Addressing</h2>
 <p><strong>Open addressing</strong> is a collision resolution technique that finds an alternative index for a key-value pair if the original index is occupied. When a collision occurs, the algorithm searches for the next available index using a probing technique. There are three common types of probing techniques: linear probing, quadratic probing, and double hashing.</p>
-<section id="probing-techniques" class="level3" data-number="20.5.1">
-<h3 data-number="20.5.1" class="anchored" data-anchor-id="probing-techniques"><span class="header-section-number">20.5.1</span> Probing Techniques</h3>
+<section id="probing-techniques" class="level3" data-number="21.5.1">
+<h3 data-number="21.5.1" class="anchored" data-anchor-id="probing-techniques"><span class="header-section-number">21.5.1</span> Probing Techniques</h3>
 <ol type="1">
 <li><strong>Linear probing</strong>: When a collision occurs, search the hash table linearly (one index at a time) until an empty slot is found.</li>
 <li><strong>Quadratic probing</strong>: When a collision occurs, search the hash table quadratically (by increasing the index by the square of the probe number) until an empty slot is found.</li>
 <li><strong>Double hashing</strong>: When a collision occurs, use a secondary hash function to compute a new index for the key-value pair, and repeat this process until an empty slot is found.</li>
 </ol>
 </section>
-<section id="insertion-search-and-deletion-1" class="level3" data-number="20.5.2">
-<h3 data-number="20.5.2" class="anchored" data-anchor-id="insertion-search-and-deletion-1"><span class="header-section-number">20.5.2</span> Insertion, Search, and Deletion</h3>
+<section id="insertion-search-and-deletion-1" class="level3" data-number="21.5.2">
+<h3 data-number="21.5.2" class="anchored" data-anchor-id="insertion-search-and-deletion-1"><span class="header-section-number">21.5.2</span> Insertion, Search, and Deletion</h3>
 <p>Here’s how to perform insertion, search, and deletion operations using open addressing:</p>
 <ol type="1">
 <li><p><strong>Insertion</strong>: Calculate the index using the hash function. If the index is empty, insert the key-value pair. If the index is occupied, use the chosen probing technique to find the next available index and insert the key-value pair there.</p></li>
@@ -636,8 +642,8 @@ Indices:
 <li><p><strong>Deletion</strong>: Calculate the index using the hash function. If the index is empty, the key is not in the hash table. If the index is occupied and the key matches the stored key, remove the key-value pair and mark the index as deleted. Continue searching using the chosen probing technique to handle cases where the removed key-value pair was part of a cluster.</p></li>
 </ol>
 </section>
-<section id="advantages-and-disadvantages-of-open-addressing" class="level3" data-number="20.5.3">
-<h3 data-number="20.5.3" class="anchored" data-anchor-id="advantages-and-disadvantages-of-open-addressing"><span class="header-section-number">20.5.3</span> Advantages and Disadvantages of Open Addressing</h3>
+<section id="advantages-and-disadvantages-of-open-addressing" class="level3" data-number="21.5.3">
+<h3 data-number="21.5.3" class="anchored" data-anchor-id="advantages-and-disadvantages-of-open-addressing"><span class="header-section-number">21.5.3</span> Advantages and Disadvantages of Open Addressing</h3>
 <p>Open addressing has several advantages and disadvantages:</p>
 <ul>
 <li><strong>Advantages</strong>:
@@ -654,42 +660,42 @@ Indices:
 <p>Open addressing is an alternative method for resolving hash collisions that can be more memory-efficient than chaining. However, it may not be the best option for all use cases, especially when clustering and deletion issues are critical factors.</p>
 </section>
 </section>
-<section id="complexity-and-load-factor" class="level2" data-number="20.6">
-<h2 data-number="20.6" class="anchored" data-anchor-id="complexity-and-load-factor"><span class="header-section-number">20.6</span> Complexity and Load Factor</h2>
+<section id="complexity-and-load-factor" class="level2" data-number="21.6">
+<h2 data-number="21.6" class="anchored" data-anchor-id="complexity-and-load-factor"><span class="header-section-number">21.6</span> Complexity and Load Factor</h2>
 <p>When analyzing the complexity of hash functions and hash tables, we need to consider the time taken for searching, inserting, or deleting an element. There are two main steps involved in these operations:</p>
 <ol type="1">
 <li>Computing the hash function for the given key.</li>
 <li>Traversing the list of key-value pairs present at the computed index.</li>
 </ol>
-<section id="time-complexity-of-hash-computation" class="level3" data-number="20.6.1">
-<h3 data-number="20.6.1" class="anchored" data-anchor-id="time-complexity-of-hash-computation"><span class="header-section-number">20.6.1</span> Time Complexity of Hash Computation</h3>
+<section id="time-complexity-of-hash-computation" class="level3" data-number="21.6.1">
+<h3 data-number="21.6.1" class="anchored" data-anchor-id="time-complexity-of-hash-computation"><span class="header-section-number">21.6.1</span> Time Complexity of Hash Computation</h3>
 <p>For the first step, the time taken depends on the key and the hash function. For example, if the key is a string “abcd”, then its hash function may depend on the length of the string. But for very large values of <code>n</code>, the number of entries into the map, the length of the keys is almost negligible in comparison to <code>n</code>, so hash computation can be considered to take place in constant time, i.e., O(1).</p>
 </section>
-<section id="time-complexity-of-list-traversal" class="level3" data-number="20.6.2">
-<h3 data-number="20.6.2" class="anchored" data-anchor-id="time-complexity-of-list-traversal"><span class="header-section-number">20.6.2</span> Time Complexity of List Traversal</h3>
+<section id="time-complexity-of-list-traversal" class="level3" data-number="21.6.2">
+<h3 data-number="21.6.2" class="anchored" data-anchor-id="time-complexity-of-list-traversal"><span class="header-section-number">21.6.2</span> Time Complexity of List Traversal</h3>
 <p>For the second step, traversal of the list of key-value pairs present at that index needs to be done. In the worst case, all the <code>n</code> entries are at the same index, resulting in a time complexity of O(n). However, enough research has been done to make hash functions uniformly distribute the keys in the array, so this almost never happens.</p>
 </section>
-<section id="load-factor" class="level3" data-number="20.6.3">
-<h3 data-number="20.6.3" class="anchored" data-anchor-id="load-factor"><span class="header-section-number">20.6.3</span> Load Factor</h3>
+<section id="load-factor" class="level3" data-number="21.6.3">
+<h3 data-number="21.6.3" class="anchored" data-anchor-id="load-factor"><span class="header-section-number">21.6.3</span> Load Factor</h3>
 <p>On average, if there are <code>n</code> entries and <code>b</code> is the size of the array, there would be <code>n/b</code> entries at each index. This value <code>n/b</code> is called the load factor, which represents the load on our map. The load factor is denoted by the symbol λ:</p>
 <pre><code>λ = n/b</code></pre>
 <p>This load factor needs to be kept low so that the number of entries at one index is less, and the complexity remains almost constant, i.e., O(1).</p>
 </section>
-<section id="balancing-load-factor-and-complexity" class="level3" data-number="20.6.4">
-<h3 data-number="20.6.4" class="anchored" data-anchor-id="balancing-load-factor-and-complexity"><span class="header-section-number">20.6.4</span> Balancing Load Factor and Complexity</h3>
+<section id="balancing-load-factor-and-complexity" class="level3" data-number="21.6.4">
+<h3 data-number="21.6.4" class="anchored" data-anchor-id="balancing-load-factor-and-complexity"><span class="header-section-number">21.6.4</span> Balancing Load Factor and Complexity</h3>
 <p>To maintain the load factor at an acceptable level, the hash table can be resized when the load factor exceeds a certain threshold. This helps to keep the complexity of hash table operations near O(1) by redistributing the keys uniformly across a larger array.</p>
 <p>In conclusion, understanding the complexity and load factor of hash functions is crucial for designing efficient hash tables. By carefully choosing a suitable hash function and managing the load factor, it’s possible to achieve near-constant time complexity for various hash table operations.</p>
 </section>
 </section>
-<section id="rehashing" class="level2" data-number="20.7">
-<h2 data-number="20.7" class="anchored" data-anchor-id="rehashing"><span class="header-section-number">20.7</span> Rehashing</h2>
+<section id="rehashing" class="level2" data-number="21.7">
+<h2 data-number="21.7" class="anchored" data-anchor-id="rehashing"><span class="header-section-number">21.7</span> Rehashing</h2>
 <p>Rehashing, as the name suggests, means hashing again. When the load factor increases to more than its pre-defined value (the default value of the load factor is 0.75), the complexity increases. To overcome this issue, the size of the array is increased (typically doubled) and all the values are hashed again and stored in the new, larger array. This helps maintain a low load factor and low complexity.</p>
-<section id="why" class="level3" data-number="20.7.1">
-<h3 data-number="20.7.1" class="anchored" data-anchor-id="why"><span class="header-section-number">20.7.1</span> Why?</h3>
+<section id="why" class="level3" data-number="21.7.1">
+<h3 data-number="21.7.1" class="anchored" data-anchor-id="why"><span class="header-section-number">21.7.1</span> Why?</h3>
 <p>Rehashing is done because whenever key-value pairs are inserted into the map, the load factor increases, which implies that the time complexity also increases, as explained earlier. This might not provide the desired time complexity of O(1). Hence, rehashing must be performed, increasing the size of the <code>bucketArray</code> to reduce the load factor and the time complexity.</p>
 </section>
-<section id="how" class="level3" data-number="20.7.2">
-<h3 data-number="20.7.2" class="anchored" data-anchor-id="how"><span class="header-section-number">20.7.2</span> How?</h3>
+<section id="how" class="level3" data-number="21.7.2">
+<h3 data-number="21.7.2" class="anchored" data-anchor-id="how"><span class="header-section-number">21.7.2</span> How?</h3>
 <p>Rehashing can be done as follows:</p>
 <ol type="1">
 <li>For each addition of a new entry to the map, check the load factor.</li>
@@ -712,8 +718,8 @@ New bucketArray (size = 8):
 <p>By rehashing, the hash table maintains its desired time complexity of O(1) even as the number of elements increases. It is important to note that rehashing can be a costly operation, especially if the number of elements in the hash table is large. However, since rehashing is done infrequently and only when the load factor surpasses a certain threshold, the amortized cost of rehashing remains low, allowing the hash table operations to maintain near-constant time complexity.</p>
 </section>
 </section>
-<section id="hash-tables-vs-hash-maps" class="level2" data-number="20.8">
-<h2 data-number="20.8" class="anchored" data-anchor-id="hash-tables-vs-hash-maps"><span class="header-section-number">20.8</span> Hash Tables vs Hash Maps</h2>
+<section id="hash-tables-vs-hash-maps" class="level2" data-number="21.8">
+<h2 data-number="21.8" class="anchored" data-anchor-id="hash-tables-vs-hash-maps"><span class="header-section-number">21.8</span> Hash Tables vs Hash Maps</h2>
 <p><strong>Hash tables</strong> and <strong>hash maps</strong> differ in their implementation and functionality.</p>
 <ul>
 <li><strong>Hash tables</strong> use direct hashing, where the key is an integer or can be directly converted to an integer (e.g., a string of digits). The integer is then used to compute the index in the hash table.</li>
@@ -725,8 +731,8 @@ New bucketArray (size = 8):
 <li><p>If the keys are of any other data type or cannot be directly converted to integers, a <strong>hash map</strong> would be more appropriate. For example, if you’re working with strings, such as usernames or URLs, a hash map would be a better choice.</p></li>
 </ul>
 </section>
-<section id="hashmaps-in-java" class="level2" data-number="20.9">
-<h2 data-number="20.9" class="anchored" data-anchor-id="hashmaps-in-java"><span class="header-section-number">20.9</span> HashMaps in Java</h2>
+<section id="hashmaps-in-java" class="level2" data-number="21.9">
+<h2 data-number="21.9" class="anchored" data-anchor-id="hashmaps-in-java"><span class="header-section-number">21.9</span> HashMaps in Java</h2>
 <p>A <strong>HashMap</strong> is a collection in Java that implements the Map interface and uses a hash table for storage. It stores key-value pairs, where each key is unique, and the keys are not ordered.</p>
 <p>Here’s how to use a HashMap in Java:</p>
 <ol type="1">
@@ -761,8 +767,8 @@ New bucketArray (size = 8):
 </ol>
 <p>A HashMap can be a useful data structure when you need to store key-value pairs efficiently. It provides constant-time performance for common operations like put, get, and remove, making it an ideal choice for various applications.</p>
 </section>
-<section id="hashtables-in-java" class="level2" data-number="20.10">
-<h2 data-number="20.10" class="anchored" data-anchor-id="hashtables-in-java"><span class="header-section-number">20.10</span> HashTables in Java</h2>
+<section id="hashtables-in-java" class="level2" data-number="21.10">
+<h2 data-number="21.10" class="anchored" data-anchor-id="hashtables-in-java"><span class="header-section-number">21.10</span> HashTables in Java</h2>
 <p>A <strong>HashTable</strong> is a collection in Java that implements the Map interface and uses a hash table for storage. It is similar to a HashMap but with some differences, such as being synchronized, which makes it thread-safe. HashTable stores key-value pairs, where each key is unique, and the keys are not ordered.</p>
 <p>Here’s how to use a HashTable in Java:</p>
 <ol type="1">
@@ -797,8 +803,8 @@ New bucketArray (size = 8):
 </ol>
 <p>A HashTable can be a useful data structure when you need to store key-value pairs and require thread-safe operations. However, it has some performance overhead due to synchronization, so if thread safety is not a concern, a HashMap is generally a more efficient choice.</p>
 </section>
-<section id="hashsets-in-java" class="level2" data-number="20.11">
-<h2 data-number="20.11" class="anchored" data-anchor-id="hashsets-in-java"><span class="header-section-number">20.11</span> HashSets in Java</h2>
+<section id="hashsets-in-java" class="level2" data-number="21.11">
+<h2 data-number="21.11" class="anchored" data-anchor-id="hashsets-in-java"><span class="header-section-number">21.11</span> HashSets in Java</h2>
 <p>A <strong>HashSet</strong> is a collection in Java that implements the Set interface and uses a hash table for storage. It does not store key-value pairs like hash tables or hash maps, but instead stores unique elements. The elements in a HashSet are not ordered, and duplicate values are not allowed.</p>
 <p>Here’s how to use a HashSet in Java:</p>
 <ol type="1">
@@ -822,11 +828,11 @@ New bucketArray (size = 8):
 </ol>
 <p>A HashSet can be a useful data structure when you need to store a collection of unique elements without any specific order. It provides constant-time performance for common operations like add, remove, and contains, making it an efficient choice for many applications.</p>
 </section>
-<section id="hascode-and-equals-in-java" class="level2" data-number="20.12">
-<h2 data-number="20.12" class="anchored" data-anchor-id="hascode-and-equals-in-java"><span class="header-section-number">20.12</span> <code>hasCode</code> and <code>equals</code> in Java</h2>
+<section id="hascode-and-equals-in-java" class="level2" data-number="21.12">
+<h2 data-number="21.12" class="anchored" data-anchor-id="hascode-and-equals-in-java"><span class="header-section-number">21.12</span> <code>hasCode</code> and <code>equals</code> in Java</h2>
 <p>In Java, the <code>hashCode</code> method is part of the <code>Object</code> class, which is the superclass of all Java classes. The purpose of the <code>hashCode</code> method is to provide a default implementation for generating hash codes, which are integer values that represent the memory address of an object.</p>
-<section id="the-hashcode-method" class="level3" data-number="20.12.1">
-<h3 data-number="20.12.1" class="anchored" data-anchor-id="the-hashcode-method"><span class="header-section-number">20.12.1</span> The <code>hashCode</code> Method</h3>
+<section id="the-hashcode-method" class="level3" data-number="21.12.1">
+<h3 data-number="21.12.1" class="anchored" data-anchor-id="the-hashcode-method"><span class="header-section-number">21.12.1</span> The <code>hashCode</code> Method</h3>
 <p>The <code>hashCode</code> method has the following signature:</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">int</span> <span class="fu">hashCode</span><span class="op">()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This method returns an integer hash code for the object on which it is called. By default, it returns a hash code that is based on the object’s memory address, but this behavior can be overridden in subclasses to provide custom hash code generation.</p>
@@ -837,8 +843,8 @@ New bucketArray (size = 8):
 <li>The hash code of an object should not change over time unless the information used in the <code>equals()</code> method also changes.</li>
 </ol>
 </section>
-<section id="overriding-the-hashcode-method" class="level3" data-number="20.12.2">
-<h3 data-number="20.12.2" class="anchored" data-anchor-id="overriding-the-hashcode-method"><span class="header-section-number">20.12.2</span> Overriding the <code>hashCode</code> Method</h3>
+<section id="overriding-the-hashcode-method" class="level3" data-number="21.12.2">
+<h3 data-number="21.12.2" class="anchored" data-anchor-id="overriding-the-hashcode-method"><span class="header-section-number">21.12.2</span> Overriding the <code>hashCode</code> Method</h3>
 <p>When creating custom classes, it is important to override the <code>hashCode</code> method if the <code>equals()</code> method is also overridden. This ensures that the general contract of the <code>hashCode</code> method is maintained, which is essential for the correct functioning of hash-based data structures like <code>HashSet</code> and <code>HashMap</code>.</p>
 <p>Here’s an example of a custom <code>Person</code> class that overrides both the <code>equals()</code> and <code>hashCode()</code> methods:</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Person <span class="op">{</span></span>
@@ -866,8 +872,8 @@ New bucketArray (size = 8):
 <span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In this example, the <code>equals()</code> method checks if two <code>Person</code> objects have the same name and age. The <code>hashCode()</code> method uses the <code>Objects.hash()</code> utility method, which generates a hash code based on the name and age fields.</p>
 </section>
-<section id="using-hashcode-with-java-collections" class="level3" data-number="20.12.3">
-<h3 data-number="20.12.3" class="anchored" data-anchor-id="using-hashcode-with-java-collections"><span class="header-section-number">20.12.3</span> Using <code>hashCode</code> with Java Collections</h3>
+<section id="using-hashcode-with-java-collections" class="level3" data-number="21.12.3">
+<h3 data-number="21.12.3" class="anchored" data-anchor-id="using-hashcode-with-java-collections"><span class="header-section-number">21.12.3</span> Using <code>hashCode</code> with Java Collections</h3>
 <p>The <code>hashCode</code> method plays a crucial role in the performance of Java’s hash-based data structures, such as <code>HashSet</code>, <code>HashMap</code>, and <code>HashTable</code>. These data structures rely on the <code>hashCode</code> method to efficiently store and retrieve objects based on their hash codes.</p>
 <p>When working with these collections, it is important to ensure that the <code>hashCode</code> method is correctly implemented for the objects being stored. Failing to do so can lead to poor performance or incorrect behavior.</p>
 <p>In summary, the <code>hashCode</code> method in Java is a critical part of the <code>Object</code> class that provides a default implementation for generating hash codes. When creating custom classes, it is essential to override the <code>hashCode</code> method if the <code>equals()</code> method is also overridden, ensuring the correct functioning of hash-based data structures like <code>HashSet</code> and <code>HashMap</code>.</p>
@@ -1113,7 +1119,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./21_graphs.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">The Graph Data Structure</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">The Graph Data Structure</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
