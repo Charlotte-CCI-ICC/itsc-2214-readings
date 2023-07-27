@@ -30,6 +30,19 @@ book:
       chapters:
         - 12_collections_of_data_intro.qmd
         - 13_operations_on_lists.md
+        - 14_implementing_arraylists.md
+        - 15_implementing_linkedlists.md
+    - part: "Stacks and Queues"
+      chapters:
+        - 16_stack.md
+        - 17_queue.md
+    - part: "Recursion"
+      chapters:
+        - 18_recursion.md
+        - 19_binary_search.md
+    - part: "Trees"
+      chapters:
+        - 20_trees.qmd
     - part: "Graphs"
       chapters:
         - 21_graphs.qmd
@@ -48,3 +61,6 @@ format:
 
 website:
   open-graph: true
+  reader-mode: true
+  repo-url: https://github.com/Charlotte-CCI-ICC/itsc-2214-readings
+  repo-actions: [edit, issue]
