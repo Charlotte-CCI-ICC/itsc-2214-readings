@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - Summer 2023 - 21&nbsp; Graphs</title>
+<title>ITSC 2214 - Data Structures and Algorithms - Fall 2023 - 21&nbsp; Graphs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -126,7 +126,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">ITSC 2214 - Data Structures and Algorithms - Summer 2023</a> 
+      <a href="./">ITSC 2214 - Data Structures and Algorithms - Fall 2023</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -1578,7 +1578,8 @@ C–D
 <p>An <strong>adjacency matrix</strong> is a two-dimensional grid representation, where the cell at the i-th row and j-th column denotes the connection between the i-th and j-th vertices. In an unweighted graph, the cells contain a 1 (indicating an edge between the vertices) or a 0 (indicating no edge). In a weighted graph, the cells hold the weights of the respective edges.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="adjacency-matrix-graph">
+<div id="fig-adjacency-matrix-graph" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
 <div>
 <svg width="672" height="480" viewbox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
@@ -1620,11 +1621,12 @@ C–D
 <path fill="none" stroke="black" d="M90.65,-72.76C84.83,-61.46 77.11,-46.44 71.3,-35.15"></path> </g> </g>
 </svg>
 </div>
-<p>A graph for adjacency matrix example</p>
+<figcaption class="figure-caption">Figure&nbsp;21.19: A graph for adjacency matrix example</figcaption>
+</figure>
 </div>
 </div>
 </div>
-<p>Adjacency matrix representation (unweighted) for the graph in <span class="quarto-unresolved-ref">?fig-adjacency-matrix-graph</span> is:</p>
+<p>Adjacency matrix representation (unweighted) for the graph in <a href="#fig-adjacency-matrix-graph">Figure&nbsp;<span>21.19</span></a> is:</p>
 <div id="lst-adjacency-matrix-example" class="listing">
 <p>Listing&nbsp;21.2: Adjacency matrix representation.</p>
 <pre id="lst-adjacency-matrix-example" class="text" data-lst-cap="Adjacency matrix representation."><code>  A B C D
@@ -1727,7 +1729,7 @@ C–E
 <path fill="none" stroke="black" d="M99.91,-71.7C100.07,-60.85 100.27,-46.92 100.42,-36.1"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;21.19: An example graph for BFS traversal. The numbers represent the order in which the vertices are visited.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.20: An example graph for BFS traversal. The numbers represent the order in which the vertices are visited.</figcaption>
 </figure>
 </div>
 </div>
@@ -1833,7 +1835,7 @@ forLoop-&gt;Qempty
 <path fill="none" stroke="black" d="M292.83,-36.05C306.88,-44.96 321.62,-57.32 329.39,-73 343.51,-101.47 333.48,-115.32 319.39,-143.8 317.34,-147.96 314.77,-152.13 312.07,-156.07"></path> <polygon fill="black" stroke="black" points="309.16,-154.11 306.05,-164.24 314.8,-158.27 309.16,-154.11"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;21.20: Flowchart depicting the steps of the BFS algorithm.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.21: Flowchart depicting the steps of the BFS algorithm.</figcaption>
 </figure>
 </div>
 </div>
@@ -1893,7 +1895,7 @@ C–E
 <path fill="none" stroke="black" d="M99,-94.64C99,-83.34 99,-70.39 99,-59.09"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;21.21: Example graph for DFS traversal. The numbers and colors indicate the order and depth of traversal, respectively.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.22: Example graph for DFS traversal. The numbers and colors indicate the order and depth of traversal, respectively.</figcaption>
 </figure>
 </div>
 </div>
@@ -1970,7 +1972,7 @@ forLoop-&gt;end
 <path fill="none" stroke="black" d="M197.73,-72.81C197.73,-64.79 197.73,-55.05 197.73,-46.07"></path> <polygon fill="black" stroke="black" points="201.23,-46.03 197.73,-36.03 194.23,-46.03 201.23,-46.03"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;21.22: Flowchart depicting the recursive implementation of the DFS algorithm.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.23: Flowchart depicting the recursive implementation of the DFS algorithm.</figcaption>
 </figure>
 </div>
 </div>
@@ -2066,7 +2068,7 @@ forLoop-&gt;Sempty
 <path fill="none" stroke="black" d="M270.17,-36.16C282.95,-45.31 296.54,-57.82 303.52,-73 316.8,-101.87 307.61,-115.32 293.52,-143.8 291.43,-148.04 288.81,-152.29 286.04,-156.3"></path> <polygon fill="black" stroke="black" points="283.05,-154.46 279.91,-164.58 288.67,-158.62 283.05,-154.46"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;21.23: Flowchart depicting the iterative implementation of the DFS algorithm.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.24: Flowchart depicting the iterative implementation of the DFS algorithm.</figcaption>
 </figure>
 </div>
 </div>
