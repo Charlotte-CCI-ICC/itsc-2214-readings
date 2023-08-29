@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - Fall 2023 - 20&nbsp; Tree Data Structure</title>
+<title>ITSC 2214 - Data Structures and Algorithms - Fall 2023 - 21&nbsp; Tree Data Structure</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./20_trees.html">Trees</a></li><li class="breadcrumb-item"><a href="./20_trees.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./20_trees.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -163,10 +163,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_1_compilers_types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_algorithmic_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Algorithmic Analysis</span></a>
+ <span class="menu-text">Unit Testing</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -174,8 +186,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_algorithmic_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span></a>
+  <a href="./04_unit_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_writing_junit_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_mutation_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_list_of_mutators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">List of Mutators</span></span></a>
   </div>
 </li>
       </ul>
@@ -183,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Unit Testing</span></a>
+ <span class="menu-text">Iterative Sorting and Searching</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -191,26 +221,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_unit_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></span></a>
+  <a href="./08_sorting_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05_writing_junit_tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span></a>
+  <a href="./09_comparable_comparator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06_mutation_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></span></a>
+  <a href="./10_bubble_selection_insertion_sort.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07_list_of_mutators.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">List of Mutators</span></span></a>
+  <a href="./11_linear_search.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Linear Search</span></span></a>
   </div>
 </li>
       </ul>
@@ -218,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
- <span class="menu-text">Iterative Sorting and Searching</span></a>
+ <span class="menu-text">Sequential Collections of Data</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -226,26 +256,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08_sorting_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span></a>
+  <a href="./12_collections_of_data_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Collections of Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09_comparable_comparator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
+  <a href="./13_operations_on_lists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_bubble_selection_insertion_sort.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span></a>
+  <a href="./14_implementing_arraylists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11_linear_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Linear Search</span></span></a>
+  <a href="./15_implementing_linkedlists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></span></a>
   </div>
 </li>
       </ul>
@@ -253,7 +283,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
- <span class="menu-text">Sequential Collections of Data</span></a>
+ <span class="menu-text">Stacks and Queues</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -261,26 +291,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12_collections_of_data_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Collections of Data</span></span></a>
+  <a href="./16_stack.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13_operations_on_lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./14_implementing_arraylists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./15_implementing_linkedlists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></span></a>
+  <a href="./17_queue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span></a>
   </div>
 </li>
       </ul>
@@ -288,7 +306,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
- <span class="menu-text">Stacks and Queues</span></a>
+ <span class="menu-text">Recursion</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -296,92 +314,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./16_stack.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./17_queue.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
- <span class="menu-text">Recursion</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./18_recursion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Recursion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Recursion</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./19_binary_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
- <span class="menu-text">Trees</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20_trees.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
- <span class="menu-text">Graphs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./21_graphs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
- <span class="menu-text">Hashing, HashMaps and HashTables</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./22_hashing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
   </div>
 </li>
-      </ul>
-  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
@@ -398,28 +360,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">20.1</span> Background</a></li>
-  <li><a href="#introduction-to-trees" id="toc-introduction-to-trees" class="nav-link" data-scroll-target="#introduction-to-trees"><span class="header-section-number">20.2</span> Introduction to Trees</a></li>
-  <li><a href="#binary-tree" id="toc-binary-tree" class="nav-link" data-scroll-target="#binary-tree"><span class="header-section-number">20.3</span> Binary Tree</a>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">21.1</span> Background</a></li>
+  <li><a href="#introduction-to-trees" id="toc-introduction-to-trees" class="nav-link" data-scroll-target="#introduction-to-trees"><span class="header-section-number">21.2</span> Introduction to Trees</a></li>
+  <li><a href="#binary-tree" id="toc-binary-tree" class="nav-link" data-scroll-target="#binary-tree"><span class="header-section-number">21.3</span> Binary Tree</a>
   <ul class="collapse">
-  <li><a href="#implementing-a-binary-tree" id="toc-implementing-a-binary-tree" class="nav-link" data-scroll-target="#implementing-a-binary-tree"><span class="header-section-number">20.3.1</span> Implementing a Binary Tree</a></li>
+  <li><a href="#implementing-a-binary-tree" id="toc-implementing-a-binary-tree" class="nav-link" data-scroll-target="#implementing-a-binary-tree"><span class="header-section-number">21.3.1</span> Implementing a Binary Tree</a></li>
   </ul></li>
-  <li><a href="#common-operations-on-binary-trees" id="toc-common-operations-on-binary-trees" class="nav-link" data-scroll-target="#common-operations-on-binary-trees"><span class="header-section-number">20.4</span> Common Operations on Binary Trees</a>
+  <li><a href="#common-operations-on-binary-trees" id="toc-common-operations-on-binary-trees" class="nav-link" data-scroll-target="#common-operations-on-binary-trees"><span class="header-section-number">21.4</span> Common Operations on Binary Trees</a>
   <ul class="collapse">
-  <li><a href="#traversals-and-orderings" id="toc-traversals-and-orderings" class="nav-link" data-scroll-target="#traversals-and-orderings"><span class="header-section-number">20.4.1</span> Traversals and Orderings</a></li>
+  <li><a href="#traversals-and-orderings" id="toc-traversals-and-orderings" class="nav-link" data-scroll-target="#traversals-and-orderings"><span class="header-section-number">21.4.1</span> Traversals and Orderings</a></li>
   </ul></li>
-  <li><a href="#binary-search-trees-bst" id="toc-binary-search-trees-bst" class="nav-link" data-scroll-target="#binary-search-trees-bst"><span class="header-section-number">20.5</span> Binary Search Trees (BST)</a>
+  <li><a href="#binary-search-trees-bst" id="toc-binary-search-trees-bst" class="nav-link" data-scroll-target="#binary-search-trees-bst"><span class="header-section-number">21.5</span> Binary Search Trees (BST)</a>
   <ul class="collapse">
-  <li><a href="#definition-properties-and-structure-of-bsts" id="toc-definition-properties-and-structure-of-bsts" class="nav-link" data-scroll-target="#definition-properties-and-structure-of-bsts"><span class="header-section-number">20.5.1</span> Definition, Properties, and Structure of BSTs</a></li>
-  <li><a href="#advantages-of-bsts-over-other-tree-structures" id="toc-advantages-of-bsts-over-other-tree-structures" class="nav-link" data-scroll-target="#advantages-of-bsts-over-other-tree-structures"><span class="header-section-number">20.5.2</span> Advantages of BSTs over other tree structures</a></li>
-  <li><a href="#detailed-description-of-bst-operations-insertion-deletion-searching" id="toc-detailed-description-of-bst-operations-insertion-deletion-searching" class="nav-link" data-scroll-target="#detailed-description-of-bst-operations-insertion-deletion-searching"><span class="header-section-number">20.5.3</span> Detailed description of BST operations: insertion, deletion, searching</a></li>
-  <li><a href="#recursive-and-iterative-implementations-in-java" id="toc-recursive-and-iterative-implementations-in-java" class="nav-link" data-scroll-target="#recursive-and-iterative-implementations-in-java"><span class="header-section-number">20.5.4</span> Recursive and Iterative Implementations in Java</a></li>
-  <li><a href="#search-operation" id="toc-search-operation" class="nav-link" data-scroll-target="#search-operation"><span class="header-section-number">20.5.5</span> Search Operation</a></li>
-  <li><a href="#insertion-operation" id="toc-insertion-operation" class="nav-link" data-scroll-target="#insertion-operation"><span class="header-section-number">20.5.6</span> Insertion Operation</a></li>
-  <li><a href="#deletion-operation" id="toc-deletion-operation" class="nav-link" data-scroll-target="#deletion-operation"><span class="header-section-number">20.5.7</span> Deletion Operation</a></li>
-  <li><a href="#performance-and-time-complexity" id="toc-performance-and-time-complexity" class="nav-link" data-scroll-target="#performance-and-time-complexity"><span class="header-section-number">20.5.8</span> Performance and Time Complexity</a></li>
+  <li><a href="#definition-properties-and-structure-of-bsts" id="toc-definition-properties-and-structure-of-bsts" class="nav-link" data-scroll-target="#definition-properties-and-structure-of-bsts"><span class="header-section-number">21.5.1</span> Definition, Properties, and Structure of BSTs</a></li>
+  <li><a href="#advantages-of-bsts-over-other-tree-structures" id="toc-advantages-of-bsts-over-other-tree-structures" class="nav-link" data-scroll-target="#advantages-of-bsts-over-other-tree-structures"><span class="header-section-number">21.5.2</span> Advantages of BSTs over other tree structures</a></li>
+  <li><a href="#detailed-description-of-bst-operations-insertion-deletion-searching" id="toc-detailed-description-of-bst-operations-insertion-deletion-searching" class="nav-link" data-scroll-target="#detailed-description-of-bst-operations-insertion-deletion-searching"><span class="header-section-number">21.5.3</span> Detailed description of BST operations: insertion, deletion, searching</a></li>
+  <li><a href="#recursive-and-iterative-implementations-in-java" id="toc-recursive-and-iterative-implementations-in-java" class="nav-link" data-scroll-target="#recursive-and-iterative-implementations-in-java"><span class="header-section-number">21.5.4</span> Recursive and Iterative Implementations in Java</a></li>
+  <li><a href="#search-operation" id="toc-search-operation" class="nav-link" data-scroll-target="#search-operation"><span class="header-section-number">21.5.5</span> Search Operation</a></li>
+  <li><a href="#insertion-operation" id="toc-insertion-operation" class="nav-link" data-scroll-target="#insertion-operation"><span class="header-section-number">21.5.6</span> Insertion Operation</a></li>
+  <li><a href="#deletion-operation" id="toc-deletion-operation" class="nav-link" data-scroll-target="#deletion-operation"><span class="header-section-number">21.5.7</span> Deletion Operation</a></li>
+  <li><a href="#performance-and-time-complexity" id="toc-performance-and-time-complexity" class="nav-link" data-scroll-target="#performance-and-time-complexity"><span class="header-section-number">21.5.8</span> Performance and Time Complexity</a></li>
   </ul></li>
-  <li><a href="#balanced-binary-search-trees" id="toc-balanced-binary-search-trees" class="nav-link" data-scroll-target="#balanced-binary-search-trees"><span class="header-section-number">20.6</span> Balanced Binary Search Trees</a></li>
+  <li><a href="#balanced-binary-search-trees" id="toc-balanced-binary-search-trees" class="nav-link" data-scroll-target="#balanced-binary-search-trees"><span class="header-section-number">21.6</span> Balanced Binary Search Trees</a></li>
   </ul>
 </nav>
     </div>
@@ -428,7 +390,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></h1>
+<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></h1>
 </div>
 
 
@@ -443,9 +405,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="background" class="level2" data-number="20.1">
-<h2 data-number="20.1" class="anchored" data-anchor-id="background"><span class="header-section-number">20.1</span> Background</h2>
-<p>When we first begin to learn about data structures, we often encounter linear structures such as arrays, linked lists, stacks, and queues. These structures, as the term ‘linear’ suggests, store data in a sequential manner (<a href="#fig-linked-list">Figure&nbsp;<span>20.1</span></a>). This makes them great for situations where the data can be naturally expressed as a sequence, for instance, a to-do list or a queue at a coffee shop.</p>
+<section id="background" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="background"><span class="header-section-number">21.1</span> Background</h2>
+<p>When we first begin to learn about data structures, we often encounter linear structures such as arrays, linked lists, stacks, and queues. These structures, as the term ‘linear’ suggests, store data in a sequential manner (<a href="#fig-linked-list">Figure&nbsp;<span>21.1</span></a>). This makes them great for situations where the data can be naturally expressed as a sequence, for instance, a to-do list or a queue at a coffee shop.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-linked-list" class="quarto-figure quarto-figure-center anchored">
@@ -495,13 +457,13 @@ G
 <path fill="none" stroke="black" d="M18,-71.7C18,-63.98 18,-54.71 18,-46.11"></path> <polygon fill="black" stroke="black" points="21.5,-46.1 18,-36.1 14.5,-46.1 21.5,-46.1"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.1: A representation of a linked list structure, highlighting its linear nature.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.1: A representation of a linked list structure, highlighting its linear nature.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Let’s consider the linked list. Each node in the linked list has a reference to the next node, creating a chain of elements. This works well when the data in the structure has a natural sequential or linear relationship. However, as we delve deeper into more complex data problems, we begin to see that not all data fits neatly into a linear relationship.</p>
-<p>Consider an organizational hierarchy within a company. Each person (except the CEO) reports to exactly one person. However, each manager can have multiple direct reports. In this case, each node (person) might need to reference more than one node (<a href="#fig-org-hierarchy">Figure&nbsp;<span>20.2</span></a>). Using a linked list to represent this data would be cumbersome, as it would not capture the multiple relationships that exist between a manager and their direct reports.</p>
+<p>Consider an organizational hierarchy within a company. Each person (except the CEO) reports to exactly one person. However, each manager can have multiple direct reports. In this case, each node (person) might need to reference more than one node (<a href="#fig-org-hierarchy">Figure&nbsp;<span>21.2</span></a>). Using a linked list to represent this data would be cumbersome, as it would not capture the multiple relationships that exist between a manager and their direct reports.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-org-hierarchy" class="quarto-figure quarto-figure-center anchored">
@@ -567,12 +529,12 @@ Manager2-&gt;Employee4
 <path fill="none" stroke="black" d="M344.65,-158.64C360.07,-141.87 378.56,-121.76 395.07,-103.81"></path> <polygon fill="black" stroke="black" points="397.82,-105.99 402.01,-96.26 392.66,-101.25 397.82,-105.99"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.2: An example of an organizational hierarchy within a company, illustrating the non-linear relationships that exist.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.2: An example of an organizational hierarchy within a company, illustrating the non-linear relationships that exist.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Another example is a file system on your computer. Each folder can contain multiple files or other folders. But, each file or folder is contained within exactly one other folder. Once again, we see the need for a data structure that can capture these multiple relationships (<a href="#fig-file-system">Figure&nbsp;<span>20.3</span></a>).</p>
+<p>Another example is a file system on your computer. Each folder can contain multiple files or other folders. But, each file or folder is contained within exactly one other folder. Once again, we see the need for a data structure that can capture these multiple relationships (<a href="#fig-file-system">Figure&nbsp;<span>21.3</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-file-system" class="quarto-figure quarto-figure-center anchored">
@@ -638,14 +600,14 @@ Subfolder1-&gt;File4
 <path fill="none" stroke="black" d="M71.9,-71.7C76,-63.73 80.95,-54.1 85.49,-45.26"></path> <polygon fill="black" stroke="black" points="88.74,-46.6 90.2,-36.1 82.52,-43.4 88.74,-46.6"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.3: A representation of a simple file system, showing how folders can contain multiple other folders or files.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.3: A representation of a simple file system, showing how folders can contain multiple other folders or files.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>These examples bring to light a common pattern: there are situations where our data is not linear, but hierarchical. Hierarchies exist in various forms in the real world, from biological classifications to the layout of web pages, and modeling these hierarchies accurately in our programs allows us to reflect the reality more truthfully.</p>
 <p>Enter the concept of Trees.</p>
-<p>A tree in computer science is a hierarchical data structure that can model these kinds of relationships (<a href="#fig-tree-structure">Figure&nbsp;<span>20.4</span></a>). This structure gets its name from a real-world tree, but with a twist - the tree data structure is often visualized with the root at the top and the leaves at the bottom, resembling an upside-down real-world tree.</p>
+<p>A tree in computer science is a hierarchical data structure that can model these kinds of relationships (<a href="#fig-tree-structure">Figure&nbsp;<span>21.4</span></a>). This structure gets its name from a real-world tree, but with a twist - the tree data structure is often visualized with the root at the top and the leaves at the bottom, resembling an upside-down real-world tree.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-tree-structure" class="quarto-figure quarto-figure-center anchored">
@@ -711,7 +673,7 @@ Child3-&gt;Grandchild3
 <path fill="none" stroke="black" d="M357.31,-154.55C357.31,-146.63 357.31,-138 357.31,-129.28"></path> <polygon fill="black" stroke="black" points="360.81,-129.04 357.31,-119.04 353.81,-129.04 360.81,-129.04"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.4: An illustration of a simple tree data structure, with key components labeled.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.4: An illustration of a simple tree data structure, with key components labeled.</figcaption>
 </figure>
 </div>
 </div>
@@ -719,11 +681,11 @@ Child3-&gt;Grandchild3
 <p>The tree structure is a fundamental shift from our previously understood data structures. It can open new doors to solving problems and provide an efficient way to organize and model complex relationships in our data.</p>
 <p>In the following sections, we’ll take a deeper dive into the world of trees, understanding their properties, variations, and how they can revolutionize the way we think about hierarchical data relationships.</p>
 </section>
-<section id="introduction-to-trees" class="level2" data-number="20.2">
-<h2 data-number="20.2" class="anchored" data-anchor-id="introduction-to-trees"><span class="header-section-number">20.2</span> Introduction to Trees</h2>
+<section id="introduction-to-trees" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="introduction-to-trees"><span class="header-section-number">21.2</span> Introduction to Trees</h2>
 <p>After establishing the need for a data structure that can handle more complex relationships, we can now formally introduce the concept of trees.</p>
 <p>A tree in computer science is an abstract data type that simulates a hierarchical structure with a set of interconnected nodes. The key characteristic that separates trees from other data structures is that no node in the tree may be connected to more than one parent node, thereby preventing any possibility of a loop in the data structure.</p>
-<p>Let’s get familiar with some fundamental tree terminologies (see <a href="#fig-tree-terminology">Figure&nbsp;<span>20.5</span></a>):</p>
+<p>Let’s get familiar with some fundamental tree terminologies (see <a href="#fig-tree-terminology">Figure&nbsp;<span>21.5</span></a>):</p>
 <ul>
 <li><strong>Node</strong>: A unit or location in the tree where data is stored. It’s similar to a link in a linked list or an element in an array.</li>
 <li><strong>Root</strong>: The topmost node in the tree that doesn’t have a parent.</li>
@@ -802,13 +764,13 @@ C-&gt;E
 <path fill="none" stroke="black" d="M341.18,-138.24C350.59,-123.25 360.52,-107.45 369.42,-93.27"></path> <polygon fill="black" stroke="black" points="372.47,-95 374.82,-84.67 366.54,-91.28 372.47,-95"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.5: A simple tree illustrating various tree terminologies. Node A is the root, nodes B and C are children of A. Node C, having two children, demonstrates the degree of a node. Nodes D, E, F, G are leaf nodes. The subtree consists of Node C and its descendants (D, E). The level is demonstrated by the level of Node B (Level 1). The depth of Node D is 2 (from Root A). The height of the tree is 2 (distance from the Root A to furthest leaf).</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.5: A simple tree illustrating various tree terminologies. Node A is the root, nodes B and C are children of A. Node C, having two children, demonstrates the degree of a node. Nodes D, E, F, G are leaf nodes. The subtree consists of Node C and its descendants (D, E). The level is demonstrated by the level of Node B (Level 1). The depth of Node D is 2 (from Root A). The height of the tree is 2 (distance from the Root A to furthest leaf).</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>The concept of trees becomes truly interesting when we delve into the various types of trees. Different types of trees can be used to solve different types of problems, and it’s crucial to choose the right type for a given problem.</p>
-<p>The simplest form of a tree is a <strong>General Tree</strong>, where each node can have any number of child nodes. An example of where a general tree might be useful is in the representation of a file system on a computer. In this system, each folder can contain any number of files or folders. We can illustrate this with a diagram (<a href="#fig-general-tree">Figure&nbsp;<span>20.6</span></a>).</p>
+<p>The simplest form of a tree is a <strong>General Tree</strong>, where each node can have any number of child nodes. An example of where a general tree might be useful is in the representation of a file system on a computer. In this system, each folder can contain any number of files or folders. We can illustrate this with a diagram (<a href="#fig-general-tree">Figure&nbsp;<span>21.6</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-general-tree" class="quarto-figure quarto-figure-center anchored">
@@ -882,12 +844,12 @@ Subfolder1-&gt;File5
 <path fill="none" stroke="black" d="M116.8,-71.7C125.6,-63.14 136.38,-52.66 146,-43.3"></path> <polygon fill="black" stroke="black" points="148.68,-45.58 153.41,-36.1 143.8,-40.57 148.68,-45.58"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.6: An example of a general tree representing a file system, where each node can have any number of child nodes.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.6: An example of a general tree representing a file system, where each node can have any number of child nodes.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>However, there are also more specialized types of trees, like <strong>Binary Trees</strong>, where each node can have at most two children, commonly referred to as left and right child. The binary tree can be visualized in the form of a family tree where each parent (node) can have at most two children (<a href="#fig-binary-tree">Figure&nbsp;<span>20.7</span></a>).</p>
+<p>However, there are also more specialized types of trees, like <strong>Binary Trees</strong>, where each node can have at most two children, commonly referred to as left and right child. The binary tree can be visualized in the form of a family tree where each parent (node) can have at most two children (<a href="#fig-binary-tree">Figure&nbsp;<span>21.7</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-binary-tree" class="quarto-figure quarto-figure-center anchored">
@@ -921,12 +883,12 @@ Parent-&gt;Child2
 <path fill="none" stroke="black" d="M97.43,-113.25C101.86,-103.15 106.83,-91.84 111.54,-81.12"></path> <polygon fill="black" stroke="black" points="114.77,-82.47 115.58,-71.91 108.36,-79.66 114.77,-82.47"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.7: A binary tree representing a family tree, where each parent can have at most two children.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.7: A binary tree representing a family tree, where each parent can have at most two children.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>A further specialization is the <strong>Binary Search Tree (BST)</strong>, where the nodes are arranged in a manner such that for every node, nodes in the left subtree have values less than the node, and nodes in the right subtree have values greater than the node. This property makes BSTs useful for search operations, such as finding a book in a library system, where books are organized based on their identifying information (<a href="#fig-bst">Figure&nbsp;<span>20.8</span></a>).</p>
+<p>A further specialization is the <strong>Binary Search Tree (BST)</strong>, where the nodes are arranged in a manner such that for every node, nodes in the left subtree have values less than the node, and nodes in the right subtree have values greater than the node. This property makes BSTs useful for search operations, such as finding a book in a library system, where books are organized based on their identifying information (<a href="#fig-bst">Figure&nbsp;<span>21.8</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-bst" class="quarto-figure quarto-figure-center anchored">
@@ -992,13 +954,13 @@ G
 <path fill="none" stroke="black" d="M151.21,-81.09C159.32,-70.73 170.03,-57.04 179.12,-45.42"></path> <polygon fill="black" stroke="black" points="181.99,-47.43 185.4,-37.4 176.48,-43.12 181.99,-47.43"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.8: A binary search tree (BST) used in a library system for organizing books. The key property of BST is that nodes in the left subtree have values less than the parent node, and nodes in the right subtree have values greater.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.8: A binary search tree (BST) used in a library system for organizing books. The key property of BST is that nodes in the left subtree have values less than the parent node, and nodes in the right subtree have values greater.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>There are also self-balancing trees like <strong>AVL Trees</strong> and <strong>Red-Black Trees</strong> that maintain their balance as new nodes are inserted or existing nodes are removed, which ensures that the tree remains efficient for operations like insertion, deletion, and search.</p>
-<p>Another common type of tree is the <strong>B-tree</strong>, used in databases and filesystems. In a B-tree, each node can have more than two children, unlike in a binary tree. This structure allows for efficient access and modification of large blocks of data, which makes B-trees particularly suitable for use in disk-based storage systems, such as databases (<a href="#fig-btree">Figure&nbsp;<span>20.9</span></a>).</p>
+<p>Another common type of tree is the <strong>B-tree</strong>, used in databases and filesystems. In a B-tree, each node can have more than two children, unlike in a binary tree. This structure allows for efficient access and modification of large blocks of data, which makes B-trees particularly suitable for use in disk-based storage systems, such as databases (<a href="#fig-btree">Figure&nbsp;<span>21.9</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-btree" class="quarto-figure quarto-figure-center anchored">
@@ -1096,15 +1058,15 @@ Node4–Leaf7
 <path fill="none" stroke="black" d="M404.8,-71.7C415.96,-60.85 430.29,-46.92 441.41,-36.1"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.9: A representation of a B-tree used in a database. Each node can have more than two children, providing efficient access and modification of large data blocks.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.9: A representation of a B-tree used in a database. Each node can have more than two children, providing efficient access and modification of large data blocks.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Understanding these types of trees and how they work is crucial to using them effectively. In the next sections, we will delve deeper into some of these tree types and explore their properties and uses.</p>
 </section>
-<section id="binary-tree" class="level2" data-number="20.3">
-<h2 data-number="20.3" class="anchored" data-anchor-id="binary-tree"><span class="header-section-number">20.3</span> Binary Tree</h2>
+<section id="binary-tree" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="binary-tree"><span class="header-section-number">21.3</span> Binary Tree</h2>
 <p>After understanding the basic concept of trees, let’s now focus on a special kind of tree, the Binary Tree. As we have mentioned earlier, in a binary tree, a node can have at most two children - commonly referred to as the left child and the right child. This property leads to some interesting and useful characteristics that we’ll explore in this section.</p>
 <p>The structure of a binary tree is relatively straightforward. Each node in a binary tree contains some data, a reference to the left child node, and a reference to the right child node. If a node has no left or right child, the corresponding reference is set to <code>null</code>.</p>
 <p>In a binary tree, each level has twice as many nodes as the previous level, creating a rapidly expanding structure. This property enables binary trees to store large amounts of data in a relatively small number of levels, which can lead to efficient search and insertion operations, given the tree is balanced.</p>
@@ -1161,7 +1123,7 @@ B-&gt;E
 <path fill="none" stroke="black" d="M51.27,-72.78C54.51,-64.39 58.54,-53.95 62.18,-44.51"></path> <polygon fill="black" stroke="black" points="65.45,-45.75 65.78,-35.16 58.92,-43.23 65.45,-45.75"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.10: A Full Binary Tree. Every node has either 0 or 2 children.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.10: A Full Binary Tree. Every node has either 0 or 2 children.</figcaption>
 </figure>
 </div>
 </div>
@@ -1226,7 +1188,7 @@ C-&gt;F
 <path fill="none" stroke="black" d="M126.01,-71.71C126.01,-64 126.01,-54.73 126.01,-46.13"></path> <polygon fill="black" stroke="black" points="129.51,-46.12 126.01,-36.12 122.51,-46.12 129.51,-46.12"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.11: A Complete Binary Tree. Every level is fully filled except for the last, which is filled from left to right.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.11: A Complete Binary Tree. Every level is fully filled except for the last, which is filled from left to right.</figcaption>
 </figure>
 </div>
 </div>
@@ -1299,7 +1261,7 @@ C-&gt;G
 <path fill="none" stroke="black" d="M136.68,-75.19C144.22,-65.41 154.49,-52.1 163.14,-40.88"></path> <polygon fill="black" stroke="black" points="166.03,-42.87 169.36,-32.81 160.49,-38.59 166.03,-42.87"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.12: A Perfect Binary Tree. Every level is fully filled.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.12: A Perfect Binary Tree. Every level is fully filled.</figcaption>
 </figure>
 </div>
 </div>
@@ -1364,7 +1326,7 @@ C-&gt;F
 <path fill="none" stroke="black" d="M126.01,-71.71C126.01,-64 126.01,-54.73 126.01,-46.13"></path> <polygon fill="black" stroke="black" points="129.51,-46.12 126.01,-36.12 122.51,-46.12 129.51,-46.12"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.13: A Balanced Binary Tree. The difference in height of left and right subtrees for every node is not more than 1.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.13: A Balanced Binary Tree. The difference in height of left and right subtrees for every node is not more than 1.</figcaption>
 </figure>
 </div>
 </div>
@@ -1421,13 +1383,13 @@ D-&gt;E
 <path fill="none" stroke="black" d="M18.01,-71.7C18.01,-63.99 18.01,-54.72 18.01,-46.12"></path> <polygon fill="black" stroke="black" points="21.51,-46.11 18.01,-36.11 14.51,-46.11 21.51,-46.11"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.14: A Degenerate (or pathological) Tree. Each parent node has only one child.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.14: A Degenerate (or pathological) Tree. Each parent node has only one child.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<section id="implementing-a-binary-tree" class="level3" data-number="20.3.1">
-<h3 data-number="20.3.1" class="anchored" data-anchor-id="implementing-a-binary-tree"><span class="header-section-number">20.3.1</span> Implementing a Binary Tree</h3>
+<section id="implementing-a-binary-tree" class="level3" data-number="21.3.1">
+<h3 data-number="21.3.1" class="anchored" data-anchor-id="implementing-a-binary-tree"><span class="header-section-number">21.3.1</span> Implementing a Binary Tree</h3>
 <p>In this section, we will be implementing a simple Binary Tree structure using Java. We’ll start with the definition of the <code>Node</code> class.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/**</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> <span class="co">*</span> This class represents a node in the binary tree<span class="co">.</span></span>
@@ -1467,14 +1429,14 @@ D-&gt;E
 <p>In the <code>BinaryTree</code> class, we defined a <code>root</code> of type <code>Node&lt;T&gt;</code> representing the root of the tree. Practical applications of binary trees usually include additional operations like adding a node, deleting a node, checking if a value exists in the tree, and various ways of traversing the tree (in-order, pre-order, post-order).</p>
 </section>
 </section>
-<section id="common-operations-on-binary-trees" class="level2" data-number="20.4">
-<h2 data-number="20.4" class="anchored" data-anchor-id="common-operations-on-binary-trees"><span class="header-section-number">20.4</span> Common Operations on Binary Trees</h2>
-<section id="traversals-and-orderings" class="level3" data-number="20.4.1">
-<h3 data-number="20.4.1" class="anchored" data-anchor-id="traversals-and-orderings"><span class="header-section-number">20.4.1</span> Traversals and Orderings</h3>
+<section id="common-operations-on-binary-trees" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="common-operations-on-binary-trees"><span class="header-section-number">21.4</span> Common Operations on Binary Trees</h2>
+<section id="traversals-and-orderings" class="level3" data-number="21.4.1">
+<h3 data-number="21.4.1" class="anchored" data-anchor-id="traversals-and-orderings"><span class="header-section-number">21.4.1</span> Traversals and Orderings</h3>
 <p>Trees, being a nonlinear data structure, cannot be traversed in a single run like arrays, linked lists, or other linear data structures. Therefore, they require some specific methods to traverse their nodes, visit each node once, and perform some operations such as search, update, or accumulate.</p>
 <p>Three common types of depth-first traversal are <strong>in-order</strong>, <strong>pre-order</strong>, and <strong>post-order</strong>.</p>
-<section id="in-order-traversal" class="level4" data-number="20.4.1.1">
-<h4 data-number="20.4.1.1" class="anchored" data-anchor-id="in-order-traversal"><span class="header-section-number">20.4.1.1</span> In-Order Traversal</h4>
+<section id="in-order-traversal" class="level4" data-number="21.4.1.1">
+<h4 data-number="21.4.1.1" class="anchored" data-anchor-id="in-order-traversal"><span class="header-section-number">21.4.1.1</span> In-Order Traversal</h4>
 <p>In in-order traversal, the process is as follows: 1. Traverse the left subtree 2. Visit the root node 3. Traverse the right subtree</p>
 <p>This traversal technique is widely used, and in binary search trees, it retrieves data in ascending order.</p>
 <div class="cell">
@@ -1510,7 +1472,7 @@ A-&gt;C
 <path fill="none" stroke="black" d="M78.49,-96.89C82.48,-87.39 87.06,-76.49 91.34,-66.31"></path> <polygon fill="black" stroke="black" points="94.67,-67.41 95.32,-56.83 88.22,-64.7 94.67,-67.41"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.15: In-Order Traversal: Traverse left subtree, Visit root, Traverse right subtree. The numbers indicate the order of traversal.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.15: In-Order Traversal: Traverse left subtree, Visit root, Traverse right subtree. The numbers indicate the order of traversal.</figcaption>
 </figure>
 </div>
 </div>
@@ -1524,8 +1486,8 @@ A-&gt;C
   }
 }</code></pre>
 </section>
-<section id="pre-order-traversal" class="level4" data-number="20.4.1.2">
-<h4 data-number="20.4.1.2" class="anchored" data-anchor-id="pre-order-traversal"><span class="header-section-number">20.4.1.2</span> Pre-Order Traversal</h4>
+<section id="pre-order-traversal" class="level4" data-number="21.4.1.2">
+<h4 data-number="21.4.1.2" class="anchored" data-anchor-id="pre-order-traversal"><span class="header-section-number">21.4.1.2</span> Pre-Order Traversal</h4>
 <p>In pre-order traversal, the process is as follows: 1. Visit the root node 2. Traverse the left subtree 3. Traverse the right subtree</p>
 <p>This method can be used to create a copy of the tree, or to get a prefix expression of an expression tree.</p>
 <div class="cell">
@@ -1561,7 +1523,7 @@ A-&gt;C
 <path fill="none" stroke="black" d="M78.49,-96.89C82.48,-87.39 87.06,-76.49 91.34,-66.31"></path> <polygon fill="black" stroke="black" points="94.67,-67.41 95.32,-56.83 88.22,-64.7 94.67,-67.41"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.16: Pre-Order Traversal: Visit root, Traverse left subtree, Traverse right subtree. The numbers indicate the order of traversal.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.16: Pre-Order Traversal: Visit root, Traverse left subtree, Traverse right subtree. The numbers indicate the order of traversal.</figcaption>
 </figure>
 </div>
 </div>
@@ -1575,8 +1537,8 @@ A-&gt;C
   }
 }</code></pre>
 </section>
-<section id="post-order-traversal" class="level4" data-number="20.4.1.3">
-<h4 data-number="20.4.1.3" class="anchored" data-anchor-id="post-order-traversal"><span class="header-section-number">20.4.1.3</span> Post-Order Traversal</h4>
+<section id="post-order-traversal" class="level4" data-number="21.4.1.3">
+<h4 data-number="21.4.1.3" class="anchored" data-anchor-id="post-order-traversal"><span class="header-section-number">21.4.1.3</span> Post-Order Traversal</h4>
 <p>In post-order traversal, the process is as follows: 1. Traverse the left subtree 2. Traverse the right subtree 3. Visit the root node</p>
 <p>This method is used to delete or deallocate nodes of a tree, or to get a postfix expression of an expression tree.</p>
 <div class="cell">
@@ -1612,7 +1574,7 @@ A-&gt;C
 <path fill="none" stroke="black" d="M78.49,-96.89C82.48,-87.39 87.06,-76.49 91.34,-66.31"></path> <polygon fill="black" stroke="black" points="94.67,-67.41 95.32,-56.83 88.22,-64.7 94.67,-67.41"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.17: Post-Order Traversal: Traverse left subtree, Traverse right subtree, Visit root. The numbers indicate the order of traversal.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.17: Post-Order Traversal: Traverse left subtree, Traverse right subtree, Visit root. The numbers indicate the order of traversal.</figcaption>
 </figure>
 </div>
 </div>
@@ -1631,13 +1593,13 @@ A-&gt;C
 </section>
 </section>
 </section>
-<section id="binary-search-trees-bst" class="level2" data-number="20.5">
-<h2 data-number="20.5" class="anchored" data-anchor-id="binary-search-trees-bst"><span class="header-section-number">20.5</span> Binary Search Trees (BST)</h2>
+<section id="binary-search-trees-bst" class="level2" data-number="21.5">
+<h2 data-number="21.5" class="anchored" data-anchor-id="binary-search-trees-bst"><span class="header-section-number">21.5</span> Binary Search Trees (BST)</h2>
 <p>Before delving into Binary Search Trees (BSTs), let’s take a step back and contemplate the significance of search operations in computer science. A search operation is fundamental to many applications, from looking up a contact in your smartphone to searching for a specific book in a library database. Therefore, making search operations efficient has always been a central challenge in computer science.</p>
 <p>Traditional search approaches like linear search, which checks each item one by one, can be time-consuming especially when dealing with large datasets, as it has a time complexity of O(n). A considerable improvement is the binary search algorithm, which works by repeatedly dividing the sorted list of elements in half until the target element is found, giving it a time complexity of O(log n). However, binary search requires the data to be sorted, and maintaining a sorted list of elements can be expensive for insert and delete operations.</p>
-<p>This is where Binary Search Trees come in. A Binary Search Tree is a special type of binary tree that maintains a specific ordering property — for each node, all elements in the left subtree are less than the node, and all elements in the right subtree are greater than the node (see <a href="#fig-bst-property">Figure&nbsp;<span>20.18</span></a>). This property of BSTs enables us to perform search, insert, and delete operations efficiently, maintaining a time complexity of O(log n) in an ideal situation where the tree is balanced. Let’s explore these concepts in more detail.</p>
-<section id="definition-properties-and-structure-of-bsts" class="level3" data-number="20.5.1">
-<h3 data-number="20.5.1" class="anchored" data-anchor-id="definition-properties-and-structure-of-bsts"><span class="header-section-number">20.5.1</span> Definition, Properties, and Structure of BSTs</h3>
+<p>This is where Binary Search Trees come in. A Binary Search Tree is a special type of binary tree that maintains a specific ordering property — for each node, all elements in the left subtree are less than the node, and all elements in the right subtree are greater than the node (see <a href="#fig-bst-property">Figure&nbsp;<span>21.18</span></a>). This property of BSTs enables us to perform search, insert, and delete operations efficiently, maintaining a time complexity of O(log n) in an ideal situation where the tree is balanced. Let’s explore these concepts in more detail.</p>
+<section id="definition-properties-and-structure-of-bsts" class="level3" data-number="21.5.1">
+<h3 data-number="21.5.1" class="anchored" data-anchor-id="definition-properties-and-structure-of-bsts"><span class="header-section-number">21.5.1</span> Definition, Properties, and Structure of BSTs</h3>
 <p>A Binary Search Tree (BST) is a binary tree where for every node:</p>
 <ul>
 <li>The values in its left subtree are less than the node’s value.</li>
@@ -1708,15 +1670,15 @@ G
 <path fill="none" stroke="black" d="M136.67,-75.17C144.21,-65.39 154.48,-52.08 163.13,-40.87"></path> <polygon fill="black" stroke="black" points="166.02,-42.86 169.35,-32.8 160.47,-38.58 166.02,-42.86"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.18: The Binary Search Tree property: for every node, all elements in the left subtree are less than the node, and all elements in the right subtree are greater than the node.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.18: The Binary Search Tree property: for every node, all elements in the left subtree are less than the node, and all elements in the right subtree are greater than the node.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>This property ensures that the “in-order” traversal of a BST results in a sorted sequence of values, which is the key to efficient search, insertion, and deletion operations.</p>
 </section>
-<section id="advantages-of-bsts-over-other-tree-structures" class="level3" data-number="20.5.2">
-<h3 data-number="20.5.2" class="anchored" data-anchor-id="advantages-of-bsts-over-other-tree-structures"><span class="header-section-number">20.5.2</span> Advantages of BSTs over other tree structures</h3>
+<section id="advantages-of-bsts-over-other-tree-structures" class="level3" data-number="21.5.2">
+<h3 data-number="21.5.2" class="anchored" data-anchor-id="advantages-of-bsts-over-other-tree-structures"><span class="header-section-number">21.5.2</span> Advantages of BSTs over other tree structures</h3>
 <p>The BST property provides some advantages over other tree structures:</p>
 <ul>
 <li><strong>Efficient search</strong>: If the tree is balanced, we can find, insert, or delete entries in O(log n) time where n is the total number of nodes. This is significantly faster than linear search, and it doesn’t require the maintenance of a sorted list like binary search.</li>
@@ -1724,10 +1686,10 @@ G
 <li><strong>Flexibility</strong>: Unlike an array, BSTs do not have a fixed size. They can grow and shrink during the execution of the program, allowing efficient use of memory.</li>
 </ul>
 </section>
-<section id="detailed-description-of-bst-operations-insertion-deletion-searching" class="level3" data-number="20.5.3">
-<h3 data-number="20.5.3" class="anchored" data-anchor-id="detailed-description-of-bst-operations-insertion-deletion-searching"><span class="header-section-number">20.5.3</span> Detailed description of BST operations: insertion, deletion, searching</h3>
+<section id="detailed-description-of-bst-operations-insertion-deletion-searching" class="level3" data-number="21.5.3">
+<h3 data-number="21.5.3" class="anchored" data-anchor-id="detailed-description-of-bst-operations-insertion-deletion-searching"><span class="header-section-number">21.5.3</span> Detailed description of BST operations: insertion, deletion, searching</h3>
 <p>BSTs support three fundamental operations: search, insertion, and deletion, all of which leverage the BST property to operate efficiently.</p>
-<p><strong>Search</strong>: Starting from the root, if the target value is less than the current node, we move to the left child; if it’s greater, we move to the right child. We repeat this process until we either find the target value or reach a null where the target value should be if it were in the tree (see <a href="#fig-bst-search">Figure&nbsp;<span>20.19</span></a>).</p>
+<p><strong>Search</strong>: Starting from the root, if the target value is less than the current node, we move to the left child; if it’s greater, we move to the right child. We repeat this process until we either find the target value or reach a null where the target value should be if it were in the tree (see <a href="#fig-bst-search">Figure&nbsp;<span>21.19</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-bst-search" class="quarto-figure quarto-figure-center anchored">
@@ -1793,12 +1755,12 @@ G
 <path fill="none" stroke="black" d="M136.67,-75.17C144.21,-65.39 154.48,-52.08 163.13,-40.87"></path> <polygon fill="black" stroke="black" points="166.02,-42.86 169.35,-32.8 160.47,-38.58 166.02,-42.86"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.19: BST search operation: Starting from the root, the algorithm compares the target value with the current node and moves left or right based on the comparison. The search ends when the target is found or when a null is encountered.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.19: BST search operation: Starting from the root, the algorithm compares the target value with the current node and moves left or right based on the comparison. The search ends when the target is found or when a null is encountered.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p><strong>Insertion</strong>: Similar to search, but when we reach a null location, we create a new node with the target value at that spot (see <a href="#fig-bst-insertion">Figure&nbsp;<span>20.20</span></a>).</p>
+<p><strong>Insertion</strong>: Similar to search, but when we reach a null location, we create a new node with the target value at that spot (see <a href="#fig-bst-insertion">Figure&nbsp;<span>21.20</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-bst-insertion" class="quarto-figure quarto-figure-center anchored">
@@ -1872,13 +1834,13 @@ G
 <path fill="none" stroke="blue" d="M18,-71.7C18,-63.98 18,-54.71 18,-46.11"></path> <polygon fill="blue" stroke="blue" points="21.5,-46.1 18,-36.1 14.5,-46.1 21.5,-46.1"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.20: BST insertion operation: Similar to the search operation, the algorithm moves down the tree starting from the root. When a null location is encountered, a new node is created at that spot.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.20: BST insertion operation: Similar to the search operation, the algorithm moves down the tree starting from the root. When a null location is encountered, a new node is created at that spot.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p><strong>Deletion</strong>: A bit more complicated as we need to maintain the BST property after removing a node. The process varies based on the number of children the node to be deleted has</p>
-<p>, similar to deletion in a binary tree (see <a href="#fig-bst-deletion">Figure&nbsp;<span>20.21</span></a>).</p>
+<p>, similar to deletion in a binary tree (see <a href="#fig-bst-deletion">Figure&nbsp;<span>21.21</span></a>).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-bst-deletion" class="quarto-figure quarto-figure-center anchored">
@@ -1952,23 +1914,23 @@ G
 <path fill="none" stroke="blue" d="M18,-71.7C18,-63.98 18,-54.71 18,-46.11"></path> <polygon fill="blue" stroke="blue" points="21.5,-46.1 18,-36.1 14.5,-46.1 21.5,-46.1"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.21: BST deletion operation: Deletion in a BST can be complex as it must maintain the BST property after removing a node. The process varies depending on whether the node to be deleted has no children, one child, or two children.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.21: BST deletion operation: Deletion in a BST can be complex as it must maintain the BST property after removing a node. The process varies depending on whether the node to be deleted has no children, one child, or two children.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Absolutely. Let’s break down the implementation of BST operations into both recursive and iterative approaches using Java.</p>
 </section>
-<section id="recursive-and-iterative-implementations-in-java" class="level3" data-number="20.5.4">
-<h3 data-number="20.5.4" class="anchored" data-anchor-id="recursive-and-iterative-implementations-in-java"><span class="header-section-number">20.5.4</span> Recursive and Iterative Implementations in Java</h3>
+<section id="recursive-and-iterative-implementations-in-java" class="level3" data-number="21.5.4">
+<h3 data-number="21.5.4" class="anchored" data-anchor-id="recursive-and-iterative-implementations-in-java"><span class="header-section-number">21.5.4</span> Recursive and Iterative Implementations in Java</h3>
 <p>While recursion offers a straightforward and elegant approach to implementing BST operations, the iterative method can often provide better performance in terms of space complexity. Let’s look at both methods for each of the main BST operations: search, insertion, and deletion.</p>
 </section>
-<section id="search-operation" class="level3" data-number="20.5.5">
-<h3 data-number="20.5.5" class="anchored" data-anchor-id="search-operation"><span class="header-section-number">20.5.5</span> Search Operation</h3>
+<section id="search-operation" class="level3" data-number="21.5.5">
+<h3 data-number="21.5.5" class="anchored" data-anchor-id="search-operation"><span class="header-section-number">21.5.5</span> Search Operation</h3>
 <p>The objective of the search operation in a binary search tree (BST) is to find a node that contains a specified value. If the value is present in the BST, the function will return that node. Otherwise, it will return null.</p>
 <p>To find a node in a BST, we can use one of two main approaches: recursion or iteration. Both have their advantages and disadvantages, which will depend on the situation at hand.</p>
-<section id="recursive-approach" class="level4" data-number="20.5.5.1">
-<h4 data-number="20.5.5.1" class="anchored" data-anchor-id="recursive-approach"><span class="header-section-number">20.5.5.1</span> Recursive Approach</h4>
+<section id="recursive-approach" class="level4" data-number="21.5.5.1">
+<h4 data-number="21.5.5.1" class="anchored" data-anchor-id="recursive-approach"><span class="header-section-number">21.5.5.1</span> Recursive Approach</h4>
 <p>Consider the following Java code that uses a recursive method to search a node in a BST.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">TreeNode</span> <span class="fu">search</span><span class="op">(</span><span class="bu">TreeNode</span> node<span class="op">,</span> <span class="dt">int</span> value<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>node <span class="op">==</span> <span class="kw">null</span> <span class="op">||</span> node<span class="op">.</span><span class="fu">val</span> <span class="op">==</span> value<span class="op">)</span></span>
@@ -1984,8 +1946,8 @@ G
 <p>If the value to be found is less than the current node’s value, the function recursively calls itself, continuing the search on the left subtree (<code>node.left</code>).</p>
 <p>Conversely, if the value is greater than the current node’s value, the function calls itself to continue the search on the right subtree (<code>node.right</code>).</p>
 </section>
-<section id="iterative-approach" class="level4" data-number="20.5.5.2">
-<h4 data-number="20.5.5.2" class="anchored" data-anchor-id="iterative-approach"><span class="header-section-number">20.5.5.2</span> Iterative Approach</h4>
+<section id="iterative-approach" class="level4" data-number="21.5.5.2">
+<h4 data-number="21.5.5.2" class="anchored" data-anchor-id="iterative-approach"><span class="header-section-number">21.5.5.2</span> Iterative Approach</h4>
 <p>Now, let’s look at an iterative approach to search a node in a BST. The iterative approach can be more space-efficient as it does not require stack space for recursive calls.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">TreeNode</span> <span class="fu">search</span><span class="op">(</span><span class="bu">TreeNode</span> root<span class="op">,</span> <span class="dt">int</span> value<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="op">(</span>root <span class="op">!=</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
@@ -2004,8 +1966,8 @@ G
 <p>The loop breaks and the current node is returned if the value of the current node is equal to the desired value.</p>
 <p>If the value is not found in the tree, the function will return null.</p>
 </section>
-<section id="visualizing-the-search-operation" class="level4" data-number="20.5.5.3">
-<h4 data-number="20.5.5.3" class="anchored" data-anchor-id="visualizing-the-search-operation"><span class="header-section-number">20.5.5.3</span> Visualizing the Search Operation</h4>
+<section id="visualizing-the-search-operation" class="level4" data-number="21.5.5.3">
+<h4 data-number="21.5.5.3" class="anchored" data-anchor-id="visualizing-the-search-operation"><span class="header-section-number">21.5.5.3</span> Visualizing the Search Operation</h4>
 <p>We’ll use a simple binary search tree with the values 2, 1, and 3, with 2 being the root node, 1 the left child, and 3 the right child. We’ll search for the value 3.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -2040,7 +2002,7 @@ BST
 <path fill="none" stroke="black" d="M51.26,-72.76C54.5,-64.37 58.53,-53.93 62.17,-44.5"></path> <polygon fill="black" stroke="black" points="65.44,-45.74 65.77,-35.15 58.91,-43.22 65.44,-45.74"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.22: Illustration of the search operation process in a binary search tree, comparing recursive and iterative approaches. The recursive path is shown in blue, while the iterative path is shown in green.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.22: Illustration of the search operation process in a binary search tree, comparing recursive and iterative approaches. The recursive path is shown in blue, while the iterative path is shown in green.</figcaption>
 </figure>
 </div>
 </div>
@@ -2050,11 +2012,11 @@ BST
 <p>Please note that in this simple example, the recursive and iterative paths are identical. This won’t always be the case, especially in larger trees, but the key takeaway is that both methods are following the same fundamental logic, albeit through different operational mechanics.</p>
 </section>
 </section>
-<section id="insertion-operation" class="level3" data-number="20.5.6">
-<h3 data-number="20.5.6" class="anchored" data-anchor-id="insertion-operation"><span class="header-section-number">20.5.6</span> Insertion Operation</h3>
+<section id="insertion-operation" class="level3" data-number="21.5.6">
+<h3 data-number="21.5.6" class="anchored" data-anchor-id="insertion-operation"><span class="header-section-number">21.5.6</span> Insertion Operation</h3>
 <p>Insertion operation in a Binary Search Tree (BST) aims to add a new node with a specific value to the tree. The position of the new node is determined by the fundamental property of BST: for any given node, all nodes in its left subtree have values less than its value, and all nodes in its right subtree have values greater than its value.</p>
-<section id="recursive-approach-1" class="level4" data-number="20.5.6.1">
-<h4 data-number="20.5.6.1" class="anchored" data-anchor-id="recursive-approach-1"><span class="header-section-number">20.5.6.1</span> Recursive Approach</h4>
+<section id="recursive-approach-1" class="level4" data-number="21.5.6.1">
+<h4 data-number="21.5.6.1" class="anchored" data-anchor-id="recursive-approach-1"><span class="header-section-number">21.5.6.1</span> Recursive Approach</h4>
 <p>Let’s start with the recursive approach to insert a node in a BST. Here is a snippet of Java code implementing this approach:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">TreeNode</span> <span class="fu">insert</span><span class="op">(</span><span class="bu">TreeNode</span> node<span class="op">,</span> <span class="dt">int</span> value<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>node <span class="op">==</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
@@ -2075,8 +2037,8 @@ BST
 <p>If the value to be inserted is greater than the value of the current node, it recursively calls <code>insert</code> to insert the value into the right subtree (<code>node.right</code>).</p>
 <p>After the value is inserted, it returns the (potentially modified) current node, maintaining the structure of the tree.</p>
 </section>
-<section id="iterative-approach-1" class="level4" data-number="20.5.6.2">
-<h4 data-number="20.5.6.2" class="anchored" data-anchor-id="iterative-approach-1"><span class="header-section-number">20.5.6.2</span> Iterative Approach</h4>
+<section id="iterative-approach-1" class="level4" data-number="21.5.6.2">
+<h4 data-number="21.5.6.2" class="anchored" data-anchor-id="iterative-approach-1"><span class="header-section-number">21.5.6.2</span> Iterative Approach</h4>
 <p>Now let’s consider an iterative approach to insert a node in a BST, which can be more space-efficient as it doesn’t require stack space for recursive calls:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">TreeNode</span> <span class="fu">insert</span><span class="op">(</span><span class="bu">TreeNode</span> root<span class="op">,</span> <span class="dt">int</span> value<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">TreeNode</span> node <span class="op">=</span> <span class="kw">new</span> <span class="bu">TreeNode</span><span class="op">(</span>value<span class="op">);</span></span>
@@ -2109,8 +2071,8 @@ BST
 <p>When the <code>current</code> node becomes null, we’ve found the correct spot for the new node. If the new value is less than the parent’s value, we insert the new node as the left child of the parent; otherwise, we insert it as the right child.</p>
 <p>The function then returns the root of the (now modified) BST.</p>
 </section>
-<section id="visualizing-the-insertion-operation" class="level4" data-number="20.5.6.3">
-<h4 data-number="20.5.6.3" class="anchored" data-anchor-id="visualizing-the-insertion-operation"><span class="header-section-number">20.5.6.3</span> Visualizing the Insertion Operation</h4>
+<section id="visualizing-the-insertion-operation" class="level4" data-number="21.5.6.3">
+<h4 data-number="21.5.6.3" class="anchored" data-anchor-id="visualizing-the-insertion-operation"><span class="header-section-number">21.5.6.3</span> Visualizing the Insertion Operation</h4>
 <p>Consider a simple binary search tree with values 2, 1, and 3, where 2 is the root node, 1 is the left child, and 3 is the right child. Let’s try to insert a new node with the value 4 into this tree.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -2153,7 +2115,7 @@ BST
 <path fill="none" stroke="black" d="M72,-71.7C72,-63.98 72,-54.71 72,-46.11"></path> <polygon fill="black" stroke="black" points="75.5,-46.1 72,-36.1 68.5,-46.1 75.5,-46.1"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.23: Illustration of the node insertion process in a binary search tree, showcasing both recursive and iterative approaches. The path followed by the recursive approach is shown in blue, while the path followed by the iterative approach is shown in green.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.23: Illustration of the node insertion process in a binary search tree, showcasing both recursive and iterative approaches. The path followed by the recursive approach is shown in blue, while the path followed by the iterative approach is shown in green.</figcaption>
 </figure>
 </div>
 </div>
@@ -2163,8 +2125,8 @@ BST
 <p>Just like the search operation, in this simple example, the recursive and iterative paths for the insertion operation are identical. But in a larger tree, the paths may differ depending on the current state of the tree and the value to be inserted. However, both methods adhere to the same principle - the new node is added in such a way that it maintains the property of the binary search tree.</p>
 </section>
 </section>
-<section id="deletion-operation" class="level3" data-number="20.5.7">
-<h3 data-number="20.5.7" class="anchored" data-anchor-id="deletion-operation"><span class="header-section-number">20.5.7</span> Deletion Operation</h3>
+<section id="deletion-operation" class="level3" data-number="21.5.7">
+<h3 data-number="21.5.7" class="anchored" data-anchor-id="deletion-operation"><span class="header-section-number">21.5.7</span> Deletion Operation</h3>
 <p>Deleting or removing a node from a binary tree is a slightly complex operation compared to insertion. This is because when we remove a node, we need to ensure that the remaining nodes still form a binary tree. The process differs depending on the number of children the node has:</p>
 <ol type="1">
 <li><strong>No child</strong>: If the node is a leaf node (i.e., it does not have any children), we can directly remove the node.</li>
@@ -2202,7 +2164,7 @@ B-&gt;C
 <path fill="none" stroke="black" d="M53.36,-89.98C55.97,-84.04 58.8,-77.19 61.01,-70.82 63.81,-62.78 66.39,-53.87 68.56,-45.75"></path> <polygon fill="black" stroke="black" points="71.96,-46.55 71.06,-35.99 65.18,-44.81 71.96,-46.55"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.24: Removing a node with no children. The node ‘C’ is simply removed from the tree.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.24: Removing a node with no children. The node ‘C’ is simply removed from the tree.</figcaption>
 </figure>
 </div>
 </div>
@@ -2251,13 +2213,13 @@ C-&gt;D
 <path fill="none" stroke="black" d="M75.01,-72.84C75.01,-64.81 75.01,-55.07 75.01,-46.09"></path> <polygon fill="black" stroke="black" points="78.51,-46.04 75.01,-36.04 71.51,-46.04 78.51,-46.04"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.25: Removing a node with one child. The node ‘B’ is replaced by its subtree rooted at ‘C’.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.25: Removing a node with one child. The node ‘B’ is replaced by its subtree rooted at ‘C’.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ol start="3" type="1">
-<li><p><strong>Two children</strong>: This is the most complex case. If the node has two children, we generally seek a node from the tree to replace the node to be deleted. The replacement node is typically the in-order predecessor or the in-order successor of the node. These are the node’s immediate previous and next nodes in in-order traversal (see <a href="#fig-in-order-traversal">Figure&nbsp;<span>20.15</span></a>).</p>
+<li><p><strong>Two children</strong>: This is the most complex case. If the node has two children, we generally seek a node from the tree to replace the node to be deleted. The replacement node is typically the in-order predecessor or the in-order successor of the node. These are the node’s immediate previous and next nodes in in-order traversal (see <a href="#fig-in-order-traversal">Figure&nbsp;<span>21.15</span></a>).</p>
 <ul>
 <li><p><strong>In-order predecessor</strong>: This is the node with the highest value that is smaller than the value of the node to be removed. It can be found by moving one step to the left (to the left child), and then as far right as possible.</p></li>
 <li><p><strong>In-order successor</strong>: This is the node with the smallest value that is larger than the value of the node to be removed. It can be found by moving one step to the right (to the right child), and then as far left as possible.</p></li>
@@ -2296,7 +2258,7 @@ B-&gt;C
 <path fill="none" stroke="blue" d="M51.27,-72.78C54.51,-64.39 58.54,-53.95 62.18,-44.51"></path> <polygon fill="blue" stroke="blue" points="65.45,-45.75 65.78,-35.16 58.92,-43.23 65.45,-45.75"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.26: Removing a node with two children. The node ‘B’ is replaced by its in-order predecessor ‘A’ or in-order successor ‘C’. The replacement node is then recursively removed from its original position.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.26: Removing a node with two children. The node ‘B’ is replaced by its in-order predecessor ‘A’ or in-order successor ‘C’. The replacement node is then recursively removed from its original position.</figcaption>
 </figure>
 </div>
 </div>
@@ -2333,8 +2295,8 @@ function minValue(node) {
 }</code></pre>
 <p>In this pseudocode, <code>remove()</code> is a recursive function that deletes the node with the specified key from the tree and returns the new root of the subtree, and <code>minValue()</code> is a helper function that returns the minimum value in a non-empty binary search tree.</p>
 <p>The time complexity for deletion in a binary tree can range from O(log n) to O(n), where n is the number of nodes. In a balanced tree, the time complexity is O(log n) because we would be traversing the height of the tree, which is logarithmic in a balanced tree. However, in the worst-case scenario, such as when the tree is a degenerate or skewed tree, the time complexity would be O(n) because each removal could potentially involve traversing all the nodes of the tree.</p>
-<section id="recursive-approach-2" class="level4" data-number="20.5.7.1">
-<h4 data-number="20.5.7.1" class="anchored" data-anchor-id="recursive-approach-2"><span class="header-section-number">20.5.7.1</span> Recursive Approach</h4>
+<section id="recursive-approach-2" class="level4" data-number="21.5.7.1">
+<h4 data-number="21.5.7.1" class="anchored" data-anchor-id="recursive-approach-2"><span class="header-section-number">21.5.7.1</span> Recursive Approach</h4>
 <div class="sourceCode" id="cb11"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="bu">TreeNode</span> <span class="fu">delete</span><span class="op">(</span><span class="bu">TreeNode</span> root<span class="op">,</span> <span class="dt">int</span> value<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>root <span class="op">==</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> root<span class="op">;</span></span>
@@ -2369,8 +2331,8 @@ function minValue(node) {
 <p>The presented examples illustrate how different BST operations can be performed in both recursive and iterative manner. Each has its own pros and cons - recursive methods are often easier to comprehend and write, whereas iterative methods might provide better performance.</p>
 </section>
 </section>
-<section id="performance-and-time-complexity" class="level3" data-number="20.5.8">
-<h3 data-number="20.5.8" class="anchored" data-anchor-id="performance-and-time-complexity"><span class="header-section-number">20.5.8</span> Performance and Time Complexity</h3>
+<section id="performance-and-time-complexity" class="level3" data-number="21.5.8">
+<h3 data-number="21.5.8" class="anchored" data-anchor-id="performance-and-time-complexity"><span class="header-section-number">21.5.8</span> Performance and Time Complexity</h3>
 <p>The time complexity of binary search tree operations such as search, insert, and delete depends on the height of the binary search tree. In the best-case scenario, the tree is perfectly balanced, and its height is log(n), where n is the number of nodes. In this case, search, insert, and delete operations can be performed in O(log n) time. However, in the worst-case scenario, the tree can become skewed, which means it resembles a linked list more than a tree. In this case, the height of the tree is n, and operations can take up to O(n) time.</p>
 <p>Let’s see how this plays out for each operation:</p>
 <p><strong>Search Operation</strong></p>
@@ -2392,10 +2354,10 @@ function minValue(node) {
 <p>The next topic that we’ll discuss, self-balancing binary search trees, will address this limitation of the basic binary search tree by ensuring that the tree remains approximately balanced at all times. As a result, self-balancing binary search trees can guarantee that the time complexity of major operations is always O(log n), which is a significant improvement in the worst-case scenario.</p>
 </section>
 </section>
-<section id="balanced-binary-search-trees" class="level2" data-number="20.6">
-<h2 data-number="20.6" class="anchored" data-anchor-id="balanced-binary-search-trees"><span class="header-section-number">20.6</span> Balanced Binary Search Trees</h2>
+<section id="balanced-binary-search-trees" class="level2" data-number="21.6">
+<h2 data-number="21.6" class="anchored" data-anchor-id="balanced-binary-search-trees"><span class="header-section-number">21.6</span> Balanced Binary Search Trees</h2>
 <p>Binary search trees (BSTs) are powerful data structures that support efficient search, insertion, and deletion operations. However, if the tree becomes unbalanced, these operations could degrade to linear time complexity. One effective way to mitigate this issue is by employing balanced binary search trees, such as AVL Trees and Red-Black Trees. These trees aim to maintain balance, ensuring efficient performance regardless of the input sequence.</p>
-<p>The concept of a “balanced” tree might sound abstract, so let’s make it tangible with an example (<a href="#fig-balanced-bst">Figure&nbsp;<span>20.27</span></a>). A balanced binary tree is one where the difference between the heights of the left and right subtrees of every node is either -1, 0, or 1. This balance ensures that the tree doesn’t lean too heavily on one side, optimizing the path to every node and promoting efficiency.</p>
+<p>The concept of a “balanced” tree might sound abstract, so let’s make it tangible with an example (<a href="#fig-balanced-bst">Figure&nbsp;<span>21.27</span></a>). A balanced binary tree is one where the difference between the heights of the left and right subtrees of every node is either -1, 0, or 1. This balance ensures that the tree doesn’t lean too heavily on one side, optimizing the path to every node and promoting efficiency.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-balanced-bst" class="quarto-figure quarto-figure-center anchored">
@@ -2477,13 +2439,13 @@ G
 <path fill="none" stroke="black" d="M51.26,-72.76C54.5,-64.37 58.53,-53.93 62.17,-44.5"></path> <polygon fill="black" stroke="black" points="65.44,-45.74 65.77,-35.15 58.91,-43.22 65.44,-45.74"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.27: A balanced binary search tree. The numbers show the height of each node.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.27: A balanced binary search tree. The numbers show the height of each node.</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Consider a balance scale, with nodes as the weights. When equally balanced, the scale maintains equilibrium. However, adding or subtracting weights (or nodes) disturbs this balance, causing the scale to lean towards the heavier side. AVL Trees and Red-Black Trees work similarly - they maintain equilibrium by redistributing the weights, which we call “rotations” in the context of trees.</p>
-<p><strong>AVL Trees</strong>, named after their inventors Adelson-Velsky and Landis, adjust their balance through a process called rotation. This operation preserves the in-order property of the tree. If the balance factor of a node in an AVL tree becomes 2 or -2, a rotation is performed to regain balance. Let’s illustrate this with a simple example (<a href="#fig-avl-rotation">Figure&nbsp;<span>20.31</span></a>).</p>
+<p><strong>AVL Trees</strong>, named after their inventors Adelson-Velsky and Landis, adjust their balance through a process called rotation. This operation preserves the in-order property of the tree. If the balance factor of a node in an AVL tree becomes 2 or -2, a rotation is performed to regain balance. Let’s illustrate this with a simple example (<a href="#fig-avl-rotation">Figure&nbsp;<span>21.31</span></a>).</p>
 <p>Consider inserting 1, 2, 3 into an initially empty AVL tree.</p>
 <ol type="1">
 <li>Inserting 1 gives us:</li>
@@ -2505,7 +2467,7 @@ G
 <ellipse fill="none" stroke="black" cx="18" cy="-18" rx="18" ry="18"></ellipse> <text text-anchor="middle" x="18" y="-13.8" font-family="Times,serif" font-size="14.00">1</text> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.28: Inserting 1 into an empty AVL tree.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.28: Inserting 1 into an empty AVL tree.</figcaption>
 </figure>
 </div>
 </div>
@@ -2538,7 +2500,7 @@ G
 <path fill="none" stroke="black" d="M18,-71.7C18,-63.98 18,-54.71 18,-46.11"></path> <polygon fill="black" stroke="black" points="21.5,-46.1 18,-36.1 14.5,-46.1 21.5,-46.1"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.29: Inserting 2 into the AVL tree.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.29: Inserting 2 into the AVL tree.</figcaption>
 </figure>
 </div>
 </div>
@@ -2579,7 +2541,7 @@ G
 <path fill="none" stroke="black" d="M18,-71.7C18,-63.98 18,-54.71 18,-46.11"></path> <polygon fill="black" stroke="black" points="21.5,-46.1 18,-36.1 14.5,-46.1 21.5,-46.1"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.30: Inserting 3 into the AVL tree results in an unbalanced tree.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.30: Inserting 3 into the AVL tree results in an unbalanced tree.</figcaption>
 </figure>
 </div>
 </div>
@@ -2621,7 +2583,7 @@ G
 <path fill="none" stroke="black" d="M51.26,-72.76C54.5,-64.37 58.53,-53.93 62.17,-44.5"></path> <polygon fill="black" stroke="black" points="65.44,-45.74 65.77,-35.15 58.91,-43.22 65.44,-45.74"></polygon> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;20.31: A left rotation around the root balances the AVL tree.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;21.31: A left rotation around the root balances the AVL tree.</figcaption>
 </figure>
 </div>
 </div>
@@ -2872,12 +2834,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./19_binary_search.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Binary Search</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Binary Search</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./21_graphs.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Graphs</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Graphs</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
