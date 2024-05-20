@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - Fall 2023 - 3&nbsp; Java Compiler and Types</title>
+<title>ITSC 2214 - Data Structures and Algorithms - Fall 2023 - 4&nbsp; Java Compiler and Types</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -90,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -101,17 +108,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <body class="nav-sidebar floating">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_1_compilers_types.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_1_compilers_types.html">Java Generics</a></li><li class="breadcrumb-item"><a href="./02_1_compilers_types.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -121,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">ITSC 2214 - Data Structures and Algorithms - Fall 2023</a> 
@@ -143,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">On Computers and Computing</span></a>
+ <span class="menu-text">Programming Labs</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -151,34 +157,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_intro_to_cs_dsa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Background on Computer Science and Data Structures</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./02_general_purpose_computers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modern General-Purpose, Programmable Computers</span></span></a>
+  <a href="./labs/00_installing_req_software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing Required Software</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./02_1_compilers_types.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03_algorithmic_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Unit Testing</span></a>
+ <span class="menu-text">On Computers and Computing</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -186,26 +174,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_unit_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></span></a>
+  <a href="./01_intro_to_cs_dsa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background on Computer Science and Data Structures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05_writing_junit_tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./06_mutation_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./07_list_of_mutators.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">List of Mutators</span></span></a>
+  <a href="./02_general_purpose_computers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modern General-Purpose, Programmable Computers</span></span></a>
   </div>
 </li>
       </ul>
@@ -213,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Iterative Sorting and Searching</span></a>
+ <span class="menu-text">Java Generics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -221,26 +197,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08_sorting_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./09_comparable_comparator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./10_bubble_selection_insertion_sort.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11_linear_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Linear Search</span></span></a>
+  <a href="./02_1_compilers_types.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></span></a>
   </div>
 </li>
       </ul>
@@ -248,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
- <span class="menu-text">Sequential Collections of Data</span></a>
+ <span class="menu-text">Algorithmic Analysis</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -256,26 +214,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12_collections_of_data_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Collections of Data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./13_operations_on_lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./14_implementing_arraylists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./15_implementing_linkedlists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></span></a>
+  <a href="./03_algorithmic_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -283,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
- <span class="menu-text">Stacks and Queues</span></a>
+ <span class="menu-text">Unit Testing</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -291,14 +231,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./16_stack.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span></a>
+  <a href="./04_unit_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./17_queue.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span></a>
+  <a href="./05_writing_junit_tests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_mutation_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_list_of_mutators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">List of Mutators</span></span></a>
   </div>
 </li>
       </ul>
@@ -306,7 +258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
- <span class="menu-text">Recursion</span></a>
+ <span class="menu-text">Iterative Sorting and Searching</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -314,61 +266,170 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./08_sorting_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09_comparable_comparator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_bubble_selection_insertion_sort.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_linear_search.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Linear Search</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+ <span class="menu-text">Sequential Collections of Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_collections_of_data_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Collections of Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_operations_on_lists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14_implementing_arraylists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15_implementing_linkedlists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+ <span class="menu-text">Stacks and Queues</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16_stack.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17_queue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
+ <span class="menu-text">Recursion</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./18_recursion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Recursion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Recursion</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./19_binary_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+ <span class="menu-text">Trees and Graphs</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20_trees.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./21_graphs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
+ <span class="menu-text">Hashing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./22_hashing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-a-compiler" id="toc-what-is-a-compiler" class="nav-link active" data-scroll-target="#what-is-a-compiler"><span class="header-section-number">3.1</span> What is a Compiler?</a></li>
-  <li><a href="#role-of-the-compiler-in-java" id="toc-role-of-the-compiler-in-java" class="nav-link" data-scroll-target="#role-of-the-compiler-in-java"><span class="header-section-number">3.2</span> Role of the Compiler in Java</a></li>
-  <li><a href="#type-checking-and-the-compiler" id="toc-type-checking-and-the-compiler" class="nav-link" data-scroll-target="#type-checking-and-the-compiler"><span class="header-section-number">3.3</span> Type Checking and the Compiler</a>
+  <li><a href="#what-is-a-compiler" id="toc-what-is-a-compiler" class="nav-link active" data-scroll-target="#what-is-a-compiler"><span class="header-section-number">4.1</span> What is a Compiler?</a></li>
+  <li><a href="#role-of-the-compiler-in-java" id="toc-role-of-the-compiler-in-java" class="nav-link" data-scroll-target="#role-of-the-compiler-in-java"><span class="header-section-number">4.2</span> Role of the Compiler in Java</a></li>
+  <li><a href="#type-checking-and-the-compiler" id="toc-type-checking-and-the-compiler" class="nav-link" data-scroll-target="#type-checking-and-the-compiler"><span class="header-section-number">4.3</span> Type Checking and the Compiler</a>
   <ul class="collapse">
-  <li><a href="#role-of-variable-declarations-in-type-checking" id="toc-role-of-variable-declarations-in-type-checking" class="nav-link" data-scroll-target="#role-of-variable-declarations-in-type-checking"><span class="header-section-number">3.3.1</span> Role of Variable Declarations in Type Checking</a></li>
-  <li><a href="#role-of-method-declarations-in-type-checking" id="toc-role-of-method-declarations-in-type-checking" class="nav-link" data-scroll-target="#role-of-method-declarations-in-type-checking"><span class="header-section-number">3.3.2</span> Role of Method Declarations in Type Checking</a></li>
-  <li><a href="#role-of-class-declarations-in-type-checking" id="toc-role-of-class-declarations-in-type-checking" class="nav-link" data-scroll-target="#role-of-class-declarations-in-type-checking"><span class="header-section-number">3.3.3</span> Role of Class Declarations in Type Checking</a></li>
-  <li><a href="#inheritance-and-type-checking" id="toc-inheritance-and-type-checking" class="nav-link" data-scroll-target="#inheritance-and-type-checking"><span class="header-section-number">3.3.4</span> Inheritance and Type Checking</a></li>
-  <li><a href="#abstract-classes-and-interfaces-in-type-checking" id="toc-abstract-classes-and-interfaces-in-type-checking" class="nav-link" data-scroll-target="#abstract-classes-and-interfaces-in-type-checking"><span class="header-section-number">3.3.5</span> Abstract Classes and Interfaces in Type Checking</a></li>
+  <li><a href="#role-of-variable-declarations-in-type-checking" id="toc-role-of-variable-declarations-in-type-checking" class="nav-link" data-scroll-target="#role-of-variable-declarations-in-type-checking"><span class="header-section-number">4.3.1</span> Role of Variable Declarations in Type Checking</a></li>
+  <li><a href="#role-of-method-declarations-in-type-checking" id="toc-role-of-method-declarations-in-type-checking" class="nav-link" data-scroll-target="#role-of-method-declarations-in-type-checking"><span class="header-section-number">4.3.2</span> Role of Method Declarations in Type Checking</a></li>
+  <li><a href="#role-of-class-declarations-in-type-checking" id="toc-role-of-class-declarations-in-type-checking" class="nav-link" data-scroll-target="#role-of-class-declarations-in-type-checking"><span class="header-section-number">4.3.3</span> Role of Class Declarations in Type Checking</a></li>
+  <li><a href="#inheritance-and-type-checking" id="toc-inheritance-and-type-checking" class="nav-link" data-scroll-target="#inheritance-and-type-checking"><span class="header-section-number">4.3.4</span> Inheritance and Type Checking</a></li>
+  <li><a href="#abstract-classes-and-interfaces-in-type-checking" id="toc-abstract-classes-and-interfaces-in-type-checking" class="nav-link" data-scroll-target="#abstract-classes-and-interfaces-in-type-checking"><span class="header-section-number">4.3.5</span> Abstract Classes and Interfaces in Type Checking</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -376,9 +437,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_1_compilers_types.html">Java Generics</a></li><li class="breadcrumb-item"><a href="./02_1_compilers_types.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></h1>
 </div>
 
 
@@ -391,11 +452,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
 
+
 <p>The compilation process is a fundamental aspect of Java development. It represents the bridge between human-readable code and machine-executable instructions. This section will explore the nature of compilers, specifically focusing on the Java compiler, which plays a critical role in translating source code into an intermediate form that can be understood by the Java Virtual Machine (JVM).</p>
-<section id="what-is-a-compiler" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="what-is-a-compiler"><span class="header-section-number">3.1</span> What is a Compiler?</h2>
+<section id="what-is-a-compiler" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="what-is-a-compiler"><span class="header-section-number">4.1</span> What is a Compiler?</h2>
 <p>A compiler is a specialized software program that translates source code written in a high-level programming language, like Java, into a lower-level, machine-readable code. This translation is essential for enabling the machine to execute the code, as computers can only understand binary instructions.</p>
 <p>In the context of Java, this translation doesn’t result in machine code specific to a particular computer’s hardware. Instead, the Java compiler translates source code into an intermediate form called “bytecode.” Here’s how it works:</p>
 <blockquote class="blockquote">
@@ -411,8 +474,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 <p>The use of bytecode allows Java to achieve its “write once, run anywhere” philosophy, as the bytecode is platform-independent and can be run on any device with an appropriate JVM.</p>
 </section>
-<section id="role-of-the-compiler-in-java" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="role-of-the-compiler-in-java"><span class="header-section-number">3.2</span> Role of the Compiler in Java</h2>
+<section id="role-of-the-compiler-in-java" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="role-of-the-compiler-in-java"><span class="header-section-number">4.2</span> Role of the Compiler in Java</h2>
 <p>The Java compiler’s role extends beyond mere translation of code. Let’s delve into its multifaceted functions:</p>
 <ol type="1">
 <li><strong>Syntax Checking</strong>: The compiler checks the source code for any syntax errors, such as missing semicolons, mismatched brackets, or incorrect keywords. If any such errors are found, the compilation process halts, and the errors must be fixed before proceeding.</li>
@@ -431,68 +494,101 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Bytecode Generation</strong>: Finally, the compiler generates the bytecode. This bytecode is a compact representation of the source code, suitable for execution by the JVM. It includes instructions for the JVM, along with metadata like class names, method names, and variable types.</li>
 </ol>
 <p>The compiler’s thorough analysis and transformation of Java code into bytecode lay the foundation for Java’s robustness and cross-platform capabilities. Understanding the compiler’s function provides insights into how Java source code is interpreted and executed, and it sets the stage for the exploration of more advanced topics such as inheritance, polymorphism, and generics from the compiler’s perspective.</p>
-<div class="cell">
+<div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-extended-java-compilation-process" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
+<div id="fig-extended-java-compilation-process" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-extended-java-compilation-process-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <svg width="672" height="480" viewbox="0.00 0.00 277.78 488.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 484)">
-<title>
-G
-</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-484 273.78,-484 273.78,4 -4,4"></polygon> <!-- SourceCode --> <g id="node1" class="node">
-<title>
-SourceCode
-</title>
-<polygon fill="#87cefa" stroke="#87cefa" points="167.45,-480 79.59,-480 79.59,-444 167.45,-444 167.45,-480"></polygon> <text text-anchor="middle" x="123.52" y="-457.8" font-family="Times,serif" font-size="14.00">Source Code</text> </g> <!-- Compiler --> <g id="node2" class="node">
-<title>
-Compiler
-</title>
-<polygon fill="#87cefa" stroke="#87cefa" points="172.28,-391.2 74.76,-391.2 74.76,-355.2 172.28,-355.2 172.28,-391.2"></polygon> <text text-anchor="middle" x="123.52" y="-369" font-family="Times,serif" font-size="14.00">Java Compiler</text> </g> <!-- SourceCode&#45;&gt;Compiler --> <g id="edge1" class="edge">
-<title>
-SourceCode-&gt;Compiler
-</title>
-<path fill="none" stroke="#000000" d="M123.52,-443.85C123.52,-431.72 123.52,-415.22 123.52,-401.32"></path> <polygon fill="#000000" stroke="#000000" points="123.52,-391.31 128.02,-401.31 123.52,-396.31 123.52,-401.31 123.52,-401.31 123.52,-401.31 123.52,-396.31 119.02,-401.31 123.52,-391.31 123.52,-391.31"></polygon> <text text-anchor="middle" x="160.27" y="-413.4" font-family="Times,serif" font-size="14.00"> Compilation</text> </g> <!-- Bytecode --> <g id="node3" class="node">
-<title>
-Bytecode
-</title>
-<polygon fill="#87cefa" stroke="#87cefa" points="157.89,-302.4 89.15,-302.4 89.15,-266.4 157.89,-266.4 157.89,-302.4"></polygon> <text text-anchor="middle" x="123.52" y="-280.2" font-family="Times,serif" font-size="14.00">Bytecode</text> </g> <!-- Compiler&#45;&gt;Bytecode --> <g id="edge2" class="edge">
-<title>
-Compiler-&gt;Bytecode
-</title>
-<path fill="none" stroke="#000000" d="M123.52,-355.05C123.52,-342.92 123.52,-326.42 123.52,-312.52"></path> <polygon fill="#000000" stroke="#000000" points="123.52,-302.51 128.02,-312.51 123.52,-307.51 123.52,-312.51 123.52,-312.51 123.52,-312.51 123.52,-307.51 119.02,-312.51 123.52,-302.51 123.52,-302.51"></polygon> <text text-anchor="middle" x="184.55" y="-324.6" font-family="Times,serif" font-size="14.00"> Bytecode Generation</text> </g> <!-- JVM --> <g id="node4" class="node">
-<title>
-JVM
-</title>
-<polygon fill="#87cefa" stroke="#87cefa" points="150.52,-213.6 96.52,-213.6 96.52,-177.6 150.52,-177.6 150.52,-213.6"></polygon> <text text-anchor="middle" x="123.52" y="-191.4" font-family="Times,serif" font-size="14.00">JVM</text> </g> <!-- Bytecode&#45;&gt;JVM --> <g id="edge3" class="edge">
-<title>
-Bytecode-&gt;JVM
-</title>
-<path fill="none" stroke="#000000" d="M123.52,-266.25C123.52,-254.12 123.52,-237.62 123.52,-223.72"></path> <polygon fill="#000000" stroke="#000000" points="123.52,-213.71 128.02,-223.71 123.52,-218.71 123.52,-223.71 123.52,-223.71 123.52,-223.71 123.52,-218.71 119.02,-223.71 123.52,-213.71 123.52,-213.71"></polygon> <text text-anchor="middle" x="181.83" y="-235.8" font-family="Times,serif" font-size="14.00"> Initial Interpretation</text> </g> <!-- JIT --> <g id="node5" class="node">
-<title>
-JIT
-</title>
-<polygon fill="#87cefa" stroke="#87cefa" points="91.07,-124.8 -0.02,-124.8 -0.02,-88.8 91.07,-88.8 91.07,-124.8"></polygon> <text text-anchor="middle" x="45.52" y="-102.6" font-family="Times,serif" font-size="14.00">JIT Compiler</text> </g> <!-- JVM&#45;&gt;JIT --> <g id="edge4" class="edge">
-<title>
-JVM-&gt;JIT
-</title>
-<path fill="none" stroke="#000000" d="M96.25,-190.72C77.58,-186.48 54.12,-177.7 42.21,-159.6 37.48,-152.43 36.74,-143.42 37.66,-134.94"></path> <polygon fill="#000000" stroke="#000000" points="39.46,-125.01 42.1,-135.65 38.57,-129.93 37.68,-134.85 37.68,-134.85 37.68,-134.85 38.57,-129.93 33.25,-134.05 39.46,-125.01 39.46,-125.01"></polygon> <text text-anchor="middle" x="117.18" y="-147" font-family="Times,serif" font-size="14.00"> Just-In-Time Compilation</text> </g> <!-- NativeCode --> <g id="node6" class="node">
-<title>
-NativeCode
-</title>
-<polygon fill="#87cefa" stroke="#87cefa" points="194.87,-36 56.17,-36 56.17,0 194.87,0 194.87,-36"></polygon> <text text-anchor="middle" x="125.52" y="-13.8" font-family="Times,serif" font-size="14.00">Native Machine Code</text> </g> <!-- JIT&#45;&gt;NativeCode --> <g id="edge5" class="edge">
-<title>
-JIT-&gt;NativeCode
-</title>
-<path fill="none" stroke="#000000" d="M43.67,-88.43C43.42,-77.58 44.85,-63.85 51.96,-54 55.27,-49.41 59.34,-45.4 63.86,-41.91"></path> <polygon fill="#000000" stroke="#000000" points="72.39,-36.15 66.62,-45.47 68.25,-38.94 64.1,-41.74 64.1,-41.74 64.1,-41.74 68.25,-38.94 61.59,-38.01 72.39,-36.15 72.39,-36.15"></polygon> <text text-anchor="middle" x="122.3" y="-58.2" font-family="Times,serif" font-size="14.00"> Native Code Generation</text> </g> <!-- NativeCode&#45;&gt;JVM --> <g id="edge6" class="edge">
-<title>
-NativeCode-&gt;JVM
-</title>
-<path fill="none" stroke="#000000" d="M173.33,-36.1C180.59,-40.79 187.11,-46.67 191.52,-54 215.72,-94.22 215.96,-119.53 191.52,-159.6 184.48,-171.14 172.29,-179.03 160.16,-184.36"></path> <polygon fill="#000000" stroke="#000000" points="150.54,-188.1 158.23,-180.28 155.2,-186.29 159.86,-184.48 159.86,-184.48 159.86,-184.48 155.2,-186.29 161.49,-188.67 150.54,-188.1 150.54,-188.1"></polygon> <text text-anchor="middle" x="239.65" y="-102.6" font-family="Times,serif" font-size="14.00"> Execution</text> </g> </g>
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-484 273.78,-484 273.78,4 -4,4"></polygon>
+<!-- SourceCode -->
+<g id="node1" class="node">
+<title>SourceCode</title>
+<polygon fill="#87cefa" stroke="#87cefa" points="167.45,-480 79.59,-480 79.59,-444 167.45,-444 167.45,-480"></polygon>
+<text text-anchor="middle" x="123.52" y="-457.8" font-family="Times,serif" font-size="14.00">Source Code</text>
+</g>
+<!-- Compiler -->
+<g id="node2" class="node">
+<title>Compiler</title>
+<polygon fill="#87cefa" stroke="#87cefa" points="172.28,-391.2 74.76,-391.2 74.76,-355.2 172.28,-355.2 172.28,-391.2"></polygon>
+<text text-anchor="middle" x="123.52" y="-369" font-family="Times,serif" font-size="14.00">Java Compiler</text>
+</g>
+<!-- SourceCode&#45;&gt;Compiler -->
+<g id="edge1" class="edge">
+<title>SourceCode-&gt;Compiler</title>
+<path fill="none" stroke="#000000" d="M123.52,-443.85C123.52,-431.72 123.52,-415.22 123.52,-401.32"></path>
+<polygon fill="#000000" stroke="#000000" points="123.52,-391.31 128.02,-401.31 123.52,-396.31 123.52,-401.31 123.52,-401.31 123.52,-401.31 123.52,-396.31 119.02,-401.31 123.52,-391.31 123.52,-391.31"></polygon>
+<text text-anchor="middle" x="160.27" y="-413.4" font-family="Times,serif" font-size="14.00"> Compilation</text>
+</g>
+<!-- Bytecode -->
+<g id="node3" class="node">
+<title>Bytecode</title>
+<polygon fill="#87cefa" stroke="#87cefa" points="157.89,-302.4 89.15,-302.4 89.15,-266.4 157.89,-266.4 157.89,-302.4"></polygon>
+<text text-anchor="middle" x="123.52" y="-280.2" font-family="Times,serif" font-size="14.00">Bytecode</text>
+</g>
+<!-- Compiler&#45;&gt;Bytecode -->
+<g id="edge2" class="edge">
+<title>Compiler-&gt;Bytecode</title>
+<path fill="none" stroke="#000000" d="M123.52,-355.05C123.52,-342.92 123.52,-326.42 123.52,-312.52"></path>
+<polygon fill="#000000" stroke="#000000" points="123.52,-302.51 128.02,-312.51 123.52,-307.51 123.52,-312.51 123.52,-312.51 123.52,-312.51 123.52,-307.51 119.02,-312.51 123.52,-302.51 123.52,-302.51"></polygon>
+<text text-anchor="middle" x="184.55" y="-324.6" font-family="Times,serif" font-size="14.00"> Bytecode Generation</text>
+</g>
+<!-- JVM -->
+<g id="node4" class="node">
+<title>JVM</title>
+<polygon fill="#87cefa" stroke="#87cefa" points="150.52,-213.6 96.52,-213.6 96.52,-177.6 150.52,-177.6 150.52,-213.6"></polygon>
+<text text-anchor="middle" x="123.52" y="-191.4" font-family="Times,serif" font-size="14.00">JVM</text>
+</g>
+<!-- Bytecode&#45;&gt;JVM -->
+<g id="edge3" class="edge">
+<title>Bytecode-&gt;JVM</title>
+<path fill="none" stroke="#000000" d="M123.52,-266.25C123.52,-254.12 123.52,-237.62 123.52,-223.72"></path>
+<polygon fill="#000000" stroke="#000000" points="123.52,-213.71 128.02,-223.71 123.52,-218.71 123.52,-223.71 123.52,-223.71 123.52,-223.71 123.52,-218.71 119.02,-223.71 123.52,-213.71 123.52,-213.71"></polygon>
+<text text-anchor="middle" x="181.83" y="-235.8" font-family="Times,serif" font-size="14.00"> Initial Interpretation</text>
+</g>
+<!-- JIT -->
+<g id="node5" class="node">
+<title>JIT</title>
+<polygon fill="#87cefa" stroke="#87cefa" points="91.07,-124.8 -0.02,-124.8 -0.02,-88.8 91.07,-88.8 91.07,-124.8"></polygon>
+<text text-anchor="middle" x="45.52" y="-102.6" font-family="Times,serif" font-size="14.00">JIT Compiler</text>
+</g>
+<!-- JVM&#45;&gt;JIT -->
+<g id="edge4" class="edge">
+<title>JVM-&gt;JIT</title>
+<path fill="none" stroke="#000000" d="M96.25,-190.72C77.58,-186.48 54.12,-177.7 42.21,-159.6 37.48,-152.43 36.74,-143.42 37.66,-134.94"></path>
+<polygon fill="#000000" stroke="#000000" points="39.46,-125.01 42.1,-135.65 38.57,-129.93 37.68,-134.85 37.68,-134.85 37.68,-134.85 38.57,-129.93 33.25,-134.05 39.46,-125.01 39.46,-125.01"></polygon>
+<text text-anchor="middle" x="117.18" y="-147" font-family="Times,serif" font-size="14.00"> Just-In-Time Compilation</text>
+</g>
+<!-- NativeCode -->
+<g id="node6" class="node">
+<title>NativeCode</title>
+<polygon fill="#87cefa" stroke="#87cefa" points="194.87,-36 56.17,-36 56.17,0 194.87,0 194.87,-36"></polygon>
+<text text-anchor="middle" x="125.52" y="-13.8" font-family="Times,serif" font-size="14.00">Native Machine Code</text>
+</g>
+<!-- JIT&#45;&gt;NativeCode -->
+<g id="edge5" class="edge">
+<title>JIT-&gt;NativeCode</title>
+<path fill="none" stroke="#000000" d="M43.67,-88.43C43.42,-77.58 44.85,-63.85 51.96,-54 55.27,-49.41 59.34,-45.4 63.86,-41.91"></path>
+<polygon fill="#000000" stroke="#000000" points="72.39,-36.15 66.62,-45.47 68.25,-38.94 64.1,-41.74 64.1,-41.74 64.1,-41.74 68.25,-38.94 61.59,-38.01 72.39,-36.15 72.39,-36.15"></polygon>
+<text text-anchor="middle" x="122.3" y="-58.2" font-family="Times,serif" font-size="14.00"> Native Code Generation</text>
+</g>
+<!-- NativeCode&#45;&gt;JVM -->
+<g id="edge6" class="edge">
+<title>NativeCode-&gt;JVM</title>
+<path fill="none" stroke="#000000" d="M173.33,-36.1C180.59,-40.79 187.11,-46.67 191.52,-54 215.72,-94.22 215.96,-119.53 191.52,-159.6 184.48,-171.14 172.29,-179.03 160.16,-184.36"></path>
+<polygon fill="#000000" stroke="#000000" points="150.54,-188.1 158.23,-180.28 155.2,-186.29 159.86,-184.48 159.86,-184.48 159.86,-184.48 155.2,-186.29 161.49,-188.67 150.54,-188.1 150.54,-188.1"></polygon>
+<text text-anchor="middle" x="239.65" y="-102.6" font-family="Times,serif" font-size="14.00"> Execution</text>
+</g>
+</g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;3.1: Flow diagram illustrating the journey of Java source code from compilation into bytecode, followed by optimization and transpilation to native machine code by the Java Virtual Machine (JVM). This comprehensive view underscores the multifaceted roles played by the Java compiler and the JVM.</figcaption>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-extended-java-compilation-process-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Flow diagram illustrating the journey of Java source code from compilation into bytecode, followed by optimization and transpilation to native machine code by the Java Virtual Machine (JVM). This comprehensive view underscores the multifaceted roles played by the Java compiler and the JVM.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -508,8 +604,8 @@ NativeCode-&gt;JVM
 </ul>
 <p>Each arrow between the nodes represents a transformation or action, such as “Compilation” between “Source Code” and “Java Compiler” and “Bytecode Generation” between “Java Compiler” and “Bytecode.” These actions are what make Java a powerful and portable language.</p>
 </section>
-<section id="type-checking-and-the-compiler" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="type-checking-and-the-compiler"><span class="header-section-number">3.3</span> Type Checking and the Compiler</h2>
+<section id="type-checking-and-the-compiler" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="type-checking-and-the-compiler"><span class="header-section-number">4.3</span> Type Checking and the Compiler</h2>
 <p>Type checking is not merely about confirming if an <code>int</code> is an <code>int</code>. It’s about ensuring that variables, methods, and objects adhere to certain expectations or “contracts.” The compiler uses these contracts to ensure your code is logically coherent before it even gets run.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Simple type checking example</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> a <span class="op">=</span> <span class="dv">5</span><span class="op">;</span>  <span class="co">// Declaring integer variable</span></span>
@@ -517,16 +613,16 @@ NativeCode-&gt;JVM
 <blockquote class="blockquote">
 <p><strong>A Variable as a Promise</strong>: Imagine telling your friend you will bring a pen to class. You’ve now made a promise, or set an expectation. Similarly, when you declare a variable as an <code>int</code>, you’re promising the compiler that this variable will only store integer values.</p>
 </blockquote>
-<section id="role-of-variable-declarations-in-type-checking" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="role-of-variable-declarations-in-type-checking"><span class="header-section-number">3.3.1</span> Role of Variable Declarations in Type Checking</h3>
+<section id="role-of-variable-declarations-in-type-checking" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="role-of-variable-declarations-in-type-checking"><span class="header-section-number">4.3.1</span> Role of Variable Declarations in Type Checking</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Type checking with variable declaration</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> b <span class="op">=</span> <span class="fl">4.5</span><span class="op">;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">// b = a + "some text";  // Compiler Error: Incompatible types</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a <span class="op">+</span> <span class="fl">2.0</span><span class="op">;</span>  <span class="co">// No error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In Java, declaring a variable with a specific type serves as a basic form of contract with the compiler. This informs the compiler what kinds of operations are valid or invalid on that variable. Essentially, type declarations are like basic rules that you agree to follow.</p>
 </section>
-<section id="role-of-method-declarations-in-type-checking" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="role-of-method-declarations-in-type-checking"><span class="header-section-number">3.3.2</span> Role of Method Declarations in Type Checking</h3>
+<section id="role-of-method-declarations-in-type-checking" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="role-of-method-declarations-in-type-checking"><span class="header-section-number">4.3.2</span> Role of Method Declarations in Type Checking</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Method declaration and calling</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">int</span> <span class="fu">add</span><span class="op">(</span><span class="dt">int</span> x<span class="op">,</span> <span class="dt">int</span> y<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> y<span class="op">;</span></span>
@@ -538,8 +634,8 @@ NativeCode-&gt;JVM
 <p><strong>Methods as a Job Description</strong>: Think of method declarations like a job description. It lists the qualifications (parameter types) you need to apply (call the method) and what you’ll get in return (return type).</p>
 </blockquote>
 </section>
-<section id="role-of-class-declarations-in-type-checking" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="role-of-class-declarations-in-type-checking"><span class="header-section-number">3.3.3</span> Role of Class Declarations in Type Checking</h3>
+<section id="role-of-class-declarations-in-type-checking" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="role-of-class-declarations-in-type-checking"><span class="header-section-number">4.3.3</span> Role of Class Declarations in Type Checking</h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Class declaration with variables and methods</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Dog <span class="op">{</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">String</span> name<span class="op">;</span></span>
@@ -557,8 +653,8 @@ NativeCode-&gt;JVM
 <p><strong>A Class as a Contract</strong>: Consider a class as a more complex agreement or contract that spells out what variables and methods are available for objects of that class.</p>
 </blockquote>
 </section>
-<section id="inheritance-and-type-checking" class="level3" data-number="3.3.4">
-<h3 data-number="3.3.4" class="anchored" data-anchor-id="inheritance-and-type-checking"><span class="header-section-number">3.3.4</span> Inheritance and Type Checking</h3>
+<section id="inheritance-and-type-checking" class="level3" data-number="4.3.4">
+<h3 data-number="4.3.4" class="anchored" data-anchor-id="inheritance-and-type-checking"><span class="header-section-number">4.3.4</span> Inheritance and Type Checking</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Class inheritance example</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Animal <span class="op">{</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">makeSound</span><span class="op">()</span> <span class="op">{</span></span>
@@ -577,8 +673,8 @@ NativeCode-&gt;JVM
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>myAnimal<span class="op">.</span><span class="fu">makeSound</span><span class="op">();</span>  <span class="co">// Outputs "Meow"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The concept of inheritance allows a subclass to inherit fields and methods from its superclass. This effectively expands the initial contract made by the superclass, and the compiler recognizes this extended contract during type checking.</p>
 </section>
-<section id="abstract-classes-and-interfaces-in-type-checking" class="level3" data-number="3.3.5">
-<h3 data-number="3.3.5" class="anchored" data-anchor-id="abstract-classes-and-interfaces-in-type-checking"><span class="header-section-number">3.3.5</span> Abstract Classes and Interfaces in Type Checking</h3>
+<section id="abstract-classes-and-interfaces-in-type-checking" class="level3" data-number="4.3.5">
+<h3 data-number="4.3.5" class="anchored" data-anchor-id="abstract-classes-and-interfaces-in-type-checking"><span class="header-section-number">4.3.5</span> Abstract Classes and Interfaces in Type Checking</h3>
 <div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Abstract class and interface example</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">abstract</span> <span class="kw">class</span> <span class="bu">Shape</span> <span class="op">{</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">abstract</span> <span class="dt">void</span> <span class="fu">draw</span><span class="op">();</span></span>
@@ -684,10 +780,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -697,8 +810,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -710,7 +832,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -754,6 +999,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -779,6 +1025,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -840,17 +1112,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./02_general_purpose_computers.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modern General-Purpose, Programmable Computers</span></span>
+      <a href="./02_general_purpose_computers.html" class="pagination-link" aria-label="Modern General-Purpose, Programmable Computers">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modern General-Purpose, Programmable Computers</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03_algorithmic_analysis.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03_algorithmic_analysis.html" class="pagination-link" aria-label="Algorithmic Analysis">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
