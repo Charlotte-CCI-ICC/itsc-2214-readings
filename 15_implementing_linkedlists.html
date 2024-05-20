@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - Fall 2023 - 17&nbsp; Implementing Linked Lists</title>
+<title>ITSC 2214 - Data Structures and Algorithms - Fall 2023 - 19&nbsp; Implementing Linked Lists</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12_collections_of_data_intro.html">Sequential Collections of Data</a></li><li class="breadcrumb-item"><a href="./15_implementing_linkedlists.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12_collections_of_data_intro.html">Sequential Collections of Data</a></li><li class="breadcrumb-item"><a href="./15_implementing_linkedlists.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -161,6 +161,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing Required Software</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/01_using_autograder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Using the Autograder</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/02_1l_java_ide_practice-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">1L. Java and IDE Practice - 1</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -175,13 +187,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_intro_to_cs_dsa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background on Computer Science and Data Structures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Background on Computer Science and Data Structures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_general_purpose_computers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modern General-Purpose, Programmable Computers</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modern General-Purpose, Programmable Computers</span></span></a>
   </div>
 </li>
       </ul>
@@ -198,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_1_compilers_types.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></span></a>
   </div>
 </li>
       </ul>
@@ -215,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_algorithmic_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -232,25 +244,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_unit_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_writing_junit_tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06_mutation_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_list_of_mutators.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">List of Mutators</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">List of Mutators</span></span></a>
   </div>
 </li>
       </ul>
@@ -267,25 +279,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08_sorting_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_comparable_comparator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10_bubble_selection_insertion_sort.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_linear_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Linear Search</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Linear Search</span></span></a>
   </div>
 </li>
       </ul>
@@ -302,25 +314,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12_collections_of_data_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Collections of Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Collections of Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13_operations_on_lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14_implementing_arraylists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_implementing_linkedlists.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></span></a>
   </div>
 </li>
       </ul>
@@ -337,13 +349,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16_stack.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./17_queue.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span></a>
   </div>
 </li>
       </ul>
@@ -360,13 +372,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./18_recursion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Recursion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Recursion</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./19_binary_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
   </div>
 </li>
       </ul>
@@ -383,13 +395,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20_trees.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./21_graphs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
   </div>
 </li>
       </ul>
@@ -406,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./22_hashing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
   </div>
 </li>
       </ul>
@@ -421,19 +433,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#understanding-references-in-java" id="toc-understanding-references-in-java" class="nav-link active" data-scroll-target="#understanding-references-in-java"><span class="header-section-number">17.1</span> Understanding References in Java</a></li>
-  <li><a href="#memory-allocation-for-java-objects" id="toc-memory-allocation-for-java-objects" class="nav-link" data-scroll-target="#memory-allocation-for-java-objects"><span class="header-section-number">17.2</span> Memory Allocation for Java Objects</a></li>
-  <li><a href="#objects-interacting-through-references" id="toc-objects-interacting-through-references" class="nav-link" data-scroll-target="#objects-interacting-through-references"><span class="header-section-number">17.3</span> 6.3 Objects Interacting Through References</a></li>
-  <li><a href="#implementing-linked-lists-in-java" id="toc-implementing-linked-lists-in-java" class="nav-link" data-scroll-target="#implementing-linked-lists-in-java"><span class="header-section-number">17.4</span> Implementing Linked Lists in Java</a></li>
-  <li><a href="#adding-to-a-singly-linked-list" id="toc-adding-to-a-singly-linked-list" class="nav-link" data-scroll-target="#adding-to-a-singly-linked-list"><span class="header-section-number">17.5</span> 6.5 Adding to a Singly Linked List</a></li>
-  <li><a href="#searching-a-singly-linked-list" id="toc-searching-a-singly-linked-list" class="nav-link" data-scroll-target="#searching-a-singly-linked-list"><span class="header-section-number">17.6</span> Searching a Singly Linked List</a></li>
-  <li><a href="#removing-from-a-singly-linked-list" id="toc-removing-from-a-singly-linked-list" class="nav-link" data-scroll-target="#removing-from-a-singly-linked-list"><span class="header-section-number">17.7</span> Removing from a Singly Linked List</a>
+  <li><a href="#understanding-references-in-java" id="toc-understanding-references-in-java" class="nav-link active" data-scroll-target="#understanding-references-in-java"><span class="header-section-number">19.1</span> Understanding References in Java</a></li>
+  <li><a href="#memory-allocation-for-java-objects" id="toc-memory-allocation-for-java-objects" class="nav-link" data-scroll-target="#memory-allocation-for-java-objects"><span class="header-section-number">19.2</span> Memory Allocation for Java Objects</a></li>
+  <li><a href="#objects-interacting-through-references" id="toc-objects-interacting-through-references" class="nav-link" data-scroll-target="#objects-interacting-through-references"><span class="header-section-number">19.3</span> 6.3 Objects Interacting Through References</a></li>
+  <li><a href="#implementing-linked-lists-in-java" id="toc-implementing-linked-lists-in-java" class="nav-link" data-scroll-target="#implementing-linked-lists-in-java"><span class="header-section-number">19.4</span> Implementing Linked Lists in Java</a></li>
+  <li><a href="#adding-to-a-singly-linked-list" id="toc-adding-to-a-singly-linked-list" class="nav-link" data-scroll-target="#adding-to-a-singly-linked-list"><span class="header-section-number">19.5</span> 6.5 Adding to a Singly Linked List</a></li>
+  <li><a href="#searching-a-singly-linked-list" id="toc-searching-a-singly-linked-list" class="nav-link" data-scroll-target="#searching-a-singly-linked-list"><span class="header-section-number">19.6</span> Searching a Singly Linked List</a></li>
+  <li><a href="#removing-from-a-singly-linked-list" id="toc-removing-from-a-singly-linked-list" class="nav-link" data-scroll-target="#removing-from-a-singly-linked-list"><span class="header-section-number">19.7</span> Removing from a Singly Linked List</a>
   <ul class="collapse">
-  <li><a href="#case-1-empty-linked-list" id="toc-case-1-empty-linked-list" class="nav-link" data-scroll-target="#case-1-empty-linked-list"><span class="header-section-number">17.7.1</span> Case 1: Empty Linked List</a></li>
-  <li><a href="#case-2-linked-list-with-one-element" id="toc-case-2-linked-list-with-one-element" class="nav-link" data-scroll-target="#case-2-linked-list-with-one-element"><span class="header-section-number">17.7.2</span> Case 2: Linked List with One Element</a></li>
-  <li><a href="#case-3-linked-list-with-more-than-one-element" id="toc-case-3-linked-list-with-more-than-one-element" class="nav-link" data-scroll-target="#case-3-linked-list-with-more-than-one-element"><span class="header-section-number">17.7.3</span> Case 3: Linked List with More Than One Element</a></li>
-  <li><a href="#moving-to-removeint-i" id="toc-moving-to-removeint-i" class="nav-link" data-scroll-target="#moving-to-removeint-i"><span class="header-section-number">17.7.4</span> Moving to <code>remove(int i)</code></a></li>
-  <li><a href="#summary-and-conclusion" id="toc-summary-and-conclusion" class="nav-link" data-scroll-target="#summary-and-conclusion"><span class="header-section-number">17.7.5</span> Summary and Conclusion</a></li>
+  <li><a href="#case-1-empty-linked-list" id="toc-case-1-empty-linked-list" class="nav-link" data-scroll-target="#case-1-empty-linked-list"><span class="header-section-number">19.7.1</span> Case 1: Empty Linked List</a></li>
+  <li><a href="#case-2-linked-list-with-one-element" id="toc-case-2-linked-list-with-one-element" class="nav-link" data-scroll-target="#case-2-linked-list-with-one-element"><span class="header-section-number">19.7.2</span> Case 2: Linked List with One Element</a></li>
+  <li><a href="#case-3-linked-list-with-more-than-one-element" id="toc-case-3-linked-list-with-more-than-one-element" class="nav-link" data-scroll-target="#case-3-linked-list-with-more-than-one-element"><span class="header-section-number">19.7.3</span> Case 3: Linked List with More Than One Element</a></li>
+  <li><a href="#moving-to-removeint-i" id="toc-moving-to-removeint-i" class="nav-link" data-scroll-target="#moving-to-removeint-i"><span class="header-section-number">19.7.4</span> Moving to <code>remove(int i)</code></a></li>
+  <li><a href="#summary-and-conclusion" id="toc-summary-and-conclusion" class="nav-link" data-scroll-target="#summary-and-conclusion"><span class="header-section-number">19.7.5</span> Summary and Conclusion</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -441,9 +453,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12_collections_of_data_intro.html">Sequential Collections of Data</a></li><li class="breadcrumb-item"><a href="./15_implementing_linkedlists.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12_collections_of_data_intro.html">Sequential Collections of Data</a></li><li class="breadcrumb-item"><a href="./15_implementing_linkedlists.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></h1>
+<h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></h1>
 </div>
 
 
@@ -461,8 +473,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>In this chapter, we’ll take a closer look at how objects interact in Java. To fully understand this interaction, we first need to grasp the concept of references in Java, memory allocation for Java objects, and how different objects can interact through references. Later, we’ll also examine how these principles apply to implementing linked lists in Java.</p>
-<section id="understanding-references-in-java" class="level2" data-number="17.1">
-<h2 data-number="17.1" class="anchored" data-anchor-id="understanding-references-in-java"><span class="header-section-number">17.1</span> Understanding References in Java</h2>
+<section id="understanding-references-in-java" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="understanding-references-in-java"><span class="header-section-number">19.1</span> Understanding References in Java</h2>
 <p>In Java programming, the statement that “all objects are references” is a cornerstone. Understanding what this statement means is a fundamental step in mastering Java.</p>
 <p>In Java, when we say an object is a <em>reference</em>, it means that the object acts as an address pointer, referencing a specific location in memory. This location is where the actual data associated with that object is stored.</p>
 <p>Consider your computer’s memory as a large grid, as illustrated in Table 6.1. Each cell can store some data.</p>
@@ -571,8 +583,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p>For any object in Java, it’s not the data of the object that is directly stored in the variable, but rather the <em>reference</em> to the data.</p>
 </section>
-<section id="memory-allocation-for-java-objects" class="level2" data-number="17.2">
-<h2 data-number="17.2" class="anchored" data-anchor-id="memory-allocation-for-java-objects"><span class="header-section-number">17.2</span> Memory Allocation for Java Objects</h2>
+<section id="memory-allocation-for-java-objects" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="memory-allocation-for-java-objects"><span class="header-section-number">19.2</span> Memory Allocation for Java Objects</h2>
 <p>Consider the following example, in which we have a <code>Dog</code> class.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Dog <span class="op">{</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">String</span> name<span class="op">;</span></span>
@@ -594,8 +606,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>So, <code>myDog</code> is essentially a pointer that points to the location in memory where the <code>Dog</code> object’s data is stored.</p>
 </section>
-<section id="objects-interacting-through-references" class="level2" data-number="17.3">
-<h2 data-number="17.3" class="anchored" data-anchor-id="objects-interacting-through-references"><span class="header-section-number">17.3</span> 6.3 Objects Interacting Through References</h2>
+<section id="objects-interacting-through-references" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="objects-interacting-through-references"><span class="header-section-number">19.3</span> 6.3 Objects Interacting Through References</h2>
 <p>Now, let’s consider a scenario where we have two classes, <code>Dog</code> and <code>HomeOwner</code>. The <code>Dog</code> class is the same as before, but the <code>HomeOwner</code> class is a bit more complex.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> HomeOwner</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -648,8 +660,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>This understanding of references and memory allocation sets the foundation for how linked lists work in Java, which we will explore in the upcoming sections.</p>
 </section>
-<section id="implementing-linked-lists-in-java" class="level2" data-number="17.4">
-<h2 data-number="17.4" class="anchored" data-anchor-id="implementing-linked-lists-in-java"><span class="header-section-number">17.4</span> Implementing Linked Lists in Java</h2>
+<section id="implementing-linked-lists-in-java" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="implementing-linked-lists-in-java"><span class="header-section-number">19.4</span> Implementing Linked Lists in Java</h2>
 <p>Absolutely! Last time, we used arrays to construct lists, but we can indeed build a list using the concept of references we have just discussed.</p>
 <p>We’ll start by creating a class where we’ll store a reference to the first piece of data in our List. Then, our first piece of data will contain a reference to the next piece, and the next piece will point to the one following it, and so on.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -736,8 +748,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="adding-to-a-singly-linked-list" class="level2" data-number="17.5">
-<h2 data-number="17.5" class="anchored" data-anchor-id="adding-to-a-singly-linked-list"><span class="header-section-number">17.5</span> 6.5 Adding to a Singly Linked List</h2>
+<section id="adding-to-a-singly-linked-list" class="level2" data-number="19.5">
+<h2 data-number="19.5" class="anchored" data-anchor-id="adding-to-a-singly-linked-list"><span class="header-section-number">19.5</span> 6.5 Adding to a Singly Linked List</h2>
 <p>The <code>SinglyLinkedNode</code></p>
 <p>class needs getter and setter methods for accessing and modifying its private data and next fields.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SinglyLinkedNode<span class="op">&lt;</span>T<span class="op">&gt;</span> <span class="op">{</span></span>
@@ -825,8 +837,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now, each time we call <code>add()</code>, we start at the head and follow the <code>next</code> references until we find a node where <code>next</code> is <code>null</code>. We then set that node’s <code>next</code> to the new node, effectively adding it to the end of the list.</p>
 <p>And there you have it! We’ve cracked the code for adding nodes to a singly linked list, regardless of its size.</p>
 </section>
-<section id="searching-a-singly-linked-list" class="level2" data-number="17.6">
-<h2 data-number="17.6" class="anchored" data-anchor-id="searching-a-singly-linked-list"><span class="header-section-number">17.6</span> Searching a Singly Linked List</h2>
+<section id="searching-a-singly-linked-list" class="level2" data-number="19.6">
+<h2 data-number="19.6" class="anchored" data-anchor-id="searching-a-singly-linked-list"><span class="header-section-number">19.6</span> Searching a Singly Linked List</h2>
 <p>Having explored the intricacies of adding elements to our singly linked list, it’s only logical to now ask, “How can we find an element in our list?” After all, what good is storing data if we can’t retrieve it?</p>
 <p>Let’s delve into the process of developing a <code>search</code> method that behaves similarly to the <code>indexOf</code> method in the Java standard library. Our <code>search</code> method should return the index of the first occurrence of a given element in the list and <code>-1</code> if the element is not found.</p>
 <p>Before we get started, there’s an important update we need to make to our generics. We’ll be comparing objects in our list to the search target, which means we need to ensure these objects are comparable. To do this, we’ll update <code>T</code> to <code>T extends Comparable&lt;T&gt;</code>. This ensures that the type <code>T</code> implements the <code>Comparable</code> interface, providing us with the ability to compare objects of this type.</p>
@@ -864,8 +876,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>If the data does not match our target, we increment our <code>index</code> and move to the next node in the list. If we reach the end of the list without finding our target, the method returns <code>-1</code>, indicating the target is not in the list.</p>
 <p>And that’s how we develop a search method for our singly linked list, providing us with the means to locate and retrieve data efficiently!</p>
 </section>
-<section id="removing-from-a-singly-linked-list" class="level2" data-number="17.7">
-<h2 data-number="17.7" class="anchored" data-anchor-id="removing-from-a-singly-linked-list"><span class="header-section-number">17.7</span> Removing from a Singly Linked List</h2>
+<section id="removing-from-a-singly-linked-list" class="level2" data-number="19.7">
+<h2 data-number="19.7" class="anchored" data-anchor-id="removing-from-a-singly-linked-list"><span class="header-section-number">19.7</span> Removing from a Singly Linked List</h2>
 <p>Just as we learned how to add elements to a singly linked list, let’s now turn our attention to the process of removing elements. As with adding elements, we’ll start with a simpler case and gradually address more complex scenarios. We’ll design a <code>removeLast</code> method, which removes the last node from the list.</p>
 <p>There are three scenarios we need to consider:</p>
 <ol type="1">
@@ -873,8 +885,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>The list contains only one element.</li>
 <li>The list contains more than one element.</li>
 </ol>
-<section id="case-1-empty-linked-list" class="level3" data-number="17.7.1">
-<h3 data-number="17.7.1" class="anchored" data-anchor-id="case-1-empty-linked-list"><span class="header-section-number">17.7.1</span> Case 1: Empty Linked List</h3>
+<section id="case-1-empty-linked-list" class="level3" data-number="19.7.1">
+<h3 data-number="19.7.1" class="anchored" data-anchor-id="case-1-empty-linked-list"><span class="header-section-number">19.7.1</span> Case 1: Empty Linked List</h3>
 <p>The simplest scenario to handle is an empty list. If the list is empty, we have nothing to remove. Here’s a simple starting point for our <code>removeLast</code> method:</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">removeLast</span><span class="op">()</span> <span class="op">{</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="op">(</span>head <span class="op">==</span> <span class="kw">null</span><span class="op">)</span> <span class="op">{</span></span>
@@ -883,8 +895,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This code handles an empty list by simply returning without doing anything.</p>
 </section>
-<section id="case-2-linked-list-with-one-element" class="level3" data-number="17.7.2">
-<h3 data-number="17.7.2" class="anchored" data-anchor-id="case-2-linked-list-with-one-element"><span class="header-section-number">17.7.2</span> Case 2: Linked List with One Element</h3>
+<section id="case-2-linked-list-with-one-element" class="level3" data-number="19.7.2">
+<h3 data-number="19.7.2" class="anchored" data-anchor-id="case-2-linked-list-with-one-element"><span class="header-section-number">19.7.2</span> Case 2: Linked List with One Element</h3>
 <p>Now, let’s consider the case where our list contains only one element.</p>
 <p>To remove the only element from the list, we would set <code>head</code> to <code>null</code>, effectively removing the link to that node.</p>
 <p>Here’s how our <code>removeLast</code> method looks now:</p>
@@ -896,8 +908,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="case-3-linked-list-with-more-than-one-element" class="level3" data-number="17.7.3">
-<h3 data-number="17.7.3" class="anchored" data-anchor-id="case-3-linked-list-with-more-than-one-element"><span class="header-section-number">17.7.3</span> Case 3: Linked List with More Than One Element</h3>
+<section id="case-3-linked-list-with-more-than-one-element" class="level3" data-number="19.7.3">
+<h3 data-number="19.7.3" class="anchored" data-anchor-id="case-3-linked-list-with-more-than-one-element"><span class="header-section-number">19.7.3</span> Case 3: Linked List with More Than One Element</h3>
 <p>When the list contains more than one element, we must find the last node and the node before it. Why? Because to remove the last node, we must set the <code>next</code> field of the node before it to <code>null</code>.</p>
 <p>Let’s think about how we might achieve this. We can’t simply set <code>head.getNext() = null</code> like we did with the one-element list, because this would leave us with only the first node.</p>
 <p>Instead, we could use a loop similar to the one in the <code>add</code> method, but with a twist. Instead of stopping when <code>current.getNext() == null</code>, which would leave us at the last node, we stop when <code>current.getNext().getNext() == null</code>, which will leave us at the second-to-last node.</p>
@@ -916,8 +928,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now, we have a <code>removeLast</code> method that handles any size list!</p>
 </section>
-<section id="moving-to-removeint-i" class="level3" data-number="17.7.4">
-<h3 data-number="17.7.4" class="anchored" data-anchor-id="moving-to-removeint-i"><span class="header-section-number">17.7.4</span> Moving to <code>remove(int i)</code></h3>
+<section id="moving-to-removeint-i" class="level3" data-number="19.7.4">
+<h3 data-number="19.7.4" class="anchored" data-anchor-id="moving-to-removeint-i"><span class="header-section-number">19.7.4</span> Moving to <code>remove(int i)</code></h3>
 <p>Removing the last node from a list is a good starting point, but what if we want to remove an arbitrary node at index <code>i</code>?</p>
 <p>For this, we would need to iterate over the nodes until we reach the <code>(i-1)</code>th node (just before the node we want to remove), then update its <code>next</code> field to skip over the <code>i</code>th node and link to the <code>(i+1)</code>th node.</p>
 <p>However, this requires careful checking of edge cases, such as when <code>i</code> is <code>0</code> (requiring us to update the <code>head</code>), or when <code>i</code> is greater than the size of the list.</p>
@@ -958,8 +970,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This updated method takes care of any negative index or index that’s out of range by simply returning without making any changes. If the index is zero, we update the head of the list to be the next node. If the index is within the range of the list, we find the node at <code>(i-1)</code> and update its <code>next</code> reference to skip over the <code>i</code>th node.</p>
 <p>And with that, we’ve covered the basics of how to add and remove nodes from a singly linked list!</p>
 </section>
-<section id="summary-and-conclusion" class="level3" data-number="17.7.5">
-<h3 data-number="17.7.5" class="anchored" data-anchor-id="summary-and-conclusion"><span class="header-section-number">17.7.5</span> Summary and Conclusion</h3>
+<section id="summary-and-conclusion" class="level3" data-number="19.7.5">
+<h3 data-number="19.7.5" class="anchored" data-anchor-id="summary-and-conclusion"><span class="header-section-number">19.7.5</span> Summary and Conclusion</h3>
 <p>In this chapter, we learned how to implement linked lists in Java using references and objects. We saw how references can point to other objects in memory and how we can use them to create nodes that store data and link to other nodes. We also learned how to define a class for a singly linked list that contains a reference to the first node, called the head, and methods for adding, searching, and removing elements. We compared the advantages and disadvantages of linked lists with array-backed lists and discussed some applications of linked lists in real-world problems. We concluded that linked lists are a dynamic and flexible data structure that can grow and shrink as needed, but they also have some drawbacks such as extra memory overhead, lack of random access, and potential memory leaks.</p>
 
 
@@ -1379,12 +1391,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./14_implementing_arraylists.html" class="pagination-link" aria-label="Implementing Array-backed Lists">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./16_stack.html" class="pagination-link" aria-label="Stack Data Structure">
-        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

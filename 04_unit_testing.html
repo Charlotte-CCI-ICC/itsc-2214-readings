@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - Fall 2023 - 6&nbsp; Unit Testing and Test-Driven Development</title>
+<title>ITSC 2214 - Data Structures and Algorithms - Fall 2023 - 8&nbsp; Unit Testing and Test-Driven Development</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_unit_testing.html">Unit Testing</a></li><li class="breadcrumb-item"><a href="./04_unit_testing.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_unit_testing.html">Unit Testing</a></li><li class="breadcrumb-item"><a href="./04_unit_testing.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -161,6 +161,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing Required Software</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/01_using_autograder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Using the Autograder</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/02_1l_java_ide_practice-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">1L. Java and IDE Practice - 1</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -175,13 +187,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_intro_to_cs_dsa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background on Computer Science and Data Structures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Background on Computer Science and Data Structures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_general_purpose_computers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Modern General-Purpose, Programmable Computers</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modern General-Purpose, Programmable Computers</span></span></a>
   </div>
 </li>
       </ul>
@@ -198,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_1_compilers_types.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></span></a>
   </div>
 </li>
       </ul>
@@ -215,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_algorithmic_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -232,25 +244,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_unit_testing.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_writing_junit_tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06_mutation_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_list_of_mutators.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">List of Mutators</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">List of Mutators</span></span></a>
   </div>
 </li>
       </ul>
@@ -267,25 +279,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08_sorting_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_comparable_comparator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10_bubble_selection_insertion_sort.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_linear_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Linear Search</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Linear Search</span></span></a>
   </div>
 </li>
       </ul>
@@ -302,25 +314,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12_collections_of_data_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Collections of Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Collections of Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13_operations_on_lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14_implementing_arraylists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_implementing_linkedlists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></span></a>
   </div>
 </li>
       </ul>
@@ -337,13 +349,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16_stack.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./17_queue.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span></a>
   </div>
 </li>
       </ul>
@@ -360,13 +372,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./18_recursion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Recursion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Recursion</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./19_binary_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
   </div>
 </li>
       </ul>
@@ -383,13 +395,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20_trees.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./21_graphs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
   </div>
 </li>
       </ul>
@@ -406,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./22_hashing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
   </div>
 </li>
       </ul>
@@ -421,26 +433,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">6.1</span> Background</a></li>
-  <li><a href="#the-power-of-unit-testing" id="toc-the-power-of-unit-testing" class="nav-link" data-scroll-target="#the-power-of-unit-testing"><span class="header-section-number">6.2</span> The Power of Unit Testing</a></li>
-  <li><a href="#a-basic-approach-to-unit-testing" id="toc-a-basic-approach-to-unit-testing" class="nav-link" data-scroll-target="#a-basic-approach-to-unit-testing"><span class="header-section-number">6.3</span> A Basic Approach to Unit Testing</a></li>
-  <li><a href="#recognizing-the-inefficiencies-and-redundancies" id="toc-recognizing-the-inefficiencies-and-redundancies" class="nav-link" data-scroll-target="#recognizing-the-inefficiencies-and-redundancies"><span class="header-section-number">6.4</span> Recognizing the Inefficiencies and Redundancies</a>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">8.1</span> Background</a></li>
+  <li><a href="#the-power-of-unit-testing" id="toc-the-power-of-unit-testing" class="nav-link" data-scroll-target="#the-power-of-unit-testing"><span class="header-section-number">8.2</span> The Power of Unit Testing</a></li>
+  <li><a href="#a-basic-approach-to-unit-testing" id="toc-a-basic-approach-to-unit-testing" class="nav-link" data-scroll-target="#a-basic-approach-to-unit-testing"><span class="header-section-number">8.3</span> A Basic Approach to Unit Testing</a></li>
+  <li><a href="#recognizing-the-inefficiencies-and-redundancies" id="toc-recognizing-the-inefficiencies-and-redundancies" class="nav-link" data-scroll-target="#recognizing-the-inefficiencies-and-redundancies"><span class="header-section-number">8.4</span> Recognizing the Inefficiencies and Redundancies</a>
   <ul class="collapse">
-  <li><a href="#redundancy" id="toc-redundancy" class="nav-link" data-scroll-target="#redundancy"><span class="header-section-number">6.4.1</span> Redundancy</a></li>
-  <li><a href="#lack-of-automation" id="toc-lack-of-automation" class="nav-link" data-scroll-target="#lack-of-automation"><span class="header-section-number">6.4.2</span> Lack of Automation</a></li>
+  <li><a href="#redundancy" id="toc-redundancy" class="nav-link" data-scroll-target="#redundancy"><span class="header-section-number">8.4.1</span> Redundancy</a></li>
+  <li><a href="#lack-of-automation" id="toc-lack-of-automation" class="nav-link" data-scroll-target="#lack-of-automation"><span class="header-section-number">8.4.2</span> Lack of Automation</a></li>
   </ul></li>
-  <li><a href="#a-slightly-more-sophisticated-approach-to-unit-testing" id="toc-a-slightly-more-sophisticated-approach-to-unit-testing" class="nav-link" data-scroll-target="#a-slightly-more-sophisticated-approach-to-unit-testing"><span class="header-section-number">6.5</span> A slightly more sophisticated approach to Unit Testing</a></li>
-  <li><a href="#automating-test-execution" id="toc-automating-test-execution" class="nav-link" data-scroll-target="#automating-test-execution"><span class="header-section-number">6.6</span> Automating Test Execution</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">6.7</span> Summary</a></li>
+  <li><a href="#a-slightly-more-sophisticated-approach-to-unit-testing" id="toc-a-slightly-more-sophisticated-approach-to-unit-testing" class="nav-link" data-scroll-target="#a-slightly-more-sophisticated-approach-to-unit-testing"><span class="header-section-number">8.5</span> A slightly more sophisticated approach to Unit Testing</a></li>
+  <li><a href="#automating-test-execution" id="toc-automating-test-execution" class="nav-link" data-scroll-target="#automating-test-execution"><span class="header-section-number">8.6</span> Automating Test Execution</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">8.7</span> Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_unit_testing.html">Unit Testing</a></li><li class="breadcrumb-item"><a href="./04_unit_testing.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_unit_testing.html">Unit Testing</a></li><li class="breadcrumb-item"><a href="./04_unit_testing.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></h1>
 </div>
 
 
@@ -457,22 +469,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="background" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="background"><span class="header-section-number">6.1</span> Background</h2>
+<section id="background" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="background"><span class="header-section-number">8.1</span> Background</h2>
 <p>Imagine you are an architect and you’ve just designed a large, complex building - let’s say a skyscraper. This skyscraper is not merely a single entity; it’s composed of thousands of individual components - the plumbing, the electrical wiring, the elevators, the heating system, and the building’s structural elements, among many others. Now, how would you ensure that the skyscraper works as intended? Would you wait until the entire building is constructed and then start testing every possible scenario? Obviously, this approach is time-consuming, and it exposes you to significant risk.</p>
 <p>A similar challenge exists in the world of software development. Take, for example, a web browser. This is a complex piece of software with hundreds of classes interacting in intricate ways. These classes and methods perform various tasks such as rendering HTML and CSS, processing JavaScript, managing cookies, implementing security features, and many others. Ensuring the correct functionality of this software is a daunting task, given the vast range of potential inputs. After all, there are billions of web pages on the internet, each with its unique combination of technologies, designs, and user interactions. How can you guarantee that your browser works flawlessly with all of them? A naive approach would be to load each web page and observe the output, but this process is not only time-consuming but also practically impossible.</p>
 <p>This conundrum begs the question: How can we validate the correct functionality of a software product efficiently? The direction points towards automation - the ability to conduct tests without manual intervention. But how can we achieve this, especially given the enormous application surface area?</p>
 <p>This is where unit testing and Test-Driven Development (TDD) come in.</p>
 </section>
-<section id="the-power-of-unit-testing" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="the-power-of-unit-testing"><span class="header-section-number">6.2</span> The Power of Unit Testing</h2>
+<section id="the-power-of-unit-testing" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="the-power-of-unit-testing"><span class="header-section-number">8.2</span> The Power of Unit Testing</h2>
 <p>While the surface area of an entire application is vast, the surface area of individual classes and units of code within the software project is significantly smaller. If we can write tests to verify that each method within each class functions correctly for all possible inputs, we reduce the complexity of the problem.</p>
 <p>At first glance, it might seem like an overwhelming task. Even a moderately complex software project can have thousands of methods spread across hundreds of classes. Writing tests for all of them could result in thousands of test cases. But this is precisely where automation proves its worth. By automating these tests, we can execute them each time we modify our code, ensuring the functionality remains intact. This method gives us confidence that our changes have not inadvertently introduced bugs into existing functionality.</p>
 <p>The key principle here is that by ensuring each individual unit of our software behaves correctly, we can be reasonably confident that the application as a whole operates as expected, provided the software architecture is sound. In this manner, unit testing allows us to break down the monumental task of verifying a complex software system’s functionality into manageable, automated tasks.</p>
 <p>In the following sections, we will delve deeper into the concept of unit testing, its implementation in Java, and the practice of Test-Driven Development, where tests actually guide and shape the development of the software. Buckle up, for we’re about to embark on an exciting journey that will fundamentally change how you approach software development!</p>
 </section>
-<section id="a-basic-approach-to-unit-testing" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="a-basic-approach-to-unit-testing"><span class="header-section-number">6.3</span> A Basic Approach to Unit Testing</h2>
+<section id="a-basic-approach-to-unit-testing" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="a-basic-approach-to-unit-testing"><span class="header-section-number">8.3</span> A Basic Approach to Unit Testing</h2>
 <p>In order to illustrate the process of unit testing in Java, let’s consider a simple utility class named <code>MathUtil</code>. This class defines basic arithmetic operations such as <code>add</code>, <code>subtract</code>, etc.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MathUtil <span class="op">{</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">int</span> <span class="fu">add</span><span class="op">(</span><span class="dt">int</span> a<span class="op">,</span> <span class="dt">int</span> b<span class="op">)</span> <span class="op">{</span></span>
@@ -500,11 +512,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In the above example, the <code>testAdd1</code> method tests the addition of two positive numbers. We could also add methods like <code>testAdd2</code> to test adding a positive and a negative number, <code>testAdd3</code> to test adding two negative numbers, and so forth. Each of these methods tests a specific scenario and validates that the result is as expected.</p>
 </section>
-<section id="recognizing-the-inefficiencies-and-redundancies" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="recognizing-the-inefficiencies-and-redundancies"><span class="header-section-number">6.4</span> Recognizing the Inefficiencies and Redundancies</h2>
+<section id="recognizing-the-inefficiencies-and-redundancies" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="recognizing-the-inefficiencies-and-redundancies"><span class="header-section-number">8.4</span> Recognizing the Inefficiencies and Redundancies</h2>
 <p>While the above approach accomplishes our objective of validating the methods in our <code>MathUtil</code> class, you might have already noticed that it’s far from optimal. There are several glaring issues that can make this method tedious and inefficient:</p>
-<section id="redundancy" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="redundancy"><span class="header-section-number">6.4.1</span> Redundancy</h3>
+<section id="redundancy" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="redundancy"><span class="header-section-number">8.4.1</span> Redundancy</h3>
 <p>Every test method follows a similar pattern - we perform an operation and then verify if the result matches the expected outcome. This redundancy suggests we could abstract out the verification part into a separate method.</p>
 <p>In the following expanded <code>MathUtilTest</code> class, you can observe that <code>testAdd2</code> and <code>testAdd3</code> follow the exact same pattern as <code>testAdd1</code>. They create an instance of <code>MathUtil</code>, perform an operation, and then compare the result with the expected outcome. This repetitive pattern across multiple tests highlights the redundancy and inefficiency of this approach.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MathUtilTest <span class="op">{</span></span>
@@ -548,8 +560,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="co">// More test methods for other cases...</span></span>
 <span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="lack-of-automation" class="level3" data-number="6.4.2">
-<h3 data-number="6.4.2" class="anchored" data-anchor-id="lack-of-automation"><span class="header-section-number">6.4.2</span> Lack of Automation</h3>
+<section id="lack-of-automation" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="lack-of-automation"><span class="header-section-number">8.4.2</span> Lack of Automation</h3>
 <p>Let’s see how we need to currently run the tests we’ve written.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MathUtilTest <span class="op">{</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -569,8 +581,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Currently, we need to call each test method manually to run our tests. An automated system that could execute all tests for us would save time and reduce the chances of human error. However, as we will see later, there are better approaches to automation than the one we’ve used here.</p>
 </section>
 </section>
-<section id="a-slightly-more-sophisticated-approach-to-unit-testing" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="a-slightly-more-sophisticated-approach-to-unit-testing"><span class="header-section-number">6.5</span> A slightly more sophisticated approach to Unit Testing</h2>
+<section id="a-slightly-more-sophisticated-approach-to-unit-testing" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="a-slightly-more-sophisticated-approach-to-unit-testing"><span class="header-section-number">8.5</span> A slightly more sophisticated approach to Unit Testing</h2>
 <p>To alleviate the redundancy, we can create a method that compares the expected and actual results and raises an error if they do not match. This method, which we can call <code>assertEquals</code>, would look something like this:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">assertEquals</span><span class="op">(</span><span class="bu">String</span> testCaseName<span class="op">,</span> <span class="dt">int</span> expected<span class="op">,</span> <span class="dt">int</span> actual<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>expected <span class="op">!=</span> actual<span class="op">)</span> <span class="op">{</span></span>
@@ -590,8 +602,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now, our test case looks cleaner and easier to understand. The <code>assertEquals</code> method abstracts away the comparison details, leaving only the test logic in the test case. We can apply this simplification to all our test methods.</p>
 <p>This approach significantly reduces the redundancy in our test code, making it easier to write and maintain our tests. However, we are still manually running each test method from the <code>main</code> method. What if we could also automate the execution of all test methods?</p>
 </section>
-<section id="automating-test-execution" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="automating-test-execution"><span class="header-section-number">6.6</span> Automating Test Execution</h2>
+<section id="automating-test-execution" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="automating-test-execution"><span class="header-section-number">8.6</span> Automating Test Execution</h2>
 <p>What if we could just call a single method that runs all our test methods? Let’s define a simple <code>runTests</code> method that does exactly that.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">runTests</span><span class="op">()</span> <span class="op">{</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">testAdd</span><span class="op">();</span></span>
@@ -604,8 +616,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This approach is an improvement over manually running each test. However, it still has some drawbacks. For instance, when you add a new test method, you need to remember to add a call to this method in the <code>runTests</code> method. It would be better if our test framework could automatically detect and run all test methods without requiring any modifications to the <code>runTests</code> method. As we’ll see later, this is precisely what test frameworks like JUnit offer.</p>
 </section>
-<section id="summary" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.7</span> Summary</h2>
+<section id="summary" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="summary"><span class="header-section-number">8.7</span> Summary</h2>
 <p>So far, we have seen how unit testing can be a powerful tool in ensuring that individual units of code within a larger software application function as expected. We have also discussed and implemented a basic system for automating unit tests in Java, gradually refining this system to make it more efficient and less redundant.</p>
 <p>In the following sections, we will discuss JUnit, a popular unit testing framework in Java that takes automation and convenience to the next level. We will also explore the practice of Test-Driven Development, where we let our tests guide the development of our software, helping us to write cleaner, more robust code. Stay tuned!</p>
 
@@ -1025,12 +1037,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./03_algorithmic_analysis.html" class="pagination-link" aria-label="Algorithmic Analysis">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./05_writing_junit_tests.html" class="pagination-link" aria-label="Writing JUnit Tests and Test-Driven Development">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - Fall 2023 - 10&nbsp; Introduction to Mutation Testing</title>
+<title>ITSC 2214 - Data Structures and Algorithms - Fall 2023 - 2&nbsp; Using the Autograder</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./07_list_of_mutators.html" rel="next">
-<link href="./05_writing_junit_tests.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../labs/02_1l_java_ide_practice-1.html" rel="next">
+<link href="../labs/00_installing_req_software.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -115,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_unit_testing.html">Unit Testing</a></li><li class="breadcrumb-item"><a href="./06_mutation_testing.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/00_installing_req_software.html">Programming Labs</a></li><li class="breadcrumb-item"><a href="../labs/01_using_autograder.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Using the Autograder</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -130,7 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">ITSC 2214 - Data Structures and Algorithms - Fall 2023</a> 
+      <a href="../">ITSC 2214 - Data Structures and Algorithms - Fall 2023</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -142,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -157,19 +123,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/00_installing_req_software.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/00_installing_req_software.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing Required Software</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/01_using_autograder.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/01_using_autograder.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Using the Autograder</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/02_1l_java_ide_practice-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/02_1l_java_ide_practice-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">1L. Java and IDE Practice - 1</span></span></a>
   </div>
 </li>
@@ -186,13 +152,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_intro_to_cs_dsa.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_intro_to_cs_dsa.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Background on Computer Science and Data Structures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_general_purpose_computers.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_general_purpose_computers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modern General-Purpose, Programmable Computers</span></span></a>
   </div>
 </li>
@@ -209,7 +175,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_1_compilers_types.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_1_compilers_types.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></span></a>
   </div>
 </li>
@@ -226,7 +192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_algorithmic_analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="../03_algorithmic_analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span></a>
   </div>
 </li>
@@ -243,25 +209,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_unit_testing.html" class="sidebar-item-text sidebar-link">
+  <a href="../04_unit_testing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05_writing_junit_tests.html" class="sidebar-item-text sidebar-link">
+  <a href="../05_writing_junit_tests.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06_mutation_testing.html" class="sidebar-item-text sidebar-link active">
+  <a href="../06_mutation_testing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07_list_of_mutators.html" class="sidebar-item-text sidebar-link">
+  <a href="../07_list_of_mutators.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">List of Mutators</span></span></a>
   </div>
 </li>
@@ -278,25 +244,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08_sorting_intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../08_sorting_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09_comparable_comparator.html" class="sidebar-item-text sidebar-link">
+  <a href="../09_comparable_comparator.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_bubble_selection_insertion_sort.html" class="sidebar-item-text sidebar-link">
+  <a href="../10_bubble_selection_insertion_sort.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11_linear_search.html" class="sidebar-item-text sidebar-link">
+  <a href="../11_linear_search.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Linear Search</span></span></a>
   </div>
 </li>
@@ -313,25 +279,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12_collections_of_data_intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../12_collections_of_data_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Collections of Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13_operations_on_lists.html" class="sidebar-item-text sidebar-link">
+  <a href="../13_operations_on_lists.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./14_implementing_arraylists.html" class="sidebar-item-text sidebar-link">
+  <a href="../14_implementing_arraylists.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15_implementing_linkedlists.html" class="sidebar-item-text sidebar-link">
+  <a href="../15_implementing_linkedlists.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></span></a>
   </div>
 </li>
@@ -348,13 +314,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./16_stack.html" class="sidebar-item-text sidebar-link">
+  <a href="../16_stack.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./17_queue.html" class="sidebar-item-text sidebar-link">
+  <a href="../17_queue.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span></a>
   </div>
 </li>
@@ -371,13 +337,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./18_recursion.html" class="sidebar-item-text sidebar-link">
+  <a href="../18_recursion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Recursion</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./19_binary_search.html" class="sidebar-item-text sidebar-link">
+  <a href="../19_binary_search.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
   </div>
 </li>
@@ -394,13 +360,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./20_trees.html" class="sidebar-item-text sidebar-link">
+  <a href="../20_trees.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./21_graphs.html" class="sidebar-item-text sidebar-link">
+  <a href="../21_graphs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
   </div>
 </li>
@@ -417,7 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./22_hashing.html" class="sidebar-item-text sidebar-link">
+  <a href="../22_hashing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
   </div>
 </li>
@@ -433,27 +399,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#unit-testing-a-recap" id="toc-unit-testing-a-recap" class="nav-link active" data-scroll-target="#unit-testing-a-recap"><span class="header-section-number">10.1</span> Unit Testing, a Recap</a></li>
-  <li><a href="#writing-correct-unit-tests" id="toc-writing-correct-unit-tests" class="nav-link" data-scroll-target="#writing-correct-unit-tests"><span class="header-section-number">10.2</span> Writing <em>Correct</em> Unit Tests</a></li>
-  <li><a href="#mutation-testing-a-solution-to-test-the-correctness-of-your-unit-tests" id="toc-mutation-testing-a-solution-to-test-the-correctness-of-your-unit-tests" class="nav-link" data-scroll-target="#mutation-testing-a-solution-to-test-the-correctness-of-your-unit-tests"><span class="header-section-number">10.3</span> Mutation Testing: A Solution to Test the Correctness of Your Unit Tests</a></li>
-  <li><a href="#mutation-testing-in-practice" id="toc-mutation-testing-in-practice" class="nav-link" data-scroll-target="#mutation-testing-in-practice"><span class="header-section-number">10.4</span> Mutation Testing in Practice</a>
-  <ul class="collapse">
-  <li><a href="#what-are-these-mutators" id="toc-what-are-these-mutators" class="nav-link" data-scroll-target="#what-are-these-mutators"><span class="header-section-number">10.4.1</span> What are these mutators?</a></li>
-  </ul></li>
-  <li><a href="#understanding-codingrooms-feedback" id="toc-understanding-codingrooms-feedback" class="nav-link" data-scroll-target="#understanding-codingrooms-feedback"><span class="header-section-number">10.5</span> Understanding CodingRooms Feedback</a>
-  <ul class="collapse">
-  <li><a href="#understanding-mutation-test-feedback" id="toc-understanding-mutation-test-feedback" class="nav-link" data-scroll-target="#understanding-mutation-test-feedback"><span class="header-section-number">10.5.1</span> Understanding Mutation Test Feedback</a></li>
-  <li><a href="#understanding-the-grading-overview" id="toc-understanding-the-grading-overview" class="nav-link" data-scroll-target="#understanding-the-grading-overview"><span class="header-section-number">10.5.2</span> Understanding the Grading Overview</a></li>
-  </ul></li>
+  <li><a href="#installing-required-software" id="toc-installing-required-software" class="nav-link active" data-scroll-target="#installing-required-software"><span class="header-section-number">2.1</span> Installing Required Software</a></li>
+  <li><a href="#downloading-project-files" id="toc-downloading-project-files" class="nav-link" data-scroll-target="#downloading-project-files"><span class="header-section-number">2.2</span> Downloading Project Files</a></li>
+  <li><a href="#opening-the-project-in-visual-studio-code" id="toc-opening-the-project-in-visual-studio-code" class="nav-link" data-scroll-target="#opening-the-project-in-visual-studio-code"><span class="header-section-number">2.3</span> Opening the Project in Visual Studio Code</a></li>
+  <li><a href="#writing-your-code" id="toc-writing-your-code" class="nav-link" data-scroll-target="#writing-your-code"><span class="header-section-number">2.4</span> Writing Your Code</a></li>
+  <li><a href="#checking-autograder-feedback" id="toc-checking-autograder-feedback" class="nav-link" data-scroll-target="#checking-autograder-feedback"><span class="header-section-number">2.5</span> Checking Autograder Feedback</a></li>
+  <li><a href="#viewing-generated-feedback" id="toc-viewing-generated-feedback" class="nav-link" data-scroll-target="#viewing-generated-feedback"><span class="header-section-number">2.6</span> Viewing Generated Feedback</a></li>
+  <li><a href="#creating-a-submission" id="toc-creating-a-submission" class="nav-link" data-scroll-target="#creating-a-submission"><span class="header-section-number">2.7</span> Creating a Submission</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">2.8</span> Additional Resources</a></li>
+  <li><a href="#ai-feedback" id="toc-ai-feedback" class="nav-link" data-scroll-target="#ai-feedback"><span class="header-section-number">2.9</span> AI Feedback</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_unit_testing.html">Unit Testing</a></li><li class="breadcrumb-item"><a href="./06_mutation_testing.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/00_installing_req_software.html">Programming Labs</a></li><li class="breadcrumb-item"><a href="../labs/01_using_autograder.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Using the Autograder</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Using the Autograder</span></h1>
 </div>
 
 
@@ -470,130 +433,83 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="unit-testing-a-recap" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="unit-testing-a-recap"><span class="header-section-number">10.1</span> Unit Testing, a Recap</h2>
-<p>Writing <em>correct</em> code is challenging. Owning your code, maintaining it, and ensuring it always performs as expected can be even more difficult. After all, we are human, and mistakes are a part of our nature. Therefore, we can’t always rely solely on our ability to catch these mistakes. Instead, automated processes that can help us identify and correct these errors are truly invaluable.</p>
-<p>Unit testing is one such automated process that tests your code. These tests target individual units of your code and are designed to verify their behavior. In programming, a method can be thought of as the smallest unit of code, and Classes, Packages, and Modules are larger units of code. Every unit test is designed to validate a single behavior of a single unit of code.</p>
-<p>Unit testing is so crucial that they are a mandatory requirement for many software development projects. For instance, if you are contributing a Java source class to most projects, you are also required to provide unit tests for that class. In this course, where we deal with Data Structures and Algorithms, learning how to implement them in Java, etc., submitting your implementations without Unit tests would be like submitting a paper without a bibliography. It might make us question, “Sure, you wrote this and it looks convincing, but where’s your evidence? Why should I believe you?”</p>
-<p>And that’s why you will be required to write unit tests for your Data Structures and Algorithms implementations. But then, how do you know that your unit tests are correct?</p>
-<p>Consider this example:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="at">@Test</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">testAdd</span><span class="op">()</span> <span class="op">{</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">assertTrue</span><span class="op">(</span><span class="dv">1</span> <span class="op">==</span> <span class="dv">1</span><span class="op">);</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The test passes, but does it mean it’s correct? Let’s examine the test.</p>
+<p>These instructions will guide you on how to use the autograder for all your labs. The autograder helps you check your code and provides feedback on your assignments. Follow these steps for a smooth grading experience.</p>
+<section id="installing-required-software" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="installing-required-software"><span class="header-section-number">2.1</span> Installing Required Software</h2>
+<p>Ensure you have all the necessary software installed. Follow the instructions in the <a href="https://charlotte-cci-icc.github.io/itsc-2214-readings/labs/00_installing_req_software.html">Installing Required Software</a> chapter or the instructions provided in class.</p>
 </section>
-<section id="writing-correct-unit-tests" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="writing-correct-unit-tests"><span class="header-section-number">10.2</span> Writing <em>Correct</em> Unit Tests</h2>
-<p>Taking a closer look at the unit test above, two problems become evident:</p>
-<ul>
-<li>The <code>add</code> method isn’t called in the test.</li>
-<li>The test can’t fail.</li>
-</ul>
-<p>To address the first issue, we can leverage tools that detect when a unit test doesn’t cover a particular line of code. Here “cover” means “execute”.</p>
-<p>So what about a test like this?</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="at">@Test</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">testAdd</span><span class="op">()</span> <span class="op">{</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">assertTrue</span><span class="op">(</span><span class="fu">add</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">)</span> <span class="op">==</span> <span class="fu">add</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">));</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The <code>add</code> method is called, and test coverage is at 100%. However, this test can’t fail, meaning it is not <em>correct</em>.</p>
+<section id="downloading-project-files" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="downloading-project-files"><span class="header-section-number">2.2</span> Downloading Project Files</h2>
+<p>For each lab, you will be provided with a link to download the project files. Unzip these files into a designated folder, preferably this folder will be placed inside a <code>ITSC 2214</code> folder for all labs for this class.</p>
 </section>
-<section id="mutation-testing-a-solution-to-test-the-correctness-of-your-unit-tests" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="mutation-testing-a-solution-to-test-the-correctness-of-your-unit-tests"><span class="header-section-number">10.3</span> Mutation Testing: A Solution to Test the Correctness of Your Unit Tests</h2>
-<p>Mutation testing provides a way to test the correctness of your unit tests. It can help you find tests that can’t fail, tests that need more test cases, and even logic errors in your code.</p>
-<p>The basic idea of mutation testing is as follows: if you claim your source code is correct, and that the tests prove it, mutation testing will challenge that claim. Mutation testing introduces small changes, called <em>mutations</em>, to your source code. If your tests still pass after these changes, it suggests that your test or source code may not be correct.</p>
-<p>These mutations are created by algorithms called <em>mutators</em> or <em>mutation operators</em>. Each time a mutator runs, it receives a fresh copy of your source code and makes only one change. The result of a mutator is a <em>mutant</em> - a mutated version of your source code.</p>
-</section>
-<section id="mutation-testing-in-practice" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="mutation-testing-in-practice"><span class="header-section-number">10.4</span> Mutation Testing in Practice</h2>
-<p>Here’s how mutation testing works in practice:</p>
+<section id="opening-the-project-in-visual-studio-code" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="opening-the-project-in-visual-studio-code"><span class="header-section-number">2.3</span> Opening the Project in Visual Studio Code</h2>
+<ol type="1">
+<li><strong>Open Visual Studio Code.</strong></li>
+<li><strong>Open the Project Folder:</strong>
 <ul>
-<li>Apply a set of mutators to your source code to produce a collection of mutants.</li>
-<li>For each mutant, run your unit tests.
-<ul>
-<li>If the unit tests pass, the mutant has <em>survived</em>.</li>
-<li>If the unit tests fail, the mutant was <em>killed</em></li>
+<li>Go to <code>File &gt; Open Folder</code>.</li>
+<li>Select the folder where you extracted the project files.</li>
 </ul></li>
-</ul>
-<p>.</p>
-<p>The aim is to kill as many mutants as possible. If too many mutants survive, it indicates that your unit tests are not sufficient to prove that your source code is correct. If you manage to kill all mutants, you can use your unit tests to argue that your source code is indeed correct.</p>
-<p>In our course, only unit tests that leave no surviving mutants will be accepted as a valid submission.</p>
-<section id="what-are-these-mutators" class="level3" data-number="10.4.1">
-<h3 data-number="10.4.1" class="anchored" data-anchor-id="what-are-these-mutators"><span class="header-section-number">10.4.1</span> What are these mutators?</h3>
-<p>Mutators introduce specific types of changes to your code. For instance, a primitive returns mutator (PRIMITIVE_RETURNS) replaces int, short, long, char, float, and double return values with 0. So, for example, this method:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">int</span> <span class="fu">add</span><span class="op">(</span><span class="dt">int</span> lhs<span class="op">,</span> <span class="dt">int</span> rhs<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> lhs <span class="op">+</span> rhs<span class="op">;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>becomes:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">int</span> <span class="fu">add</span><span class="op">(</span><span class="dt">int</span> lhs<span class="op">,</span> <span class="dt">int</span> rhs<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This mutant would survive in two cases: if the <code>add</code> method is never tested or if the only test cases for <code>add</code> are ones where the result is 0. To fix this, you can add more test cases that test <code>add</code> with non-zero results.</p>
-<p>Another example of a mutator is the Remove Conditionals Mutator (REMOVE_CONDITIONALS), which removes all conditional statements such that the guarded statements always execute.</p>
-<p>For example, this code:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>a <span class="op">==</span> b<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// do something</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>becomes:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span><span class="kw">true</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// do something</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This mutant would survive if the source method is never tested, if all test cases for the source method only ever test the true case, or if both branches have the exact same code or equivalent code, to begin with. To fix this, you can add more test cases that test the false case, and ensure that the true and false branches are not equivalent.</p>
-<p>Through mutation testing, you will get valuable feedback to improve your code and tests, making them more robust and reliable.</p>
-<p>Remember, a well-tested code base is not just about coverage—it’s about the quality of tests, their ability to catch mistakes, and their resilience against possible errors. Mutation testing is an invaluable tool in achieving this.</p>
-<p>Certainly, let’s decipher the feedback from the Coding Rooms.</p>
+</ol>
 </section>
+<section id="writing-your-code" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="writing-your-code"><span class="header-section-number">2.4</span> Writing Your Code</h2>
+<p>Each lab will contain specific instructions on what code you need to write.</p>
 </section>
-<section id="understanding-codingrooms-feedback" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="understanding-codingrooms-feedback"><span class="header-section-number">10.5</span> Understanding CodingRooms Feedback</h2>
-<p>In the feedback provided by the autograder in Coding Rooms, you can find two main parts. The first part lists the mutation tests that have been run, and the second part provides a grading overview.</p>
-<section id="understanding-mutation-test-feedback" class="level3" data-number="10.5.1">
-<h3 data-number="10.5.1" class="anchored" data-anchor-id="understanding-mutation-test-feedback"><span class="header-section-number">10.5.1</span> Understanding Mutation Test Feedback</h3>
-<p>Each mutation test feedback starts with “Running Mutation tests”, followed by details about each mutation test performed.</p>
-<pre><code>Running Mutation tests -
-Ran mutation tests for Calculator.CalculatorTest -
--[ RECORD 0 ]---------+------------------------------------
-Mutation type         | RemoveConditionalMutator_EQUAL_ELSE
-Source method mutated | divide
-Line no. of mutation  | 56
-Test examined         | None
-Result                | SURVIVED</code></pre>
-<p>In the example above, the autograder has run a mutation test on the “divide” method of your “Calculator” class. Here is what each line in the record means:</p>
+<section id="checking-autograder-feedback" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="checking-autograder-feedback"><span class="header-section-number">2.5</span> Checking Autograder Feedback</h2>
+<p>You can check the feedback from the autograder using the following steps:</p>
+<p><strong>Using the Terminal:</strong></p>
+<ol type="1">
+<li>Open a terminal in Visual Studio Code.</li>
+<li>Run the command: <code>umm grade ./script.rhai</code></li>
+</ol>
+<p><strong>Using the Command Palette:</strong></p>
+<ol type="1">
+<li>Open the command palette with <code>Ctrl + Shift + P</code> on Windows or <code>Cmd + Shift + P</code> on Mac.</li>
+<li>Type “run task” and select “Tasks: Run Task”. (In future use, you can select “Tasks: Rerun Last Task”.)</li>
+<li>Select the “Grade Assignment” task.</li>
+<li>Choose <code>script.rhai</code> and press Enter.</li>
+</ol>
+<p><strong>Note:</strong> The first few labs might not have tasks correctly configured.</p>
+</section>
+<section id="viewing-generated-feedback" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="viewing-generated-feedback"><span class="header-section-number">2.6</span> Viewing Generated Feedback</h2>
+<p>After running the grading command, the autograder will provide feedback on the tests that have failed, and tell if you have been penalized for any reason. You can view the feedback in the terminal or the <code>feedback</code> folder in the project directory.</p>
+<p>It will also generate links that will further explain the reason for penalty, or explain the test that failed. You can click on these links to view the detailed feedback. Here is an example of a generated feedback link: <a href="https://feedback.dhruvdh.com/be5593a1-2b8f-49fc-a4ec-981095ae0702" class="uri">https://feedback.dhruvdh.com/be5593a1-2b8f-49fc-a4ec-981095ae0702</a></p>
+</section>
+<section id="creating-a-submission" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="creating-a-submission"><span class="header-section-number">2.7</span> Creating a Submission</h2>
+<p>When you are ready to submit your assignment:</p>
+<ol type="1">
+<li>Run the command: <code>umm create-submission</code> in the terminal.</li>
+<li>This will generate a zip file with a name like <code>submission-2024-05-20-07-50-41.zip</code>.</li>
+<li>Submit the generated zip file to Gradescope.</li>
+</ol>
+</section>
+<section id="additional-resources" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">2.8</span> Additional Resources</h2>
 <ul>
-<li><p><strong>Mutation type:</strong> The type of mutation that was made to your code. In this case, a RemoveConditionalMutator_EQUAL_ELSE mutation was made. This mutation type removes a conditional (==) operator and always takes the else branch.</p></li>
-<li><p><strong>Source method mutated:</strong> The method in your code that was mutated for the test. In this case, it’s the “divide” method.</p></li>
-<li><p><strong>Line no. of mutation:</strong> The line number in your code where the mutation was applied.</p></li>
-<li><p><strong>Test examined:</strong> This line indicates which test case was run against the mutant. “None” means no specific test case was chosen, and all available tests were run.</p></li>
-<li><p><strong>Result:</strong> The outcome of the mutation test. If your tests fail against the mutated code (which is a good thing!), this line will read “KILLED”. If your tests pass (which implies your tests didn’t catch the error introduced by the mutation), this line will read “SURVIVED”. In this case, the mutant has survived, indicating your tests didn’t catch the error.</p></li>
+<li><strong>Autograder Commands:</strong> The autograder provides various commands to help you manage your project. You can see a list of available commands by running <code>umm --help</code> in the terminal.</li>
 </ul>
-<p>If any mutants survive, the autograder lists those under the line, “Problematic mutation test failures printed about.”</p>
 </section>
-<section id="understanding-the-grading-overview" class="level3" data-number="10.5.2">
-<h3 data-number="10.5.2" class="anchored" data-anchor-id="understanding-the-grading-overview"><span class="header-section-number">10.5.2</span> Understanding the Grading Overview</h3>
-<p>The grading overview gives you a quick summary of how your code has performed in the tests. It breaks down the grading by requirements.</p>
-<pre><code>┌──────────────────────────────────────────────────────┬
-│                   Grading Overview                   │
-├──────────────────────────────────────────────────────┼
-│ Requirement │    Grade    │          Reason          │
-├─────────────┼─────────────┼──────────────────────────┤
-│      1      │ 10.00/10.00 │   - 4/4 tests passing.   │
-├─────────────┼─────────────┼──────────────────────────┤
-│      2      │ 32.00/40.00 │ -8 Penalty due to surviv │
-│             │             │       ing muations       │
-├─────────────┼─────────────┼──────────────────────────┤
-│                  Total: 42.00/50.00                  │
-└──────────────────────────────────────────────────────┴</code></pre>
-<p>In the example above, we have:</p>
+<section id="ai-feedback" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="ai-feedback"><span class="header-section-number">2.9</span> AI Feedback</h2>
+<p>When you check your code with the autograder, you will receive feedback from an AI teaching assistant. If you are not satisfied with the response, you can request new feedback by clicking on one of the buttons that best describes your situation. These buttons include options like:</p>
 <ul>
-<li><p><strong>Requirement 1:</strong> This section corresponds to the first requirement of the assignment. The student received a full score (10.00/10.00) because all 4 test cases associated with this requirement passed.</p></li>
-<li><p><strong>Requirement 2:</strong> This section corresponds to the second requirement of the assignment. The student lost 8 points because of surviving mutations, resulting in a score of 32.00/40.00 for this requirement.</p></li>
+<li><strong>Your suggestions are too broad and vague.</strong></li>
+<li><strong>I don’t understand.</strong></li>
+<li><strong>Your suggestions work, but I don’t understand why.</strong></li>
+<li><strong>The changes you suggested are unnecessary or already implemented in my submission.</strong></li>
+<li><strong>Request alternate explanation/solution.</strong></li>
+<li><strong>This explanation seems incorrect.</strong></li>
 </ul>
-<p>The total grade of the assignment is</p>
-<p>42.00/50.00, indicating the need for further improvement.</p>
-<p>Remember, each surviving mutation indicates a flaw in your test cases—they didn’t catch an erroneous mutation. To improve your grade, aim to update your test cases to ensure that they effectively detect the mutations.</p>
+<p>You can also provide additional notes in the text box below these buttons. This interaction helps tailor the feedback to better suit your needs.</p>
+<p>Here is an example of the feedback interface: <a href="https://feedback.dhruvdh.com/be5593a1-2b8f-49fc-a4ec-981095ae0702" class="uri">https://feedback.dhruvdh.com/be5593a1-2b8f-49fc-a4ec-981095ae0702</a></p>
+<p>The AI feedback generator will prioritize key issues to help you make progress, provide relevant examples, and encourage critical thinking. It will avoid sharing direct solutions to foster independent problem-solving skills.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1008,13 +924,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./05_writing_junit_tests.html" class="pagination-link" aria-label="Writing JUnit Tests and Test-Driven Development">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span>
+      <a href="../labs/00_installing_req_software.html" class="pagination-link" aria-label="Installing Required Software">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Installing Required Software</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./07_list_of_mutators.html" class="pagination-link" aria-label="List of Mutators">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">List of Mutators</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../labs/02_1l_java_ide_practice-1.html" class="pagination-link" aria-label="1L. Java and IDE Practice - 1">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">1L. Java and IDE Practice - 1</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
