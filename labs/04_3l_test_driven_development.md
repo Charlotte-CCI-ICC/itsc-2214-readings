@@ -1,5 +1,6 @@
 
 ---
+
 title: "3L. Test-Driven Development"
 ---
 
@@ -56,8 +57,7 @@ Here are the files in your project for the ConcertTicket package:
         └── WalletTest.java
 ```
 
-Using the files tab on the left, double-click on the `ConcertTicket.ConcertTicket` class and the `ConcertTicket.Wallet` class.![image.png](<Link_todo>)
-
+Using the files tab on the left, double-click on the `ConcertTicket.ConcertTicket` class and the `ConcertTicket.Wallet` class.
 Get familiar with these files and read through the comments!
 
 ## Implementation Instructions
