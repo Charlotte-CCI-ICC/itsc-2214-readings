@@ -1,5 +1,5 @@
 ---
-title: Write JUnit Tests - 2
+title: "7L. Write JUnit Tests - 2"
 ---
 ## Update Autograder
 
