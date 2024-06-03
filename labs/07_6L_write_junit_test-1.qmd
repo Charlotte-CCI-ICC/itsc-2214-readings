@@ -14,29 +14,18 @@ umm update
 Please go through slides on Mutation Testing, and the List of Mutators page.
 Please see the Labs 6 and 7 announcement.
 
-## Opening Project in IDE
+## Project File
 
+You can download the project by clicking on this link below.
 **Project files:** [6L_writing_junit_tests-TEMPLATE.zip](https://www.dropbox.com/scl/fi/u9tr8l5vvms33gvs97dpr/6L_writing_junit_tests-TEMPLATE.zip?rlkey=4ad1h53f2kg2vyxq5mr2cx25q&st=mbnyx244&dl=1)
 
-1. Unzip the files to preferably an `ITSC 2214` folder for this class.
-2. Open Visual Studio Code.
-3. Go to `File > Open Folder`. Choose the folder where you extracted the files.
+## Opening Project in IDE
 
-## Checking Grade
+{{< include Opening_project_in_ide.qmd >}}
 
-You can check your grade without hitting check answer, like so:
+## Checking Your Grade
 
-### Using Terminal
-
-1. Open a terminal. To open a terminal in Visual Studio Code on different operating systems:
-    - **Windows:** Press ``Ctrl + ` `` or `` Ctrl + Shift + ` `` to open the integrated terminal.
-
-    - **Mac:** Press `` Cmd + ` `` or `` Cmd + Shift + ` `` to open the integrated terminal.
-2. Run the command:
-
-    ```bash
-    umm grade ./script.rhai
-    ```
+{{< include checking_grade.qmd >}}
 
 ## Project Overview
 
