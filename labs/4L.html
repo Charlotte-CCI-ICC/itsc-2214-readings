@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - Fall 2023 - 3&nbsp; 1L. Java and IDE Practice - 1</title>
+<title>ITSC 2214 - Data Structures and Algorithms - Fall 2023 - 5&nbsp; 4L. Generics In Java- 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../labs/04_3l_test_driven_development.html" rel="next">
-<link href="../labs/01_using_autograder.html" rel="prev">
+<link href="../labs/5L.html" rel="next">
+<link href="../labs/04_3l_test_driven_development.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/00_installing_req_software.html">Programming Labs</a></li><li class="breadcrumb-item"><a href="../labs/02_1l_java_ide_practice-1.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">1L. Java and IDE Practice - 1</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/00_installing_req_software.html">Programming Labs</a></li><li class="breadcrumb-item"><a href="../labs/4L.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">4L. Generics In Java- 1</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -135,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/02_1l_java_ide_practice-1.html" class="sidebar-item-text sidebar-link active">
+  <a href="../labs/02_1l_java_ide_practice-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">1L. Java and IDE Practice - 1</span></span></a>
   </div>
 </li>
@@ -147,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/4L.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/4L.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">4L. Generics In Java- 1</span></span></a>
   </div>
 </li>
@@ -417,21 +451,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites"><span class="header-section-number">3.1</span> Prerequisites</a></li>
-  <li><a href="#project-files" id="toc-project-files" class="nav-link" data-scroll-target="#project-files"><span class="header-section-number">3.2</span> Project Files</a></li>
-  <li><a href="#opening-in-visual-studio-code" id="toc-opening-in-visual-studio-code" class="nav-link" data-scroll-target="#opening-in-visual-studio-code"><span class="header-section-number">3.3</span> Opening in Visual Studio Code</a></li>
-  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"><span class="header-section-number">3.4</span> Description</a></li>
-  <li><a href="#checking-autograder-feedback" id="toc-checking-autograder-feedback" class="nav-link" data-scroll-target="#checking-autograder-feedback"><span class="header-section-number">3.5</span> Checking Autograder Feedback</a></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">3.6</span> Submission</a></li>
+  <li><a href="#update-autograder" id="toc-update-autograder" class="nav-link active" data-scroll-target="#update-autograder"><span class="header-section-number">5.1</span> Update Autograder</a></li>
+  <li><a href="#opening-project-in-ide" id="toc-opening-project-in-ide" class="nav-link" data-scroll-target="#opening-project-in-ide"><span class="header-section-number">5.2</span> Opening Project in IDE</a></li>
+  <li><a href="#checking-grade" id="toc-checking-grade" class="nav-link" data-scroll-target="#checking-grade"><span class="header-section-number">5.3</span> Checking Grade</a>
+  <ul class="collapse">
+  <li><a href="#using-terminal" id="toc-using-terminal" class="nav-link" data-scroll-target="#using-terminal"><span class="header-section-number">5.3.1</span> Using Terminal</a></li>
+  </ul></li>
+  <li><a href="#project-overview" id="toc-project-overview" class="nav-link" data-scroll-target="#project-overview"><span class="header-section-number">5.4</span> Project Overview</a></li>
+  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric"><span class="header-section-number">5.5</span> Rubric</a></li>
+  <li><a href="#checking-autograder-feedback" id="toc-checking-autograder-feedback" class="nav-link" data-scroll-target="#checking-autograder-feedback"><span class="header-section-number">5.6</span> Checking Autograder Feedback</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">5.7</span> Submission</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/00_installing_req_software.html">Programming Labs</a></li><li class="breadcrumb-item"><a href="../labs/02_1l_java_ide_practice-1.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">1L. Java and IDE Practice - 1</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/00_installing_req_software.html">Programming Labs</a></li><li class="breadcrumb-item"><a href="../labs/4L.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">4L. Generics In Java- 1</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">1L. Java and IDE Practice - 1</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">4L. Generics In Java- 1</span></h1>
 </div>
 
 
@@ -448,30 +486,62 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="prerequisites" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="prerequisites"><span class="header-section-number">3.1</span> Prerequisites</h2>
-<p>Please follow the instructions from the <a href="https://charlotte-cci-icc.github.io/itsc-2214-readings/labs/00_installing_req_software.html">Installing Required Software</a> textbook chapter or the instructions presented in class.</p>
-<p>Also, please go through the <a href="https://charlotte-cci-icc.github.io/itsc-2214-readings/labs/01_using_autograder.html">Using the Autograder</a> to understand how to use the autograder for your labs.</p>
+<section id="update-autograder" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="update-autograder"><span class="header-section-number">5.1</span> Update Autograder</h2>
+<p>First, please update your autograder by running:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> update</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="project-files" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="project-files"><span class="header-section-number">3.2</span> Project Files</h2>
-<p><a href="https://www.dropbox.com/scl/fi/1tsvk7imbx0n6a4mriclt/1L_java-ide-practice-TEMPLATE.zip?rlkey=z8sxyaex9exgrd6vbwqjo5xse&amp;st=txircail&amp;raw=1">Download the project files from here</a></p>
-</section>
-<section id="opening-in-visual-studio-code" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="opening-in-visual-studio-code"><span class="header-section-number">3.3</span> Opening in Visual Studio Code</h2>
+<section id="opening-project-in-ide" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="opening-project-in-ide"><span class="header-section-number">5.2</span> Opening Project in IDE</h2>
+<p><strong>Project files:</strong> <a href="https://www.dropbox.com/scl/fi/vb00died8l1g96qjaxwc5/4L_java_generics_1-TEMPLATE.zip?rlkey=n7ofqzvu9xtmwi8ikvhojsojy&amp;st=abznypnv&amp;dl=1">4L_java_generics_1-TEMPLATE.zip</a></p>
 <ol type="1">
-<li>Unzip the files to preferably an <code>ITSC 2214</code> folder for this class.</li>
+<li>Unzip the files to preferably an <code>ITSC 2214</code> folder for this class. You must have created this folder before for previous labs.</li>
 <li>Open Visual Studio Code.</li>
 <li>Go to <code>File &gt; Open Folder</code>. Choose the folder where you extracted the files.</li>
 </ol>
 </section>
-<section id="description" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="description"><span class="header-section-number">3.4</span> Description</h2>
-<p>There is a <code>Main</code> class with 12 methods. Methods are called <code>part0</code>, <code>part1</code>, etc.</p>
-<p>The body of each method has comments that explain what the method needs to return. Your job is to write code to make sure it returns the correct value. There are tests you can run that will verify your method is working properly. Your grade will be determined by how many tests you pass. Each test or part is worth ~6 points.</p>
+<section id="checking-grade" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="checking-grade"><span class="header-section-number">5.3</span> Checking Grade</h2>
+<p>You can check your grade without hitting check answer by following these steps:</p>
+<section id="using-terminal" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="using-terminal"><span class="header-section-number">5.3.1</span> Using Terminal</h3>
+<ol type="1">
+<li><p>Open a terminal. To open a terminal in Visual Studio Code on different operating systems:</p>
+<ul>
+<li><p><strong>Windows:</strong> Press <code>Ctrl + `` or</code>Ctrl + Shift + ` to open the integrated terminal.</p></li>
+<li><p><strong>Mac:</strong> Press <code>Cmd + `` or</code>Cmd + Shift + ` to open the integrated terminal.</p></li>
+</ul></li>
+<li><p>Run the command:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> grade ./script.rhai</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
 </section>
-<section id="checking-autograder-feedback" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="checking-autograder-feedback"><span class="header-section-number">3.5</span> Checking Autograder Feedback</h2>
+</section>
+<section id="project-overview" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="project-overview"><span class="header-section-number">5.4</span> Project Overview</h2>
+<p>Here are the files in your project for the GenerivsPractice package:</p>
+<pre><code>.
+├── src/
+│   └── GenericsPractice/
+│       └── Pair.java
+└── test/
+    └── GenericsPractice/
+        └── PairTest.java</code></pre>
+<p>After you read the following, check this:</p>
+<ul>
+<li>This <code>Pair</code> class stores two elements of the same generic type.</li>
+<li>Implement the <code>min</code> method which returns the smaller of the two elements. These elements must be instances of the <code>Comparable</code> interface.</li>
+</ul>
+</section>
+<section id="rubric" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="rubric"><span class="header-section-number">5.5</span> Rubric</h2>
+<ul>
+<li>Project must compile, otherwise no grade.</li>
+<li>Complete JavaDoc for <code>GenericsPractice.Pair</code> (5 points)</li>
+<li>All tests passing for <code>GenericsPractice.PairTest</code> (20 points)</li>
+</ul>
+</section>
+<section id="checking-autograder-feedback" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="checking-autograder-feedback"><span class="header-section-number">5.6</span> Checking Autograder Feedback</h2>
 <ol type="1">
 <li>Open a terminal.</li>
 <li>Run the command: <code>umm grade ./script.rhai</code></li>
@@ -485,11 +555,12 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>You may not have tasks correctly configured for the first few labs.</p>
 </section>
-<section id="submission" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="submission"><span class="header-section-number">3.6</span> Submission</h2>
+<section id="submission" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="submission"><span class="header-section-number">5.7</span> Submission</h2>
 <ol type="1">
-<li>You can copy and run <code>umm create-submission</code> command in the terminal, and that should create a zip file with a name similar to <code>submission-2024-05-20-07-50-41.zip</code>.</li>
-<li>Submit the <code>submission-2024... .zip</code> file to Gradescope.</li>
+<li><p>You can copy and run the <code>umm create-submission</code> command in the terminal, and that should create a zip file with a name similar to <code>submission-2024-01-24-15-04-50.zip</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> create-submission</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Submit the <code>submission-2024-... .zip</code> file to Gradescope. The submission zip file will appear in the file explorer tab of VS Code. You can right click on this file and click on reveal in explorer (windows) or reveal in finder (mac) in order to find this file. then, you can drag and drop this to gradescope for submission.</p></li>
 </ol>
 
 
@@ -907,13 +978,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../labs/01_using_autograder.html" class="pagination-link" aria-label="Using the Autograder">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Using the Autograder</span></span>
+      <a href="../labs/04_3l_test_driven_development.html" class="pagination-link" aria-label="3L. Test-Driven Development">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">3L. Test-Driven Development</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../labs/04_3l_test_driven_development.html" class="pagination-link" aria-label="3L. Test-Driven Development">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">3L. Test-Driven Development</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../labs/5L.html" class="pagination-link" aria-label="5L. Generics In Java- 2">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">5L. Generics In Java- 2</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
