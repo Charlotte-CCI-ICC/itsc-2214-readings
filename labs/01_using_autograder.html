@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -147,13 +181,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/4L.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/05_4l_generics_in_java-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">4L. Generics In Java- 1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/5L.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/06_5l_generics_in_java-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">5L. Generics In Java- 2</span></span></a>
   </div>
 </li>
@@ -477,18 +511,15 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="checking-autograder-feedback" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="checking-autograder-feedback"><span class="header-section-number">2.5</span> Checking Autograder Feedback</h2>
-<p>You can check the feedback from the autograder using the following steps:</p>
-<p><strong>Using the Terminal:</strong></p>
+<p>You can check your grade without hitting check answer by following these steps:</p>
 <ol type="1">
-<li>Open a terminal in Visual Studio Code.</li>
-<li>Run the command: <code>umm grade ./script.rhai</code></li>
-</ol>
-<p><strong>Using the Command Palette:</strong></p>
-<ol type="1">
-<li>Open the command palette with <code>Ctrl + Shift + P</code> on Windows or <code>Cmd + Shift + P</code> on Mac.</li>
-<li>Type “run task” and select “Tasks: Run Task”. (In future use, you can select “Tasks: Rerun Last Task”.)</li>
-<li>Select the “Grade Assignment” task.</li>
-<li>Choose <code>script.rhai</code> and press Enter.</li>
+<li><p>Open a terminal. To open a terminal in Visual Studio Code on different operating systems:</p>
+<ul>
+<li><p><strong>Windows:</strong> Press ” Ctrl + ` ” or ” Ctrl + Shift + ` ” to open the integrated terminal.</p></li>
+<li><p><strong>Mac:</strong> Press ” Cmd + ` ” or ” Cmd + Shift + ` ” to open the integrated terminal.</p></li>
+</ul></li>
+<li><p>Run the command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> grade ./script.rhai</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 <p><strong>Note:</strong> The first few labs might not have tasks correctly configured.</p>
 </section>

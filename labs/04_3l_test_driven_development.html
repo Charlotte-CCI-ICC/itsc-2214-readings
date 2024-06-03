@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../labs/4L.html" rel="next">
+<link href="../labs/05_4l_generics_in_java-1.html" rel="next">
 <link href="../labs/02_1l_java_ide_practice-1.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -181,13 +181,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/4L.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/05_4l_generics_in_java-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">4L. Generics In Java- 1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/5L.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/06_5l_generics_in_java-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">5L. Generics In Java- 2</span></span></a>
   </div>
 </li>
@@ -452,15 +452,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#update-auto-grader" id="toc-update-auto-grader" class="nav-link active" data-scroll-target="#update-auto-grader"><span class="header-section-number">4.1</span> Update Auto-grader</a></li>
-  <li><a href="#opening-project-in-ide" id="toc-opening-project-in-ide" class="nav-link" data-scroll-target="#opening-project-in-ide"><span class="header-section-number">4.2</span> Opening Project in IDE</a></li>
-  <li><a href="#checking-grade" id="toc-checking-grade" class="nav-link" data-scroll-target="#checking-grade"><span class="header-section-number">4.3</span> Checking Grade</a>
+  <li><a href="#opening-project-in-ide" id="toc-opening-project-in-ide" class="nav-link" data-scroll-target="#opening-project-in-ide"><span class="header-section-number">4.2</span> Opening Project in IDE</a>
   <ul class="collapse">
-  <li><a href="#using-terminal" id="toc-using-terminal" class="nav-link" data-scroll-target="#using-terminal"><span class="header-section-number">4.3.1</span> Using Terminal</a></li>
-  <li><a href="#watch" id="toc-watch" class="nav-link" data-scroll-target="#watch"><span class="header-section-number">4.3.2</span> Watch</a></li>
+  <li><a href="#watch" id="toc-watch" class="nav-link" data-scroll-target="#watch"><span class="header-section-number">4.2.1</span> Watch</a></li>
   </ul></li>
-  <li><a href="#project-overview" id="toc-project-overview" class="nav-link" data-scroll-target="#project-overview"><span class="header-section-number">4.4</span> Project Overview</a></li>
-  <li><a href="#implementation-instructions" id="toc-implementation-instructions" class="nav-link" data-scroll-target="#implementation-instructions"><span class="header-section-number">4.5</span> Implementation Instructions</a></li>
-  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric"><span class="header-section-number">4.6</span> Rubric</a></li>
+  <li><a href="#project-overview" id="toc-project-overview" class="nav-link" data-scroll-target="#project-overview"><span class="header-section-number">4.3</span> Project Overview</a></li>
+  <li><a href="#implementation-instructions" id="toc-implementation-instructions" class="nav-link" data-scroll-target="#implementation-instructions"><span class="header-section-number">4.4</span> Implementation Instructions</a></li>
+  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric"><span class="header-section-number">4.5</span> Rubric</a></li>
+  <li><a href="#checking-your-grade" id="toc-checking-your-grade" class="nav-link" data-scroll-target="#checking-your-grade"><span class="header-section-number">4.6</span> Checking Your Grade</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">4.7</span> Submission</a></li>
   </ul>
 </nav>
@@ -498,34 +497,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Unzip the files preferably into an <code>ITSC 2214</code> folder for this class. This folder should serve as the parent directory for all labs related to the class.</li>
 <li>Open Visual Studio Code.</li>
-<li>Go to <code>File &gt; Open Folder</code> and choose the folder where you extracted the files.</li>
+<li>Go to <code>File &gt; Open Folder</code> and choose the folder where you extracted the files. ```</li>
 </ol>
-</section>
-<section id="checking-grade" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="checking-grade"><span class="header-section-number">4.3</span> Checking Grade</h2>
-<p>You can check your grade without hitting check answer by following these steps:</p>
-<section id="using-terminal" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="using-terminal"><span class="header-section-number">4.3.1</span> Using Terminal</h3>
-<ol type="1">
-<li><p>Open a terminal. To open a terminal in Visual Studio Code on different operating systems:</p>
-<ul>
-<li><p><strong>Windows:</strong> Press <code>Ctrl + `` or</code>Ctrl + Shift + ` to open the integrated terminal.</p></li>
-<li><p><strong>Mac:</strong> Press <code>Cmd + `` or</code>Cmd + Shift + ` to open the integrated terminal.</p></li>
-</ul></li>
-<li><p>Run the command:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> grade ./script.rhai</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-</section>
-<section id="watch" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="watch"><span class="header-section-number">4.3.2</span> Watch</h3>
+<section id="watch" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="watch"><span class="header-section-number">4.2.1</span> Watch</h3>
 <ol type="1">
 <li><p><a href="https://capture.dropbox.com/ojlTIhxa3CEgUO9m">How to check for compiler errors is VSCode</a></p></li>
 <li><p><a href="https://www.youtube.com/watch?v=gIPSEyMoiMM">Installing and Using Codeium</a></p></li>
 </ol>
 </section>
 </section>
-<section id="project-overview" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="project-overview"><span class="header-section-number">4.4</span> Project Overview</h2>
+<section id="project-overview" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="project-overview"><span class="header-section-number">4.3</span> Project Overview</h2>
 <p>Here are the files in your project for the ConcertTicket package:</p>
 <pre><code>.
 ├── src/
@@ -537,8 +520,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         └── WalletTest.java</code></pre>
 <p>Using the files tab on the left, double-click on the <code>ConcertTicket.ConcertTicket</code> class and the <code>ConcertTicket.Wallet</code> class. Get familiar with these files and read through the comments!</p>
 </section>
-<section id="implementation-instructions" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="implementation-instructions"><span class="header-section-number">4.5</span> Implementation Instructions</h2>
+<section id="implementation-instructions" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="implementation-instructions"><span class="header-section-number">4.4</span> Implementation Instructions</h2>
 <ol type="1">
 <li><strong>Implement <code>getSize()</code> Method</strong>
 <ul>
@@ -552,19 +535,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>There is no method for removing a <code>ConcertTicket</code> from the wallet! Your job is to write that method. The method should be called <code>remove</code>. It should take no parameters and it should return the most recently added <code>ConcertTicket</code>.</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> ConcertTicket <span class="fu">remove</span><span class="op">()</span> <span class="op">{</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Create a ConcertTicket reference variable (DO NOT create a</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// new ConcertTicket - JUST create the reference variable)</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Use the size variable (which always points at the next empty</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// slot) to get the last added ConcertTicket from the array:</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Set that array slot to null:</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Decrement the size variable:</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Return the Concert Ticket:</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> ConcertTicket <span class="fu">remove</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Create a ConcertTicket reference variable (DO NOT create a</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// new ConcertTicket - JUST create the reference variable)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Use the size variable (which always points at the next empty</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// slot) to get the last added ConcertTicket from the array:</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Set that array slot to null:</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Decrement the size variable:</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Return the Concert Ticket:</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><strong>Checking for Errors</strong>
 <ul>
 <li><p>Once you are done, make sure there are no syntax errors. You can do so by opening the problems view by clicking on this button in the bottom left:</p>
@@ -598,19 +581,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ol>
 </section>
-<section id="rubric" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="rubric"><span class="header-section-number">4.6</span> Rubric</h2>
+<section id="rubric" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="rubric"><span class="header-section-number">4.5</span> Rubric</h2>
 <ul>
 <li><strong>Project must compile to receive a grade.</strong></li>
 <li><strong>All tests for <code>ConcertTicket.WalletTest</code> must pass (25 points).</strong></li>
 </ul>
+</section>
+<section id="checking-your-grade" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="checking-your-grade"><span class="header-section-number">4.6</span> Checking Your Grade</h2>
+<p>You can check your grade without hitting check answer by following these steps:</p>
+<ol type="1">
+<li><p>Open a terminal. To open a terminal in Visual Studio Code on different operating systems:</p>
+<ul>
+<li><p><strong>Windows:</strong> Press ” Ctrl + ` ” or ” Ctrl + Shift + ` ” to open the integrated terminal.</p></li>
+<li><p><strong>Mac:</strong> Press ” Cmd + ` ” or ” Cmd + Shift + ` ” to open the integrated terminal.</p></li>
+</ul></li>
+<li><p>Run the command:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> grade ./script.rhai</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
 </section>
 <section id="submission" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="submission"><span class="header-section-number">4.7</span> Submission</h2>
 <ol type="1">
 <li><p>You can copy and run the <code>umm create-submission</code> command in the terminal, and that should create a zip file with a name similar to <code>submission-2024-01-24-15-04-50.zip</code>.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> create-submission</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Submit the <code>submission-2024-... .zip</code> file to Gradescope. The submission zip file will appear in the file explorer tab of VS Code. You can right-click on this file and click on <code>Reveal in Explorer</code> (windows) or <code>Reveal in Finder</code> (mac) in order to find this file. Then, you can drag and drop this to Gradescope for submission.</p></li>
+<li><p>Submit the <code>submission-2024-... .zip</code> file to Gradescope. The submission zip file will appear in the file explorer tab of VS Code. You can right click on this file and click on reveal in explorer (windows) or reveal in finder (mac) in order to find this file. then, you can drag and drop this to gradescope for submission.</p></li>
 </ol>
 
 
@@ -1033,7 +1029,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../labs/4L.html" class="pagination-link" aria-label="4L. Generics In Java- 1">
+      <a href="../labs/05_4l_generics_in_java-1.html" class="pagination-link" aria-label="4L. Generics In Java- 1">
         <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">4L. Generics In Java- 1</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
