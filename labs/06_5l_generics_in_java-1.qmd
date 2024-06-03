@@ -12,7 +12,7 @@ umm update
 
 ## Opening Project in IDE
 
-**Project files:** [5L_java_generics_2-TEMPLATE.zip](https://www.dropbox.com/scl/fi/l12m1jgsuucjbmrz5hbfc/5L_java_generics_2-TEMPLATE.zip?rlkey=uqg0jr6jeoabzl2hjkl1vzzri&st=95jzs59s&dl=1)
+**Project files:** [5L_java_generics_2-TEMPLATE.zip](https://www.dropbox.com/scl/fi/l12m1jgsuucjbmrz5hbfc/5L_java_generics_2-TEMPLATE.zip?rlkey=uqg0jr6jeoabzl2hjkl1vzzri&raw=1)
 
 1. Unzip the files to preferably an `ITSC 2214` folder for this class.
 2. Open Visual Studio Code.
