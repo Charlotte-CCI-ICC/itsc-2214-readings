@@ -21,7 +21,7 @@ format:
         └── MatrixTest.java
 ```
 
-## Instructions
+## Detailed Instructions
 
 Your task is to complete the implementation of a generic `Matrix` class. Currently, the `Matrix` class is empty. A matrix is a two-dimensional arrangement of elements. You access elements with a row and column index. For example:
 

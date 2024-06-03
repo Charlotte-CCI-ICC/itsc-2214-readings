@@ -33,7 +33,7 @@ Here are the files in your project for the ConcertTicket package:
 Using the files tab on the left, double-click on the `ConcertTicket.ConcertTicket` class and the `ConcertTicket.Wallet` class.
 Get familiar with these files and read through the comments!
 
-## Implementation Instructions
+## Detailed Instructions
 
 1. **Implement `getSize()` Method**
     - The size is the number of tickets currently present in the wallet.

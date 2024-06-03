@@ -9,17 +9,37 @@ format:
           href: https://www.dropbox.com/scl/fi/iak61ulbn2gz61yc60jd1/7L_writing_junit_tests_2-TEMPLATE.zip?rlkey=c4aetsjmf4baybpumc1d5tq0q&raw=1
 ---
 
-
 ## Project Overview
 
-In this lab, we are going to write tests for a `Comparable` interface implementation, and we are going to learn how to structure projects.
+> Note: You will be creating this project structure from scratch. These directories and files will not be provided to you.
 
-Here is what you want to do:
+```
+.
+├── src
+│   └── UnitTesting
+│       ├── CoOrds.java
+│       └── Student.java
+└── test
+    └── UnitTesting
+        ├── CoOrdsTest.java
+        └── StudentTest.java
+```
 
-1. Create a folder called `src`. It stands for “source”, where we will place our source files. Folders can be created using this button.
-2. Inside `src`, create a folder called `UnitTesting`. This is meant to represent a package called `UnitTesting`. We want every class to belong to a package, as it helps when test classes and source classes are of the same package.
-3. Create a source class called `CoOrds.java` inside the `UnitTesting` package, copy the following inside of it:
+## Detailed Instructions
 
+In this lab, we are going to write tests for a `Comparable` interface implementation and learn how to structure projects.
+
+### Steps to Follow
+
+1. **Create Source Folder**
+    - Create a folder called `src`. This folder will contain our source files.
+
+2. **Create Package Folder**
+    - Inside `src`, create a folder called `UnitTesting`. This represents a package called `UnitTesting`. It helps to keep test classes and source classes in the same package.
+
+3. **Create CoOrds Class**
+    - Inside the `UnitTesting` package, create a source class called `CoOrds.java` and copy the following code into it:
+    
     ```java
     package UnitTesting;
 
@@ -45,8 +65,9 @@ Here is what you want to do:
     }
     ```
 
-4. Create another source class called `Student.java` also inside the `UnitTesting` package. Copy the following inside of it:
-
+4. **Create Student Class**
+    - Also inside the `UnitTesting` package, create another source class called `Student.java` and copy the following code into it:
+    
     ```java
     package UnitTesting;
 
@@ -76,19 +97,24 @@ Here is what you want to do:
     }
     ```
 
-5. Create a folder called `test`. This is where we will place our test files.
-6. Inside `test`, create a folder called `UnitTesting`. This is meant to represent a package called `UnitTesting`.
-7. Create two classes here called `CoOrdsTest` and `StudentTest`. You can copy your `CalculatorTest` contents from lab 5L here, and then modify it to contain tests for `CoOrds` and `Student`, respectively.
+5. **Create Test Folder**
+    - Create a folder called `test`. This folder will contain our test files.
 
-It is essential that each class in this project belongs to the same `UnitTesting` package.
+6. **Create Test Package Folder**
+    - Inside `test`, create a folder called `UnitTesting`. This represents a package called `UnitTesting`.
 
-This is what it should look like, in the end:
+7. **Create Test Classes**
+    - Inside the `UnitTesting` test package, create two classes called `CoOrdsTest.java` and `StudentTest.java`. 
+    > You can copy your `CalculatorTest` contents from a previous lab here and then modify them to contain tests for `CoOrds` and `Student`, respectively. This is not required, but it will save you time by providing a starting point.
+
+### Project Structure
+
+Ensure each class in this project belongs to the `UnitTesting` package. Your final project structure should look like this:
 
 ```
 .
 ├── src
 │   └── UnitTesting
-│       ├── Comparable.java
 │       ├── CoOrds.java
 │       └── Student.java
 └── test
@@ -97,11 +123,13 @@ This is what it should look like, in the end:
         └── StudentTest.java
 ```
 
-Once you’ve implemented tests for each, first make sure your tests are passing.
+### Final Steps
 
-Once they are passing you can hit check answer to run mutation testing.
+1. **Run and Pass Tests**
+    - Once your tests are passing, you can run the grading command to perform mutation testing.
 
-You CANNOT run mutation tests (via the autograder) if your tests aren’t passing. Mutation testing can only work on tests that pass.
+2. **Mutation Testing**
+    - Remember, you cannot run mutation tests via the autograder if your tests aren’t passing. Mutation testing only works on passing tests.
 
 ## Rubric
 
