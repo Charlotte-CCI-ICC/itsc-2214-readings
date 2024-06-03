@@ -10,13 +10,12 @@ book:
     - part: "Programming Labs"
       chapters:
         - labs/00_installing_req_software.md
-        - labs/01_using_autograder.md
-        - labs/02_1l_java_ide_practice-1.md
-        - labs/04_3l_test_driven_development.md
-        - labs/4L.md
-        - labs/5L.md
-        - labs/6L.md
-        - labs/7L.md
+        - labs/01_using_autograder.qmd
+        - labs/02_1l_java_ide_practice-1.qmd
+        - labs/04_3l_test_driven_development.qmd
+        - labs/05_4l_generics_in_java-1.qmd
+        - labs/06_5l_generics_in_java-1.qmd
+        -
     - part: "On Computers and Computing"
       chapters:
         - 01_intro_to_cs_dsa.md

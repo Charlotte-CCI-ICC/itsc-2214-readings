@@ -17,21 +17,6 @@ Project files: [3L_test-driven-development.zip](https://www.dropbox.com/scl/fi/b
 1. Unzip the files preferably into an `ITSC 2214` folder for this class.  This folder should serve as the parent directory for all labs related to the class.
 2. Open Visual Studio Code.
 3. Go to `File > Open Folder` and choose the folder where you extracted the files.
-
-## Checking Grade
-
-You can check your grade without hitting check answer by following these steps:
-
-### Using Terminal
-
-1. Open a terminal. To open a terminal in Visual Studio Code on different operating systems:
-    - **Windows:** Press `Ctrl + `` or`Ctrl + Shift + ` to open the integrated terminal.
-
-    - **Mac:** Press `Cmd + `` or`Cmd + Shift + ` to open the integrated terminal.
-2. Run the command:
-
-    ```bash
-    umm grade ./script.rhai
     ```
 
 ### Watch
@@ -107,12 +92,11 @@ Get familiar with these files and read through the comments!
 - **Project must compile to receive a grade.**
 - **All tests for `ConcertTicket.WalletTest` must pass (25 points).**
 
+
+## Checking Your Grade
+
+{{< include checking_grade.qmd >}}
+
 ## Submission
 
-1. You can copy and run the `umm create-submission` command in the terminal, and that should create a zip file with a name similar to `submission-2024-01-24-15-04-50.zip`.
-
-    ```bash
-    umm create-submission
-    ```
-
-2. Submit the `submission-2024-... .zip` file to Gradescope. The submission zip file will appear in the file explorer tab of VS Code. You can right-click on this file and click on `Reveal in Explorer` (windows) or `Reveal in Finder` (mac) in order to find this file. Then, you can drag and drop this to Gradescope for submission.
+{{< include submission_instructions.qmd  >}}

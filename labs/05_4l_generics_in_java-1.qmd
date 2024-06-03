@@ -1,0 +1,52 @@
+---
+title: "4L. Generics In Java- 1"
+---
+
+## Update Autograder
+
+First, please update your autograder by running:
+
+```bash
+umm update
+```
+
+## Opening Project in IDE
+
+**Project files:** [4L_java_generics_1-TEMPLATE.zip](https://www.dropbox.com/scl/fi/vb00died8l1g96qjaxwc5/4L_java_generics_1-TEMPLATE.zip?rlkey=n7ofqzvu9xtmwi8ikvhojsojy&raw=1)
+
+1. Unzip the files to preferably an `ITSC 2214` folder for this class. You must have created this folder before for previous labs.
+2. Open Visual Studio Code.
+3. Go to `File > Open Folder`. Choose the folder where you extracted the files.
+
+## Project Overview
+
+Here are the files in your project for the GenerivsPractice package:
+
+```
+.
+├── src/
+│   └── GenericsPractice/
+│       └── Pair.java
+└── test/
+    └── GenericsPractice/
+        └── PairTest.java
+```
+
+After you read the following, check this:
+
+- This `Pair` class stores two elements of the same generic type.
+- Implement the `min` method which returns the smaller of the two elements. These elements must be instances of the `Comparable` interface.
+
+## Rubric
+
+- Project must compile, otherwise no grade.
+- Complete JavaDoc for `GenericsPractice.Pair` (5 points)
+- All tests passing for `GenericsPractice.PairTest` (20 points)
+
+## Checking Your Grade
+
+{{< include checking_grade.qmd >}}
+
+## Submission
+
+{{< include submission_instructions.qmd  >}}
