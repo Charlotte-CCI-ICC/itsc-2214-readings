@@ -43,20 +43,6 @@ After you read the following, check this:
 - Complete JavaDoc for `GenericsPractice.Pair` (5 points)
 - All tests passing for `GenericsPractice.PairTest` (20 points)
 
-## Checking Autograder Feedback
-
-1. Open a terminal.
-2. Run the command: `umm grade ./script.rhai`
-
-OR
-
-1. Open the command palette with `Ctrl + Shift + P` on Windows and `Cmd + Shift + P` on Mac.
-2. Type "run task" and select "Tasks: Run Task". (or "Tasks: Rerun Last Task" in the future).
-3. Select the "Grade Assignment" task. Use the other ones as needed but avoid the "Update" task unless told to do so.
-4. Select "script.rhai" and press Enter.
-
-You may not have tasks correctly configured for the first few labs.
-
 ## Checking Your Grade
 
 {{< include checking_grade.qmd >}}
