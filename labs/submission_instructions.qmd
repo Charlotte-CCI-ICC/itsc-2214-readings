@@ -1,7 +1,16 @@
-1. You can copy and run the `umm create-submission` command in the terminal, and that should create a zip file with a name similar to `submission-2024-01-24-15-04-50.zip`.
+## Submitting your Project
+
+When you are ready to submit your assignment:
+
+1. Open a terminal. To open a terminal in Visual Studio Code on different operating systems:
+    - **Windows:** Press " Ctrl + \` " or " Ctrl + Shift + \` " to open the integrated terminal.
+
+    - **Mac:** Press " Cmd + \` " or " Cmd + Shift + \` " to open the integrated terminal.
+
+2. You can copy and run the `umm create-submission` command in the terminal, and that should create a zip file with a name similar to `submission-2024-01-24-15-04-50.zip`.
 
     ```bash
     umm create-submission
     ```
 
-2. Submit the `submission-2024-... .zip` file to Gradescope. The submission zip file will appear in the file explorer tab of VS Code. You can right click on this file and click on reveal in explorer (windows) or reveal in finder (mac) in order to find this file. then, you can drag and drop this to gradescope for submission.
+3. Submit the `submission-2024-... .zip` file to Gradescope. The submission zip file will appear in the file explorer tab of VS Code. You can right click on this file and click on reveal in explorer (windows) or reveal in finder (mac) in order to find this file. then, you can drag and drop this to gradescope for submission.

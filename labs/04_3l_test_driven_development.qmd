@@ -1,25 +1,15 @@
 ---
 title: "3L. Test-Driven Development"
+project_link: https://www.dropbox.com/scl/fi/bij5z8o9dl5ofgz7pfdjc/3L_test-driven-development-TEMPLATE.zip?rlkey=6j924rgd2llmss7u0tod2t6a8&raw=1
+format: 
+    html:
+        code-links:
+        - text: Project Files
+          icon: file-code
+          href: https://www.dropbox.com/scl/fi/bij5z8o9dl5ofgz7pfdjc/3L_test-driven-development-TEMPLATE.zip?rlkey=6j924rgd2llmss7u0tod2t6a8&raw=1
 ---
 
-## Update Auto-grader
-
-First, update the auto-grader by running the following command:
-
-```bash
-umm update 
-```
-
-## Opening Project in IDE
-
-Project files: [3L_test-driven-development.zip](https://www.dropbox.com/scl/fi/bij5z8o9dl5ofgz7pfdjc/3L_test-driven-development-TEMPLATE.zip?rlkey=6j924rgd2llmss7u0tod2t6a8&raw=1)
-
-1. Unzip the files preferably into an `ITSC 2214` folder for this class.  This folder should serve as the parent directory for all labs related to the class.
-2. Open Visual Studio Code.
-3. Go to `File > Open Folder` and choose the folder where you extracted the files.
-    ```
-
-### Watch
+## Watch
 
 1. [How to check for compiler errors is VSCode](https://capture.dropbox.com/ojlTIhxa3CEgUO9m)
 
@@ -92,11 +82,12 @@ Get familiar with these files and read through the comments!
 - **Project must compile to receive a grade.**
 - **All tests for `ConcertTicket.WalletTest` must pass (25 points).**
 
+{{< include project_files_download.qmd >}}
 
-## Checking Your Grade
+{{< include opening_project.qmd >}}
+
+{{< include update_autograder.qmd >}}
 
 {{< include checking_grade.qmd >}}
-
-## Submission
 
 {{< include submission_instructions.qmd  >}}

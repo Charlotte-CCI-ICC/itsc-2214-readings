@@ -1,22 +1,13 @@
 ---
 title: "5L. Generics In Java- 2"
+project_link: https://www.dropbox.com/scl/fi/l12m1jgsuucjbmrz5hbfc/5L_java_generics_2-TEMPLATE.zip?rlkey=uqg0jr6jeoabzl2hjkl1vzzri&raw=1
+format: 
+    html:
+        code-links:
+        - text: Project Files
+          icon: file-code
+          href: https://www.dropbox.com/scl/fi/l12m1jgsuucjbmrz5hbfc/5L_java_generics_2-TEMPLATE.zip?rlkey=uqg0jr6jeoabzl2hjkl1vzzri&raw=1
 ---
-
-## Update Autograder
-
-First, please update your autograder by running:
-
-```bash
-umm update
-```
-
-## Opening Project in IDE
-
-**Project files:** [5L_java_generics_2-TEMPLATE.zip](https://www.dropbox.com/scl/fi/l12m1jgsuucjbmrz5hbfc/5L_java_generics_2-TEMPLATE.zip?rlkey=uqg0jr6jeoabzl2hjkl1vzzri&raw=1)
-
-1. Unzip the files to preferably an `ITSC 2214` folder for this class.
-2. Open Visual Studio Code.
-3. Go to `File > Open Folder`. Choose the folder where you extracted the files.
 
 ## Project Overview
 
@@ -71,10 +62,12 @@ This constructor implementation also tells you what the fields of the `Matrix` c
 - Complete JavaDoc for `GenericsPractice.Matrix` (5 points)
 - All tests passing for `GenericsPractice.MatrixTest` (20 points)
 
-## Checking Your Grade
+{{< include project_files_download.qmd >}}
+
+{{< include opening_project.qmd >}}
+
+{{< include update_autograder.qmd >}}
 
 {{< include checking_grade.qmd >}}
-
-## Submission
 
 {{< include submission_instructions.qmd  >}}

@@ -1,31 +1,17 @@
 ---
-title: Write JUnit Tests - 1
+title: 6L. Writing JUnit Tests - 1
+project_link: https://www.dropbox.com/scl/fi/u9tr8l5vvms33gvs97dpr/6L_writing_junit_tests-TEMPLATE.zip?rlkey=4ad1h53f2kg2vyxq5mr2cx25q&st=mbnyx244&raw=1
+format: 
+    html:
+        code-links:
+        - text: Project Files
+          icon: file-code
+          href: https://www.dropbox.com/scl/fi/u9tr8l5vvms33gvs97dpr/6L_writing_junit_tests-TEMPLATE.zip?rlkey=4ad1h53f2kg2vyxq5mr2cx25q&st=mbnyx244&raw=1
 ---
-## Update Autograder
-
-First, please update your autograder by running:
-
-```bash
-umm update
-```
 
 ## Pre-requisite
 
-Please go through slides on Mutation Testing, and the List of Mutators page.
-Please see the Labs 6 and 7 announcement.
-
-## Project File
-
-You can download the project by clicking on this link below.
-**Project files:** [6L_writing_junit_tests-TEMPLATE.zip](https://www.dropbox.com/scl/fi/u9tr8l5vvms33gvs97dpr/6L_writing_junit_tests-TEMPLATE.zip?rlkey=4ad1h53f2kg2vyxq5mr2cx25q&st=mbnyx244&dl=1)
-
-## Opening Project in IDE
-
-{{< include Opening_project_in_ide.qmd >}}
-
-## Checking Your Grade
-
-{{< include checking_grade.qmd >}}
+Please go through the the [writing JUnit tests chapter](../05_writing_junit_tests.md), [mutation testing chapter](../06_mutation_testing.md), the [List of Mutators chapter](../07_list_of_mutators.md), and the slides on Mutation Testing from the lecture.
 
 ## Project Overview
 
@@ -142,6 +128,12 @@ Make sure you modify your tests or source code to get rid of all surviving mutat
 - Unit tests for `Calculator.Calculator` should pass (10 points)
 - There should be no surviving mutants. Points are only awarded for no surviving mutations (40 points)
 
-## Submission
+{{< include project_files_download.qmd >}}
+
+{{< include opening_project.qmd >}}
+
+{{< include update_autograder.qmd >}}
+
+{{< include checking_grade.qmd >}}
 
 {{< include submission_instructions.qmd  >}}

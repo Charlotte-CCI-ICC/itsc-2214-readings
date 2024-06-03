@@ -1,4 +1,6 @@
-1. Find the zip file in your Downloads folder.
+## Opening Project in Visual Studio Code
+
+1. Download the project files from 
 2. Unzip the files to preferably an `ITSC 2214` folder for this class. You must have created this folder before for previous labs.
     ![Unzip_Location_ITSC_2214](../imgs/extract_from_zip.png)
 
