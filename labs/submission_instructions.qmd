@@ -1,0 +1,7 @@
+1. You can copy and run the `umm create-submission` command in the terminal, and that should create a zip file with a name similar to `submission-2024-01-24-15-04-50.zip`.
+
+    ```bash
+    umm create-submission
+    ```
+
+2. Submit the `submission-2024-... .zip` file to Gradescope. The submission zip file will appear in the file explorer tab of VS Code. You can right click on this file and click on reveal in explorer (windows) or reveal in finder (mac) in order to find this file. then, you can drag and drop this to gradescope for submission.

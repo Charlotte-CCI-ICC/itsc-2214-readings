@@ -25,19 +25,17 @@ Each lab will contain specific instructions on what code you need to write.
 
 ## Checking Autograder Feedback
 
-You can check the feedback from the autograder using the following steps:
+You can check your grade without hitting check answer by following these steps:
 
-**Using the Terminal:**
+1. Open a terminal. To open a terminal in Visual Studio Code on different operating systems:
+    - **Windows:** Press " Ctrl + \` " or " Ctrl + Shift + \` " to open the integrated terminal.
 
-1. Open a terminal in Visual Studio Code.
-2. Run the command: `umm grade ./script.rhai`
+    - **Mac:** Press " Cmd + \` " or " Cmd + Shift + \` " to open the integrated terminal.
+1. Run the command:
 
-**Using the Command Palette:**
-
-1. Open the command palette with `Ctrl + Shift + P` on Windows or `Cmd + Shift + P` on Mac.
-2. Type "run task" and select "Tasks: Run Task". (In future use, you can select "Tasks: Rerun Last Task".)
-3. Select the "Grade Assignment" task.
-4. Choose `script.rhai` and press Enter.
+    ```bash
+    umm grade ./script.rhai
+    ```
 
 **Note:** The first few labs might not have tasks correctly configured.
 

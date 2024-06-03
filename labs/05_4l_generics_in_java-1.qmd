@@ -12,27 +12,11 @@ umm update
 
 ## Opening Project in IDE
 
-**Project files:** [4L_java_generics_1-TEMPLATE.zip](https://www.dropbox.com/scl/fi/vb00died8l1g96qjaxwc5/4L_java_generics_1-TEMPLATE.zip?rlkey=n7ofqzvu9xtmwi8ikvhojsojy&st=abznypnv&dl=1)
+**Project files:** [4L_java_generics_1-TEMPLATE.zip](https://www.dropbox.com/scl/fi/vb00died8l1g96qjaxwc5/4L_java_generics_1-TEMPLATE.zip?rlkey=n7ofqzvu9xtmwi8ikvhojsojy&raw=1)
 
 1. Unzip the files to preferably an `ITSC 2214` folder for this class. You must have created this folder before for previous labs.
 2. Open Visual Studio Code.
 3. Go to `File > Open Folder`. Choose the folder where you extracted the files.
-
-## Checking Grade
-
-You can check your grade without hitting check answer by following these steps:
-
-### Using Terminal
-
-1. Open a terminal. To open a terminal in Visual Studio Code on different operating systems:
-    - **Windows:** Press `Ctrl + `` or`Ctrl + Shift + ` to open the integrated terminal.
-
-    - **Mac:** Press `Cmd + `` or`Cmd + Shift + ` to open the integrated terminal.
-2. Run the command:
-
-    ```bash
-    umm grade ./script.rhai
-    ```
 
 ## Project Overview
 
@@ -73,12 +57,10 @@ OR
 
 You may not have tasks correctly configured for the first few labs.
 
+## Checking Your Grade
+
+{{< include checking_grade.qmd >}}
+
 ## Submission
 
-1. You can copy and run the `umm create-submission` command in the terminal, and that should create a zip file with a name similar to `submission-2024-01-24-15-04-50.zip`.
-
-    ```bash
-    umm create-submission
-    ```
-
-2. Submit the `submission-2024-... .zip` file to Gradescope. The submission zip file will appear in the file explorer tab of VS Code. You can right click on this file and click on reveal in explorer (windows) or reveal in finder (mac) in order to find this file. then, you can drag and drop this to gradescope for submission.
+{{< include submission_instructions.qmd  >}}

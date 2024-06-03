@@ -24,21 +24,10 @@ There is a `Main` class with 12 methods. Methods are called `part0`, `part1`, et
 
 The body of each method has comments that explain what the method needs to return. Your job is to write code to make sure it returns the correct value. There are tests you can run that will verify your method is working properly. Your grade will be determined by how many tests you pass. Each test or part is worth ~6 points.
 
-## Checking Autograder Feedback
+## Checking Your Grade
 
-1. Open a terminal.
-2. Run the command: `umm grade ./script.rhai`
-
-OR
-
-1. Open the command palette with `Ctrl + Shift + P` on Windows and `Cmd + Shift + P` on Mac.
-2. Type "run task" and select "Tasks: Run Task". (or "Tasks: Rerun Last Task" in the future).
-3. Select the "Grade Assignment" task. Use the other ones as needed but avoid the "Update" task unless told to do so.
-4. Select "script.rhai" and press Enter.
-
-You may not have tasks correctly configured for the first few labs.
+{{< include checking_grade.qmd >}}
 
 ## Submission
 
-1. You can copy and run `umm create-submission` command in the terminal, and that should create a zip file with a name similar to `submission-2024-05-20-07-50-41.zip`.
-2. Submit the `submission-2024... .zip` file to Gradescope.
+{{< include submission_instructions.qmd  >}}
