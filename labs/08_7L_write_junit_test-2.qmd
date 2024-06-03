@@ -1,0 +1,135 @@
+---
+title: Write JUnit Tests - 2
+---
+## Update Autograder
+
+First, please update your autograder by running:
+
+```bash
+umm update
+```
+
+## Pre-requisite
+
+Please go through slides on Mutation Testing, and the List of Mutators page.
+Please see the Labs 6 and 7 announcement.
+
+## Project File
+
+You can download the project by clicking on this link below
+**Project files:** [7L_writing_junit_tests-TEMPLATE.zip](https://www.dropbox.com/scl/fi/iak61ulbn2gz61yc60jd1/7L_writing_junit_tests_2-TEMPLATE.zip?rlkey=c4aetsjmf4baybpumc1d5tq0q&raw=1)
+
+## Opening Project in IDE
+
+{{< include Opening_project_in_ide.qmd >}}
+
+## Checking Your Grade
+
+{{< include checking_grade.qmd >}}
+
+## Overview
+
+In this lab, we are going to write tests for a `Comparable` interface implementation, and we are going to learn how to structure projects.
+
+Here is what you want to do:
+
+1. Create a folder called `src`. It stands for “source”, where we will place our source files. Folders can be created using this button.
+2. Inside `src`, create a folder called `UnitTesting`. This is meant to represent a package called `UnitTesting`. We want every class to belong to a package, as it helps when test classes and source classes are of the same package.
+3. Create a source class called `CoOrds.java` inside the `UnitTesting` package, copy the following inside of it:
+
+    ```java
+    package UnitTesting;
+
+    public class CoOrds implements Comparable<CoOrds> {
+        int x, y;
+
+        public CoOrds() {
+            x = y = 0;
+        }
+
+        public CoOrds(int X, int Y) {
+            x = X;
+            y = Y;
+        }
+
+        public int compareTo(CoOrds other) {
+            if (x != other.x) {
+                return x - other.x;
+            } else {
+                return y - other.y;
+            }
+        }
+    }
+    ```
+
+4. Create another source class called `Student.java` also inside the `UnitTesting` package. Copy the following inside of it:
+
+    ```java
+    package UnitTesting;
+
+    public class Student implements Comparable<Student> {
+        String name;
+        char grade;
+
+        public Student() {
+        }
+
+        public Student(String n, char g) {
+            name = n;
+            grade = g;
+        }
+
+        public int compareTo(Student other) {
+            if (grade == other.grade) {
+                if (name.charAt(0) == other.name.charAt(0)) {
+                    return 0;
+                } else {
+                    return name.charAt(0) - other.name.charAt(0);
+                }
+            } else {
+                return other.grade - grade;
+            }
+        }
+    }
+    ```
+
+5. Create a folder called `test`. This is where we will place our test files.
+6. Inside `test`, create a folder called `UnitTesting`. This is meant to represent a package called `UnitTesting`.
+7. Create two classes here called `CoOrdsTest` and `StudentTest`. You can copy your `CalculatorTest` contents from lab 5L here, and then modify it to contain tests for `CoOrds` and `Student`, respectively.
+
+It is essential that each class in this project belongs to the same `UnitTesting` package.
+
+This is what it should look like, in the end:
+
+```
+.
+├── src
+│   └── UnitTesting
+│       ├── Comparable.java
+│       ├── CoOrds.java
+│       └── Student.java
+└── test
+    └── UnitTesting
+        ├── CoOrdsTest.java
+        └── StudentTest.java
+```
+
+Once you’ve implemented tests for each, first make sure your tests are passing.
+
+Once they are passing you can hit check answer to run mutation testing.
+
+You CANNOT run mutation tests (via the autograder) if your tests aren’t passing. Mutation testing can only work on tests that pass.
+
+## Rubric
+
+- Project must compile, otherwise no grade.
+- Complete JavaDoc for `UnitTesting.CoOrds` (5 points)
+- Complete JavaDoc for `UnitTesting.Student` (5 points)
+- No surviving mutants for `UnitTesting.CoOrdsTest` (20 points)
+- No surviving mutants for `UnitTesting.StudentTest` (20 points)
+
+Submissions will be manually reviewed by TAs. Your grade may change as a result.
+
+## Submission
+
+{{< include submission_instructions.qmd  >}}

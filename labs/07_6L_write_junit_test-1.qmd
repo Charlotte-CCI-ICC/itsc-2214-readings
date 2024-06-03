@@ -1,5 +1,7 @@
-
-# Update Autograder
+---
+title: Write JUnit Tests - 1
+---
+## Update Autograder
 
 First, please update your autograder by running:
 
@@ -7,30 +9,24 @@ First, please update your autograder by running:
 umm update
 ```
 
-If this doesn't work, or you see an error, you can update with this instead:
-
-```bash
-cargo install --git https://github.com/DhruvDh/umm.git
-```
-
-# Pre-requisite
+## Pre-requisite
 
 Please go through slides on Mutation Testing, and the List of Mutators page.
 Please see the Labs 6 and 7 announcement.
 
-# Opening Project in IDE
+## Opening Project in IDE
 
-**Project files:** 6L_writing_junit_tests-TEMPLATE.zip
+**Project files:** [6L_writing_junit_tests-TEMPLATE.zip](https://www.dropbox.com/scl/fi/u9tr8l5vvms33gvs97dpr/6L_writing_junit_tests-TEMPLATE.zip?rlkey=4ad1h53f2kg2vyxq5mr2cx25q&st=mbnyx244&dl=1)
 
 1. Unzip the files to preferably an `ITSC 2214` folder for this class.
 2. Open Visual Studio Code.
 3. Go to `File > Open Folder`. Choose the folder where you extracted the files.
 
-# Checking Grade
+## Checking Grade
 
 You can check your grade without hitting check answer, like so:
 
-## Using Terminal 
+### Using Terminal
 
 1. Open a terminal. To open a terminal in Visual Studio Code on different operating systems:
     - **Windows:** Press ``Ctrl + ` `` or `` Ctrl + Shift + ` `` to open the integrated terminal.
@@ -42,7 +38,7 @@ You can check your grade without hitting check answer, like so:
     umm grade ./script.rhai
     ```
 
-# Overview
+## Project Overview
 
 Here is the list of files in the Calculator Package:
 
@@ -55,6 +51,8 @@ Here is the list of files in the Calculator Package:
     └── Calculator
         └── CalculatorTest.java
 ```
+
+## Implementation Instructions
 
 The `Calculator.Calculator` class is fully implemented and contains a list of methods for each basic arithmetic operation. The only method that is different from what you’d expect is `divide()`, which throws an exception if someone tries to divide by zero. This is interesting because when you write tests you will have to make sure your test tests the fact that exceptions are being thrown when expected and not being thrown when not expected.
 
@@ -150,21 +148,11 @@ Once your tests are passing, use the above instructions to check your grade with
 
 Make sure you modify your tests or source code to get rid of all surviving mutations. Once you are done, hit submit.
 
-# Rubric
+## Rubric
 
 - Unit tests for `Calculator.Calculator` should pass (10 points)
 - There should be no surviving mutants. Points are only awarded for no surviving mutations (40 points)
 
-# Submitting as a Pair
+## Submission
 
-Please make sure you enter the emails of your team member when you submit on Gradescope. Please do not make two separate submissions or you will be flagged for plagiarism. Both students should get an email notification once a successful submission is made to Gradescope.
-
-# Submission
-
-1. You can copy and run the `umm create-submission` command in the terminal, and that should create a zip file with a name similar to `submission-2024-01-24-15-04-50.zip`.
-
-    ```bash
-    umm create-submission
-    ```
-
-2. Submit the `submission-2024-... .zip` file to Gradescope. The submission zip file will appear in the file explorer tab of VS Code. You can right click on this file and click on reveal in explorer (windows) or reveal in finder (mac) in order to find this file. then, you can drag and drop this to gradescope for submission.
+{{< include submission_instructions.qmd  >}}
