@@ -12,32 +12,13 @@ Ensure you have all the necessary software installed. Follow the instructions in
 
 For each lab, you will be provided with a link to download the project files. Unzip these files into a designated folder, preferably this folder will be placed inside a `ITSC 2214` folder for all labs for this class.
 
-## Opening the Project in Visual Studio Code
-
-1. **Open Visual Studio Code.**
-2. **Open the Project Folder:**
-   - Go to `File > Open Folder`.
-   - Select the folder where you extracted the project files.
+{{< include opening_project.qmd >}}
 
 ## Writing Your Code
 
 Each lab will contain specific instructions on what code you need to write.
 
-## Checking Autograder Feedback
-
-You can check your grade without hitting check answer by following these steps:
-
-1. Open a terminal. To open a terminal in Visual Studio Code on different operating systems:
-    - **Windows:** Press " Ctrl + \` " or " Ctrl + Shift + \` " to open the integrated terminal.
-
-    - **Mac:** Press " Cmd + \` " or " Cmd + Shift + \` " to open the integrated terminal.
-1. Run the command:
-
-    ```bash
-    umm grade ./script.rhai
-    ```
-
-**Note:** The first few labs might not have tasks correctly configured.
+{{< include checking_grade.qmd >}}
 
 ## Viewing Generated Feedback
 
@@ -45,17 +26,35 @@ After running the grading command, the autograder will provide feedback on the t
 
 It will also generate links that will further explain the reason for penalty, or explain the test that failed. You can click on these links to view the detailed feedback. Here is an example of a generated feedback link: <https://feedback.dhruvdh.com/be5593a1-2b8f-49fc-a4ec-981095ae0702>
 
-## Creating a Submission
-
-When you are ready to submit your assignment:
-
-1. Run the command: `umm create-submission` in the terminal.
-2. This will generate a zip file with a name like `submission-2024-05-20-07-50-41.zip`.
-3. Submit the generated zip file to Gradescope.
+{{< include submission_instructions.qmd  >}}
 
 ## Additional Resources
 
 - **Autograder Commands:** The autograder provides various commands to help you manage your project. You can see a list of available commands by running `umm --help` in the terminal.
+
+```
+Build tool for novices
+
+Usage: umm [COMMAND ...]
+
+Available options:
+    -h, --help          Prints help information
+
+Available commands:
+    run                 Run a java file with a main method
+    check               Check for syntax errors
+    test                Run JUnit tests
+    doc-check           Check a file for missing javadoc
+    grade               Grade your work
+    create-submission   Create a submission zip
+    clean               Cleans the build folder, library folder, and vscode settings
+    info                Prints a JSON description of the project as parsed
+    update              Update the umm command
+    check-health        Checks the health of the project
+    serve-project-code  Starts and serves a web server that serves the project code
+    reset               Reset the project metadata, and re-download libraries
+    exit                Exit the program
+```
 
 ## AI Feedback
 

@@ -1,0 +1,152 @@
+---
+title: "7L. Writing JUnit Tests - 2"
+project_link: https://www.dropbox.com/scl/fi/iak61ulbn2gz61yc60jd1/7L_writing_junit_tests_2-TEMPLATE.zip?rlkey=c4aetsjmf4baybpumc1d5tq0q&raw=1
+format: 
+    html:
+        code-links:
+        - text: Project Files
+          icon: file-code
+          href: https://www.dropbox.com/scl/fi/iak61ulbn2gz61yc60jd1/7L_writing_junit_tests_2-TEMPLATE.zip?rlkey=c4aetsjmf4baybpumc1d5tq0q&raw=1
+---
+
+## Project Overview
+
+> Note: You will be creating this project structure from scratch. These directories and files will not be provided to you.
+
+```
+.
+├── src
+│   └── UnitTesting
+│       ├── CoOrds.java
+│       └── Student.java
+└── test
+    └── UnitTesting
+        ├── CoOrdsTest.java
+        └── StudentTest.java
+```
+
+## Detailed Instructions
+
+In this lab, we are going to write tests for a `Comparable` interface implementation and learn how to structure projects.
+
+### Steps to Follow
+
+1. **Create Source Folder**
+    - Create a folder called `src`. This folder will contain our source files.
+
+2. **Create Package Folder**
+    - Inside `src`, create a folder called `UnitTesting`. This represents a package called `UnitTesting`. It helps to keep test classes and source classes in the same package.
+
+3. **Create CoOrds Class**
+    - Inside the `UnitTesting` package, create a source class called `CoOrds.java` and copy the following code into it:
+    
+    ```java
+    package UnitTesting;
+
+    public class CoOrds implements Comparable<CoOrds> {
+        int x, y;
+
+        public CoOrds() {
+            x = y = 0;
+        }
+
+        public CoOrds(int X, int Y) {
+            x = X;
+            y = Y;
+        }
+
+        public int compareTo(CoOrds other) {
+            if (x != other.x) {
+                return x - other.x;
+            } else {
+                return y - other.y;
+            }
+        }
+    }
+    ```
+
+4. **Create Student Class**
+    - Also inside the `UnitTesting` package, create another source class called `Student.java` and copy the following code into it:
+    
+    ```java
+    package UnitTesting;
+
+    public class Student implements Comparable<Student> {
+        String name;
+        char grade;
+
+        public Student() {
+        }
+
+        public Student(String n, char g) {
+            name = n;
+            grade = g;
+        }
+
+        public int compareTo(Student other) {
+            if (grade == other.grade) {
+                if (name.charAt(0) == other.name.charAt(0)) {
+                    return 0;
+                } else {
+                    return name.charAt(0) - other.name.charAt(0);
+                }
+            } else {
+                return other.grade - grade;
+            }
+        }
+    }
+    ```
+
+5. **Create Test Folder**
+    - Create a folder called `test`. This folder will contain our test files.
+
+6. **Create Test Package Folder**
+    - Inside `test`, create a folder called `UnitTesting`. This represents a package called `UnitTesting`.
+
+7. **Create Test Classes**
+    - Inside the `UnitTesting` test package, create two classes called `CoOrdsTest.java` and `StudentTest.java`. 
+    > You can copy your `CalculatorTest` contents from a previous lab here and then modify them to contain tests for `CoOrds` and `Student`, respectively. This is not required, but it will save you time by providing a starting point.
+
+### Project Structure
+
+Ensure each class in this project belongs to the `UnitTesting` package. Your final project structure should look like this:
+
+```
+.
+├── src
+│   └── UnitTesting
+│       ├── CoOrds.java
+│       └── Student.java
+└── test
+    └── UnitTesting
+        ├── CoOrdsTest.java
+        └── StudentTest.java
+```
+
+### Final Steps
+
+1. **Run and Pass Tests**
+    - Once your tests are passing, you can run the grading command to perform mutation testing.
+
+2. **Mutation Testing**
+    - Remember, you cannot run mutation tests via the autograder if your tests aren’t passing. Mutation testing only works on passing tests.
+
+## Rubric
+
+- Project must compile, otherwise no grade.
+- Complete JavaDoc for `UnitTesting.CoOrds` (5 points)
+- Complete JavaDoc for `UnitTesting.Student` (5 points)
+- No surviving mutants for `UnitTesting.CoOrdsTest` (20 points)
+- No surviving mutants for `UnitTesting.StudentTest` (20 points)
+
+Submissions will be manually reviewed by TAs. Your grade may change as a result.
+
+{{< include project_files_download.qmd >}}
+
+{{< include opening_project.qmd >}}
+
+{{< include update_autograder.qmd >}}
+
+{{< include checking_grade.qmd >}}
+
+{{< include submission_instructions.qmd  >}}

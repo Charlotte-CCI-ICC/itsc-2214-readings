@@ -1,10 +1,12 @@
-You can check your grade without hitting check answer by following these steps:
+## Checking Autograder Feedback
+
+You can check your grade locally by following these steps:
 
 1. Open a terminal. To open a terminal in Visual Studio Code on different operating systems:
     - **Windows:** Press " Ctrl + \` " or " Ctrl + Shift + \` " to open the integrated terminal.
 
     - **Mac:** Press " Cmd + \` " or " Cmd + Shift + \` " to open the integrated terminal.
-1. Run the command:
+2. Run the command:
 
     ```bash
     umm grade ./script.rhai

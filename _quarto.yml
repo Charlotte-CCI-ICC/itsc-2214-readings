@@ -3,8 +3,8 @@ project:
   output-dir: docs
 
 book:
-  title: "ITSC 2214 - Data Structures and Algorithms - Fall 2023"
-  date: "08/21/2023"
+  title: "ITSC 2214 - Data Structures and Algorithms"
+  date: "05/21/2024"
   chapters:
     - index.qmd
     - part: "Programming Labs"
@@ -15,6 +15,8 @@ book:
         - labs/04_3l_test_driven_development.qmd
         - labs/05_4l_generics_in_java-1.qmd
         - labs/06_5l_generics_in_java-1.qmd
+        - labs/07_6L_write_junit_test-1.qmd
+        - labs/08_7L_write_junit_test-2.qmd
     - part: "On Computers and Computing"
       chapters:
         - 01_intro_to_cs_dsa.md
