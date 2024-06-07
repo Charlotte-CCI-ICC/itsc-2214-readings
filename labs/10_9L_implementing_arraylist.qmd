@@ -1,12 +1,12 @@
 ---
 title: "9L. Implementing ArrayList"
-project_link: https://www.dropbox.com/scl/fi/u9tr8l5vvms33gvs97dpr/9L_implementing_arraylist-TEMPLATE.zip?rlkey=4ad1h53f2kg2vyxq5mr2cx25q&&raw=1
+project_link: https://www.dropbox.com/scl/fi/u9tr8l5vvms33gvs97dpr/9L_implementing_arraylist-TEMPLATE.zip?rlkey=4ad1h53f2kg2vyxq5mr2cx25q&raw=1
 format: 
     html:
         code-links:
         - text: Project Files
           icon: file-code
-          href: https://www.dropbox.com/scl/fi/lnazheh3adzk6v08ntnia/9L_implementing_arraylist-TEMPLATE.zip?rlkey=w7rkbwvt10dxcrxaz0m9b26gs&&raw=1
+          href: https://www.dropbox.com/scl/fi/lnazheh3adzk6v08ntnia/9L_implementing_arraylist-TEMPLATE.zip?rlkey=w7rkbwvt10dxcrxaz0m9b26gs&raw=1
 ---
 
 ## Detailed Instructions
@@ -20,7 +20,7 @@ format:
 - **Unit tests passing for DataStructures.ArrayList class**: 60 points
 - **Hidden Unit tests passing for DataStructures.ArrayList class**: 180 points
 
-> **You must score > 70% for your submission to "pass". If it doesn't pass, only a 0 is transferred to Canvas.**
+**You must score > 70% for your submission to "pass". If it doesn't pass, only a 0 is transferred to Canvas.**
 
 **Note:** If your `DataStructures.ArrayListTest` passes, the hidden tests will also pass unless you've modified `ArrayListTest` yourself.
 
@@ -32,4 +32,4 @@ format:
 
 {{< include checking_grade.qmd >}}
 
-{{< include submission_instructions.qmd>}}
+{{< include submission_instructions.qmd  >}}
