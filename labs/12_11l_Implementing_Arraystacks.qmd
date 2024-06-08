@@ -1,0 +1,48 @@
+---
+title: "Implementing ArrayStacks"
+---
+## Detailed Instructions
+
+Your goal is to implement `DataStructures.ArrayStack` according to the interface `ADTs.StackADT`
+
+Do read these slides-[Stacks and queues](https://www.dropbox.com/scl/fi/uynsuyjjso72iowec1irh/7.-Stacks-Queues-Arrays.pptx?rlkey=9udp3qn9vryj9cotpw52a7nzi&e=1&dl=0)
+
+**Also Watch:**
+
+1. [Implementing ArrayStack](https://youtu.be/2VWi8lN50_M)
+
+### Project Overview
+
+These are the files in the project :
+
+```
+.
+├── src
+│  ├── ADTs
+│  │  ├── CollectionADT.java
+│  │  ├── ListADT.java
+│  │  └── StackADT.java
+│  ├── DataStructures
+│  │  ├── ArrayStack.java (Work here!)
+│  └── Exceptions
+│     ├── ElementNotFoundException.java
+│     ├── EmptyCollectionException.java
+│     ├── InvalidArgumentException.java
+│     ├── NonComparableElementException.java
+│     └── StackOverflowException.java
+└── test
+   └── DataStructures
+      └── ArrayStackTest.java
+```
+
+## Rubric
+
+1. Project must compile, otherwise no grade.
+
+2. JavaDoc for `DataStructures.ArrayStack` class (20 points)
+
+Tests passing for `DataStructures.ArrayStack` class (hidden tests) (80 points)
+
+3. Must score > 70% to receive a grade (pass).
+
+{{< include checking_grade.qmd >}}
