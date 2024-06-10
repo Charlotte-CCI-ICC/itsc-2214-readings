@@ -13,7 +13,7 @@ Do read these slides-[Stacks and queues](https://www.dropbox.com/scl/fi/uynsuyjj
 
 ### Project Overview
 
-These are the files in the project :
+These are the files in the project : 
 
 ```
 .
@@ -25,7 +25,7 @@ These are the files in the project :
 │  ├── DataStructures
 │  │  ├── ArrayStack.java (Work here!)
 │  └── Exceptions
-│     ├── ElementNotFoundException.java
+│     ├── ElementNotFoundException.java 
 │     ├── EmptyCollectionException.java
 │     ├── InvalidArgumentException.java
 │     ├── NonComparableElementException.java

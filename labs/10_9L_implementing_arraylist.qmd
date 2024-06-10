@@ -23,7 +23,7 @@ format:
 **You must score > 70% for your submission to "pass". If it doesn't pass, only a 0 is transferred to Canvas.**
 
 **Note:** If your `DataStructures.ArrayListTest` passes, the hidden tests will also pass unless you've modified `ArrayListTest` yourself.
-
+ 
 {{< include project_files_download.qmd >}}
 
 {{< include opening_project.qmd >}}

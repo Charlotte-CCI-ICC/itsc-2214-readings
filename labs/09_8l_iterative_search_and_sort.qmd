@@ -21,4 +21,4 @@ Read (for pseudocode and examples of these algorithms only) this module - [Sorti
 
 4. **TAs will manually review your work after submission, your grade may change as a result.**
 
-{{< include checking_grade.qmd >}}
+{{< include checking_grade.qmd >}} 
