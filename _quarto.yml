@@ -15,7 +15,7 @@ book:
         - labs/04_3l_test_driven_development.qmd
         - labs/05_4l_generics_in_java-1.qmd
         - labs/06_5l_generics_in_java-1.qmd
-        - labs/07_6l_write_junit_test-1.qmd
+        - labs/07_6l_write_junit_test-1.qmd 
         - labs/08_7l_write_junit_test-2.qmd
         - labs/09_8l_iterative_search_and_sort.qmd
         - labs/10_9l_implementing_arraylist.qmd
