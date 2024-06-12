@@ -8,6 +8,29 @@ format:
           icon: file-code
           href: https://www.dropbox.com/scl/fi/lnazheh3adzk6v08ntnia/9L_implementing_arraylist-TEMPLATE.zip?rlkey=w7rkbwvt10dxcrxaz0m9b26gs&raw=1
 ---
+## Project Overview
+
+```
+.
+├── src 
+│   ├── ADTs
+│   │   ├── CollectionADT.java
+|   |   └── ListADT.java
+|   |
+|   └── DataStructures
+|   |   └── ArrayList
+|   |
+|   └── Exceptions
+│     ├── ElementNotFoundException.java 
+│     ├── EmptyCollectionException.java
+│     ├── InvalidArgumentException.java
+|     ├── NonComparableElementException.java
+│     └── StackOverflowException.java
+|
+└── test
+    └── DataStructures
+        └── ArrayListTest.java
+```
 
 ## Detailed Instructions
 

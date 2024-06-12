@@ -1,6 +1,25 @@
 ---
 title: "8L. Iterative Search and Sort"
 ---
+```
+.
+├── src 
+│   └── Algorithms
+|      ├── BubbleSortArray.java
+|      ├── InsertionSortArray.java
+|      ├── LinearSearchArray.java 
+|      ├── Searchable.java
+|      ├── SelectionSortArray.java 
+│      └── Sortable.java
+| 
+└── test
+    └── Algorithms
+       ├── BubbleSortArrayTest.java
+       ├── InsertionSortArrayTest.java
+       ├── LinearSearchArrayTest.java 
+       └── SelectionSortArrayTest.java 
+```
+
 ## Detailed Instructions
 
 Read (for pseudocode and examples of these algorithms only) this module - [Sorting_intro](https://charlotte-cci-icc.github.io/itsc-2214-readings/08_sorting_intro.html)
