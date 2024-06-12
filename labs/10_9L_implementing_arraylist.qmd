@@ -8,8 +8,10 @@ format:
           icon: file-code
           href: https://www.dropbox.com/scl/fi/lnazheh3adzk6v08ntnia/9L_implementing_arraylist-TEMPLATE.zip?rlkey=w7rkbwvt10dxcrxaz0m9b26gs&raw=1
 ---
+
 ## Project Overview
 
+Here are the files in your project
 ```
 .
 ├── src 

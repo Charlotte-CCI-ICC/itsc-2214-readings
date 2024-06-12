@@ -10,6 +10,8 @@ format:
 ---
 ## Project Overview
 
+Here are the files in your project
+
 ```
 .
 ├── src 
