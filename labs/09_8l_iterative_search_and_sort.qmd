@@ -1,0 +1,50 @@
+---
+title: "8L. Iterative Search and Sort"
+---
+
+## Project Overview
+
+Here are the files in your project
+```
+.
+├── src 
+│   └── Algorithms
+|      ├── BubbleSortArray.java
+|      ├── InsertionSortArray.java
+|      ├── LinearSearchArray.java 
+|      ├── Searchable.java
+|      ├── SelectionSortArray.java 
+│      └── Sortable.java
+| 
+└── test
+    └── Algorithms
+       ├── BubbleSortArrayTest.java
+       ├── InsertionSortArrayTest.java
+       ├── LinearSearchArrayTest.java 
+       └── SelectionSortArrayTest.java 
+```
+
+## Detailed Instructions
+
+Read (for pseudocode and examples of these algorithms only) this module - [Sorting_intro](https://charlotte-cci-icc.github.io/itsc-2214-readings/08_sorting_intro.html)
+and watch this youtube video[Lab and Project Structure Explaination](https://youtu.be/B_tXCVioNWU).
+
+You can refer to this link for more details regarding the lab and the sorting algorithms.
+[Bubble Selection and Insertion Sort](https://charlotte-cci-icc.github.io/itsc-2214-readings/10_bubble_selection_insertion_sort.html)
+
+**Also Watch:**
+
+1. [Bubble Sort Explaination](https://www.dropbox.com/scl/fi/8hj7etmusy593blhegt5i/Bubble%20Sort.mp4?rlkey=yom47gvqielmnlta2wyiwgg8c&e=1&dl=0)
+2. [Selection and Insertion Sort Explaination](https://www.dropbox.com/scl/fi/po8fbnvpf4ugtbvb5re0l/Selection%20and%20Insertion%20Sort.mp4?rlkey=1cu7xspzwuj1ecsxg38z2mr1w&e=1&dl=0)
+
+## Rubric
+
+1. Project must compile, otherwise no grade.
+
+2. JavaDoc for `LinearSearchArray`, `BubbleSortArray`, `InsertionSortArray`, `SelectionSortArray`, (20 points).
+
+3. Unit tests for `LinearSearchArray`, `BubbleSortArray`, `InsertionSortArray`, `SelectionSortArray` (20 points each)
+
+4. **TAs will manually review your work after submission, your grade may change as a result.**
+
+{{< include checking_grade.qmd >}} 

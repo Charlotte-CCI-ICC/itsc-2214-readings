@@ -1,0 +1,60 @@
+---
+title: "10L. Implementing Linked-Lists"
+project_link: https://www.dropbox.com/scl/fi/bao5lj40m6vvq342pvox4/10L_implementing_linkedlist-TEMPLATE.zip?rlkey=z3svhnnbktjdmkk373wfjsmgv&raw=1
+format: 
+    html:
+        code-links:
+        - text: Project Files
+          icon: file-code
+          href: https://www.dropbox.com/scl/fi/bao5lj40m6vvq342pvox4/10L_implementing_linkedlist-TEMPLATE.zip?rlkey=z3svhnnbktjdmkk373wfjsmgv&raw=1
+---
+## Project Overview
+
+Here are the files in your project
+
+```
+.
+├── src 
+│   ├── ADTs
+│   │   ├── CollectionADT.java
+|   |   └── ListADT.java
+|   |
+|   └── DataStructures
+|   |   ├── LinkedList
+|   |   └── SinglyLinkedList
+|   |   
+|   └── Exceptions
+│     ├── ElementNotFoundException.java 
+│     ├── EmptyCollectionException.java
+│     ├── InvalidArgumentException.java
+|     ├── NonComparableElementException.java
+│     └── StackOverflowException.java
+|
+└── test
+    └── DataStructures
+        ├── Class SinglyLinkedListNode.java
+│       └── LinkedListTest.java
+```
+
+## Detailed Instructions
+
+**Please Watch**: [Implementing Linked Lists](https://www.youtube.com/watch?v=FAlBfALKZc0)
+
+## Rubric
+
+1. Project must compile (otherwise no grade).
+2. JavaDoc for DataStructures.LinkedList class (60 points)
+3. Hidden Unit tests passing for DataStructures.LinkedList class (180   points)
+4. You must score > 70% in order for your submission to "pass". If your submission doesn't pass, only a 0 is transferred to canvas.
+
+**Note: if your DataStructures.LinkedListTest passes, the hidden tests will also pass unless you've changed LinkedListTest yourself.**
+
+{{< include project_files_download.qmd >}}
+
+{{< include opening_project.qmd >}}
+
+{{< include update_autograder.qmd >}} 
+
+{{< include checking_grade.qmd >}}
+
+{{< include submission_instructions.qmd >}}
