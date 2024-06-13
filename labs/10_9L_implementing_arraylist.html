@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - 6&nbsp; 5L. Generics In Java- 2</title>
+<title>ITSC 2214 - Data Structures and Algorithms - 10&nbsp; 9L. Implementing ArrayList</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../labs/07_6L_write_junit_test-1.html" rel="next">
-<link href="../labs/05_4l_generics_in_java-1.html" rel="prev">
+<link href="../labs/11_10L_implementing_Linkedlist.html" rel="next">
+<link href="../labs/09_8l_iterative_search_and_sort.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/00_installing_req_software.html">Programming Labs</a></li><li class="breadcrumb-item"><a href="../labs/06_5l_generics_in_java-1.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">5L. Generics In Java- 2</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/00_installing_req_software.html">Programming Labs</a></li><li class="breadcrumb-item"><a href="../labs/10_9L_implementing_arraylist.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">9L. Implementing ArrayList</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -187,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/06_5l_generics_in_java-1.html" class="sidebar-item-text sidebar-link active">
+  <a href="../labs/06_5l_generics_in_java-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">5L. Generics In Java- 2</span></span></a>
   </div>
 </li>
@@ -211,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/10_9L_implementing_arraylist.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/10_9L_implementing_arraylist.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">9L. Implementing ArrayList</span></span></a>
   </div>
 </li>
@@ -487,23 +487,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#project-overview" id="toc-project-overview" class="nav-link active" data-scroll-target="#project-overview"><span class="header-section-number">6.1</span> Project Overview</a></li>
-  <li><a href="#detailed-instructions" id="toc-detailed-instructions" class="nav-link" data-scroll-target="#detailed-instructions"><span class="header-section-number">6.2</span> Detailed Instructions</a></li>
-  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric"><span class="header-section-number">6.3</span> Rubric</a></li>
-  <li><a href="#project-files" id="toc-project-files" class="nav-link" data-scroll-target="#project-files"><span class="header-section-number">6.4</span> Project Files</a></li>
-  <li><a href="#opening-project-in-visual-studio-code" id="toc-opening-project-in-visual-studio-code" class="nav-link" data-scroll-target="#opening-project-in-visual-studio-code"><span class="header-section-number">6.5</span> Opening Project in Visual Studio Code</a></li>
-  <li><a href="#update-the-autograder" id="toc-update-the-autograder" class="nav-link" data-scroll-target="#update-the-autograder"><span class="header-section-number">6.6</span> Update the autograder</a></li>
-  <li><a href="#checking-autograder-feedback" id="toc-checking-autograder-feedback" class="nav-link" data-scroll-target="#checking-autograder-feedback"><span class="header-section-number">6.7</span> Checking Autograder Feedback</a></li>
-  <li><a href="#submitting-your-project" id="toc-submitting-your-project" class="nav-link" data-scroll-target="#submitting-your-project"><span class="header-section-number">6.8</span> Submitting your Project</a></li>
+  <li><a href="#project-overview" id="toc-project-overview" class="nav-link active" data-scroll-target="#project-overview"><span class="header-section-number">10.1</span> Project Overview</a></li>
+  <li><a href="#detailed-instructions" id="toc-detailed-instructions" class="nav-link" data-scroll-target="#detailed-instructions"><span class="header-section-number">10.2</span> Detailed Instructions</a></li>
+  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric"><span class="header-section-number">10.3</span> Rubric</a></li>
+  <li><a href="#project-files" id="toc-project-files" class="nav-link" data-scroll-target="#project-files"><span class="header-section-number">10.4</span> Project Files</a></li>
+  <li><a href="#opening-project-in-visual-studio-code" id="toc-opening-project-in-visual-studio-code" class="nav-link" data-scroll-target="#opening-project-in-visual-studio-code"><span class="header-section-number">10.5</span> Opening Project in Visual Studio Code</a></li>
+  <li><a href="#update-the-autograder" id="toc-update-the-autograder" class="nav-link" data-scroll-target="#update-the-autograder"><span class="header-section-number">10.6</span> Update the autograder</a></li>
+  <li><a href="#checking-autograder-feedback" id="toc-checking-autograder-feedback" class="nav-link" data-scroll-target="#checking-autograder-feedback"><span class="header-section-number">10.7</span> Checking Autograder Feedback</a></li>
+  <li><a href="#submitting-your-project" id="toc-submitting-your-project" class="nav-link" data-scroll-target="#submitting-your-project"><span class="header-section-number">10.8</span> Submitting your Project</a></li>
   </ul>
-<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://www.dropbox.com/scl/fi/l12m1jgsuucjbmrz5hbfc/5L_java_generics_2-TEMPLATE.zip?rlkey=uqg0jr6jeoabzl2hjkl1vzzri&amp;raw=1"><i class="bi bi-file-code"></i>Project Files</a></li></ul></div></nav>
+<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://www.dropbox.com/scl/fi/lnazheh3adzk6v08ntnia/9L_implementing_arraylist-TEMPLATE.zip?rlkey=w7rkbwvt10dxcrxaz0m9b26gs&amp;raw=1"><i class="bi bi-file-code"></i>Project Files</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/00_installing_req_software.html">Programming Labs</a></li><li class="breadcrumb-item"><a href="../labs/06_5l_generics_in_java-1.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">5L. Generics In Java- 2</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/00_installing_req_software.html">Programming Labs</a></li><li class="breadcrumb-item"><a href="../labs/10_9L_implementing_arraylist.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">9L. Implementing ArrayList</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">5L. Generics In Java- 2</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">9L. Implementing ArrayList</span></h1>
 </div>
 
 
@@ -520,67 +520,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="project-overview" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="project-overview"><span class="header-section-number">6.1</span> Project Overview</h2>
+<section id="project-overview" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="project-overview"><span class="header-section-number">10.1</span> Project Overview</h2>
+<p>Here are the files in your project</p>
 <pre><code>.
-├── src/
-│   └── GenericsPractice/
-│       └── Matrix.java
-└── test/
-    └── GenericsPractice/
-        └── MatrixTest.java</code></pre>
+├── src 
+│   ├── ADTs
+│   │   ├── CollectionADT.java
+|   |   └── ListADT.java
+|   |
+|   └── DataStructures
+|   |   └── ArrayList
+|   |
+|   └── Exceptions
+│     ├── ElementNotFoundException.java 
+│     ├── EmptyCollectionException.java
+│     ├── InvalidArgumentException.java
+|     ├── NonComparableElementException.java
+│     └── StackOverflowException.java
+|
+└── test
+    └── DataStructures
+        └── ArrayListTest.java</code></pre>
 </section>
-<section id="detailed-instructions" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="detailed-instructions"><span class="header-section-number">6.2</span> Detailed Instructions</h2>
-<p>Your task is to complete the implementation of a generic <code>Matrix</code> class. Currently, the <code>Matrix</code> class is empty. A matrix is a two-dimensional arrangement of elements. You access elements with a row and column index. For example:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Matrix<span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> tttBoard <span class="op">=</span> <span class="kw">new</span> Matrix<span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;(</span><span class="dv">3</span><span class="op">,</span> <span class="dv">3</span><span class="op">);</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tttBoard<span class="op">.</span><span class="fu">put</span><span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="st">"x"</span><span class="op">);</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>tttBoard<span class="op">.</span><span class="fu">get</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">).</span><span class="fu">equals</span><span class="op">(</span><span class="st">"o"</span><span class="op">))</span> <span class="op">.</span> <span class="op">.</span> <span class="op">.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Please implement <code>put</code> and <code>get</code> methods based on the above usage description. Here, the first argument is the row index and the second is the column index.</p>
-<p>Since we are not allowed to use generic arrays, we use an ArrayList of ArrayLists instead (an ArrayList that contains another ArrayList inside of it).</p>
-<p>First, sketch in a notebook how you envision the rows and columns of a matrix being stored inside this ArrayList of ArrayLists. This ArrayList should be called <code>elements</code>. There should also be two integer members of this class - <code>rows</code> and <code>columns</code> - that store the size of the matrix.</p>
-<p>Complete the implementations of the class. Be sure to implement getters and setters. This is what the constructor should look like:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="fu">Matrix</span><span class="op">(</span><span class="dt">int</span> rows<span class="op">,</span> <span class="dt">int</span> columns<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">rows</span> <span class="op">=</span> rows<span class="op">;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="fu">columns</span> <span class="op">=</span> columns<span class="op">;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    elements <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span><span class="bu">ArrayList</span><span class="op">&lt;</span>T<span class="op">&gt;&gt;();</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> rows<span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">ArrayList</span><span class="op">&lt;</span>T<span class="op">&gt;</span> row <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span>T<span class="op">&gt;();</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> columns<span class="op">;</span> j<span class="op">++)</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            row<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="kw">null</span><span class="op">);</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        elements<span class="op">.</span><span class="fu">add</span><span class="op">(</span>row<span class="op">);</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This constructor implementation also tells you what the fields of the <code>Matrix</code> class should be.</p>
+<section id="detailed-instructions" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="detailed-instructions"><span class="header-section-number">10.2</span> Detailed Instructions</h2>
+<p><strong>Please Watch</strong>: <a href="https://www.youtube.com/watch?v=eDQQaNu5jUo">Implementing Array backend List</a></p>
 </section>
-<section id="rubric" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="rubric"><span class="header-section-number">6.3</span> Rubric</h2>
+<section id="rubric" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="rubric"><span class="header-section-number">10.3</span> Rubric</h2>
 <ul>
-<li>Project must compile, otherwise no grade.</li>
-<li>Complete JavaDoc for <code>GenericsPractice.Matrix</code> (5 points)</li>
-<li>All tests passing for <code>GenericsPractice.MatrixTest</code> (20 points)</li>
+<li><strong>Project must compile</strong> (otherwise no grade)</li>
+<li><strong>JavaDoc for DataStructures.ArrayList class</strong>: 60 points</li>
+<li><strong>Unit tests passing for DataStructures.ArrayList class</strong>: 60 points</li>
+<li><strong>Hidden Unit tests passing for DataStructures.ArrayList class</strong>: 180 points</li>
 </ul>
+<p><strong>You must score &gt; 70% for your submission to “pass”. If it doesn’t pass, only a 0 is transferred to Canvas.</strong></p>
+<p><strong>Note:</strong> If your <code>DataStructures.ArrayListTest</code> passes, the hidden tests will also pass unless you’ve modified <code>ArrayListTest</code> yourself.</p>
 </section>
-<section id="project-files" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="project-files"><span class="header-section-number">6.4</span> Project Files</h2>
-<p><a href="https://www.dropbox.com/scl/fi/l12m1jgsuucjbmrz5hbfc/5L_java_generics_2-TEMPLATE.zip?rlkey=uqg0jr6jeoabzl2hjkl1vzzri&amp;raw=1">Download the project files here.</a></p>
+<section id="project-files" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="project-files"><span class="header-section-number">10.4</span> Project Files</h2>
+<p><a href="https://www.dropbox.com/scl/fi/u9tr8l5vvms33gvs97dpr/9L_implementing_arraylist-TEMPLATE.zip?rlkey=4ad1h53f2kg2vyxq5mr2cx25q&amp;raw=1">Download the project files here.</a></p>
 </section>
-<section id="opening-project-in-visual-studio-code" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="opening-project-in-visual-studio-code"><span class="header-section-number">6.5</span> Opening Project in Visual Studio Code</h2>
+<section id="opening-project-in-visual-studio-code" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="opening-project-in-visual-studio-code"><span class="header-section-number">10.5</span> Opening Project in Visual Studio Code</h2>
 <ol type="1">
 <li><p>Download the project files from</p></li>
 <li><p>Unzip the files to preferably an <code>ITSC 2214</code> folder for this class. You must have created this folder before for previous labs. <img src="../imgs/extract_from_zip.png" class="img-fluid" alt="Unzip_Location_ITSC_2214"></p></li>
 <li><p>Launch Visual Studio Code. Go to File &gt; Open Folder…, navigate and select the folder where you have extracted the zip file. <img src="../imgs/vs_code-select-folder.png" class="img-fluid" alt="Vs_code_extract_zip"></p></li>
 </ol>
 </section>
-<section id="update-the-autograder" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="update-the-autograder"><span class="header-section-number">6.6</span> Update the autograder</h2>
+<section id="update-the-autograder" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="update-the-autograder"><span class="header-section-number">10.6</span> Update the autograder</h2>
 <p>First, please update your autograder by running:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> update</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> update</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="checking-autograder-feedback" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="checking-autograder-feedback"><span class="header-section-number">6.7</span> Checking Autograder Feedback</h2>
+<section id="checking-autograder-feedback" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="checking-autograder-feedback"><span class="header-section-number">10.7</span> Checking Autograder Feedback</h2>
 <p>You can check your grade locally by following these steps:</p>
 <ol type="1">
 <li><p>Open a terminal. To open a terminal in Visual Studio Code on different operating systems:</p>
@@ -589,11 +585,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Mac:</strong> Press ” Cmd + ` ” or ” Cmd + Shift + ` ” to open the integrated terminal.</p></li>
 </ul></li>
 <li><p>Run the command:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> grade ./script.rhai</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> grade ./script.rhai</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 </section>
-<section id="submitting-your-project" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="submitting-your-project"><span class="header-section-number">6.8</span> Submitting your Project</h2>
+<section id="submitting-your-project" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="submitting-your-project"><span class="header-section-number">10.8</span> Submitting your Project</h2>
 <p>When you are ready to submit your assignment:</p>
 <ol type="1">
 <li><p>Open a terminal. To open a terminal in Visual Studio Code on different operating systems:</p>
@@ -602,7 +598,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Mac:</strong> Press ” Cmd + ` ” or ” Cmd + Shift + ` ” to open the integrated terminal.</p></li>
 </ul></li>
 <li><p>You can copy and run the <code>umm create-submission</code> command in the terminal, and that should create a zip file with a name similar to <code>submission-2024-01-24-15-04-50.zip</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> create-submission</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> create-submission</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Submit the <code>submission-2024-... .zip</code> file to Gradescope. The submission zip file will appear in the file explorer tab of VS Code. You can right click on this file and click on reveal in explorer (windows) or reveal in finder (mac) in order to find this file. then, you can drag and drop this to gradescope for submission.</p></li>
 </ol>
 
@@ -1021,13 +1017,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../labs/05_4l_generics_in_java-1.html" class="pagination-link" aria-label="4L. Generics In Java- 1">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">4L. Generics In Java- 1</span></span>
+      <a href="../labs/09_8l_iterative_search_and_sort.html" class="pagination-link" aria-label="8L. Iterative Search and Sort">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">8L. Iterative Search and Sort</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../labs/07_6L_write_junit_test-1.html" class="pagination-link" aria-label="6L. Writing JUnit Tests - 1">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">6L. Writing JUnit Tests - 1</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../labs/11_10L_implementing_Linkedlist.html" class="pagination-link" aria-label="10L. Implementing Linked-Lists">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">10L. Implementing Linked-Lists</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

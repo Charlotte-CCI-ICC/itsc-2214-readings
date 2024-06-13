@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - 18&nbsp; Comparable and Comparator</title>
+<title>ITSC 2214 - Data Structures and Algorithms - 22&nbsp; Comparable and Comparator</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08_sorting_intro.html">Iterative Sorting and Searching</a></li><li class="breadcrumb-item"><a href="./09_comparable_comparator.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08_sorting_intro.html">Iterative Sorting and Searching</a></li><li class="breadcrumb-item"><a href="./09_comparable_comparator.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -203,6 +203,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">7L. Writing JUnit Tests - 2</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/09_8l_iterative_search_and_sort.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">8L. Iterative Search and Sort</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/10_9L_implementing_arraylist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">9L. Implementing ArrayList</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/11_10L_implementing_Linkedlist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">10L. Implementing Linked-Lists</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/12_11l_Implementing_Arraystacks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">11L. Implementing ArrayStacks</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -217,13 +241,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_intro_to_cs_dsa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Background on Computer Science and Data Structures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Background on Computer Science and Data Structures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_general_purpose_computers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Modern General-Purpose, Programmable Computers</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Modern General-Purpose, Programmable Computers</span></span></a>
   </div>
 </li>
       </ul>
@@ -240,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_1_compilers_types.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></span></a>
   </div>
 </li>
       </ul>
@@ -257,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_algorithmic_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -274,25 +298,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_unit_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_writing_junit_tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06_mutation_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_list_of_mutators.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">List of Mutators</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">List of Mutators</span></span></a>
   </div>
 </li>
       </ul>
@@ -309,25 +333,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08_sorting_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_comparable_comparator.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10_bubble_selection_insertion_sort.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_linear_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Linear Search</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Linear Search</span></span></a>
   </div>
 </li>
       </ul>
@@ -344,25 +368,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12_collections_of_data_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Collections of Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Collections of Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13_operations_on_lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14_implementing_arraylists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_implementing_linkedlists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></span></a>
   </div>
 </li>
       </ul>
@@ -379,13 +403,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16_stack.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./17_queue.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span></a>
   </div>
 </li>
       </ul>
@@ -402,13 +426,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./18_recursion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Recursion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Recursion</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./19_binary_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
   </div>
 </li>
       </ul>
@@ -425,13 +449,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20_trees.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./21_graphs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
   </div>
 </li>
       </ul>
@@ -448,7 +472,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./22_hashing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
   </div>
 </li>
       </ul>
@@ -463,21 +487,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sorting-complex-objects" id="toc-sorting-complex-objects" class="nav-link active" data-scroll-target="#sorting-complex-objects"><span class="header-section-number">18.1</span> Sorting Complex Objects</a></li>
-  <li><a href="#defining-a-comparison-method" id="toc-defining-a-comparison-method" class="nav-link" data-scroll-target="#defining-a-comparison-method"><span class="header-section-number">18.2</span> Defining a Comparison Method</a></li>
-  <li><a href="#implementing-comparable" id="toc-implementing-comparable" class="nav-link" data-scroll-target="#implementing-comparable"><span class="header-section-number">18.3</span> Implementing Comparable</a></li>
-  <li><a href="#comparable-in-the-standard-library" id="toc-comparable-in-the-standard-library" class="nav-link" data-scroll-target="#comparable-in-the-standard-library"><span class="header-section-number">18.4</span> <code>Comparable</code> in the Standard Library</a></li>
-  <li><a href="#sorting-flexibility-with-comparator" id="toc-sorting-flexibility-with-comparator" class="nav-link" data-scroll-target="#sorting-flexibility-with-comparator"><span class="header-section-number">18.5</span> Sorting Flexibility with <code>Comparator</code></a></li>
-  <li><a href="#understanding-natural-and-total-orderings" id="toc-understanding-natural-and-total-orderings" class="nav-link" data-scroll-target="#understanding-natural-and-total-orderings"><span class="header-section-number">18.6</span> Understanding Natural and Total Orderings</a></li>
+  <li><a href="#sorting-complex-objects" id="toc-sorting-complex-objects" class="nav-link active" data-scroll-target="#sorting-complex-objects"><span class="header-section-number">22.1</span> Sorting Complex Objects</a></li>
+  <li><a href="#defining-a-comparison-method" id="toc-defining-a-comparison-method" class="nav-link" data-scroll-target="#defining-a-comparison-method"><span class="header-section-number">22.2</span> Defining a Comparison Method</a></li>
+  <li><a href="#implementing-comparable" id="toc-implementing-comparable" class="nav-link" data-scroll-target="#implementing-comparable"><span class="header-section-number">22.3</span> Implementing Comparable</a></li>
+  <li><a href="#comparable-in-the-standard-library" id="toc-comparable-in-the-standard-library" class="nav-link" data-scroll-target="#comparable-in-the-standard-library"><span class="header-section-number">22.4</span> <code>Comparable</code> in the Standard Library</a></li>
+  <li><a href="#sorting-flexibility-with-comparator" id="toc-sorting-flexibility-with-comparator" class="nav-link" data-scroll-target="#sorting-flexibility-with-comparator"><span class="header-section-number">22.5</span> Sorting Flexibility with <code>Comparator</code></a></li>
+  <li><a href="#understanding-natural-and-total-orderings" id="toc-understanding-natural-and-total-orderings" class="nav-link" data-scroll-target="#understanding-natural-and-total-orderings"><span class="header-section-number">22.6</span> Understanding Natural and Total Orderings</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08_sorting_intro.html">Iterative Sorting and Searching</a></li><li class="breadcrumb-item"><a href="./09_comparable_comparator.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08_sorting_intro.html">Iterative Sorting and Searching</a></li><li class="breadcrumb-item"><a href="./09_comparable_comparator.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></h1>
+<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></h1>
 </div>
 
 
@@ -494,12 +518,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="sorting-complex-objects" class="level2" data-number="18.1">
-<h2 data-number="18.1" class="anchored" data-anchor-id="sorting-complex-objects"><span class="header-section-number">18.1</span> Sorting Complex Objects</h2>
+<section id="sorting-complex-objects" class="level2" data-number="22.1">
+<h2 data-number="22.1" class="anchored" data-anchor-id="sorting-complex-objects"><span class="header-section-number">22.1</span> Sorting Complex Objects</h2>
 <p>In our previous lessons, we have primarily dealt with arrays of basic data types, such as integers, which are inherently easy to compare and sort. However, software development often involves sorting collections of complex objects, such as <code>Employee</code> or <code>Student</code> objects. These user-defined types lack a natural order for comparison, necessitating a custom solution.</p>
 </section>
-<section id="defining-a-comparison-method" class="level2" data-number="18.2">
-<h2 data-number="18.2" class="anchored" data-anchor-id="defining-a-comparison-method"><span class="header-section-number">18.2</span> Defining a Comparison Method</h2>
+<section id="defining-a-comparison-method" class="level2" data-number="22.2">
+<h2 data-number="22.2" class="anchored" data-anchor-id="defining-a-comparison-method"><span class="header-section-number">22.2</span> Defining a Comparison Method</h2>
 <p>A rudimentary solution could involve appending a comparison method to our <code>Employee</code> or <code>Student</code> classes, like <code>compareSalary</code> or <code>compareGPA</code>. However, this design lacks versatility - each new attribute requires a fresh comparison method.</p>
 <p>A superior solution employs the <code>Comparable</code> interface, comprising a single method, <code>compareTo</code>. This method, accepting an object of the same type, returns an integer indicating if the current object is lesser than, equal to, or greater than the input object.</p>
 <p>The <code>Comparable</code> interface in Java is defined as follows:</p>
@@ -507,8 +531,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> <span class="fu">compareTo</span><span class="op">(</span>T o<span class="op">);</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="implementing-comparable" class="level2" data-number="18.3">
-<h2 data-number="18.3" class="anchored" data-anchor-id="implementing-comparable"><span class="header-section-number">18.3</span> Implementing Comparable</h2>
+<section id="implementing-comparable" class="level2" data-number="22.3">
+<h2 data-number="22.3" class="anchored" data-anchor-id="implementing-comparable"><span class="header-section-number">22.3</span> Implementing Comparable</h2>
 <p>Implementing the <code>Comparable</code> interface in any class endows it with sortable attributes. For example, sorting <code>Student</code> objects by GPA could be achieved by implementing <code>Comparable&lt;Student&gt;</code> in the <code>Student</code> class, defining <code>compareTo</code> to compare GPAs:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Student <span class="kw">implements</span> <span class="bu">Comparable</span><span class="op">&lt;</span>Student<span class="op">&gt;</span> <span class="op">{</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">double</span> gpa<span class="op">;</span></span>
@@ -532,14 +556,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="comparable-in-the-standard-library" class="level2" data-number="18.4">
-<h2 data-number="18.4" class="anchored" data-anchor-id="comparable-in-the-standard-library"><span class="header-section-number">18.4</span> <code>Comparable</code> in the Standard Library</h2>
+<section id="comparable-in-the-standard-library" class="level2" data-number="22.4">
+<h2 data-number="22.4" class="anchored" data-anchor-id="comparable-in-the-standard-library"><span class="header-section-number">22.4</span> <code>Comparable</code> in the Standard Library</h2>
 <p>The <code>Comparable</code> interface facilitates the creation of versatile sorting functions, capable of sorting arrays of any type implementing <code>Comparable</code>. This applies to user-defined types, as well as many built-in types in the Java standard library.</p>
 <p>Implementing the <code>Comparable</code> interface communicates that a class is able to be compared with other instances of its type. This standard behavior empowers methods to interact with objects more abstractly and flexibly.</p>
 <p>The Java standard library provides a <code>Comparable</code> interface similar to the one defined earlier. Many built-in classes such as <code>Integer</code>, <code>Double</code>, and <code>String</code> already implement this interface, enabling their comparison and sorting with no additional code. Our <code>Student</code> class can be modified to use <code>java.lang.Comparable</code> in place of our custom interface, maintaining the same <code>compareTo</code> method for use in our generic sort function.</p>
 </section>
-<section id="sorting-flexibility-with-comparator" class="level2" data-number="18.5">
-<h2 data-number="18.5" class="anchored" data-anchor-id="sorting-flexibility-with-comparator"><span class="header-section-number">18.5</span> Sorting Flexibility with <code>Comparator</code></h2>
+<section id="sorting-flexibility-with-comparator" class="level2" data-number="22.5">
+<h2 data-number="22.5" class="anchored" data-anchor-id="sorting-flexibility-with-comparator"><span class="header-section-number">22.5</span> Sorting Flexibility with <code>Comparator</code></h2>
 <p>The <code>Comparable</code> interface is limited to a single <code>compareTo</code> method per class. When multiple sorting methods are required, Java’s <code>Comparator</code> interface comes into play. <code>Comparator</code> represents different orderings for a specific type, allowing multiple comparators per class.</p>
 <p>For instance, a <code>Comparator</code> for <code>Student</code> objects that orders by GPA could look like this:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span></span>
@@ -565,8 +589,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="understanding-natural-and-total-orderings" class="level2" data-number="18.6">
-<h2 data-number="18.6" class="anchored" data-anchor-id="understanding-natural-and-total-orderings"><span class="header-section-number">18.6</span> Understanding Natural and Total Orderings</h2>
+<section id="understanding-natural-and-total-orderings" class="level2" data-number="22.6">
+<h2 data-number="22.6" class="anchored" data-anchor-id="understanding-natural-and-total-orderings"><span class="header-section-number">22.6</span> Understanding Natural and Total Orderings</h2>
 <p>Implementing <code>Comparable</code> endows a class with a <em>natural ordering</em>, a default ordering used in operations like sorting. For example, <code>String</code> objects follow lexicographic order and <code>Integer</code> objects adhere to numerical order. When <code>Comparable&lt;Student&gt;</code> is implemented to compare GPAs, we establish GPA as the natural ordering for <code>Student</code> objects.</p>
 <p>Java’s <code>Comparator</code> interface allows the definition of additional orderings, known as <em>total orderings</em>. While the natural ordering is default, total orderings, which also follow rules of completeness, transitivity, and antisymmetry, provide flexibility to define any suitable ordering.</p>
 <p>The <code>Comparable</code> and <code>Comparator</code> interfaces epitomize the power of abstraction in computer science. By concentrating on the core concept of order and essential operations involving order, we can create general, flexible, and reusable code to work with a broad spectrum of data types and orderings.</p>
@@ -988,12 +1012,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./08_sorting_intro.html" class="pagination-link" aria-label="Introduction to Sorting">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./10_bubble_selection_insertion_sort.html" class="pagination-link" aria-label="Bubble, Selection, and Insertion Sort">
-        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
