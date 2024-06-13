@@ -1,5 +1,12 @@
 ---
 title: "8L. Iterative Search and Sort"
+project_link: https://www.dropbox.com/scl/fi/c0dqi5dnpxv69ld5dyrmh/8L-sorting-searching-TEMPLATE.zip?rlkey=qx6at9jyp3bzzfvmh0xdwacev&raw=1
+format: 
+    html:
+        code-links:
+        - text: Project Files
+          icon: file-code
+          href: https://www.dropbox.com/scl/fi/c0dqi5dnpxv69ld5dyrmh/8L-sorting-searching-TEMPLATE.zip?rlkey=qx6at9jyp3bzzfvmh0xdwacev&raw=1
 ---
 
 ## Project Overview
@@ -24,10 +31,9 @@ Here are the files in your project
        └── SelectionSortArrayTest.java 
 ```
 
-## Detailed Instructions
+## [Detailed Instructions - Click Here](../10_bubble_selection_insertion_sort.md)
 
-Read (for pseudocode and examples of these algorithms only) this module - [Sorting_intro](https://charlotte-cci-icc.github.io/itsc-2214-readings/08_sorting_intro.html)
-and watch this youtube video[Lab and Project Structure Explaination](https://youtu.be/B_tXCVioNWU).
+**Please watch:**[Lab and Project Structure Explaination](https://youtu.be/B_tXCVioNWU).
 
 You can refer to this link for more details regarding the lab and the sorting algorithms.
 [Bubble Selection and Insertion Sort](https://charlotte-cci-icc.github.io/itsc-2214-readings/10_bubble_selection_insertion_sort.html)
@@ -47,4 +53,12 @@ You can refer to this link for more details regarding the lab and the sorting al
 
 4. **TAs will manually review your work after submission, your grade may change as a result.**
 
-{{< include checking_grade.qmd >}} 
+{{< include project_files_download.qmd >}}
+
+{{< include opening_project.qmd >}}
+
+{{< include update_autograder.qmd >}}
+
+{{< include checking_grade.qmd >}}
+
+{{< include submission_instructions.qmd  >}}
