@@ -1,0 +1,52 @@
+---
+title: "13L. Implementing ArrayQueue"
+project_link: https://www.dropbox.com/scl/fi/i5phzczo6a1ky3e4aa3zu/15_mergesort_quicksort-TEMPLATE.zip?rlkey=edqkssu2xv2r97ylagfesv18d&raw=1
+format: 
+    html:
+        code-links:
+        - text: Project Files
+          icon: file-code
+          href: https://www.dropbox.com/scl/fi/i5phzczo6a1ky3e4aa3zu/15_mergesort_quicksort-TEMPLATE.zip?rlkey=edqkssu2xv2r97ylagfesv18d&raw=1
+---
+## Detailed Instructions
+
+Please watch these videos below.
+
+1. [Implementing MergeSort](https://www.dropbox.com/scl/fi/vl10hsix1d1k203f0ov2m/mergeSort-Normalised.mp4?rlkey=faul9ovon7pl28f53uxbannxc&e=1&dl=0)
+
+2. [Implementing QuickSort](https://www.dropbox.com/scl/fi/k2sjwb7l2ogy2bfdov4vw/quickSort-Normalised.mp4?rlkey=buab4wloh48xq4m1c9obyqw89&e=1&dl=0)
+
+**Please Read**
+
+1. If your test result window is completely empty for a sorting method, that means the sorting method was stuck in an infinite loop and never finished running.
+2. The run button won't work, because there is no public static void main method in the Main class, meaning there is nothing that can be run.
+
+### Project Overview
+
+These are the files in the project : 
+
+```
+.
+├── src
+│  └──  Main.java
+└── test
+   └── MainTes.java
+```
+
+## Rubric
+
+1. Project must compile, otherwise no grade.
+
+2. JavaDoc for `Main` class (20 points)
+
+3. Tests passing for `Main` class (hidden tests) (80 points)
+
+{{< include project_files_download.qmd >}}
+
+{{< include opening_project.qmd >}}
+
+{{< include update_autograder.qmd >}} 
+
+{{< include checking_grade.qmd >}}
+
+{{< include submission_instructions.qmd >}}

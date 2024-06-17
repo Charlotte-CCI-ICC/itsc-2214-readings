@@ -21,6 +21,10 @@ book:
         - labs/10_9L_implementing_arraylist.qmd
         - labs/11_10L_implementing_Linkedlist.qmd
         - labs/12_11l_Implementing_Arraystacks.qmd
+        - labs/13_12L_Implementing_LinkedStacks.qmd
+        - labs/14_13L_Implementing_ArrayQueue.qmd
+        - labs/15_14L_Implementing_LinkedQueue.qmd
+        - labs/16_15L_Recursive_MergeSort_and_QuickSort.qmd
     - part: "On Computers and Computing"
       chapters:
         - 01_intro_to_cs_dsa.md
