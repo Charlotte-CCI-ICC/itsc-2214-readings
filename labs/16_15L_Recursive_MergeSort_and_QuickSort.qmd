@@ -1,5 +1,5 @@
 ---
-title: "13L. Implementing ArrayQueue"
+title: "15L. Implementing ArrayQueue"
 project_link: https://www.dropbox.com/scl/fi/i5phzczo6a1ky3e4aa3zu/15_mergesort_quicksort-TEMPLATE.zip?rlkey=edqkssu2xv2r97ylagfesv18d&raw=1
 format: 
     html:
@@ -30,7 +30,7 @@ These are the files in the project :
 ├── src
 │  └──  Main.java
 └── test
-   └── MainTes.java
+   └── MainTest.java
 ```
 
 ## Rubric
@@ -39,7 +39,7 @@ These are the files in the project :
 
 2. JavaDoc for `Main` class (20 points)
 
-3. Tests passing for `Main` class (hidden tests) (80 points)
+3. Tests passing for `MainTest` class (hidden tests) (80 points)
 
 {{< include project_files_download.qmd >}}
 

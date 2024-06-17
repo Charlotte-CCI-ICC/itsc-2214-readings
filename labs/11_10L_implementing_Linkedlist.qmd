@@ -43,8 +43,8 @@ Here are the files in your project
 ## Rubric
 
 1. Project must compile (otherwise no grade).
-2. JavaDoc for DataStructures.LinkedList class (60 points)
-3. Hidden Unit tests passing for DataStructures.LinkedList class (180   points)
+2. JavaDoc for 'DataStructures.LinkedList' class (60 points)
+3. Hidden Unit tests passing for 'DataStructures.LinkedListTest' class (180   points)
 4. You must score > 70% in order for your submission to "pass". If your submission doesn't pass, only a 0 is transferred to canvas.
 
 **Note: if your DataStructures.LinkedListTest passes, the hidden tests will also pass unless you've changed LinkedListTest yourself.**

@@ -47,7 +47,7 @@ These are the files in the project :
 
 2. JavaDoc for `DataStructures.LinkedQueue` class (20 points)
 
-3. Tests passing for `DataStructures.LinkedQueue` class (hidden tests) (80 points)
+3. Tests passing for `DataStructures.LinkedQueueTest` class (hidden tests) (80 points)
 
 4. Must score > 70% to receive a grade (pass).
 

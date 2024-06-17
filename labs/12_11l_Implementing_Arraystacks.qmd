@@ -48,7 +48,7 @@ These are the files in the project :
 
 2. JavaDoc for `DataStructures.ArrayStack` class (20 points)
 
-3. Tests passing for `DataStructures.ArrayStack` class (hidden tests) (80 points)
+3. Tests passing for `DataStructures.ArrayStackTest` class (hidden tests) (80 points)
 
 4. Must score > 70% to receive a grade (pass).
 

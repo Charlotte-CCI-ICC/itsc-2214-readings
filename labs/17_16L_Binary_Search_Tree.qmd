@@ -1,12 +1,13 @@
 ---
-title: "13L. Implementing ArrayQueue"
-project_link: todo
+title: "16L. Implementing ArrayQueue"
+project_link: https://www.dropbox.com/scl/fi/iv5606d81e8qrjwou9eoo/16_binary_search_tree-TEMPLATE.zip?rlkey=q2x1ealyovtdyusuc4qluynt8&raw=1
 format: 
     html:
         code-links:
         - text: Project Files
           icon: file-code
-          href: todo
+          href: https://www.dropbox.com/scl/fi/iv5606d81e8qrjwou9eoo/16_binary_search_tree-TEMPLATE.zip?rlkey=q2x1ealyovtdyusuc4qluynt8&raw=1
+
 ---
 ## Detailed Instructions
 
@@ -27,28 +28,25 @@ These are the files in the project :
 ├── src
 │  ├── ADTs
 │  │  ├── CollectionADT.java
-│  │  ├── ListADT.java
-│  │  └── QueueADT.java
+│  │  └── BinarySearchTreeADT.java
 │  ├── DataStructures
-│  │  ├── ArrayQueue.java (Work here!)
+│  │  ├── BinarySearchTree.java (Work here!)
+|  |  └── TreeNode.java (Work here!)  
 │  └── Exceptions
-│     ├── ElementNotFoundException.java
-│     ├── EmptyCollectionException.java
-│     ├── InvalidArgumentException.java
-│     ├── NonComparableElementException.java
-│     └── QueueOverflowException.java
+│     ├── EmptyTreeException.java
+│     └── NodeNotFoundException.java
 └── test
    └── DataStructures
-      └── ArrayQueueTest.java
+      └── BinarySearchTreeTest.java
 ```
 
 ## Rubric
 
 1. Project must compile, otherwise no grade.
 
-2. JavaDoc for `DataStructures.ArrayQueue` class (20 points)
+2. JavaDoc for `DataStructures.BinarySearchTree ` class (20 points)
 
-3. Tests passing for `DataStructures.ArrayQueueTest` class (hidden tests) (80 points)
+3. Tests passing for `DataStructures.BinarySearchTreeTest ` class (hidden tests) (80 points)
 
 {{< include project_files_download.qmd >}}
 
