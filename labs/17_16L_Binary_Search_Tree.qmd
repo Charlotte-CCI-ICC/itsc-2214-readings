@@ -1,0 +1,59 @@
+---
+title: "16L. Implementing ArrayQueue"
+project_link: https://www.dropbox.com/scl/fi/iv5606d81e8qrjwou9eoo/16_binary_search_tree-TEMPLATE.zip?rlkey=q2x1ealyovtdyusuc4qluynt8&raw=1
+format: 
+    html:
+        code-links:
+        - text: Project Files
+          icon: file-code
+          href: https://www.dropbox.com/scl/fi/iv5606d81e8qrjwou9eoo/16_binary_search_tree-TEMPLATE.zip?rlkey=q2x1ealyovtdyusuc4qluynt8&raw=1
+
+---
+## Detailed Instructions
+
+Your goal is to implement DataStructures.ArrayQueue according to the interface ADTs.QueueADT
+
+Do read these slides-[Stacks and queues](https://www.dropbox.com/scl/fi/uynsuyjjso72iowec1irh/7.-Stacks-Queues-Arrays.pptx?rlkey=9udp3qn9vryj9cotpw52a7nzi&e=1&dl=0)
+
+**Also Watch:**
+
+[Implementing ArrayQueue](https://youtu.be/WOu7KC2Nd4A)
+
+### Project Overview
+
+These are the files in the project : 
+
+```
+.
+├── src
+│  ├── ADTs
+│  │  ├── CollectionADT.java
+│  │  └── BinarySearchTreeADT.java
+│  ├── DataStructures
+│  │  ├── BinarySearchTree.java (Work here!)
+|  |  └── TreeNode.java (Work here!)  
+│  └── Exceptions
+│     ├── EmptyTreeException.java
+│     └── NodeNotFoundException.java
+└── test
+   └── DataStructures
+      └── BinarySearchTreeTest.java
+```
+
+## Rubric
+
+1. Project must compile, otherwise no grade.
+
+2. JavaDoc for `DataStructures.BinarySearchTree ` class (20 points)
+
+3. Tests passing for `DataStructures.BinarySearchTreeTest ` class (hidden tests) (80 points)
+
+{{< include project_files_download.qmd >}}
+
+{{< include opening_project.qmd >}}
+
+{{< include update_autograder.qmd >}} 
+
+{{< include checking_grade.qmd >}}
+
+{{< include submission_instructions.qmd >}}

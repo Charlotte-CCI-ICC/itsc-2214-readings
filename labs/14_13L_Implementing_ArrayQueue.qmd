@@ -1,5 +1,5 @@
 ---
-title: "11L. Implementing ArrayStacks"
+title: "13L. Implementing ArrayQueue"
 project_link: todo
 format: 
     html:
@@ -10,13 +10,13 @@ format:
 ---
 ## Detailed Instructions
 
-Your goal is to implement `DataStructures.ArrayStack` according to the interface `ADTs.StackADT`
+Your goal is to implement DataStructures.ArrayQueue according to the interface ADTs.QueueADT
 
 Do read these slides-[Stacks and queues](https://www.dropbox.com/scl/fi/uynsuyjjso72iowec1irh/7.-Stacks-Queues-Arrays.pptx?rlkey=9udp3qn9vryj9cotpw52a7nzi&e=1&dl=0)
 
 **Also Watch:**
 
-1. [Implementing ArrayStack](https://youtu.be/2VWi8lN50_M)
+[Implementing ArrayQueue](https://youtu.be/WOu7KC2Nd4A)
 
 ### Project Overview
 
@@ -28,29 +28,27 @@ These are the files in the project :
 │  ├── ADTs
 │  │  ├── CollectionADT.java
 │  │  ├── ListADT.java
-│  │  └── StackADT.java
+│  │  └── QueueADT.java
 │  ├── DataStructures
-│  │  ├── ArrayStack.java (Work here!)
+│  │  ├── ArrayQueue.java (Work here!)
 │  └── Exceptions
-│     ├── ElementNotFoundException.java 
+│     ├── ElementNotFoundException.java
 │     ├── EmptyCollectionException.java
 │     ├── InvalidArgumentException.java
 │     ├── NonComparableElementException.java
-│     └── StackOverflowException.java
+│     └── QueueOverflowException.java
 └── test
    └── DataStructures
-      └── ArrayStackTest.java
+      └── ArrayQueueTest.java
 ```
 
 ## Rubric
 
 1. Project must compile, otherwise no grade.
 
-2. JavaDoc for `DataStructures.ArrayStack` class (20 points)
+2. JavaDoc for `DataStructures.ArrayQueue` class (20 points)
 
-3. Tests passing for `DataStructures.ArrayStackTest` class (hidden tests) (80 points)
-
-4. Must score > 70% to receive a grade (pass).
+3. Tests passing for `DataStructures.ArrayQueueTest` class (hidden tests) (80 points)
 
 {{< include project_files_download.qmd >}}
 

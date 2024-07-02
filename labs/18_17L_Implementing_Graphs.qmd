@@ -1,0 +1,176 @@
+---
+title: "17L. Implementing Graphs"
+project_link: https://www.dropbox.com/scl/fi/ksg1pltc5fjobwsji5kig/17L_implementing_graphs-TEMPLATE.zip?rlkey=o2kxca1cped00nj1ezovkl9t1&raw=1
+format: 
+    html:
+        code-links:
+        - text: Project Files
+          icon: file-code
+          href: https://www.dropbox.com/scl/fi/ksg1pltc5fjobwsji5kig/17L_implementing_graphs-TEMPLATE.zip?rlkey=o2kxca1cped00nj1ezovkl9t1&raw=1
+---
+
+## Project Overview
+
+Here are the files in your project
+```
+.
+├── src
+│  ├── ADTs
+│  │  ├── EdgeADT.java
+│  │  ├── GraphADT.java
+│  │  └── VertexADT.java
+│  └── DataStructures
+│     ├── DirectedEdge.java
+│  >  ├── DirectedGraph.java           (Work here)
+│     ├── DirectedWeightedEdge.java
+│  >  ├── DirectedWeightedGraph.java   (Work here)
+│     ├── UndirectedEdge.java  
+│  >  ├── UndirectedGraph.java         (Work here)
+│     ├── UndirectedWeightedEdge.java
+│  >  ├── UndirectedWeightedGraph.java (Work here)
+│     └── Vertex.java
+└── test
+   └── DataStructures
+      ├── DirectedGraphTest.java
+      ├── DirectedWeightedGraphTest.java
+      ├── UndirectedGraphTest.java
+      └── UndirectedWeightedGraphTest.java
+```
+
+## Detailed Instructions 
+
+This project is about learning how to implement graphs in Java. 4 types of graphs will be implemented in this project:
+
+1. Directed Graph
+2. Undirected Graph
+3. Directed Weighted Graph
+4. Undirected Weighted Graph
+
+Directed graphs are graphs where the edges have a direction. Undirected graphs are graphs where the edges do not have a direction. Weighted graphs are graphs where the edges have a weight. 
+The weight can be used to represent the distance between two vertices. This distance can represent the cost of traveling between two vertices, or the cost can be the time it takes to travel between two vertices or the amount of money it costs to travel between two vertices, etc.
+
+Instead of implementing everything from scratch, we will just be implementing four operations:
+
+1. addVertex()
+2. removeVertex()
+3. addEdge()
+4. removeEdge()
+
+### Getting Started
+
+[You should start by looking at this file. It explains everything you need to know about the files in this project.](https://www.dropbox.com/s/ostyk2gtotxfgmy/21L_implementing_graphs.pdf?st=2tmivcbl&dl=0)
+
+### Operations
+
+#### `addVertex(V vertex)`
+
+This operation adds a vertex to the graph. It takes a single argument, the vertex to be added, and returns a boolean value indicating whether the vertex has been added successfully.
+
+**Pseudocode:**
+
+For all types of graphs, the `addVertex()` operation is the same:
+
+1. Check if the vertex already exists in the graph.
+2. If it does, return `false`.
+3. Add the vertex to the graph and return `true`.
+
+#### `removeVertex(V vertex)`
+
+This operation removes a vertex from the graph. It takes a single argument, the vertex to be removed, and returns a boolean value indicating whether the vertex has been removed successfully.
+
+**Pseudocode:**
+
+1. Check if the vertex exists in the graph.
+2. If it doesn't, return `false`.
+3. Remove all edges connected to the vertex.
+4. Remove the vertex from the graph and return `true`.
+
+#### `addEdge(V vertex1, V vertex2)`
+
+This operation adds an edge to the graph. It takes two arguments, the vertices that the edge connects, and returns a boolean value indicating whether the edge has been added successfully.
+
+**Pseudocode:**
+
+##### For directed graphs:
+
+1. Check if the vertices exist in the graph.
+2. If not, return `false`.
+3. Check if the edge already exists. If it does, return `false`.
+4. Add the edge from the first vertex to the second vertex and return `true`.
+
+##### For undirected graphs:
+
+1. Check if the vertices exist in the graph.
+2. If not, return `false`.
+3. Check if the edge already exists. If it does, return `false`.
+4. Add the edge between the first and second vertices (both ways) and return `true`.
+
+##### For directed weighted graphs:
+
+1. Check if the vertices exist in the graph.
+2. If not, return `false`.
+3. Check if the edge already exists. If it does, return `false`.
+4. Add the weighted edge from the first vertex to the second vertex and return `true`.
+
+##### For undirected weighted graphs:
+
+1. Check if the vertices exist in the graph.
+2. If not, return `false`.
+3. Check if the edge already exists. If it does, return `false`.
+4. Add the weighted edge between the first and second vertices (both ways) and return `true`.
+
+#### `removeEdge(V vertex1, V vertex2)`
+
+This operation removes an edge from the graph. It takes two arguments, the vertices that the edge connects, and returns a boolean value indicating whether the edge has been removed successfully.
+
+**Pseudocode:**
+
+##### For directed graphs:
+
+1. Check if the vertices exist in the graph.
+2. If not, return `false`.
+3. Check if the edge exists. If it doesn't, return `false`.
+4. Remove the edge from the first vertex to the second vertex and return `true`.
+
+##### For undirected graphs:
+
+1. Check if the vertices exist in the graph.
+2. If not, return `false`.
+3. Check if the edge exists. If it doesn't, return `false`.
+4. Remove the edge between the first and second vertices (both ways) and return `true`.
+
+##### For directed weighted graphs:
+
+1. Check if the vertices exist in the graph.
+2. If not, return `false`.
+3. Check if the edge exists. If it doesn't, return `false`.
+4. Remove the weighted edge from the first vertex to the second vertex and return `true`.
+
+##### For undirected weighted graphs:
+
+1. Check if the vertices exist in the graph.
+2. If not, return `false`.
+3. Check if the edge exists. If it doesn't, return `false`.
+4. Remove the weighted edge between the first and second vertices (both ways) and return `true`.
+
+## Rubric
+
+1. Project must compile, otherwise no grade.
+
+2. Unit tests for DirectedGraph must pass (15 points)
+
+3. Unit tests for DirectedWeightedGraph must pass (15 points)
+
+4. Unit tests for UndirectedGraph must pass (15 points)
+
+5. Unit tests for UndirectedWeightedGraph must pass (15 points)
+
+{{< include project_files_download.qmd >}}
+
+{{< include opening_project.qmd >}}
+
+{{< include update_autograder.qmd >}}
+
+{{< include checking_grade.qmd >}}
+
+{{< include submission_instructions.qmd  >}}
