@@ -1,5 +1,5 @@
 ---
-title: "16L. Implementing ArrayQueue"
+title: "16L. Binary Search Trees"
 project_link: https://www.dropbox.com/scl/fi/iv5606d81e8qrjwou9eoo/16_binary_search_tree-TEMPLATE.zip?rlkey=q2x1ealyovtdyusuc4qluynt8&raw=1
 format: 
     html:
@@ -9,15 +9,6 @@ format:
           href: https://www.dropbox.com/scl/fi/iv5606d81e8qrjwou9eoo/16_binary_search_tree-TEMPLATE.zip?rlkey=q2x1ealyovtdyusuc4qluynt8&raw=1
 
 ---
-## Detailed Instructions
-
-Your goal is to implement DataStructures.ArrayQueue according to the interface ADTs.QueueADT
-
-Do read these slides-[Stacks and queues](https://www.dropbox.com/scl/fi/uynsuyjjso72iowec1irh/7.-Stacks-Queues-Arrays.pptx?rlkey=9udp3qn9vryj9cotpw52a7nzi&e=1&dl=0)
-
-**Also Watch:**
-
-[Implementing ArrayQueue](https://youtu.be/WOu7KC2Nd4A)
 
 ### Project Overview
 

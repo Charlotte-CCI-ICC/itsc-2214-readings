@@ -1,12 +1,12 @@
 ---
 title: "12L. Implementing LinkedStacks"
-project_link: todo
+project_link: https://www.dropbox.com/scl/fi/doae8r4il4r29sz7wf3gu/12L_linkedstack-TEMPLATE.zip?rlkey=ygxmlfy882jav7kg4by46zqyy&raw=1
 format: 
     html:
         code-links:
         - text: Project Files
           icon: file-code
-          href: todo
+          href: https://www.dropbox.com/scl/fi/doae8r4il4r29sz7wf3gu/12L_linkedstack-TEMPLATE.zip?rlkey=ygxmlfy882jav7kg4by46zqyy&raw=1
 ---
 ## Detailed Instructions
 
