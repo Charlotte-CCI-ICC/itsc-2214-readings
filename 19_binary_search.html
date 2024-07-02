@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.556">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - 32&nbsp; Binary Search</title>
+<title>ITSC 2214 - Data Structures and Algorithms - 38&nbsp; Binary Search</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./18_recursion.html">Recursion</a></li><li class="breadcrumb-item"><a href="./19_binary_search.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Binary Search</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./18_recursion.html">Recursion</a></li><li class="breadcrumb-item"><a href="./19_binary_search.html"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Binary Search</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -227,6 +227,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">11L. Implementing ArrayStacks</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/13_12L_Implementing_LinkedStacks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">12L. Implementing LinkedStacks</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/14_13L_Implementing_ArrayQueue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">13L. Implementing ArrayQueue</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/15_14L_Implementing_LinkedQueue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">14L. Implementing LinkedQueue</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/16_15L_Recursive_MergeSort_and_QuickSort.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">15L. MergeSort and QuickSort</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/17_16L_Binary_Search_Tree.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">16L. Binary Search Trees</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./labs/18_17L_Implementing_Graphs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">17L. Implementing Graphs</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -241,13 +277,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_intro_to_cs_dsa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Background on Computer Science and Data Structures</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Background on Computer Science and Data Structures</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_general_purpose_computers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Modern General-Purpose, Programmable Computers</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Modern General-Purpose, Programmable Computers</span></span></a>
   </div>
 </li>
       </ul>
@@ -264,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_1_compilers_types.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Java Compiler and Types</span></span></a>
   </div>
 </li>
       </ul>
@@ -281,7 +317,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_algorithmic_analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Algorithmic Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -298,25 +334,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_unit_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Unit Testing and Test-Driven Development</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_writing_junit_tests.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Writing JUnit Tests and Test-Driven Development</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06_mutation_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Introduction to Mutation Testing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07_list_of_mutators.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">List of Mutators</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">List of Mutators</span></span></a>
   </div>
 </li>
       </ul>
@@ -333,25 +369,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08_sorting_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Introduction to Sorting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./09_comparable_comparator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Comparable and Comparator</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./10_bubble_selection_insertion_sort.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Bubble, Selection, and Insertion Sort</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_linear_search.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Linear Search</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Linear Search</span></span></a>
   </div>
 </li>
       </ul>
@@ -368,25 +404,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12_collections_of_data_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Collections of Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Collections of Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./13_operations_on_lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Operations on Lists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./14_implementing_arraylists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Implementing Array-backed Lists</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_implementing_linkedlists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Implementing Linked Lists</span></span></a>
   </div>
 </li>
       </ul>
@@ -403,13 +439,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./16_stack.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Stack Data Structure</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./17_queue.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Queue Data Structure</span></span></a>
   </div>
 </li>
       </ul>
@@ -426,13 +462,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./18_recursion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Recursion</span></span></a>
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Recursion</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./19_binary_search.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
   </div>
 </li>
       </ul>
@@ -449,13 +485,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20_trees.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./21_graphs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
   </div>
 </li>
       </ul>
@@ -472,7 +508,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./22_hashing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
   </div>
 </li>
       </ul>
@@ -487,20 +523,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#recursive-linear-search" id="toc-recursive-linear-search" class="nav-link active" data-scroll-target="#recursive-linear-search"><span class="header-section-number">32.1</span> Recursive Linear Search</a></li>
-  <li><a href="#optimizing-linear-search" id="toc-optimizing-linear-search" class="nav-link" data-scroll-target="#optimizing-linear-search"><span class="header-section-number">32.2</span> Optimizing Linear Search</a></li>
-  <li><a href="#divide-and-conquer" id="toc-divide-and-conquer" class="nav-link" data-scroll-target="#divide-and-conquer"><span class="header-section-number">32.3</span> Divide and Conquer</a></li>
-  <li><a href="#even-faster-drasticallyfastersearch" id="toc-even-faster-drasticallyfastersearch" class="nav-link" data-scroll-target="#even-faster-drasticallyfastersearch"><span class="header-section-number">32.4</span> Even faster <code>drasticallyFasterSearch</code></a></li>
-  <li><a href="#unveiling-binary-search" id="toc-unveiling-binary-search" class="nav-link" data-scroll-target="#unveiling-binary-search"><span class="header-section-number">32.5</span> Unveiling Binary Search</a></li>
+  <li><a href="#recursive-linear-search" id="toc-recursive-linear-search" class="nav-link active" data-scroll-target="#recursive-linear-search"><span class="header-section-number">38.1</span> Recursive Linear Search</a></li>
+  <li><a href="#optimizing-linear-search" id="toc-optimizing-linear-search" class="nav-link" data-scroll-target="#optimizing-linear-search"><span class="header-section-number">38.2</span> Optimizing Linear Search</a></li>
+  <li><a href="#divide-and-conquer" id="toc-divide-and-conquer" class="nav-link" data-scroll-target="#divide-and-conquer"><span class="header-section-number">38.3</span> Divide and Conquer</a></li>
+  <li><a href="#even-faster-drasticallyfastersearch" id="toc-even-faster-drasticallyfastersearch" class="nav-link" data-scroll-target="#even-faster-drasticallyfastersearch"><span class="header-section-number">38.4</span> Even faster <code>drasticallyFasterSearch</code></a></li>
+  <li><a href="#unveiling-binary-search" id="toc-unveiling-binary-search" class="nav-link" data-scroll-target="#unveiling-binary-search"><span class="header-section-number">38.5</span> Unveiling Binary Search</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./18_recursion.html">Recursion</a></li><li class="breadcrumb-item"><a href="./19_binary_search.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Binary Search</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./18_recursion.html">Recursion</a></li><li class="breadcrumb-item"><a href="./19_binary_search.html"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Binary Search</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Binary Search</span></h1>
+<h1 class="title"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Binary Search</span></h1>
 </div>
 
 
@@ -517,8 +553,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="recursive-linear-search" class="level2" data-number="32.1">
-<h2 data-number="32.1" class="anchored" data-anchor-id="recursive-linear-search"><span class="header-section-number">32.1</span> Recursive Linear Search</h2>
+<section id="recursive-linear-search" class="level2" data-number="38.1">
+<h2 data-number="38.1" class="anchored" data-anchor-id="recursive-linear-search"><span class="header-section-number">38.1</span> Recursive Linear Search</h2>
 <p>Let’s imagine the following scenario: You’re in a well-organized library, each shelf categorized by the author’s last name in alphabetical order from A to Z. You’re tasked to find a book by your favorite author, say, ‘Margaret Atwood’.</p>
 <p>So, you start at ‘A’ and proceed book by book, author by author, until you eventually find the book by Atwood. This, in essence, is a prime example of the linear search algorithm. Simple, right?</p>
 <p>Let’s formalize this process with Java:</p>
@@ -562,8 +598,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                   |____ linearSearchRecursive(arr, 5, 4) =&gt; returns 4</code></pre>
 <p>At each recursive call, we check if we have reached one of the base cases. If not, we make another recursive call with an incremented index. When we reach <code>linearSearchRecursive(arr, 5, 4)</code>, we find that <code>arr[4]</code> is equal to <code>key</code>, so we return <code>4</code>. This value is then passed back up the call stack until it reaches the original caller. So, <code>linearSearchRecursive(arr, 5, 0)</code> returns <code>4</code>, indicating that <code>5</code> is found at index <code>4</code> in the array.</p>
 </section>
-<section id="optimizing-linear-search" class="level2" data-number="32.2">
-<h2 data-number="32.2" class="anchored" data-anchor-id="optimizing-linear-search"><span class="header-section-number">32.2</span> Optimizing Linear Search</h2>
+<section id="optimizing-linear-search" class="level2" data-number="38.2">
+<h2 data-number="38.2" class="anchored" data-anchor-id="optimizing-linear-search"><span class="header-section-number">38.2</span> Optimizing Linear Search</h2>
 <p>Our recursive linear search algorithm successfully finds a given element within an array. However, in each recursive call, we reduce our search space by just one element. It’s akin to taking one step at a time when we could be leaping. Wouldn’t it be nice if we could shrink this search space by more than a single element at each step?</p>
 <p>Let’s imagine again that we’re in our library from earlier, but this time, we have a partner. You start at ‘A’ and your partner starts at ‘Z’. Now you’re moving towards each other, each drawing closer to ‘M’, where Atwood’s books are likely to reside. If either of you find the book, you signal the other, and the process hinges to a stop.</p>
 <p>Let’s translate this idea into code:</p>
@@ -601,8 +637,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>So it looks like the worst-case scenario hasn’t vastly improved. We’d still potentially have to traverse half the array size if the element resides in the middle. In the worst-case scenario, the time complexity remains O(n).</p>
 <p>This leads us to a realization: minor tweaks to our approach may not provide the drastic improvement we hope for. Is there some drastic change we can make to eliminate substantial amounts of data from our search space, not just one or two elements, with every recursive call?</p>
 </section>
-<section id="divide-and-conquer" class="level2" data-number="32.3">
-<h2 data-number="32.3" class="anchored" data-anchor-id="divide-and-conquer"><span class="header-section-number">32.3</span> Divide and Conquer</h2>
+<section id="divide-and-conquer" class="level2" data-number="38.3">
+<h2 data-number="38.3" class="anchored" data-anchor-id="divide-and-conquer"><span class="header-section-number">38.3</span> Divide and Conquer</h2>
 <p>When faced with a complex problem, one of the most effective strategies is often to break it down into smaller, more manageable parts. This is the essence of the ‘divide and conquer’ strategy. We divide the problem into several sub-problems that are similar to the original but smaller in size. We conquer the sub-problems by solving them recursively. Finally, we combine the solutions of the sub-problems to solve the original problem.</p>
 <p>The divide and conquer strategy is especially effective when the sub-problems can be solved independently and the solutions can be combined efficiently. In the context of searching, we can apply this strategy by dividing the search space into smaller parts and searching each part separately. If we can eliminate large parts of the search space at each step, we can find the target value much faster.</p>
 <p>Let’s see how we can apply this to Search, and our original problem of looking for books in a library!</p>
@@ -637,8 +673,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       |____ optimizedLinearSearch(arr[3..4], 0 ,1 ,5) =&gt; returns 1</code></pre>
 <p>At each recursive call, we check if we have reached one of the base cases. If not, we make another recursive call with a smaller subarray. When we reach <code>optimizedLinearSearch(arr[3..4], 0 ,1 ,5)</code>, we find that <code>arr[4]</code> is equal to <code>key</code>, so we return <code>1</code>. This value is then added to <code>left</code> (which is <code>3</code>) and passed back up the call stack until it reaches the original caller. So, <code>drasticallyFasterSearch(arr, 0 ,4 ,5)</code> returns <code>(3 + 1) = 4</code>, indicating that <code>5</code> is found at index <code>4</code> in the array.</p>
 </section>
-<section id="even-faster-drasticallyfastersearch" class="level2" data-number="32.4">
-<h2 data-number="32.4" class="anchored" data-anchor-id="even-faster-drasticallyfastersearch"><span class="header-section-number">32.4</span> Even faster <code>drasticallyFasterSearch</code></h2>
+<section id="even-faster-drasticallyfastersearch" class="level2" data-number="38.4">
+<h2 data-number="38.4" class="anchored" data-anchor-id="even-faster-drasticallyfastersearch"><span class="header-section-number">38.4</span> Even faster <code>drasticallyFasterSearch</code></h2>
 <p>Building on our previous exploration, we can see a pattern emerging. We are using our <code>drasticallyFasterSearch</code> to divide our problem, but when it comes to conquering, we are falling back to <code>optimizedLinearSearch</code>. This means we are not fully utilizing the strength of our divide and conquer approach. We have an opportunity for optimization here: what if, instead of resorting to linear search, we applied the same divide and conquer strategy again? This observation leads us to the Binary Search algorithm, a more efficient way to search sorted arrays, which would look like this:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">int</span> <span class="fu">drasticallyFasterSearch</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arr<span class="op">,</span> <span class="dt">int</span> left<span class="op">,</span> <span class="dt">int</span> right<span class="op">,</span> <span class="dt">int</span> key<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> mid <span class="op">=</span> left <span class="op">+</span> <span class="op">(</span>right <span class="op">-</span> left<span class="op">)</span> <span class="op">/</span> <span class="dv">2</span><span class="op">;</span></span>
@@ -706,8 +742,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="unveiling-binary-search" class="level2" data-number="32.5">
-<h2 data-number="32.5" class="anchored" data-anchor-id="unveiling-binary-search"><span class="header-section-number">32.5</span> Unveiling Binary Search</h2>
+<section id="unveiling-binary-search" class="level2" data-number="38.5">
+<h2 data-number="38.5" class="anchored" data-anchor-id="unveiling-binary-search"><span class="header-section-number">38.5</span> Unveiling Binary Search</h2>
 <p>The name “Binary Search” comes from the fact that this method divides the search space into two (binary) at each step of the algorithm. It is a fundamental technique used in computer science and a cornerstone in algorithm design.</p>
 <p>The final implementation of the Binary Search algorithm is as follows:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">int</span> <span class="fu">binarySearch</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arr<span class="op">,</span> <span class="dt">int</span> left<span class="op">,</span> <span class="dt">int</span> right<span class="op">,</span> <span class="dt">int</span> key<span class="op">)</span> <span class="op">{</span></span>
@@ -1141,12 +1177,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./18_recursion.html" class="pagination-link" aria-label="Recursion">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Recursion</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Recursion</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./20_trees.html" class="pagination-link" aria-label="Tree Data Structure">
-        <span class="nav-page-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - 7&nbsp; 6L. Writing JUnit Tests - 1</title>
+<title>ITSC 2214 - Data Structures and Algorithms - 17&nbsp; 16L. Binary Search Trees</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../labs/08_7L_write_junit_test-2.html" rel="next">
-<link href="../labs/06_5l_generics_in_java-1.html" rel="prev">
+<link href="../labs/18_17L_Implementing_Graphs.html" rel="next">
+<link href="../labs/16_15L_Recursive_MergeSort_and_QuickSort.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/00_installing_req_software.html">Programming Labs</a></li><li class="breadcrumb-item"><a href="../labs/07_6L_write_junit_test-1.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">6L. Writing JUnit Tests - 1</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/00_installing_req_software.html">Programming Labs</a></li><li class="breadcrumb-item"><a href="../labs/17_16L_Binary_Search_Tree.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">16L. Binary Search Trees</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -193,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/07_6L_write_junit_test-1.html" class="sidebar-item-text sidebar-link active">
+  <a href="../labs/07_6L_write_junit_test-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">6L. Writing JUnit Tests - 1</span></span></a>
   </div>
 </li>
@@ -253,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs/17_16L_Binary_Search_Tree.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/17_16L_Binary_Search_Tree.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">16L. Binary Search Trees</span></span></a>
   </div>
 </li>
@@ -523,24 +523,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link active" data-scroll-target="#pre-requisites"><span class="header-section-number">7.1</span> Pre-requisites</a></li>
-  <li><a href="#project-overview" id="toc-project-overview" class="nav-link" data-scroll-target="#project-overview"><span class="header-section-number">7.2</span> Project Overview</a></li>
-  <li><a href="#detailed-instructions" id="toc-detailed-instructions" class="nav-link" data-scroll-target="#detailed-instructions"><span class="header-section-number">7.3</span> Detailed Instructions</a></li>
-  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric"><span class="header-section-number">7.4</span> Rubric</a></li>
-  <li><a href="#project-files" id="toc-project-files" class="nav-link" data-scroll-target="#project-files"><span class="header-section-number">7.5</span> Project Files</a></li>
-  <li><a href="#opening-project-in-visual-studio-code" id="toc-opening-project-in-visual-studio-code" class="nav-link" data-scroll-target="#opening-project-in-visual-studio-code"><span class="header-section-number">7.6</span> Opening Project in Visual Studio Code</a></li>
-  <li><a href="#update-the-autograder" id="toc-update-the-autograder" class="nav-link" data-scroll-target="#update-the-autograder"><span class="header-section-number">7.7</span> Update the autograder</a></li>
-  <li><a href="#checking-autograder-feedback" id="toc-checking-autograder-feedback" class="nav-link" data-scroll-target="#checking-autograder-feedback"><span class="header-section-number">7.8</span> Checking Autograder Feedback</a></li>
-  <li><a href="#submitting-your-project" id="toc-submitting-your-project" class="nav-link" data-scroll-target="#submitting-your-project"><span class="header-section-number">7.9</span> Submitting your Project</a></li>
+  <li><a href="#project-overview" id="toc-project-overview" class="nav-link active" data-scroll-target="#project-overview"><span class="header-section-number">17.0.1</span> Project Overview</a></li>
+  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric"><span class="header-section-number">17.1</span> Rubric</a></li>
+  <li><a href="#project-files" id="toc-project-files" class="nav-link" data-scroll-target="#project-files"><span class="header-section-number">17.2</span> Project Files</a></li>
+  <li><a href="#opening-project-in-visual-studio-code" id="toc-opening-project-in-visual-studio-code" class="nav-link" data-scroll-target="#opening-project-in-visual-studio-code"><span class="header-section-number">17.3</span> Opening Project in Visual Studio Code</a></li>
+  <li><a href="#update-the-autograder" id="toc-update-the-autograder" class="nav-link" data-scroll-target="#update-the-autograder"><span class="header-section-number">17.4</span> Update the autograder</a></li>
+  <li><a href="#checking-autograder-feedback" id="toc-checking-autograder-feedback" class="nav-link" data-scroll-target="#checking-autograder-feedback"><span class="header-section-number">17.5</span> Checking Autograder Feedback</a></li>
+  <li><a href="#submitting-your-project" id="toc-submitting-your-project" class="nav-link" data-scroll-target="#submitting-your-project"><span class="header-section-number">17.6</span> Submitting your Project</a></li>
   </ul>
-<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://www.dropbox.com/scl/fi/u9tr8l5vvms33gvs97dpr/6L_writing_junit_tests-TEMPLATE.zip?rlkey=4ad1h53f2kg2vyxq5mr2cx25q&amp;st=mbnyx244&amp;raw=1"><i class="bi bi-file-code"></i>Project Files</a></li></ul></div></nav>
+<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://www.dropbox.com/scl/fi/iv5606d81e8qrjwou9eoo/16_binary_search_tree-TEMPLATE.zip?rlkey=q2x1ealyovtdyusuc4qluynt8&amp;raw=1"><i class="bi bi-file-code"></i>Project Files</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/00_installing_req_software.html">Programming Labs</a></li><li class="breadcrumb-item"><a href="../labs/07_6L_write_junit_test-1.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">6L. Writing JUnit Tests - 1</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs/00_installing_req_software.html">Programming Labs</a></li><li class="breadcrumb-item"><a href="../labs/17_16L_Binary_Search_Tree.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">16L. Binary Search Trees</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">6L. Writing JUnit Tests - 1</span></h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">16L. Binary Search Trees</span></h1>
 </div>
 
 
@@ -557,113 +555,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="pre-requisites" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="pre-requisites"><span class="header-section-number">7.1</span> Pre-requisites</h2>
-<p>Please go through the <a href="../05_writing_junit_tests.html">writing JUnit tests chapter</a>, <a href="../06_mutation_testing.html">mutation testing chapter</a>, the <a href="../07_list_of_mutators.html">List of Mutators chapter</a>, and the slides on Mutation Testing from the lecture.</p>
-</section>
-<section id="project-overview" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="project-overview"><span class="header-section-number">7.2</span> Project Overview</h2>
-<p>Here is the list of files in the Calculator Package:</p>
+<section id="project-overview" class="level3" data-number="17.0.1">
+<h3 data-number="17.0.1" class="anchored" data-anchor-id="project-overview"><span class="header-section-number">17.0.1</span> Project Overview</h3>
+<p>These are the files in the project :</p>
 <pre><code>.
-├── src 
-│   ├── Calculator
-│   │   └── Calculator.java
+├── src
+│  ├── ADTs
+│  │  ├── CollectionADT.java
+│  │  └── BinarySearchTreeADT.java
+│  ├── DataStructures
+│  │  ├── BinarySearchTree.java (Work here!)
+|  |  └── TreeNode.java (Work here!)  
+│  └── Exceptions
+│     ├── EmptyTreeException.java
+│     └── NodeNotFoundException.java
 └── test
-    └── Calculator
-        └── CalculatorTest.java</code></pre>
+   └── DataStructures
+      └── BinarySearchTreeTest.java</code></pre>
 </section>
-<section id="detailed-instructions" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="detailed-instructions"><span class="header-section-number">7.3</span> Detailed Instructions</h2>
+<section id="rubric" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="rubric"><span class="header-section-number">17.1</span> Rubric</h2>
 <ol type="1">
-<li><p>The <code>Calculator.Calculator</code> class is fully implemented and contains a list of methods for each basic arithmetic operation. The only method that is different from what you’d expect is <code>divide()</code>, which throws an exception if someone tries to divide by zero. This is interesting because when you write tests, you will have to make sure your test tests the fact that exceptions are being thrown when expected and not being thrown when not expected.</p></li>
-<li><p>The <code>Calculator.CalculatorTest</code> class inside <code>test/Calculator/CalculatorTest.java</code> is empty. Let’s talk about how to start writing this class.</p></li>
-<li><p>In order to be able to write tests, you need to import a bunch of methods called assertions from a library called JUnit. Here are some example assert methods:</p>
-<ul>
-<li><code>assertEquals</code>: takes two arguments, and checks if they are equal. If unequal, the test fails.</li>
-<li><code>assertThrows</code>: takes two arguments, the first being a class, and the second being a lambda expression.</li>
-</ul></li>
-<li><p>You can get the class of an exception by using <code>Exception.class</code>, for example, <code>ArithmeticException.class</code> or <code>java.lang.ArithmeticException.class</code> if you’ve not imported it.</p></li>
-<li><p>The lambda expression should include the method call that should throw an exception. You can think of it as a small convenient try block, for example:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">assertThrows</span><span class="op">(</span><span class="bu">ArithmeticException</span><span class="op">.</span><span class="fu">class</span><span class="op">,</span> <span class="op">()</span> <span class="op">-&gt;</span> c1<span class="op">.</span><span class="fu">divide</span><span class="op">());</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">// or if you need multiple statements</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">assertThrows</span><span class="op">(</span><span class="bu">ArithmeticException</span><span class="op">.</span><span class="fu">class</span><span class="op">,</span> <span class="op">()</span> <span class="op">-&gt;</span> <span class="op">{</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    Calculator c1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Calculator</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">);</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    c1<span class="op">.</span><span class="fu">divide</span><span class="op">();</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="op">});</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>See <a href="https://junit.org/junit5/docs/5.0.1/api/org/junit/jupiter/api/Assertions.html">Assertions (JUnit 5.0.1 API)</a> for documentation on all assertions. You might be able to find something that reduces the amount of code you need to write!</p></li>
-<li><p>We are using JUnit 5, and the way you import these assertions for JUnit 5 is:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="kw">static</span><span class="im"> org</span><span class="op">.</span><span class="im">junit</span><span class="op">.</span><span class="im">jupiter</span><span class="op">.</span><span class="im">api</span><span class="op">.</span><span class="im">Assertions</span><span class="op">.*;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p><strong>Note:</strong> Make sure you’ve added <code>package Calculator;</code> to the top of the <code>Calculator.CalculatorTest</code> class file.</p></li>
-<li><p>Every method that is meant to be a test needs to be marked with a <code>@Test</code> decorator. This helps our tool find and identify which methods are intended to be tests. You can import this decorator by saying:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">org</span><span class="op">.</span><span class="im">junit</span><span class="op">.</span><span class="im">jupiter</span><span class="op">.</span><span class="im">api</span><span class="op">.</span><span class="im">Test</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Later, you can mark a method as a test by saying:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="at">@Test</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">testAdd</span><span class="op">()</span> <span class="op">{</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// body</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>You might also want to import <code>java.lang.ArithmeticException</code>, that is the exception thrown by the divide method.</p></li>
-<li><p>Next, create a class as usual:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> CalculatorTest <span class="op">{}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Inside this class, define a bunch of calculator objects. Here are some you might find useful:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> CalculatorTest <span class="op">{</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">/*</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">    * Here is where you want to define a bunch of calculator objects   </span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">    * So that you can use them later in your tests.   </span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">    *   </span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">    * The instructions document contains a list of calculator objects   </span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">    * that might be useful to test.   </span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">    *   </span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">    * You can also create your own calculator objects. </span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">    */</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    Calculator c1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Calculator</span><span class="op">(</span><span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">);</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    Calculator c2 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Calculator</span><span class="op">(-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">);</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    Calculator c3 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Calculator</span><span class="op">(</span><span class="dv">2</span><span class="op">,</span> <span class="op">-</span><span class="dv">3</span><span class="op">);</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    Calculator c4 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Calculator</span><span class="op">(-</span><span class="dv">2</span><span class="op">,</span> <span class="op">-</span><span class="dv">3</span><span class="op">);</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    Calculator c5 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Calculator</span><span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">);</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    Calculator c6 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Calculator</span><span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">3</span><span class="op">);</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    Calculator c7 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Calculator</span><span class="op">(</span><span class="dv">2</span><span class="op">,</span> <span class="dv">0</span><span class="op">);</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    Calculator c8 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Calculator</span><span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="op">-</span><span class="dv">3</span><span class="op">);</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    Calculator c9 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Calculator</span><span class="op">(-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">0</span><span class="op">);</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Next, use the <code>@Test</code> decorator just like how it was described above to create:</p>
-<ul>
-<li><code>testAdd()</code></li>
-<li><code>testSubtract()</code></li>
-<li><code>testMultiply()</code></li>
-<li><code>testDivide()</code></li>
-</ul></li>
-<li><p>Implement all the above tests, and run them to make sure they’re all passing.</p></li>
-<li><p>Once your tests are passing, use the above instructions to check your grade within the IDE.</p></li>
-<li><p>Make sure you modify your tests or source code to get rid of all surviving mutations. Once you are done, hit submit.</p></li>
+<li><p>Project must compile, otherwise no grade.</p></li>
+<li><p>JavaDoc for <code>DataStructures.BinarySearchTree</code> class (20 points)</p></li>
+<li><p>Tests passing for <code>DataStructures.BinarySearchTreeTest</code> class (hidden tests) (80 points)</p></li>
 </ol>
 </section>
-<section id="rubric" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="rubric"><span class="header-section-number">7.4</span> Rubric</h2>
-<ul>
-<li>Unit tests for <code>Calculator.Calculator</code> should pass (10 points)</li>
-<li>There should be no surviving mutants. Points are only awarded for no surviving mutations (40 points)</li>
-</ul>
+<section id="project-files" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="project-files"><span class="header-section-number">17.2</span> Project Files</h2>
+<p><a href="https://www.dropbox.com/scl/fi/iv5606d81e8qrjwou9eoo/16_binary_search_tree-TEMPLATE.zip?rlkey=q2x1ealyovtdyusuc4qluynt8&amp;raw=1">Download the project files here.</a></p>
 </section>
-<section id="project-files" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="project-files"><span class="header-section-number">7.5</span> Project Files</h2>
-<p><a href="https://www.dropbox.com/scl/fi/u9tr8l5vvms33gvs97dpr/6L_writing_junit_tests-TEMPLATE.zip?rlkey=4ad1h53f2kg2vyxq5mr2cx25q&amp;st=mbnyx244&amp;raw=1">Download the project files here.</a></p>
-</section>
-<section id="opening-project-in-visual-studio-code" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="opening-project-in-visual-studio-code"><span class="header-section-number">7.6</span> Opening Project in Visual Studio Code</h2>
+<section id="opening-project-in-visual-studio-code" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="opening-project-in-visual-studio-code"><span class="header-section-number">17.3</span> Opening Project in Visual Studio Code</h2>
 <ol type="1">
 <li><p>Download the project files from</p></li>
 <li><p>Unzip the files to preferably an <code>ITSC 2214</code> folder for this class. You must have created this folder before for previous labs. <img src="../imgs/extract_from_zip.png" class="img-fluid" alt="Unzip_Location_ITSC_2214"></p></li>
 <li><p>Launch Visual Studio Code. Go to File &gt; Open Folder…, navigate and select the folder where you have extracted the zip file. <img src="../imgs/vs_code-select-folder.png" class="img-fluid" alt="Vs_code_extract_zip"></p></li>
 </ol>
 </section>
-<section id="update-the-autograder" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="update-the-autograder"><span class="header-section-number">7.7</span> Update the autograder</h2>
+<section id="update-the-autograder" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="update-the-autograder"><span class="header-section-number">17.4</span> Update the autograder</h2>
 <p>First, please update your autograder by running:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> update</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> update</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="checking-autograder-feedback" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="checking-autograder-feedback"><span class="header-section-number">7.8</span> Checking Autograder Feedback</h2>
+<section id="checking-autograder-feedback" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="checking-autograder-feedback"><span class="header-section-number">17.5</span> Checking Autograder Feedback</h2>
 <p>You can check your grade locally by following these steps:</p>
 <ol type="1">
 <li><p>Open a terminal. To open a terminal in Visual Studio Code on different operating systems:</p>
@@ -672,11 +608,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Mac:</strong> Press ” Cmd + ` ” or ” Cmd + Shift + ` ” to open the integrated terminal.</p></li>
 </ul></li>
 <li><p>Run the command:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> grade ./script.rhai</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> grade ./script.rhai</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ol>
 </section>
-<section id="submitting-your-project" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="submitting-your-project"><span class="header-section-number">7.9</span> Submitting your Project</h2>
+<section id="submitting-your-project" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="submitting-your-project"><span class="header-section-number">17.6</span> Submitting your Project</h2>
 <p>When you are ready to submit your assignment:</p>
 <ol type="1">
 <li><p>Open a terminal. To open a terminal in Visual Studio Code on different operating systems:</p>
@@ -685,7 +621,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Mac:</strong> Press ” Cmd + ` ” or ” Cmd + Shift + ` ” to open the integrated terminal.</p></li>
 </ul></li>
 <li><p>You can copy and run the <code>umm create-submission</code> command in the terminal, and that should create a zip file with a name similar to <code>submission-2024-01-24-15-04-50.zip</code>.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> create-submission</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">umm</span> create-submission</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Submit the <code>submission-2024-... .zip</code> file to Gradescope. The submission zip file will appear in the file explorer tab of VS Code. You can right click on this file and click on reveal in explorer (windows) or reveal in finder (mac) in order to find this file. then, you can drag and drop this to gradescope for submission.</p></li>
 </ol>
 
@@ -1104,13 +1040,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../labs/06_5l_generics_in_java-1.html" class="pagination-link" aria-label="5L. Generics In Java- 2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">5L. Generics In Java- 2</span></span>
+      <a href="../labs/16_15L_Recursive_MergeSort_and_QuickSort.html" class="pagination-link" aria-label="15L. MergeSort and QuickSort">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">15L. MergeSort and QuickSort</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../labs/08_7L_write_junit_test-2.html" class="pagination-link" aria-label="7L. Writing JUnit Tests - 2">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">7L. Writing JUnit Tests - 2</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../labs/18_17L_Implementing_Graphs.html" class="pagination-link" aria-label="17L. Implementing Graphs">
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">17L. Implementing Graphs</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
