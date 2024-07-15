@@ -1,0 +1,64 @@
+---
+title: "19L. Using Hashmaps"
+project_link: https://www.dropbox.com/scl/fi/rxdxssw60pzxfxtp0mpcy/19L_using_hashmaps-TEMPLATE.zip?rlkey=5t665eged0rjy6e3h31su4vax&raw=1
+format: 
+    html:
+        code-links:
+        - text: Project Files
+          icon: file-code
+          href: https://www.dropbox.com/scl/fi/rxdxssw60pzxfxtp0mpcy/19L_using_hashmaps-TEMPLATE.zip?rlkey=5t665eged0rjy6e3h31su4vax&raw=1
+---
+
+## Project Overview
+
+Here are the files in your project
+```
+.
+├── Main.java
+├── MainTest.java
+├── script.rhai
+|
++---.vscode
+|    ├── extensions.json
+|    ├── settings.json
+|    └── tasks.json
+|
++---lib
+|    ├── commons-text-1.11.0.jar
+|    ├── junit-4.13.2.jar
+|    ├── junit-platform-console-standalone-1.9.0-RC1.jar
+|    ├── pitest-command-line.jar
+|    ├── pitest-entry.jar
+|    ├── pitest-junit5-plugin.jar
+|    ├── pitest.jar
+|
+\---target
+```
+## Project Overview
+
+This is a small lab to practice using HashMaps from the Java standard library.
+
+You can read more about HashMaps in the following resources:
+[Java 8 HashMap Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html)
+[Hashing, HashTables, and HashMaps](https://www.dropbox.com/scl/fi/vdyyjlmzh5zbdo4gr10ed/Hashing-HashTables-and-HashMaps.pdf?rlkey=65xhta99am3z6dpi49ior74eh&e=1&dl=0)
+
+The goal is simple: implement two methods that count the number of unique objects in an array and return the count.
+
+`uniqueWithoutHashMap()` is an attempt to solve this problem without using HashMaps.
+`uniqueWithHashMap()` is an attempt to solve this problem using HashMaps.
+
+## Rubric
+
+1. Your Main.java file must compile; otherwise, no grade will be given.
+
+2. Unit tests for the Main class must pass (50 points).
+
+{{< include project_files_download.qmd >}}
+
+{{< include opening_project.qmd >}}
+
+{{< include update_autograder.qmd >}}
+
+{{< include checking_grade.qmd >}}
+
+{{< include submission_instructions.qmd  >}}
