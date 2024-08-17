@@ -9,13 +9,13 @@ You will need to install the following software on your laptop to work on labs i
 3. Git - Version control system. OS-specific installation instructions are below.
 4. Autograder - OS-specific installation instructions below.
 
-## One-Liner Install (Experimental)
+## One-Liner Install
 
 ### Windows
 
 Follow the instructions in the first comment on this gist - <https://gist.github.com/DhruvDh/71d90635a528db1318a36ea35da6d56d>
 
-To run the script on Windows:
+To run this script on Windows:
 
 1. Open a PowerShell window.
 2. Go to the gist and click the `Raw` button next to the file name at the top.
@@ -30,12 +30,66 @@ Invoke-RestMethod -Uri PASTE_RAW_URL | iex
 For the current version (at the time of writing), you can use this command:
 
 ```powershell
-Invoke-RestMethod -Uri https://gist.githubusercontent.com/DhruvDh/71d90635a528db1318a36ea35da6d56d/raw/38aa59f4c8ee3698dd2f266321c74f81c171858e/lab-prep-windows.ps1 | iex
+Invoke-RestMethod -Uri https://gist.github.com/DhruvDh/71d90635a528db1318a36ea35da6d56d/raw/0b91af6a35df6baa0835a3e97648e4f59baf76a1/lab-prep-windows.ps1 | iex
+```
+
+#### Verifying
+
+Run the following command to check if the autograder was installed correctly:
+
+```powershell
+umm --help
 ```
 
 ### MacOS
 
 Follow the instructions in the first comment on this gist - <https://gist.github.com/DhruvDh/f313bf5edd929949a31995e247e28c53>
+
+## Installing Homebrew on Mac
+
+Homebrew is a package manager for macOS that makes it easy to install software. Follow these instructions to install Homebrew on your Mac.
+
+### Steps to Install Homebrew
+
+1. **Open Terminal**: You can find the Terminal application in the Utilities folder under Applications, or by searching for it using Spotlight (Cmd + Space and type "Terminal").
+
+2. **Run the Installation Command**: Copy and paste the following command into your Terminal and press Enter:
+
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+3. **Enter Your Password**: During the installation, Homebrew will use `sudo` to gain the necessary permissions to install software. You will be prompted to enter your Mac password. Type your password and press Enter.
+
+   **Note**: You won't be able to see your password as you type. This is a security feature. Just type it carefully and press Enter.
+
+4. **Press Enter When Prompted**: The installation script may prompt you to press Enter to continue at various stages. Follow the instructions and press Enter when prompted.
+
+5. **Add Homebrew to Your Shell Environment**: Once the installation is complete, run the following command to echo and append the Homebrew shell environment setup to your `.zprofile` (if you're using Zsh, the default shell on newer macOS versions):
+
+   ```bash
+   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+   ```
+
+6. **Apply the Changes to the Current Terminal Session**: To apply the changes to your current terminal session, run:
+
+   ```bash
+   source ~/.zprofile
+   ```
+
+### Verification
+
+To verify that Homebrew was installed correctly, you can run:
+
+```bash
+brew --version
+```
+
+You should see the Homebrew version number, indicating that the installation was successful.
+
+That's it! You now have Homebrew installed on your Mac and can use it to easily install and manage software packages.
+
+## Running this script after `brew` is installed
 
 To run the script on macOS:
 
@@ -52,12 +106,20 @@ curl -sL PASTE_RAW_URL | bash
 For the current version (at the time of writing), you can use this command:
 
 ```bash
-curl -sL https://gist.githubusercontent.com/DhruvDh/f313bf5edd929949a31995e247e28c53/raw/8be0c2ff7f8e28763944497e41114a69492e3a9f/lab-prep-macos.sh | bash
+curl -sL https://gist.github.com/DhruvDh/f313bf5edd929949a31995e247e28c53/raw/15557bc1e5cb2f2086b9ea111d20e00b25f4ec32/lab-prep-macos.sh | bash
 ```
 
 This will download and execute the script, installing all necessary software and configurations for your lab preparation.
 
-## IDE - Visual Studio Code
+### Verification
+
+Run the following command to check if the autograder was installed correctly:
+
+```bash
+umm --help
+```
+
+<!-- ## IDE - Visual Studio Code
 
 Download and install Visual Studio Code from [here](https://code.visualstudio.com/download).
 
@@ -67,9 +129,8 @@ Then, install the following extensions -
 
 1. <https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack>
 2. <https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare>
-3. <https://marketplace.visualstudio.com/items?itemName=Codeium.codeium>
 
-Finally, you may be collaborating in labs with other students. Please go to <https://code.visualstudio.com/learn/collaboration/live-share> and learn about how to do the same.
+Finally, you *may* be collaborating in labs with other students. Please go to <https://code.visualstudio.com/learn/collaboration/live-share> and learn about how to do the same.
 
 ## Windows
 
@@ -161,7 +222,6 @@ We will be using a "package manager" to install the software we need, called `sc
   ...
 
   Current installation options:
-
 
     default host triple: ...
       default toolchain: ...
@@ -356,4 +416,4 @@ We will be using a "package manager" to install the software we need, called `br
   cargo install --git=https://github.com/DhruvDh/umm.git
   ```
 
-6. You can now run `umm --help` to check if it was installed correctly. If you don't see any errors, you should be good to go.
+6. You can now run `umm --help` to check if it was installed correctly. If you don't see any errors, you should be good to go. -->
