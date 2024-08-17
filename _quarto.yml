@@ -27,6 +27,7 @@ book:
         - labs/16_15L_Recursive_MergeSort_and_QuickSort.qmd
         - labs/17_16L_Binary_Search_Tree.qmd
         - labs/18_17L_Implementing_Graphs.qmd
+        - labs/19_18L_Using_Hashmaps.qmd
     - part: "On Computers and Computing"
       chapters:
         - 01_intro_to_cs_dsa.md
