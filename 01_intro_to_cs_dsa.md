@@ -10,7 +10,7 @@ The word **computer** means "to calculate" in Latin. A computer is a machine tha
 
 But did you know that computers were not always machines? Before electronic computers were invented, there were people who did math problems by hand for scientists and engineers. They were called **human computers**. They followed fixed rules and had no authority to deviate from them in any detail. They worked in teams and checked each other’s results for accuracy.
 
-![For example, in 1959, NASA had a team of women who worked as human computers to help launch rockets into space. They used pencils, paper, and calculators to do complex calculations that machines could not do at that time.](./imgs/001_nasa_computer_room.jpeg)
+![For example, in 1959, NASA had a team of women who worked as human computers to help launch rockets into space. They used pencils, paper, and calculators to do complex calculations that machines could not do at that time.](/imgs/001_nasa_computer_room.jpeg)
 
 ## Computing Capabilities
 

@@ -63,16 +63,16 @@ Get familiar with these files and read through the comments!
 4. **Checking for Errors**
     - Once you are done, make sure there are no syntax errors. You can do so by opening the problems view by clicking on this button in the bottom left:
 
-        ![Problems View Button](../imgs/problems-view-button.png)
+        ![Problems View Button](/imgs/problems-view-button.png)
 
     - Which opens this tab:
 
-        ![Problems View Tab](../imgs/problems-view-tab.png)
+        ![Problems View Tab](/imgs/problems-view-tab.png)
 
 5. **Running Tests**
     - If there are no errors, go to `WalletTest.java` in the `test/ConcertTicket` folder. Click on the thick double green arrow on line 7 to run all tests -
 
-        ![Double green arrow](../imgs/test-run-green-arrow.png)
+        ![Double green arrow](/imgs/test-run-green-arrow.png)
 
 6. **Submitting**
     - If all tests have passed, hit submit!

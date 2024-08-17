@@ -2,8 +2,8 @@
 
 1. Download the project files from 
 2. Unzip the files to preferably an `ITSC 2214` folder for this class. You must have created this folder before for previous labs.
-    ![Unzip_Location_ITSC_2214](../imgs/extract_from_zip.png)
+    ![Unzip_Location_ITSC_2214](/imgs/extract_from_zip.png)
 
 3. Launch Visual Studio Code.
 Go to File > Open Folder..., navigate and select the folder where you have extracted the zip file.
-    ![Vs_code_extract_zip](../imgs/vs_code-select-folder.png)
+    ![Vs_code_extract_zip](/imgs/vs_code-select-folder.png)
