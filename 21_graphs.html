@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.556">
+<meta name="generator" content="quarto-1.6.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ITSC 2214 - Data Structures and Algorithms - 40&nbsp; Graphs</title>
+<title>41&nbsp; Graphs – ITSC 2214 - Data Structures and Algorithms</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3fbf620316015237a6991a5ebc2a9eb0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -141,13 +141,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./20_trees.html">Trees and Graphs</a></li><li class="breadcrumb-item"><a href="./21_graphs.html"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Graphs</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./20_trees.html">Trees and Graphs</a></li><li class="breadcrumb-item"><a href="./21_graphs.html"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Graphs</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -177,9 +177,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Programming Labs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -296,9 +296,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">On Computers and Computing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -319,9 +319,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Java Generics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -336,9 +336,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Algorithmic Analysis</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -353,9 +353,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Unit Testing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -388,9 +388,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Iterative Sorting and Searching</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -423,9 +423,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Sequential Collections of Data</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -458,9 +458,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
  <span class="menu-text">Stacks and Queues</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -481,9 +481,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
  <span class="menu-text">Recursion</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -500,13 +500,19 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Binary Search</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19_1_mergesort.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">title: “The Merge Sort Algorithm”</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
  <span class="menu-text">Trees and Graphs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -514,22 +520,22 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./20_trees.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./21_graphs.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Graphs</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
  <span class="menu-text">Hashing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -537,7 +543,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./22_hashing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span></a>
   </div>
 </li>
       </ul>
@@ -552,24 +558,24 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">40.1</span> Introduction</a></li>
-  <li><a href="#graph-terminology" id="toc-graph-terminology" class="nav-link" data-scroll-target="#graph-terminology"><span class="header-section-number">40.2</span> Graph Terminology</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">41.1</span> Introduction</a></li>
+  <li><a href="#graph-terminology" id="toc-graph-terminology" class="nav-link" data-scroll-target="#graph-terminology"><span class="header-section-number">41.2</span> Graph Terminology</a>
   <ul class="collapse">
-  <li><a href="#basic-terms-and-properties" id="toc-basic-terms-and-properties" class="nav-link" data-scroll-target="#basic-terms-and-properties"><span class="header-section-number">40.2.1</span> Basic Terms and Properties</a></li>
-  <li><a href="#graph-notation" id="toc-graph-notation" class="nav-link" data-scroll-target="#graph-notation"><span class="header-section-number">40.2.2</span> Graph Notation</a></li>
-  <li><a href="#special-types-of-graphs" id="toc-special-types-of-graphs" class="nav-link" data-scroll-target="#special-types-of-graphs"><span class="header-section-number">40.2.3</span> Special Types of Graphs</a></li>
+  <li><a href="#basic-terms-and-properties" id="toc-basic-terms-and-properties" class="nav-link" data-scroll-target="#basic-terms-and-properties"><span class="header-section-number">41.2.1</span> Basic Terms and Properties</a></li>
+  <li><a href="#graph-notation" id="toc-graph-notation" class="nav-link" data-scroll-target="#graph-notation"><span class="header-section-number">41.2.2</span> Graph Notation</a></li>
+  <li><a href="#special-types-of-graphs" id="toc-special-types-of-graphs" class="nav-link" data-scroll-target="#special-types-of-graphs"><span class="header-section-number">41.2.3</span> Special Types of Graphs</a></li>
   </ul></li>
-  <li><a href="#graph-representation" id="toc-graph-representation" class="nav-link" data-scroll-target="#graph-representation"><span class="header-section-number">40.3</span> Graph Representation</a>
+  <li><a href="#graph-representation" id="toc-graph-representation" class="nav-link" data-scroll-target="#graph-representation"><span class="header-section-number">41.3</span> Graph Representation</a>
   <ul class="collapse">
-  <li><a href="#adjacency-list" id="toc-adjacency-list" class="nav-link" data-scroll-target="#adjacency-list"><span class="header-section-number">40.3.1</span> Adjacency List</a></li>
-  <li><a href="#adjacency-matrix" id="toc-adjacency-matrix" class="nav-link" data-scroll-target="#adjacency-matrix"><span class="header-section-number">40.3.2</span> Adjacency Matrix</a></li>
-  <li><a href="#converting-between-representations" id="toc-converting-between-representations" class="nav-link" data-scroll-target="#converting-between-representations"><span class="header-section-number">40.3.3</span> Converting Between Representations</a></li>
+  <li><a href="#adjacency-list" id="toc-adjacency-list" class="nav-link" data-scroll-target="#adjacency-list"><span class="header-section-number">41.3.1</span> Adjacency List</a></li>
+  <li><a href="#adjacency-matrix" id="toc-adjacency-matrix" class="nav-link" data-scroll-target="#adjacency-matrix"><span class="header-section-number">41.3.2</span> Adjacency Matrix</a></li>
+  <li><a href="#converting-between-representations" id="toc-converting-between-representations" class="nav-link" data-scroll-target="#converting-between-representations"><span class="header-section-number">41.3.3</span> Converting Between Representations</a></li>
   </ul></li>
-  <li><a href="#graph-traversal" id="toc-graph-traversal" class="nav-link" data-scroll-target="#graph-traversal"><span class="header-section-number">40.4</span> Graph Traversal</a>
+  <li><a href="#graph-traversal" id="toc-graph-traversal" class="nav-link" data-scroll-target="#graph-traversal"><span class="header-section-number">41.4</span> Graph Traversal</a>
   <ul class="collapse">
-  <li><a href="#breadth-first-search-bfs" id="toc-breadth-first-search-bfs" class="nav-link" data-scroll-target="#breadth-first-search-bfs"><span class="header-section-number">40.4.1</span> Breadth-First Search (BFS)</a></li>
-  <li><a href="#depth-first-search-dfs" id="toc-depth-first-search-dfs" class="nav-link" data-scroll-target="#depth-first-search-dfs"><span class="header-section-number">40.4.2</span> Depth-First Search (DFS)</a></li>
-  <li><a href="#applications-and-variations-of-bfs-and-dfs" id="toc-applications-and-variations-of-bfs-and-dfs" class="nav-link" data-scroll-target="#applications-and-variations-of-bfs-and-dfs"><span class="header-section-number">40.4.3</span> Applications and Variations of BFS and DFS</a></li>
+  <li><a href="#breadth-first-search-bfs" id="toc-breadth-first-search-bfs" class="nav-link" data-scroll-target="#breadth-first-search-bfs"><span class="header-section-number">41.4.1</span> Breadth-First Search (BFS)</a></li>
+  <li><a href="#depth-first-search-dfs" id="toc-depth-first-search-dfs" class="nav-link" data-scroll-target="#depth-first-search-dfs"><span class="header-section-number">41.4.2</span> Depth-First Search (DFS)</a></li>
+  <li><a href="#applications-and-variations-of-bfs-and-dfs" id="toc-applications-and-variations-of-bfs-and-dfs" class="nav-link" data-scroll-target="#applications-and-variations-of-bfs-and-dfs"><span class="header-section-number">41.4.3</span> Applications and Variations of BFS and DFS</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -577,9 +583,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./20_trees.html">Trees and Graphs</a></li><li class="breadcrumb-item"><a href="./21_graphs.html"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Graphs</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./20_trees.html">Trees and Graphs</a></li><li class="breadcrumb-item"><a href="./21_graphs.html"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Graphs</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Graphs</span></h1>
+<h1 class="title"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Graphs</span></h1>
 </div>
 
 
@@ -597,10 +603,10 @@ window.Quarto = {
 
 
 <p>Consider a typical day scrolling through Instagram. You tap on a photo from a friend, then another from an influencer you admire, followed by a click on the profile of someone who commented, leading you to yet another profile you find interesting. This scenario illustrates the complex web of connections that is characteristic of social networks. In order to analyze and make sense of such connections, we need an appropriate data structure to model them.</p>
-<p>Take, for instance, your Instagram followers. We could start by simply representing you and your followers as entities, or “vertices,” connected by lines or “edges.” The diagram below (<a href="#fig-instagram-followers-simple" class="quarto-xref">Figure&nbsp;<span>40.1</span></a>) shows such a simple representation of your followers.</p>
+<p>Take, for instance, your Instagram followers. We could start by simply representing you and your followers as entities, or “vertices,” connected by lines or “edges.” The diagram below (<a href="#fig-instagram-followers-simple" class="quarto-xref">Figure&nbsp;<span>41.1</span></a>) shows such a simple representation of your followers.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-instagram-followers-simple" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-instagram-followers-simple" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-instagram-followers-simple-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -663,16 +669,16 @@ window.Quarto = {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-instagram-followers-simple-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.1: A simplified representation of your Instagram followers. You (Y, colored in blue) are connected to four followers (1-4, colored in orange). Each line represents a connection (follows).
+Figure&nbsp;41.1: A simplified representation of your Instagram followers. You (Y, colored in blue) are connected to four followers (1-4, colored in orange). Each line represents a connection (follows).
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>At first glance, this might appear to be a tree structure, where you are the root, and your followers are the branches. However, this isn’t the most accurate representation. In reality, your followers can also follow other people, and those individuals can have their own followers, creating a multi-tiered and mutual relationship that cannot be represented using a tree structure. Tree structures are fundamentally hierarchical, with each node having one parent at most, making them inadequate to model the complex interconnections found in social networks (<a href="#fig-instagram-followers-recursive" class="quarto-xref">Figure&nbsp;<span>40.2</span></a>).</p>
+<p>At first glance, this might appear to be a tree structure, where you are the root, and your followers are the branches. However, this isn’t the most accurate representation. In reality, your followers can also follow other people, and those individuals can have their own followers, creating a multi-tiered and mutual relationship that cannot be represented using a tree structure. Tree structures are fundamentally hierarchical, with each node having one parent at most, making them inadequate to model the complex interconnections found in social networks (<a href="#fig-instagram-followers-recursive" class="quarto-xref">Figure&nbsp;<span>41.2</span></a>).</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-instagram-followers-recursive" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-instagram-followers-recursive" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-instagram-followers-recursive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -847,17 +853,17 @@ Figure&nbsp;40.1: A simplified representation of your Instagram followers. You (
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-instagram-followers-recursive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.2: A representation of Instagram followers with multiple levels of connections. Each follower can have their own followers, creating a network of connections. Arrows indicate the direction of following, showing that the relationship is not always reciprocal.
+Figure&nbsp;41.2: A representation of Instagram followers with multiple levels of connections. Each follower can have their own followers, creating a network of connections. Arrows indicate the direction of following, showing that the relationship is not always reciprocal.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>To accurately capture these complex relationships, we use a graph data structure. Graphs consist of a set of vertices (or nodes) and a set of edges that connect them. In the context of Instagram followers, the vertices represent the users, and the edges represent the connections between them.</p>
-<p>Furthermore, the relationships between Instagram users are not always reciprocal. You might follow a celebrity who does not follow you back. This creates a directed relationship, represented by an edge with a specific direction. Such relationships can be modeled using directed graphs. <a href="#fig-instagram-followers-directed" class="quarto-xref">Figure&nbsp;<span>40.3</span></a> shows a graph where the edges represent the direction of follower relationships.</p>
+<p>Furthermore, the relationships between Instagram users are not always reciprocal. You might follow a celebrity who does not follow you back. This creates a directed relationship, represented by an edge with a specific direction. Such relationships can be modeled using directed graphs. <a href="#fig-instagram-followers-directed" class="quarto-xref">Figure&nbsp;<span>41.3</span></a> shows a graph where the edges represent the direction of follower relationships.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-instagram-followers-directed" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-instagram-followers-directed" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-instagram-followers-directed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -1083,28 +1089,28 @@ Figure&nbsp;40.2: A representation of Instagram followers with multiple levels o
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-instagram-followers-directed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.3: A directed representation of your Instagram followers. Here, an arrow going from vertex <span class="math inline">\(A\)</span> to vertex <span class="math inline">\(B\)</span> indicates that <span class="math inline">\(A\)</span> follows <span class="math inline">\(B\)</span>, but <span class="math inline">\(B\)</span> does not necessarily follow <span class="math inline">\(A\)</span>. The users are color-coded: blue for you, orange for direct followers, and light grey for followers of followers. Note that the graph reflects mutual follows, unreciprocated follows, and connections among followers, which a tree structure would not capture.
+Figure&nbsp;41.3: A directed representation of your Instagram followers. Here, an arrow going from vertex <span class="math inline">\(A\)</span> to vertex <span class="math inline">\(B\)</span> indicates that <span class="math inline">\(A\)</span> follows <span class="math inline">\(B\)</span>, but <span class="math inline">\(B\)</span> does not necessarily follow <span class="math inline">\(A\)</span>. The users are color-coded: blue for you, orange for direct followers, and light grey for followers of followers. Note that the graph reflects mutual follows, unreciprocated follows, and connections among followers, which a tree structure would not capture.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Understanding and modeling such intricate networks is critical to analyzing social media behavior. From detecting trends and predicting future connections to understanding influence within a network, the applications of this model are vast and significant. In the subsequent sections, we will delve deeper into how graph data structures work, how to implement them, and how to analyze the interesting problems they can help solve.</p>
-<section id="introduction" class="level2" data-number="40.1">
-<h2 data-number="40.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">40.1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="41.1">
+<h2 data-number="41.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">41.1</span> Introduction</h2>
 <p>Imagine standing at a subway station, tracing the colorful lines on the map that depict the various routes. Each line represents a different subway route, while each station serves as a meeting point for different lines. The interplay of lines and stations illustrates the essence of a <strong>graph</strong> - a non-linear data structure that consists of vertices (stations) and edges (subway routes) connecting these vertices.</p>
 <p><strong>Adjacency</strong> and <strong>incidence</strong> are two fundamental terms in the realm of graphs. Two vertices, say station A and station B, are considered adjacent if a subway line (edge) directly connects them. On the other hand, incidence refers to a station (vertex) being served by a subway line (edge).</p>
 <p>Graphs are not merely abstract mathematical constructs but have tangible real-world applications. They model social networks, where vertices are people, and edges signify their connections. In transportation networks, vertices represent locations interconnected by edges symbolizing routes. In the era of a global pandemic, graphs can even represent Coronavirus transmission networks, where vertices symbolize individuals, and edges depict transmission paths.</p>
 </section>
-<section id="graph-terminology" class="level2" data-number="40.2">
-<h2 data-number="40.2" class="anchored" data-anchor-id="graph-terminology"><span class="header-section-number">40.2</span> Graph Terminology</h2>
+<section id="graph-terminology" class="level2" data-number="41.2">
+<h2 data-number="41.2" class="anchored" data-anchor-id="graph-terminology"><span class="header-section-number">41.2</span> Graph Terminology</h2>
 <p>To navigate through the expansive world of graphs, one must be acquainted with its language. Let’s traverse through the fundamental terms and properties that define graphs.</p>
-<section id="basic-terms-and-properties" class="level3" data-number="40.2.1">
-<h3 data-number="40.2.1" class="anchored" data-anchor-id="basic-terms-and-properties"><span class="header-section-number">40.2.1</span> Basic Terms and Properties</h3>
-<p>Imagine a city map representing connections between various landmarks - each landmark is a <strong>vertex</strong>, and the roads linking them are the <strong>edges</strong>. The connections established are not always two-way streets. While some roads may be traversed in both directions, symbolizing an <strong>undirected graph</strong>, others might be one-way streets, indicative of a <strong>directed graph</strong>. Here, edges have a specific direction, indicating a unidirectional relationship between vertices. The diagrams <a href="#fig-directed-vs-undirected-1" class="quarto-xref">Figure&nbsp;<span>40.4</span></a> and <a href="#fig-directed-vs-undirected-2" class="quarto-xref">Figure&nbsp;<span>40.5</span></a> vividly illustrate this concept.</p>
+<section id="basic-terms-and-properties" class="level3" data-number="41.2.1">
+<h3 data-number="41.2.1" class="anchored" data-anchor-id="basic-terms-and-properties"><span class="header-section-number">41.2.1</span> Basic Terms and Properties</h3>
+<p>Imagine a city map representing connections between various landmarks - each landmark is a <strong>vertex</strong>, and the roads linking them are the <strong>edges</strong>. The connections established are not always two-way streets. While some roads may be traversed in both directions, symbolizing an <strong>undirected graph</strong>, others might be one-way streets, indicative of a <strong>directed graph</strong>. Here, edges have a specific direction, indicating a unidirectional relationship between vertices. The diagrams <a href="#fig-directed-vs-undirected-1" class="quarto-xref">Figure&nbsp;<span>41.4</span></a> and <a href="#fig-directed-vs-undirected-2" class="quarto-xref">Figure&nbsp;<span>41.5</span></a> vividly illustrate this concept.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-directed-vs-undirected-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-directed-vs-undirected-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-directed-vs-undirected-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -1150,7 +1156,7 @@ Figure&nbsp;40.3: A directed representation of your Instagram followers. Here, a
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-directed-vs-undirected-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.4: Example of an undirected graph. Vertices A, B, and C are interconnected, demonstrating bi-directional relationships.
+Figure&nbsp;41.4: Example of an undirected graph. Vertices A, B, and C are interconnected, demonstrating bi-directional relationships.
 </figcaption>
 </figure>
 </div>
@@ -1158,7 +1164,7 @@ Figure&nbsp;40.4: Example of an undirected graph. Vertices A, B, and C are inter
 </div>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-directed-vs-undirected-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-directed-vs-undirected-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-directed-vs-undirected-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -1207,16 +1213,16 @@ Figure&nbsp;40.4: Example of an undirected graph. Vertices A, B, and C are inter
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-directed-vs-undirected-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.5: Example of a directed graph. The arrowheads (highlighted in orange) demonstrate the direction of the relationships between vertices A, B, and C.
+Figure&nbsp;41.5: Example of a directed graph. The arrowheads (highlighted in orange) demonstrate the direction of the relationships between vertices A, B, and C.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>In some cities, not all roads are created equal. Some roads might be longer or more congested, carrying different costs for traversal. This scenario reflects a <strong>weighted graph</strong> where edges are not equally important but carry different weights. On the contrary, in an <strong>unweighted graph</strong>, all roads carry the same weight - a short stroll in the park or a long cross-country journey holds equal significance. The illustrations <a href="#fig-weighted-vs-unweighted-1" class="quarto-xref">Figure&nbsp;<span>40.6</span></a> and <a href="#fig-weighted-vs-unweighted-2" class="quarto-xref">Figure&nbsp;<span>40.7</span></a> demonstrate this.</p>
+<p>In some cities, not all roads are created equal. Some roads might be longer or more congested, carrying different costs for traversal. This scenario reflects a <strong>weighted graph</strong> where edges are not equally important but carry different weights. On the contrary, in an <strong>unweighted graph</strong>, all roads carry the same weight - a short stroll in the park or a long cross-country journey holds equal significance. The illustrations <a href="#fig-weighted-vs-unweighted-1" class="quarto-xref">Figure&nbsp;<span>41.6</span></a> and <a href="#fig-weighted-vs-unweighted-2" class="quarto-xref">Figure&nbsp;<span>41.7</span></a> demonstrate this.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-weighted-vs-unweighted-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-weighted-vs-unweighted-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-weighted-vs-unweighted-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -1262,7 +1268,7 @@ Figure&nbsp;40.5: Example of a directed graph. The arrowheads (highlighted in or
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-weighted-vs-unweighted-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.6: Example of an unweighted graph. The edges between vertices A, B, and C carry no weights.
+Figure&nbsp;41.6: Example of an unweighted graph. The edges between vertices A, B, and C carry no weights.
 </figcaption>
 </figure>
 </div>
@@ -1270,7 +1276,7 @@ Figure&nbsp;40.6: Example of an unweighted graph. The edges between vertices A, 
 </div>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-weighted-vs-unweighted-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-weighted-vs-unweighted-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-weighted-vs-unweighted-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -1319,16 +1325,16 @@ Figure&nbsp;40.6: Example of an unweighted graph. The edges between vertices A, 
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-weighted-vs-unweighted-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.7: Example of a weighted graph. The weights (2, 3, 1) assigned to the edges between vertices A, B, and C differentiate their importance or cost.
+Figure&nbsp;41.7: Example of a weighted graph. The weights (2, 3, 1) assigned to the edges between vertices A, B, and C differentiate their importance or cost.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>As we traverse through the city, we encounter different traffic configurations. Some intersections allow only a single connection between landmarks, reflecting a <strong>simple graph</strong> with no self-loops. However, other intersections might have multiple routes connecting the same pair of landmarks or even allow U-turns, creating self-loops. This scenario portrays a <strong>multigraph</strong>. The diagrams <a href="#fig-simple-vs-multigraph-1" class="quarto-xref">Figure&nbsp;<span>40.8</span></a> and <a href="#fig-simple-vs-multigraph-2" class="quarto-xref">Figure&nbsp;<span>40.9</span></a> encapsulate these ideas.</p>
+<p>As we traverse through the city, we encounter different traffic configurations. Some intersections allow only a single connection between landmarks, reflecting a <strong>simple graph</strong> with no self-loops. However, other intersections might have multiple routes connecting the same pair of landmarks or even allow U-turns, creating self-loops. This scenario portrays a <strong>multigraph</strong>. The diagrams <a href="#fig-simple-vs-multigraph-1" class="quarto-xref">Figure&nbsp;<span>41.8</span></a> and <a href="#fig-simple-vs-multigraph-2" class="quarto-xref">Figure&nbsp;<span>41.9</span></a> encapsulate these ideas.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-simple-vs-multigraph-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-simple-vs-multigraph-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-simple-vs-multigraph-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -1374,7 +1380,7 @@ Figure&nbsp;40.7: Example of a weighted graph. The weights (2, 3, 1) assigned to
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simple-vs-multigraph-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.8: Example of a simple graph. Vertices A, B, and C are interconnected by simple edges.
+Figure&nbsp;41.8: Example of a simple graph. Vertices A, B, and C are interconnected by simple edges.
 </figcaption>
 </figure>
 </div>
@@ -1382,7 +1388,7 @@ Figure&nbsp;40.8: Example of a simple graph. Vertices A, B, and C are interconne
 </div>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-simple-vs-multigraph-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-simple-vs-multigraph-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-simple-vs-multigraph-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -1441,16 +1447,16 @@ Figure&nbsp;40.8: Example of a simple graph. Vertices A, B, and C are interconne
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simple-vs-multigraph-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.9: Example of a multigraph. Vertex A is connected to vertex B through two edges (a solid and a dashed line) and to itself via a self-loop (in orange).
+Figure&nbsp;41.9: Example of a multigraph. Vertex A is connected to vertex B through two edges (a solid and a dashed line) and to itself via a self-loop (in orange).
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>In the city of graphs, the popularity of a landmark (vertex) might be judged by the number of roads (edges) leading to it, a concept known as the <strong>degree</strong> of a vertex. A busy intersection with roads pouring in and out signifies a high-degree vertex. (See <a href="#fig-vertex-degree" class="quarto-xref">Figure&nbsp;<span>40.10</span></a> for an example.)</p>
+<p>In the city of graphs, the popularity of a landmark (vertex) might be judged by the number of roads (edges) leading to it, a concept known as the <strong>degree</strong> of a vertex. A busy intersection with roads pouring in and out signifies a high-degree vertex. (See <a href="#fig-vertex-degree" class="quarto-xref">Figure&nbsp;<span>41.10</span></a> for an example.)</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-vertex-degree" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-vertex-degree" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-vertex-degree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -1507,16 +1513,16 @@ Figure&nbsp;40.9: Example of a multigraph. Vertex A is connected to vertex B thr
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vertex-degree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.10: Example graph with vertex degrees. The degree of each vertex is indicated by the number in parentheses in the labels on the edges.
+Figure&nbsp;41.10: Example graph with vertex degrees. The degree of each vertex is indicated by the number in parentheses in the labels on the edges.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>To travel from one landmark to another, one must choose a <strong>path</strong>, a sequence of landmarks connected by roads. Occasionally, this path might lead back to the starting point, creating a <strong>cycle</strong>, a closed path where the journey starts and ends at the same landmark. (See <a href="#fig-path" class="quarto-xref">Figure&nbsp;<span>40.11</span></a> and <a href="#fig-cycle" class="quarto-xref">Figure&nbsp;<span>40.12</span></a> for examples.)</p>
+<p>To travel from one landmark to another, one must choose a <strong>path</strong>, a sequence of landmarks connected by roads. Occasionally, this path might lead back to the starting point, creating a <strong>cycle</strong>, a closed path where the journey starts and ends at the same landmark. (See <a href="#fig-path" class="quarto-xref">Figure&nbsp;<span>41.11</span></a> and <a href="#fig-cycle" class="quarto-xref">Figure&nbsp;<span>41.12</span></a> for examples.)</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-path" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-path" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-path-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -1568,7 +1574,7 @@ Figure&nbsp;40.10: Example graph with vertex degrees. The degree of each vertex 
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-path-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.11: Example graph with a path from A to D.
+Figure&nbsp;41.11: Example graph with a path from A to D.
 </figcaption>
 </figure>
 </div>
@@ -1576,7 +1582,7 @@ Figure&nbsp;40.11: Example graph with a path from A to D.
 </div>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-cycle" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-cycle" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -1622,16 +1628,16 @@ Figure&nbsp;40.11: Example graph with a path from A to D.
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.12: Example graph with a cycle. (A-B-C)
+Figure&nbsp;41.12: Example graph with a cycle. (A-B-C)
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Cities can be busy, bustling with interconnected landmarks, or they can be quiet towns with isolated points of interest. A city with a path between every pair of landmarks is a <strong>connected graph</strong>, while a city with isolated landmarks, unreachable from others, is a <strong>disconnected graph</strong>. This concept is illustrated in <a href="#fig-connected-vs-disconnected-1" class="quarto-xref">Figure&nbsp;<span>40.13</span></a> and <a href="#fig-connected-vs-disconnected-2" class="quarto-xref">Figure&nbsp;<span>40.14</span></a>.</p>
+<p>Cities can be busy, bustling with interconnected landmarks, or they can be quiet towns with isolated points of interest. A city with a path between every pair of landmarks is a <strong>connected graph</strong>, while a city with isolated landmarks, unreachable from others, is a <strong>disconnected graph</strong>. This concept is illustrated in <a href="#fig-connected-vs-disconnected-1" class="quarto-xref">Figure&nbsp;<span>41.13</span></a> and <a href="#fig-connected-vs-disconnected-2" class="quarto-xref">Figure&nbsp;<span>41.14</span></a>.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-connected-vs-disconnected-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-connected-vs-disconnected-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-connected-vs-disconnected-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -1677,7 +1683,7 @@ Figure&nbsp;40.12: Example graph with a cycle. (A-B-C)
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-connected-vs-disconnected-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.13: Example of a connected graph.
+Figure&nbsp;41.13: Example of a connected graph.
 </figcaption>
 </figure>
 </div>
@@ -1685,7 +1691,7 @@ Figure&nbsp;40.13: Example of a connected graph.
 </div>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-connected-vs-disconnected-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-connected-vs-disconnected-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-connected-vs-disconnected-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -1743,7 +1749,7 @@ Figure&nbsp;40.13: Example of a connected graph.
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-connected-vs-disconnected-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.14: Example of a disconnected graph.
+Figure&nbsp;41.14: Example of a disconnected graph.
 </figcaption>
 </figure>
 </div>
@@ -1751,19 +1757,19 @@ Figure&nbsp;40.14: Example of a disconnected graph.
 </div>
 <p>Understanding these terms and properties provides the vocabulary to talk about graphs, setting the stage for exploring more advanced concepts and applications. As we delve deeper, we will start seeing how these properties interplay and shape the complex world of graphs.</p>
 </section>
-<section id="graph-notation" class="level3" data-number="40.2.2">
-<h3 data-number="40.2.2" class="anchored" data-anchor-id="graph-notation"><span class="header-section-number">40.2.2</span> Graph Notation</h3>
+<section id="graph-notation" class="level3" data-number="41.2.2">
+<h3 data-number="41.2.2" class="anchored" data-anchor-id="graph-notation"><span class="header-section-number">41.2.2</span> Graph Notation</h3>
 <p>In mathematical terms, a graph can be represented by the notation <span class="math inline">\(G(V, E)\)</span>, where <span class="math inline">\(G\)</span> stands for the graph, <span class="math inline">\(V\)</span> is the set of vertices (or nodes), and <span class="math inline">\(E\)</span> is the set of edges (or connections). This notation provides a concise, abstract representation of the graph, which aids in understanding and analyzing its structure.</p>
 </section>
-<section id="special-types-of-graphs" class="level3" data-number="40.2.3">
-<h3 data-number="40.2.3" class="anchored" data-anchor-id="special-types-of-graphs"><span class="header-section-number">40.2.3</span> Special Types of Graphs</h3>
+<section id="special-types-of-graphs" class="level3" data-number="41.2.3">
+<h3 data-number="41.2.3" class="anchored" data-anchor-id="special-types-of-graphs"><span class="header-section-number">41.2.3</span> Special Types of Graphs</h3>
 <p>Certain types of graphs, distinguished by specific properties or structures, have earned unique classifications. Three such types are: complete graphs, bipartite graphs, and trees.</p>
 <ul>
-<li><strong>Complete Graph</strong>: A complete graph, denoted by <span class="math inline">\(K_n\)</span> where <span class="math inline">\(n\)</span> is the number of vertices, is a simple graph where every pair of distinct vertices is connected by a unique edge. In a complete graph, each vertex is directly connected to every other vertex, signifying a fully interconnected network. This type of graph is commonly seen in problems concerning network connectivity and graph coloring. See <a href="#fig-complete-graph" class="quarto-xref">Figure&nbsp;<span>40.15</span></a>.</li>
+<li><strong>Complete Graph</strong>: A complete graph, denoted by <span class="math inline">\(K_n\)</span> where <span class="math inline">\(n\)</span> is the number of vertices, is a simple graph where every pair of distinct vertices is connected by a unique edge. In a complete graph, each vertex is directly connected to every other vertex, signifying a fully interconnected network. This type of graph is commonly seen in problems concerning network connectivity and graph coloring. See <a href="#fig-complete-graph" class="quarto-xref">Figure&nbsp;<span>41.15</span></a>.</li>
 </ul>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-complete-graph" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-complete-graph" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-complete-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -1830,18 +1836,18 @@ Figure&nbsp;40.14: Example of a disconnected graph.
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-complete-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.15: Example of a complete graph. In this graph, every pair of distinct vertices (A, B, C, D) is connected by a unique edge (shown in orange), demonstrating a fully interconnected network.
+Figure&nbsp;41.15: Example of a complete graph. In this graph, every pair of distinct vertices (A, B, C, D) is connected by a unique edge (shown in orange), demonstrating a fully interconnected network.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li><strong>Bipartite Graph</strong>: A bipartite graph can be partitioned into two distinct sets, where vertices within the same set share no edges. Each edge connects a vertex from one set to a vertex in the other set, and never two vertices within the same set. This special class of graphs has extensive applications, including matching problems, scheduling problems, and in the study of molecular structures. See <a href="#fig-bipartite-graph" class="quarto-xref">Figure&nbsp;<span>40.16</span></a>.</li>
+<li><strong>Bipartite Graph</strong>: A bipartite graph can be partitioned into two distinct sets, where vertices within the same set share no edges. Each edge connects a vertex from one set to a vertex in the other set, and never two vertices within the same set. This special class of graphs has extensive applications, including matching problems, scheduling problems, and in the study of molecular structures. See <a href="#fig-bipartite-graph" class="quarto-xref">Figure&nbsp;<span>41.16</span></a>.</li>
 </ul>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-bipartite-graph" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-bipartite-graph" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bipartite-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -1920,18 +1926,18 @@ Figure&nbsp;40.15: Example of a complete graph. In this graph, every pair of dis
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bipartite-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.16: Example of a bipartite graph. The graph can be partitioned into two distinct sets (shown in lightblue and lightgreen), with each edge connecting a vertex from one set to a vertex in the other set. No edges connect vertices within the same set.
+Figure&nbsp;41.16: Example of a bipartite graph. The graph can be partitioned into two distinct sets (shown in lightblue and lightgreen), with each edge connecting a vertex from one set to a vertex in the other set. No edges connect vertices within the same set.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li><strong>Tree</strong>: A tree is a special type of graph that holds a significant place in computer science due to its simplicity and versatility. A tree is an undirected, connected graph with no cycles. Often, one vertex is designated as the root, and the other vertices are arranged in a parent-child relationship, forming a hierarchical structure. Trees are utilized in various areas such as organizing hierarchical data, structuring web pages, and in algorithms like searches and sorts. See <a href="#fig-tree" class="quarto-xref">Figure&nbsp;<span>40.17</span></a>.</li>
+<li><strong>Tree</strong>: A tree is a special type of graph that holds a significant place in computer science due to its simplicity and versatility. A tree is an undirected, connected graph with no cycles. Often, one vertex is designated as the root, and the other vertices are arranged in a parent-child relationship, forming a hierarchical structure. Trees are utilized in various areas such as organizing hierarchical data, structuring web pages, and in algorithms like searches and sorts. See <a href="#fig-tree" class="quarto-xref">Figure&nbsp;<span>41.17</span></a>.</li>
 </ul>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-tree" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-tree" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -2016,7 +2022,7 @@ Figure&nbsp;40.16: Example of a bipartite graph. The graph can be partitioned in
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tree-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.17: Example of a tree. A hierarchical structure with a designated root (A, in red) and parent-child relationships (edges in orange). The other vertices are arranged in parent-child relationships, forming a hierarchical structure.
+Figure&nbsp;41.17: Example of a tree. A hierarchical structure with a designated root (A, in red) and parent-child relationships (edges in orange). The other vertices are arranged in parent-child relationships, forming a hierarchical structure.
 </figcaption>
 </figure>
 </div>
@@ -2024,15 +2030,15 @@ Figure&nbsp;40.17: Example of a tree. A hierarchical structure with a designated
 </div>
 </section>
 </section>
-<section id="graph-representation" class="level2" data-number="40.3">
-<h2 data-number="40.3" class="anchored" data-anchor-id="graph-representation"><span class="header-section-number">40.3</span> Graph Representation</h2>
+<section id="graph-representation" class="level2" data-number="41.3">
+<h2 data-number="41.3" class="anchored" data-anchor-id="graph-representation"><span class="header-section-number">41.3</span> Graph Representation</h2>
 <p>As we use graphs to model various complex scenarios in computer science, it’s crucial to understand how to translate the abstract concept of graphs into concrete data structures. This will enable us to manipulate graphs within a programming environment. In this section, we’ll explore two prominent methods for graph representation: the adjacency list and the adjacency matrix.</p>
-<section id="adjacency-list" class="level3" data-number="40.3.1">
-<h3 data-number="40.3.1" class="anchored" data-anchor-id="adjacency-list"><span class="header-section-number">40.3.1</span> Adjacency List</h3>
+<section id="adjacency-list" class="level3" data-number="41.3.1">
+<h3 data-number="41.3.1" class="anchored" data-anchor-id="adjacency-list"><span class="header-section-number">41.3.1</span> Adjacency List</h3>
 <p>In an <strong>adjacency list</strong> representation, each vertex in the graph is associated with a list of its neighboring vertices. Depending on the specific scenario, the adjacency list can be implemented via arrays of lists or as a hash table. In either case, each vertex’s key (or index) corresponds to a list of its adjacent vertices.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-adjacency-list-graph" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-adjacency-list-graph" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-adjacency-list-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -2089,17 +2095,17 @@ Figure&nbsp;40.17: Example of a tree. A hierarchical structure with a designated
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adjacency-list-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.18: An undirected graph depicted as an example for the adjacency list. Each vertex (A in red, B in green, C in blue, D in yellow) is linked to its neighboring vertices. In the adjacency list representation, each of these vertices points to their respective neighbors.
+Figure&nbsp;41.18: An undirected graph depicted as an example for the adjacency list. Each vertex (A in red, B in green, C in blue, D in yellow) is linked to its neighboring vertices. In the adjacency list representation, each of these vertices points to their respective neighbors.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Adjacency list representation for the graph <a href="#fig-adjacency-list-graph" class="quarto-xref">Figure&nbsp;<span>40.18</span></a> is as follows:</p>
-<div id="lst-adjacency-list-example" class="rust listing quarto-float">
+<p>Adjacency list representation for the graph <a href="#fig-adjacency-list-graph" class="quarto-xref">Figure&nbsp;<span>41.18</span></a> is as follows:</p>
+<div id="lst-adjacency-list-example" class="rust listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-adjacency-list-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Listing&nbsp;40.1: Adjacency list representation.
+Listing&nbsp;41.1: Adjacency list representation.
 </figcaption>
 <div aria-describedby="lst-adjacency-list-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="sourceCode" id="lst-adjacency-list-example"><pre class="sourceCode rust code-with-copy"><code class="sourceCode rust"><span id="lst-adjacency-list-example-1"><a href="#lst-adjacency-list-example-1" aria-hidden="true" tabindex="-1"></a>A<span class="op">:</span> [B<span class="op">,</span> C]</span>
@@ -2111,12 +2117,12 @@ Listing&nbsp;40.1: Adjacency list representation.
 </div>
 <p>The adjacency list is particularly effective for sparse graphs, where the number of edges is far less than the total possible number of edges. This method only stores the vertices that are directly connected, conserving memory and allowing faster iteration over the neighbors of a given vertex.</p>
 </section>
-<section id="adjacency-matrix" class="level3" data-number="40.3.2">
-<h3 data-number="40.3.2" class="anchored" data-anchor-id="adjacency-matrix"><span class="header-section-number">40.3.2</span> Adjacency Matrix</h3>
+<section id="adjacency-matrix" class="level3" data-number="41.3.2">
+<h3 data-number="41.3.2" class="anchored" data-anchor-id="adjacency-matrix"><span class="header-section-number">41.3.2</span> Adjacency Matrix</h3>
 <p>An <strong>adjacency matrix</strong> is a two-dimensional grid representation, where the cell at the i-th row and j-th column denotes the connection between the i-th and j-th vertices. In an unweighted graph, the cells contain a 1 (indicating an edge between the vertices) or a 0 (indicating no edge). In a weighted graph, the cells hold the weights of the respective edges.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-adjacency-matrix-graph" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-adjacency-matrix-graph" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-adjacency-matrix-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -2173,17 +2179,17 @@ Listing&nbsp;40.1: Adjacency list representation.
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adjacency-matrix-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.19: A graph for adjacency matrix example
+Figure&nbsp;41.19: A graph for adjacency matrix example
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Adjacency matrix representation (unweighted) for the graph in <a href="#fig-adjacency-matrix-graph" class="quarto-xref">Figure&nbsp;<span>40.19</span></a> is:</p>
-<div id="lst-adjacency-matrix-example" class="text listing quarto-float">
+<p>Adjacency matrix representation (unweighted) for the graph in <a href="#fig-adjacency-matrix-graph" class="quarto-xref">Figure&nbsp;<span>41.19</span></a> is:</p>
+<div id="lst-adjacency-matrix-example" class="text listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-adjacency-matrix-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Listing&nbsp;40.2: Adjacency matrix representation.
+Listing&nbsp;41.2: Adjacency matrix representation.
 </figcaption>
 <div aria-describedby="lst-adjacency-matrix-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <pre id="lst-adjacency-matrix-example" class="text"><code>  A B C D
@@ -2196,8 +2202,8 @@ D 0 1 1 0</code></pre>
 </div>
 <p>The adjacency matrix proves advantageous when working with dense graphs, where the number of edges approaches the total possible number of edges. It’s also useful when one needs to rapidly determine whether an edge exists between two vertices. However, for large sparse graphs, this method can be memory-intensive as it stores the state for every possible pair of vertices.</p>
 </section>
-<section id="converting-between-representations" class="level3" data-number="40.3.3">
-<h3 data-number="40.3.3" class="anchored" data-anchor-id="converting-between-representations"><span class="header-section-number">40.3.3</span> Converting Between Representations</h3>
+<section id="converting-between-representations" class="level3" data-number="41.3.3">
+<h3 data-number="41.3.3" class="anchored" data-anchor-id="converting-between-representations"><span class="header-section-number">41.3.3</span> Converting Between Representations</h3>
 <ol type="1">
 <li><strong>Converting from a graph diagram or notation to adjacency list/matrix</strong></li>
 </ol>
@@ -2217,8 +2223,8 @@ D 0 1 1 0</code></pre>
 <p>Learning these methods to represent graphs in code and being able to switch between them equips you with the flexibility to choose the most efficient representation based on the specific requirements of your problem.</p>
 </section>
 </section>
-<section id="graph-traversal" class="level2" data-number="40.4">
-<h2 data-number="40.4" class="anchored" data-anchor-id="graph-traversal"><span class="header-section-number">40.4</span> Graph Traversal</h2>
+<section id="graph-traversal" class="level2" data-number="41.4">
+<h2 data-number="41.4" class="anchored" data-anchor-id="graph-traversal"><span class="header-section-number">41.4</span> Graph Traversal</h2>
 <p>Imagine a challenge where you need to determine the average age of all Facebook users. Considering Facebook’s user base reaches into the billions, it’s untenable to hold the entire graph of the friend network in memory. Thus, a solution would involve addressing each user’s data individually, as needed. This requirement brings us to the concept of graph traversal algorithms.</p>
 <p>Graph traversal algorithms enable us to visit each node (user, in the Facebook case), accumulate their age, and eventually calculate the average. For instance, we could load the data of a single user, push all their friends to a stack, and then continually pop from this stack, requesting each friend’s data from Facebook. As we receive data, we mark each user as ‘visited’ to avoid duplicating their age in our count. The friends of every loaded user are added to our stack, and this process repeats until our stack is empty.</p>
 <p>This scenario underscores the crucial role of graph traversal, a foundational operation in graph theory. Graphs, due to their versatility and power, have found applications across diverse domains. Whether it’s modeling social networks, computer networks, transportation systems, or web pages, or even solving complex problems in games, graphs form an indispensable tool. The process of graph traversal allows us to navigate these graphs in various ways, leading to numerous applications like searching for specific nodes, identifying the shortest path between nodes, and analyzing the overall structure of a graph.</p>
@@ -2230,14 +2236,14 @@ D 0 1 1 0</code></pre>
 <li><p><strong>Depth-First Search (DFS)</strong>: In contrast to BFS, DFS digs as deep as possible into the graph’s structure before backtracking. In essence, it explores an arbitrary path as far as possible before retracing steps.</p></li>
 </ol>
 <p>By understanding these graph traversal methods and knowing how to implement them, you will be equipped to efficiently navigate and manipulate intricate graphs, enabling you to solve a wide variety of problems. Furthermore, the choice of graph traversal method can often be influenced by the representation of the graph (as an adjacency list or adjacency matrix), which we discussed in the previous section. Having a good grasp of graph representation techniques will thus aid in effective graph traversal.</p>
-<section id="breadth-first-search-bfs" class="level3" data-number="40.4.1">
-<h3 data-number="40.4.1" class="anchored" data-anchor-id="breadth-first-search-bfs"><span class="header-section-number">40.4.1</span> Breadth-First Search (BFS)</h3>
+<section id="breadth-first-search-bfs" class="level3" data-number="41.4.1">
+<h3 data-number="41.4.1" class="anchored" data-anchor-id="breadth-first-search-bfs"><span class="header-section-number">41.4.1</span> Breadth-First Search (BFS)</h3>
 <p><strong>Breadth-First Search (BFS)</strong> is a widely-used algorithm for graph traversal and pathfinding. The defining characteristic of BFS is that it explores a graph in ‘layers’. It begins at a chosen ‘start’ vertex and explores all the neighboring vertices at the current depth prior to moving on to nodes at the next depth level. BFS uses a queue as its core data structure, which provides an inherent ‘First In, First Out’ (FIFO) characteristic - it first visits the nodes that were introduced earlier in the process, thus ensuring that it traverses level by level in the graph.</p>
 <p>The BFS algorithm’s layer-wise exploration makes it particularly well-suited for problems where the shortest path or minimum number of steps is required, such as navigating through a maze or finding the shortest route in a transportation network. However, it’s important to note that BFS can consume a significant amount of memory because it needs to store all the vertices of the current level.</p>
 <p>To illustrate how BFS works, let’s consider a step-by-step BFS traversal on the following graph:</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-bfs-example" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-bfs-example" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bfs-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -2305,7 +2311,7 @@ D 0 1 1 0</code></pre>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bfs-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.20: An example graph for BFS traversal. The numbers represent the order in which the vertices are visited.
+Figure&nbsp;41.20: An example graph for BFS traversal. The numbers represent the order in which the vertices are visited.
 </figcaption>
 </figure>
 </div>
@@ -2337,7 +2343,7 @@ Figure&nbsp;40.20: An example graph for BFS traversal. The numbers represent the
 <p>This pseudocode presents the core logic of BFS. It starts with the ‘start’ vertex, explores its neighbors, and marks them as visited. Then it continues with the next node from the queue (the ‘oldest’ unvisited node) and repeats the process until all reachable nodes have been visited. It’s important to note that BFS will only visit nodes reachable from the ‘start’ node; any isolated nodes or nodes in a separate connected component will not be visited by this BFS execution.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-bfs-flowchart" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-bfs-flowchart" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bfs-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -2448,7 +2454,7 @@ Figure&nbsp;40.20: An example graph for BFS traversal. The numbers represent the
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bfs-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.21: Flowchart depicting the steps of the BFS algorithm.
+Figure&nbsp;41.21: Flowchart depicting the steps of the BFS algorithm.
 </figcaption>
 </figure>
 </div>
@@ -2456,13 +2462,13 @@ Figure&nbsp;40.21: Flowchart depicting the steps of the BFS algorithm.
 </div>
 <p>By understanding the BFS algorithm and its application, you can efficiently solve a variety of problems involving layers or levels, shortest path, or minimal steps.</p>
 </section>
-<section id="depth-first-search-dfs" class="level3" data-number="40.4.2">
-<h3 data-number="40.4.2" class="anchored" data-anchor-id="depth-first-search-dfs"><span class="header-section-number">40.4.2</span> Depth-First Search (DFS)</h3>
+<section id="depth-first-search-dfs" class="level3" data-number="41.4.2">
+<h3 data-number="41.4.2" class="anchored" data-anchor-id="depth-first-search-dfs"><span class="header-section-number">41.4.2</span> Depth-First Search (DFS)</h3>
 <p><strong>Depth-First Search (DFS)</strong> is another essential technique for graph traversal and pathfinding. DFS explores a graph by visiting a vertex and its neighbors as deeply as possible before backtracking. This characteristic of DFS, going as deep as possible from a node before backtracking, is what distinguishes it from BFS. DFS can be implemented using recursion or an explicit stack data structure. The choice between recursion and stack implementation depends on the problem’s requirements and the size of the graph.</p>
 <p>To illustrate how DFS works, consider the following graph:</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-dfs-example" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-dfs-example" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dfs-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -2534,7 +2540,7 @@ Figure&nbsp;40.21: Flowchart depicting the steps of the BFS algorithm.
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dfs-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.22: Example graph for DFS traversal. The numbers and colors indicate the order and depth of traversal, respectively.
+Figure&nbsp;41.22: Example graph for DFS traversal. The numbers and colors indicate the order and depth of traversal, respectively.
 </figcaption>
 </figure>
 </div>
@@ -2561,7 +2567,7 @@ Figure&nbsp;40.22: Example graph for DFS traversal. The numbers and colors indic
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      DFS(graph, neighbor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-dfs-recursive-flowchart" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-dfs-recursive-flowchart" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dfs-recursive-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -2635,7 +2641,7 @@ Figure&nbsp;40.22: Example graph for DFS traversal. The numbers and colors indic
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dfs-recursive-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.23: Flowchart depicting the recursive implementation of the DFS algorithm.
+Figure&nbsp;41.23: Flowchart depicting the recursive implementation of the DFS algorithm.
 </figcaption>
 </figure>
 </div>
@@ -2657,7 +2663,7 @@ Figure&nbsp;40.23: Flowchart depicting the recursive implementation of the DFS a
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        Push neighbor onto S</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-dfs-iterative-flowchart" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-dfs-iterative-flowchart" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dfs-iterative-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
@@ -2768,15 +2774,15 @@ Figure&nbsp;40.23: Flowchart depicting the recursive implementation of the DFS a
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dfs-iterative-flowchart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;40.24: Flowchart depicting the iterative implementation of the DFS algorithm.
+Figure&nbsp;41.24: Flowchart depicting the iterative implementation of the DFS algorithm.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="applications-and-variations-of-bfs-and-dfs" class="level3" data-number="40.4.3">
-<h3 data-number="40.4.3" class="anchored" data-anchor-id="applications-and-variations-of-bfs-and-dfs"><span class="header-section-number">40.4.3</span> Applications and Variations of BFS and DFS</h3>
+<section id="applications-and-variations-of-bfs-and-dfs" class="level3" data-number="41.4.3">
+<h3 data-number="41.4.3" class="anchored" data-anchor-id="applications-and-variations-of-bfs-and-dfs"><span class="header-section-number">41.4.3</span> Applications and Variations of BFS and DFS</h3>
 <p>BFS and DFS are versatile tools in graph theory with numerous applications. Understanding their core principles and the variations that can be implemented, provides the foundation for solving a wide range of graph-related problems:</p>
 <ul>
 <li><p><strong>Shortest path</strong>: BFS can find the shortest path between two vertices in an unweighted graph due to its level-wise exploration characteristic. BFS can be modified to not only keep track of the path length but also trace the actual path taken.</p></li>
@@ -2827,18 +2833,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2870,7 +2865,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -2878,7 +2895,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -3204,12 +3221,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./20_trees.html" class="pagination-link" aria-label="Tree Data Structure">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Tree Data Structure</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./22_hashing.html" class="pagination-link" aria-label="Hashing, Hash Tables, and Hash Maps">
-        <span class="nav-page-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Hashing, Hash Tables, and Hash Maps</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
