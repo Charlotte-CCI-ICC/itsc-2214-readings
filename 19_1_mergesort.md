@@ -1,4 +1,4 @@
-
+---
 title: "The Merge Sort Algorithm"
 ---
 
