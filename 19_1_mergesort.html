@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>39&nbsp; Starting with Insertion Sort – ITSC 2214 - Data Structures and Algorithms</title>
+<title>39&nbsp; The Merge Sort Algorithm – ITSC 2214 - Data Structures and Algorithms</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./18_recursion.html">Recursion</a></li><li class="breadcrumb-item"><a href="./19_1_mergesort.html"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">title: “The Merge Sort Algorithm”</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./18_recursion.html">Recursion</a></li><li class="breadcrumb-item"><a href="./19_1_mergesort.html"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">The Merge Sort Algorithm</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -474,7 +474,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./19_1_mergesort.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">title: “The Merge Sort Algorithm”</span></span></a>
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">The Merge Sort Algorithm</span></span></a>
   </div>
 </li>
       </ul>
@@ -529,27 +529,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#trying-the-split-approach" id="toc-trying-the-split-approach" class="nav-link active" data-scroll-target="#trying-the-split-approach"><span class="header-section-number">39.1</span> Trying the Split Approach</a></li>
-  <li><a href="#discovering-the-merge" id="toc-discovering-the-merge" class="nav-link" data-scroll-target="#discovering-the-merge"><span class="header-section-number">39.2</span> Discovering the Merge</a></li>
-  <li><a href="#from-one-split-to-many" id="toc-from-one-split-to-many" class="nav-link" data-scroll-target="#from-one-split-to-many"><span class="header-section-number">39.3</span> From One Split to Many</a></li>
-  <li><a href="#making-our-code-split-recursively" id="toc-making-our-code-split-recursively" class="nav-link" data-scroll-target="#making-our-code-split-recursively"><span class="header-section-number">39.4</span> Making Our Code Split Recursively</a></li>
-  <li><a href="#understanding-the-efficiency" id="toc-understanding-the-efficiency" class="nav-link" data-scroll-target="#understanding-the-efficiency"><span class="header-section-number">39.5</span> Understanding the Efficiency</a>
+  <li><a href="#starting-with-insertion-sort" id="toc-starting-with-insertion-sort" class="nav-link active" data-scroll-target="#starting-with-insertion-sort"><span class="header-section-number">39.1</span> Starting with Insertion Sort</a></li>
+  <li><a href="#trying-the-split-approach" id="toc-trying-the-split-approach" class="nav-link" data-scroll-target="#trying-the-split-approach"><span class="header-section-number">39.2</span> Trying the Split Approach</a></li>
+  <li><a href="#discovering-the-merge" id="toc-discovering-the-merge" class="nav-link" data-scroll-target="#discovering-the-merge"><span class="header-section-number">39.3</span> Discovering the Merge</a></li>
+  <li><a href="#from-one-split-to-many" id="toc-from-one-split-to-many" class="nav-link" data-scroll-target="#from-one-split-to-many"><span class="header-section-number">39.4</span> From One Split to Many</a></li>
+  <li><a href="#making-our-code-split-recursively" id="toc-making-our-code-split-recursively" class="nav-link" data-scroll-target="#making-our-code-split-recursively"><span class="header-section-number">39.5</span> Making Our Code Split Recursively</a></li>
+  <li><a href="#understanding-the-efficiency" id="toc-understanding-the-efficiency" class="nav-link" data-scroll-target="#understanding-the-efficiency"><span class="header-section-number">39.6</span> Understanding the Efficiency</a>
   <ul class="collapse">
-  <li><a href="#the-merge-step" id="toc-the-merge-step" class="nav-link" data-scroll-target="#the-merge-step"><span class="header-section-number">39.5.1</span> The Merge Step</a></li>
-  <li><a href="#the-complete-picture" id="toc-the-complete-picture" class="nav-link" data-scroll-target="#the-complete-picture"><span class="header-section-number">39.5.2</span> The Complete Picture</a></li>
+  <li><a href="#the-merge-step" id="toc-the-merge-step" class="nav-link" data-scroll-target="#the-merge-step"><span class="header-section-number">39.6.1</span> The Merge Step</a></li>
+  <li><a href="#the-complete-picture" id="toc-the-complete-picture" class="nav-link" data-scroll-target="#the-complete-picture"><span class="header-section-number">39.6.2</span> The Complete Picture</a></li>
   </ul></li>
-  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together"><span class="header-section-number">39.6</span> Putting It All Together</a></li>
-  <li><a href="#one-more-thing-to-think-about" id="toc-one-more-thing-to-think-about" class="nav-link" data-scroll-target="#one-more-thing-to-think-about"><span class="header-section-number">39.7</span> One More Thing to Think About</a></li>
-  <li><a href="#the-final-algorithm" id="toc-the-final-algorithm" class="nav-link" data-scroll-target="#the-final-algorithm"><span class="header-section-number">39.8</span> The Final Algorithm</a></li>
+  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together"><span class="header-section-number">39.7</span> Putting It All Together</a></li>
+  <li><a href="#one-more-thing-to-think-about" id="toc-one-more-thing-to-think-about" class="nav-link" data-scroll-target="#one-more-thing-to-think-about"><span class="header-section-number">39.8</span> One More Thing to Think About</a></li>
+  <li><a href="#the-final-algorithm" id="toc-the-final-algorithm" class="nav-link" data-scroll-target="#the-final-algorithm"><span class="header-section-number">39.9</span> The Final Algorithm</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./18_recursion.html">Recursion</a></li><li class="breadcrumb-item"><a href="./19_1_mergesort.html"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">title: “The Merge Sort Algorithm”</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./18_recursion.html">Recursion</a></li><li class="breadcrumb-item"><a href="./19_1_mergesort.html"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">The Merge Sort Algorithm</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Starting with Insertion Sort</span></h1>
+<h1 class="title"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">The Merge Sort Algorithm</span></h1>
 </div>
 
 
@@ -566,8 +567,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>title: “The Merge Sort Algorithm”</p>
-<hr>
+<section id="starting-with-insertion-sort" class="level2" data-number="39.1">
+<h2 data-number="39.1" class="anchored" data-anchor-id="starting-with-insertion-sort"><span class="header-section-number">39.1</span> Starting with Insertion Sort</h2>
 <p>Let’s begin with the most intuitive way to sort numbers. Imagine you have a sequence of numbers:</p>
 <pre><code>[7, 2, 4, 1, 5, 3]</code></pre>
 <p>How would you sort this by hand? Most people would:</p>
@@ -651,8 +652,9 @@ Split:        [7, 2, 4] | [1, 5, 3]</code></pre>
 </ul>
 <p>Hey - that’s interesting! It’s still O(n²), but we’ve cut the number of operations roughly in half!</p>
 <p>Should we try implementing this idea? Even if it doesn’t give us a fundamentally faster algorithm, it might teach us something…</p>
-<section id="trying-the-split-approach" class="level2" data-number="39.1">
-<h2 data-number="39.1" class="anchored" data-anchor-id="trying-the-split-approach"><span class="header-section-number">39.1</span> Trying the Split Approach</h2>
+</section>
+<section id="trying-the-split-approach" class="level2" data-number="39.2">
+<h2 data-number="39.2" class="anchored" data-anchor-id="trying-the-split-approach"><span class="header-section-number">39.2</span> Trying the Split Approach</h2>
 <p>Since splitting might save us some work, let’s implement this idea step by step:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">splitAndSort</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arr<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Base case: arrays of size 0 or 1 are already sorted</span></span>
@@ -714,8 +716,8 @@ Step 3 - Combine:
 <p>Hey, that second idea seems promising! Let’s work through it completely:</p>
 <p>[Space for working it out…]</p>
 </section>
-<section id="discovering-the-merge" class="level2" data-number="39.2">
-<h2 data-number="39.2" class="anchored" data-anchor-id="discovering-the-merge"><span class="header-section-number">39.2</span> Discovering the Merge</h2>
+<section id="discovering-the-merge" class="level2" data-number="39.3">
+<h2 data-number="39.3" class="anchored" data-anchor-id="discovering-the-merge"><span class="header-section-number">39.3</span> Discovering the Merge</h2>
 <p>We found that taking the smallest element at each step might work. Let’s explore this idea more carefully.</p>
 <p>Given our two sorted halves: [2, 4, 7] and [1, 3, 5]</p>
 <p>Step 1: We need the smallest element overall</p>
@@ -829,8 +831,8 @@ Step 3 - Combine:
 <p>Try completing this implementation yourself!</p>
 <p>[Space for implementation…]</p>
 </section>
-<section id="from-one-split-to-many" class="level2" data-number="39.3">
-<h2 data-number="39.3" class="anchored" data-anchor-id="from-one-split-to-many"><span class="header-section-number">39.3</span> From One Split to Many</h2>
+<section id="from-one-split-to-many" class="level2" data-number="39.4">
+<h2 data-number="39.4" class="anchored" data-anchor-id="from-one-split-to-many"><span class="header-section-number">39.4</span> From One Split to Many</h2>
 <p>Remember how splitting once helped reduce our work? Let’s explore this further with larger arrays.</p>
 <p>Consider sorting: [9, 3, 7, 1, 8, 2, 6, 5, 4]</p>
 <p>With one split:</p>
@@ -874,8 +876,8 @@ Just pairs and singles (really easy!)</code></pre>
 <p>This leads us to a powerful insight: instead of arbitrarily choosing how many times to split, why not just keep splitting recursively until we reach single elements? When do we stop? When we get down to single elements and can’t split anymore!</p>
 <p>Actually, now that you think about it, single element arrays are already sorted! Meaning we can just use our existing merge code to combine them back together.</p>
 </section>
-<section id="making-our-code-split-recursively" class="level2" data-number="39.4">
-<h2 data-number="39.4" class="anchored" data-anchor-id="making-our-code-split-recursively"><span class="header-section-number">39.4</span> Making Our Code Split Recursively</h2>
+<section id="making-our-code-split-recursively" class="level2" data-number="39.5">
+<h2 data-number="39.5" class="anchored" data-anchor-id="making-our-code-split-recursively"><span class="header-section-number">39.5</span> Making Our Code Split Recursively</h2>
 <p>Let’s look back at our current implementation:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">splitAndMergeSort</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arr<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>arr<span class="op">.</span><span class="fu">length</span> <span class="op">&lt;=</span> <span class="dv">1</span><span class="op">)</span> <span class="cf">return</span><span class="op">;</span></span>
@@ -979,11 +981,11 @@ Let's follow one merge path in detail:
 <p>Each arrow (↙↘) in the splitting phase shows where we divide the array Each arrow (↖↗) in the merging phase shows which pieces we’re combining</p>
 <p>Notice how we can trace any piece of the final sorted array back through its merging steps to see how it got to its final position!</p>
 </section>
-<section id="understanding-the-efficiency" class="level2" data-number="39.5">
-<h2 data-number="39.5" class="anchored" data-anchor-id="understanding-the-efficiency"><span class="header-section-number">39.5</span> Understanding the Efficiency</h2>
+<section id="understanding-the-efficiency" class="level2" data-number="39.6">
+<h2 data-number="39.6" class="anchored" data-anchor-id="understanding-the-efficiency"><span class="header-section-number">39.6</span> Understanding the Efficiency</h2>
 <p>Before we analyze our complete algorithm, let’s understand how much work each part does. First, let’s look at merging.</p>
-<section id="the-merge-step" class="level3" data-number="39.5.1">
-<h3 data-number="39.5.1" class="anchored" data-anchor-id="the-merge-step"><span class="header-section-number">39.5.1</span> The Merge Step</h3>
+<section id="the-merge-step" class="level3" data-number="39.6.1">
+<h3 data-number="39.6.1" class="anchored" data-anchor-id="the-merge-step"><span class="header-section-number">39.6.1</span> The Merge Step</h3>
 <p>Remember our merge process? We look at the front of both arrays and pick the smaller element each time. Let’s count the steps for merging [2, 4, 7] and [1, 3, 5]:</p>
 <pre><code>Step 1: Compare 2 and 1
         Take 1
@@ -1004,8 +1006,8 @@ Step 3: Compare 4 and 3
 <p>Try counting steps yourself for merging [1, 3, 5] and [2, 4, 6, 8]. How many steps?</p>
 <p>[Space for counting…]</p>
 </section>
-<section id="the-complete-picture" class="level3" data-number="39.5.2">
-<h3 data-number="39.5.2" class="anchored" data-anchor-id="the-complete-picture"><span class="header-section-number">39.5.2</span> The Complete Picture</h3>
+<section id="the-complete-picture" class="level3" data-number="39.6.2">
+<h3 data-number="39.6.2" class="anchored" data-anchor-id="the-complete-picture"><span class="header-section-number">39.6.2</span> The Complete Picture</h3>
 <p>Now let’s look at our whole process. Draw out what happens with [7, 2, 4, 1, 5, 3]:</p>
 <pre><code>Level 1 (Split):      [7, 2, 4, 1, 5, 3]
                       /                \
@@ -1054,8 +1056,8 @@ Level 1 (Merge):       [1, 2, 3, 4, 5, 7]</code></pre>
 </blockquote>
 </section>
 </section>
-<section id="putting-it-all-together" class="level2" data-number="39.6">
-<h2 data-number="39.6" class="anchored" data-anchor-id="putting-it-all-together"><span class="header-section-number">39.6</span> Putting It All Together</h2>
+<section id="putting-it-all-together" class="level2" data-number="39.7">
+<h2 data-number="39.7" class="anchored" data-anchor-id="putting-it-all-together"><span class="header-section-number">39.7</span> Putting It All Together</h2>
 <p>Let’s summarize what we’ve discovered:</p>
 <ol type="1">
 <li>At each level of our trees:
@@ -1093,8 +1095,8 @@ Level 1 (Merge):       [1, 2, 3, 4, 5, 7]</code></pre>
 <p>[Space for calculations…]</p>
 <p>Remember our original problem? We wanted to do better than checking every element against every other element (N²). And we did! Instead of the work doubling four times when we double N (like in N²), it only doubles three times (like in N log N).</p>
 </section>
-<section id="one-more-thing-to-think-about" class="level2" data-number="39.7">
-<h2 data-number="39.7" class="anchored" data-anchor-id="one-more-thing-to-think-about"><span class="header-section-number">39.7</span> One More Thing to Think About</h2>
+<section id="one-more-thing-to-think-about" class="level2" data-number="39.8">
+<h2 data-number="39.8" class="anchored" data-anchor-id="one-more-thing-to-think-about"><span class="header-section-number">39.8</span> One More Thing to Think About</h2>
 <p>While we’ve figured out how much time our algorithm takes, there’s something else we should consider. Look back at our code - what resources are we using besides time?</p>
 <p>Take a moment to think about what happens in memory when we run our algorithm…</p>
 <p>[Space for thinking…]</p>
@@ -1168,8 +1170,8 @@ Final Merge: [2,4,7] with [1,3,5]
 <p>Is this a problem? Well, it depends! If we’re sorting a small array, probably not. But what if we were sorting millions of numbers? Or what if we were sorting on a device with limited memory?</p>
 <p>These are the kinds of questions that lead computer scientists to develop variations of merge sort that use less extra space - but that’s a puzzle for another day!</p>
 </section>
-<section id="the-final-algorithm" class="level2" data-number="39.8">
-<h2 data-number="39.8" class="anchored" data-anchor-id="the-final-algorithm"><span class="header-section-number">39.8</span> The Final Algorithm</h2>
+<section id="the-final-algorithm" class="level2" data-number="39.9">
+<h2 data-number="39.9" class="anchored" data-anchor-id="the-final-algorithm"><span class="header-section-number">39.9</span> The Final Algorithm</h2>
 <p>Here’s our complete merge sort implementation:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> MergeSort <span class="op">{</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">sort</span><span class="op">(</span><span class="dt">int</span><span class="op">[]</span> arr<span class="op">)</span> <span class="op">{</span></span>
