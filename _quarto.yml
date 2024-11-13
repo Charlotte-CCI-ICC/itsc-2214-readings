@@ -71,6 +71,8 @@ book:
     - part: "Hashing"
       chapters:
       - 22_hashing.qmd
+      chapters: 
+      - 23_ADT's and Generics.md
 
 bibliography: references.bib
 
